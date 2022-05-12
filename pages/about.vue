@@ -13,7 +13,6 @@
                             Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
                         </p>
                         <p class="text-dark">
-
                             Investigationes demonstraverunt lectores. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
                         </p>
                     </div>
@@ -24,7 +23,7 @@
             <div class="container">
                 <div class="row">
                     <div class="services-img col-md-6 col-sm-12 col-xs-12">
-                        <img class="img-responsive" src="images/service.jpg" alt="">
+                        <img class="img-responsive" src="images/slider4.jpg" alt="">
                     </div>
                     <div class="services-content col-md-6 col-sm-12 col-xs-12">
                         <h2 class="heading-regular">Programs &amp; Services</h2>
@@ -92,9 +91,11 @@
 </template>
 <style>
 .about-us .about-us-title {
-    background: url("/images/about-us.jpg");
+    background: url("/images/slider4.jpg");
     background-size: cover;
-    padding: 330px 0 200px;
+    /* padding: 330px 0 200px; */
+    /* background-position:; */
+    height: 300px !important;
 }
 
 .about-us .about-us-title h1 {

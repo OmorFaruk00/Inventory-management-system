@@ -3,6 +3,6 @@
     <Topnavbar />
     <Nuxt />
     <!-- <Newsletter /> -->
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>

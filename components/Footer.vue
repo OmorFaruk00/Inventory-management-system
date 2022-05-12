@@ -1,117 +1,130 @@
 <template>
-  <div class="footer-wrapper type2">
-    <footer class="foooter-container">
-      <div class="container">
-        <div class="footer-middle">
-          <div class="row">
-            <div class="col-md-4 col-sm-12 col-xl-4">
-              <div class="contact-footer">
-                <div class="logo-footer">
-                  <a href="./homepage-1.html"
-                    ><img src="images/logo.png" alt=""
-                  /></a>
+  <div>
+    <footer id="rs-footer" class="bg3 rs-footer" style="background-image: url(https://diu.ac/front/images/bg/counter-bg.jpg">
+    <div class="container">
+        <!-- Footer Address -->
+        <!-- <div>
+            <div class="row footer-contact-desc">
+                <div class="col-md-4">
+                    <div class="contact-inner">
+                        <i class="fa fa-map-marker"></i>
+                        <h4 class="contact-title">Address</h4>
+                        <p class="contact-desc">
+                            House # 4, Road # 1, Block - F, <br>
+                            Banani, Dhaka-1213, Bangladesh.
+                        </p>
+                    </div>
                 </div>
-                <div class="contact-desc">
-                  <p class="text-dark">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Ratione, odio?
-                  </p>
+                <div class="col-md-4">
+                    <div class="contact-inner">
+                        <i class="fa fa-phone"></i>
+                        <h4 class="contact-title">Phone Number</h4>
+                        <p class="contact-desc">
+                            <a class="contact-desc" href="tel:01611348344">+88 01611348344</a><br>
+                            <a class="contact-desc" href="tel:01939851061">+88 01939851061</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="contact-phone-email">
-                  <p>
-                    <i class="fa fa-phone pr-2"></i><a href="#">+10872229</a> |
-                    <a href="#">+10872228 </a>
-                  </p>
-                  <p>
-                    <i class="fa fs-email pr-2"></i
-                    ><a href="#">darululoom@gmail.com</a>
-                  </p>
+                <div class="col-md-4">
+                    <div class="contact-inner">
+                        <i class="fa fa-map-marker"></i>
+                        <h4 class="contact-title">Email Address</h4>
+                        <p class="contact-desc">
+                            <a class="contact-desc" href="mail:inf@diu-bd.net">inf@diu-bd.net</a> <br>
+                            <a class="contact-desc" href="mail:info@diu.net.bd">info@diu.net.bd</a>
+                        </p>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col-md-4 col-sm-12 col-xl-4">
-              <div class="links-footer">
-                <div class="row">
-                  <div class="col-sm-12 col-xl-4">
-                    <h6 class="heading-bold">DASHBOARD</h6>
-                    <ul class="list-unstyled no-margin">
-                      <li><a href="./register-page.html">REGISTER</a></li>
-                      <li><a href="./career-opportunity.html">CAREER</a></li>
-                      <li><a href="./alumni-story.html">STORY</a></li>
-                      <li><a href="./alumni-directory.html">DIRECTORY</a></li>
-                    </ul>
-                  </div>
+        </div> -->
+    </div>
 
-                  <div class="col-sm-12 col-xl-4">
-                    <h6 class="heading-bold">গুরুত্বপুরর্ণ লিংকসূমহ</h6>
-                    <ul class="list-unstyled no-margin">
-                      <li>
-                        <a href="./event-single.html"
-                          >বাংলাদেশ মাদরাসা শিক্ষা বোর্ড</a
-                        >
-                      </li>
-                      <li>
-                        <a href="./galery.html"
-                          >বাংলাদেশ মাদরাসা শিক্ষা অধিদপ্তর</a
-                        >
-                      </li>
-                      <li>
-                        <a href="./homepage-1.html"
-                          >ইসলামি আরবী বিশ্ববিদ্যালয়</a
-                        >
-                      </li>
-                      <li>
-                        <a href="./homepage-2.html">শিক্ষা মন্ত্রণালয়</a>
-                      </li>
-                    </ul>
-                  </div>
+    <!-- Footer Top -->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row p-5">
+                <div class="col-lg-4 col-md-4">
+                    <div class="about-widget">
+                        <img src="/images/logo.png" alt="Footer Logo">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia iure necessitatibus nemo doloribus fuga molestiae animi exercitationem, tempora ratione quas. </p>
 
-                  <!-- <div class="col-sm-12 col-xl-4">
-                    <h6 class="heading-bold">SUPPORT</h6>
-                    <ul class="list-unstyled no-margin">
-                      <li><a href="./job-detail.html">FAQ</a></li>
-                      <li><a href="./about-us.html#contacts">CONTACT US</a></li>
-                      <li><a href="./blog.html">ORGANIZER</a></li>
-                      <li><a href="./blog-single-fullwith.html">SOCIAL</a></li>
+                        <p class="margin-remove">is an
+                            institution that promotes eastern culture and values, and meaningfully blends eastern and
+                            western thoughts and innovation.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white">Useful Links</h5>
+                    <ul class="useful-widget text-white">
+                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a>                                                                               
+                        </li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>About</a>
+                        </li>
+                        <li><a href="3"><i class="fa fa-angle-right" aria-hidden="true"></i>Notice</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Events</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a></li>                                                                 
+                                
+                        
                     </ul>
-                  </div> -->
                 </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-12 col-xl-4 animated footer-col">
-              <div class="links-social">
-                <div class="login-dashboard">
-                  <!-- <a
-                    href="./login-page.html"
-                    class="bg-color-theme text-center text-regular"
-                    >Login Dashboard</a
-                  > -->
+
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white">OUR SITEMAP</h5>
+                    
+                      <ul>
+                        <li class="footer-item">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i><NuxtLink class="footer-link" to="/">HOME</NuxtLink>
+                        </li>
+                        <li class="footer-item">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i><NuxtLink class="footer-link" to="/about">ABOUT US</NuxtLink>
+                        </li>
+                        <li class="footer-item">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i><NuxtLink class="footer-link" to="/contact">CONTACT</NuxtLink>
+                        </li>
+                        <li class="footer-item">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i><NuxtLink class="footer-link" to="/blog">BLOG</NuxtLink>
+                        </li>
+                        <!-- <li class="footer-item">
+                            <NuxtLink class="footer-link" to="/event">EVENTS</NuxtLink>
+                        </li> -->
+
+                        <li class="footer-item">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i><NuxtLink class="footer-link" to="/gallery">GALLERY</NuxtLink>
+                        </li>
+                        <!-- <li class="footer-item">
+                            <NuxtLink class="footer-link" to="/members">ALUMNI</NuxtLink>
+                        </li> -->
+                        <li class="footer-item">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i><NuxtLink class="footer-link" to="/login">LOGIN</NuxtLink>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list-inline text-center">
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-twitter" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-instagram" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-facebook" aria-hidden="true"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
+
+               
+
             </div>
-          </div>
+
+            <!-- <Footer-social-media/> -->
+
         </div>
-        <div class="footer-bottom text-center">
-          <p class="copyright text-info">©2016 Darul uloom monirm madrasha</p>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom pb-3">
+        <div class="container">
+            <div class="copyright">
+                
+                <p class="text-center text-white ">
+                    © 2022  All rights
+                    Reserved. | Developed & Powered by:
+                    <!-- <a href="#" target="_blank">IT-Team, DIU</a> -->
+                </p>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
   </div>
 </template>

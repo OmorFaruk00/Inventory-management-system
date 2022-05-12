@@ -34,92 +34,50 @@
         </div>
       </div>
     </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container ">               
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/">HOME</NuxtLink>
+                        </li>
+                        <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/about">ABOUT US</NuxtLink>
+                        </li>
+                        <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/contact">CONTACT</NuxtLink>
+                        </li>
+                        <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/blog">BLOG</NuxtLink>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/event">EVENTS</NuxtLink>
+                        </li> -->
 
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <!-- <a class="navbar-brand" to="#">Navbar</a> -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav text-center">
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">হোম</NuxtLink>
-              <!-- <a class="nav-link" to="/">HOME</a> -->
-            </li>
-            <!-- <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">পরিচিতি</NuxtLink>
-             
-            </li> -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                to="#"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                পরিচিতি
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <NuxtLink class="dropdown-item" to="#"
-                  >এক নাজরে মাদরাসা</NuxtLink
-                >
-                <NuxtLink class="dropdown-item" to="#"
-                  >অধ্যক্ষের বাণী ও সংক্ষিপ্ত জীবনবৃত্তান্ত</NuxtLink
-                >
-                <NuxtLink class="dropdown-item" to="#">বৈশিষ্ট্য</NuxtLink>
-                <NuxtLink class="dropdown-item" to="#"
-                  >প্রতিষ্ঠার পরিকল্পনা</NuxtLink
-                >
-                <NuxtLink class="dropdown-item" to="#"
-                  >প্রতিষ্ঠার লক্ষ্য</NuxtLink
-                >
-                <NuxtLink class="dropdown-item" to="#">গভর্নিং বডি</NuxtLink>
-                <NuxtLink class="dropdown-item" to="#">প্রকমপ্লেক্স</NuxtLink>
-                <NuxtLink class="dropdown-item" to="#"
-                  >শিক্ষকমন্ডলীর তথ্যবলী</NuxtLink
-                >
-                <NuxtLink class="dropdown-item" to="#"
-                  >কর্মকর্তা ও কর্মচারী</NuxtLink
-                >
-              </div>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">একাডেমিক</NuxtLink>
-              <!-- <a class="nav-link" to="/blog">BLOG</a> -->
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">ভর্তি</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">প্রকাশনা</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/register">আবাসন</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/gallery">লাইব্রেরি</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">লগইন</NuxtLink>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+                        <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/gallery">GALLERY</NuxtLink>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/members">ALUMNI</NuxtLink>
+                        </li> -->
+                        <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/login">LOGIN</NuxtLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
   </div>
 </template>
 <style></style>
