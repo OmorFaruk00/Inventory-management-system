@@ -419,7 +419,7 @@ a:focus {
 }
 /* Topnavbar */
 .top_menu {
-    height: 150px;   
+    /* height: 150px;    */
 
 }
 .top-logo img{
@@ -479,6 +479,20 @@ a:focus {
 .top-icon i{
     margin-right: 10px;
 }
+.btn-lang{
+    border: 2px solid rgb(24, 35, 72);
+    margin-right: 10px;
+    padding: 0px 10px;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-lang:hover{
+    background:rgb(24, 35, 72);
+    color: #fff;
+
+}
+
 /* Header */
 .content-block{
     margin-bottom: 10px;;

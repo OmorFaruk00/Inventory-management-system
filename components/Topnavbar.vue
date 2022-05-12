@@ -1,23 +1,35 @@
 <template>
   <div>
     <div class="top_menu container">
-      <div class="row">
+      <div class="row pb-3">
         <div class="col-lg-2 col-md-2 col-sm-12">
           <div class="top-logo">
             <img src="/images/logo.png" alt="logo" />
           </div>
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-12 d-flex justify-content-between">
-          <div class="top-title">
-            <h2>দারুল উলূম মনিরাম</h2>
-            <h2>دارول أولوم منيرام</h2>
-            <h2>DARUL ULOOM MONIRAM</h2>       
-            
-          </div>
-          <div class="pt-4 top-icon">
-              <i class="fa fa-phone pr-2 fa-1x"></i><span>+8809612607772</span><br>
-              <i class="fa fa-envelope"></i><span>info@darululoommoniram.com</span>
-              
+        <div class="col-lg-10 col-md-10 col-sm-12">
+          <div class="row d-flex">
+            <div class="col-sm-12 col-md-6 col-xl-6">
+              <div class="top-title">
+                <h2>দারুল উলূম মনিরাম</h2>
+                <h2>دارول أولوم منيرام</h2>
+                <h2>DARUL ULOOM MONIRAM</h2>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-6 d-flex justify-content-end">
+              <div class="pt-4 top-icon">
+                <i class="fa fa-phone pr-2 fa-1x"></i><span>+8809612607772</span
+                ><br />
+                <i class="fa fa-envelope"></i
+                ><span>info@darululoommoniram.com</span><br />
+                <p>Language</p>
+                <div class="d-flex">
+                  <p class="btn-lang">Bangla</p>
+                  <p class="btn-lang">English</p>
+                  <p class="btn-lang">Arabic</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
