@@ -1,29 +1,30 @@
 <template>
-  <div>
+  <div class="counter-bg">      
     <div class="container p-5">
+        <h1 class="title pb-5">Current Statistics: Our Strength</h1>
       <div class="row">
         <div class="col-md-3 col-sm-6">
           <div class="counter">
-            <span class="counter-value">17</span>
-            <h3>Web Designing</h3>
+            <span class="counter-value"><VueJsCounter start="0" end="600" duration="3000" thousand="." decimal=","></VueJsCounter></span>
+            <h3>Current Students</h3>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="counter purple">
-            <span class="counter-value">16</span>
-            <h3>Web Development</h3>
+            <span class="counter-value"><VueJsCounter start="0" end="200" duration="3000" thousand="." decimal=","></VueJsCounter></span>
+            <h3>Current Students</h3>
           </div>
         </div>
          <div class="col-md-3 col-sm-6">
           <div class="counter gray">
-            <span class="counter-value">17</span>
-            <h3>Web Designing</h3>
+            <span class="counter-value"><VueJsCounter start="0" end="100" duration="3000" thousand="." decimal=","></VueJsCounter></span>
+            <h3>Full time teachers and employees</h3>
           </div>
         </div>
          <div class="col-md-3 col-sm-6">
           <div class="counter red">
-            <span class="counter-value">17</span>
-            <h3>Web Designing</h3>
+            <span class="counter-value"><VueJsCounter start="0" end="500" duration="3000" thousand="." decimal=","></VueJsCounter></span>
+            <h3>Number of alumni</h3>
           </div>
         </div>
       </div>
@@ -31,10 +32,16 @@
   </div>
 </template>
 <style>
+.counter-bg{
+    background: rgb(238, 233, 233);
+}
 .counter {
   color: #333;
   font-family: "Poppins", sans-serif;
   text-align: center;
+}
+.counter h3{
+    font-weight: bolder;
 }
 .counter .counter-value {
   font-size: 35px;
@@ -73,7 +80,11 @@
 }
 </style>
 <script>
-export default {
-   
-}
+
+import VueJsCounter from 'vue-js-counter'
+    export default {
+        components: {
+            VueJsCounter 
+        }
+    }
 </script>

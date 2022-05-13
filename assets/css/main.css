@@ -380,8 +380,8 @@ a {
 .title{
     text-align: center;
     color: #000000bd;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0 0 10px;
@@ -511,40 +511,10 @@ a {
  }
 
  /* notice board */
- .notice{
-     padding: 80px;
-     background: rgb(238, 233, 233);
- }
- .notice-date{
-     font-size: 15px;
-     background: rgb(204, 203, 203);
-     padding: 10px;
-     border-radius: 10px;
-     margin-right: 20px;
-     font-weight: 900;
- }
- .notice-title{
-     padding-top: 10px;
-     font-size: 15px;
-     font-weight: 900;     
- }
- .notice-title:hover{
-     cursor: pointer;
-     color: rgb(24, 35, 72);
- }
- .btn-see-more{
-     background: rgb(48, 67, 132);;
-     color: #fff;
-     cursor: pointer;
 
- }
- .btn-see-more:hover{
-    background: rgb(24, 35, 72);
-    color: #fff;
-    cursor: pointer;
-    
-    
-}
+/* programs */
+
+
  
 /* Upcomming Event */
 

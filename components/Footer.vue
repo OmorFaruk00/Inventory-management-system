@@ -57,15 +57,16 @@
                 <div class="col-lg-4 col-md-4">
                     <h5 class="text-white">Useful Links</h5>
                     <ul class="useful-widget text-white">
-                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a>                                                                               
+                        <li class="active"><a href="#"><i class="fa fa-angle-right pr-2" aria-hidden="true"></i>Lorem ipsum dolor sit</a>                                                                               
                         </li>
-                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>About</a>
+                        <li><a href="#"><i class="fa fa-angle-right pr-2" aria-hidden="true"></i>Lorem ipsum dolor sit</a>
                         </li>
-                        <li><a href="3"><i class="fa fa-angle-right" aria-hidden="true"></i>Notice</a>
+                        <li><a href="3"><i class="fa fa-angle-right pr-2" aria-hidden="true"></i>Lorem ipsum dolor sit</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Events</a>
+                        <li><a href="#"><i class="fa fa-angle-right pr-2" aria-hidden="true"></i>Lorem ipsum dolor sit</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a></li>                                                                 
+                        <li><a href="#"><i class="fa fa-angle-right pr-2" aria-hidden="true"></i>Lorem ipsum dolor sit</a></li> 
+                         <li><a href="#"><i class="fa fa-angle-right pr-2" aria-hidden="true"></i>Lorem ipsum dolor sit</a></li>                                                                 
                                 
                         
                     </ul>
