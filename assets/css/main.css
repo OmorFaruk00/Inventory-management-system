@@ -388,7 +388,7 @@ a {
 }
  .title:after{
     content: '';
-    background-color: #870e1a;
+    background-color: #000;
     height: 2px;
     width: 60px;
     margin: 3px auto 0;

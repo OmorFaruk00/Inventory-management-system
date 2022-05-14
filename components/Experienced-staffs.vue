@@ -1,6 +1,6 @@
 <template>
     <div class="staff">
-        <h2 class="title pb-2">OUR EXPERIENCED STAFFS</h2>
+        <h2 class="title pb-2">OUR TEACHING STAFFS</h2>
         <p>Considering desire as primary motivation for the generation of narratives is a useful concept.</p>
         <div class="container">   
      <client-only>

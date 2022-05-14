@@ -2,41 +2,7 @@
   <div>
     <footer id="rs-footer" class="bg3 rs-footer" style="background-image: url(https://diu.ac/front/images/bg/counter-bg.jpg">
     <div class="container">
-        <!-- Footer Address -->
-        <!-- <div>
-            <div class="row footer-contact-desc">
-                <div class="col-md-4">
-                    <div class="contact-inner">
-                        <i class="fa fa-map-marker"></i>
-                        <h4 class="contact-title">Address</h4>
-                        <p class="contact-desc">
-                            House # 4, Road # 1, Block - F, <br>
-                            Banani, Dhaka-1213, Bangladesh.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-inner">
-                        <i class="fa fa-phone"></i>
-                        <h4 class="contact-title">Phone Number</h4>
-                        <p class="contact-desc">
-                            <a class="contact-desc" href="tel:01611348344">+88 01611348344</a><br>
-                            <a class="contact-desc" href="tel:01939851061">+88 01939851061</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-inner">
-                        <i class="fa fa-map-marker"></i>
-                        <h4 class="contact-title">Email Address</h4>
-                        <p class="contact-desc">
-                            <a class="contact-desc" href="mail:inf@diu-bd.net">inf@diu-bd.net</a> <br>
-                            <a class="contact-desc" href="mail:info@diu.net.bd">info@diu.net.bd</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        
     </div>
 
     <!-- Footer Top -->

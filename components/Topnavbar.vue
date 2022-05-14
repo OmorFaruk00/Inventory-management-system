@@ -22,11 +22,11 @@
                 ><br />
                 <i class="fa fa-envelope"></i
                 ><span>info@darululoommoniram.com</span><br />
-                <p>Language</p>
-                <div class="d-flex">
-                  <p class="btn-lang">Bangla</p>
+                
+                <div class="d-flex pt-3">
+                  <p class="btn-lang">বাংলা</p>
                   <p class="btn-lang">English</p>
-                  <p class="btn-lang">Arabic</p>
+                  <p class="btn-lang">العربية</p>
                 </div>
               </div>
             </div>
@@ -34,50 +34,54 @@
         </div>
       </div>
     </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-            <div class="container ">               
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav text-center">
-                        <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/">HOME</NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/about">ABOUT US</NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/contact">CONTACT</NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/blog">BLOG</NuxtLink>
-                        </li>
-                        <!-- <li class="nav-item">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item">
+              <NuxtLink class="nav-link" to="/">HOME</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-link" to="/about">ABOUT US</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-link" to="/notice">NOTICE BOARD</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-link" to="/contact">CONTACT</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-link" to="/blog">BLOG</NuxtLink>
+            </li>
+            <!-- <li class="nav-item">
                             <NuxtLink class="nav-link" to="/event">EVENTS</NuxtLink>
                         </li> -->
 
-                        <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/gallery">GALLERY</NuxtLink>
-                        </li>
-                        <!-- <li class="nav-item">
+            <li class="nav-item">
+              <NuxtLink class="nav-link" to="/gallery">GALLERY</NuxtLink>
+            </li>
+            <!-- <li class="nav-item">
                             <NuxtLink class="nav-link" to="/members">ALUMNI</NuxtLink>
                         </li> -->
-                        <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/login">LOGIN</NuxtLink>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            <!-- <li class="nav-item">
+              <NuxtLink class="nav-link" to="/login">LOGIN</NuxtLink>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
 </template>
 <style></style>
