@@ -304,8 +304,4 @@
   
   
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> 16cc88ddcb95fef58ff39d7bb2af0821c2844c6a

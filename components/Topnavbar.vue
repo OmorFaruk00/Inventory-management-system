@@ -20,22 +20,13 @@
               <div class="pt-4 top-icon">
                 <img src="images/phone.png" alt="phone"><span>+8809612607772</span
                 ><br />
-<<<<<<< HEAD
                 <img src="images/email.png" alt="email">
                 <span>info@darululoommoniram.com</span><br />
-=======
-                <i class="fa fa-envelope"></i
-                ><span>info@darululoommoniram.com</span><br />
->>>>>>> 16cc88ddcb95fef58ff39d7bb2af0821c2844c6a
                 
                 <div class="d-flex pt-3">
                   <p class="btn-lang">বাংলা</p>
                   <p class="btn-lang">English</p>
-<<<<<<< HEAD
                   <p class="btn-lang">عربي</p>
-=======
-                  <p class="btn-lang">العربية</p>
->>>>>>> 16cc88ddcb95fef58ff39d7bb2af0821c2844c6a
                 </div>
               </div>
             </div>
@@ -43,7 +34,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
     
     <nav class="navbar navbar-expand-lg navbar-dark ">
             <div class="container ">               
@@ -90,56 +80,6 @@
                 </div>
             </div>
         </nav>
-=======
-
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav text-center">
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/">HOME</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/about">ABOUT US</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/notice">NOTICE BOARD</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/contact">CONTACT</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/blog">BLOG</NuxtLink>
-            </li>
-            <!-- <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/event">EVENTS</NuxtLink>
-                        </li> -->
-
-            <li class="nav-item">
-              <NuxtLink class="nav-link" to="/gallery">GALLERY</NuxtLink>
-            </li>
-            <!-- <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/members">ALUMNI</NuxtLink>
-                        </li> -->
-            <!-- <li class="nav-item">
-              <NuxtLink class="nav-link" to="/login">LOGIN</NuxtLink>
-            </li> -->
-          </ul>
-        </div>
-      </div>
-    </nav>
->>>>>>> 16cc88ddcb95fef58ff39d7bb2af0821c2844c6a
   </div>
 </template>
 <style scope>

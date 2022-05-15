@@ -65,7 +65,7 @@
     <!-- our mission -->
     <Mission />
     <Experienced-staffs />
-    <Committee />
+    <!-- <Committee /> -->
   </div>
 </template>
 <style>
