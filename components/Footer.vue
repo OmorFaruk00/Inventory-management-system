@@ -129,3 +129,72 @@
 </footer>
   </div>
 </template>
+<style scoped>
+.about-widget p{
+    color: #fff;
+    font-size: 15px;
+    padding-top: 10px;
+    line-height: 20px;
+
+}
+.useful-widget li a{
+    color: #fff !important;
+    font-size: 15px;
+    line-height: 30px;
+    padding-top: 10px;
+}
+.useful-widget li a:hover{
+    color: rgb(77, 33, 199) !important;
+    cursor: pointer;
+}
+.footer-link {
+    color: #fff !important;
+    padding-top: 10px;
+    line-height: 30px;
+}
+.footer-link:hover {
+    color: rgb(77, 33, 199) !important;
+    cursor: pointer;
+    
+}
+.footer-item i{
+    color: #fff !important;
+    padding-top: 10px;
+    font-size: 15px;
+    padding-right: 8px;
+    
+
+}
+
+@media (max-width: 991px) {
+    .footer-wrapper .foooter-container .footer-middle .contact-footer {
+        margin-bottom: 30px;
+    }
+    .footer-wrapper .foooter-container .footer-middle .links-footer {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-wrapper .foooter-container .footer-middle .contact-footer {
+        text-align: center;
+    }
+    .footer-wrapper .foooter-container .footer-middle .contact-footer .logo-footer {
+        width: 100%;
+    }
+    .footer-wrapper .foooter-container .footer-middle .links-footer {
+        text-align: center;
+    }
+    .footer-wrapper .foooter-container .footer-middle .links-footer h6 {
+        margin-top: 20px;
+    }
+}
+
+.footer-wrapper .foooter-container .footer-bottom {
+    padding: 30px 0;
+}
+
+.footer-wrapper .foooter-container .footer-bottom p {
+    color: #9f9f9f;
+}
+</style>

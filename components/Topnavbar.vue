@@ -18,15 +18,15 @@
             </div>
             <div class="col-sm-12 col-md-6 col-xl-6 d-flex justify-content-end">
               <div class="pt-4 top-icon">
-                <i class="fa fa-phone pr-2 fa-1x"></i><span>+8809612607772</span
+                <img src="images/phone.png" alt="phone"><span>+8809612607772</span
                 ><br />
-                <i class="fa fa-envelope"></i
-                ><span>info@darululoommoniram.com</span><br />
-                <p>Language</p>
-                <div class="d-flex">
-                  <p class="btn-lang">Bangla</p>
+                <img src="images/email.png" alt="email">
+                <span>info@darululoommoniram.com</span><br />
+                
+                <div class="d-flex pt-3">
+                  <p class="btn-lang">বাংলা</p>
                   <p class="btn-lang">English</p>
-                  <p class="btn-lang">Arabic</p>
+                  <p class="btn-lang">عربي</p>
                 </div>
               </div>
             </div>
@@ -58,6 +58,10 @@
                         <li class="nav-item">
                             <NuxtLink class="nav-link" to="/contact">CONTACT</NuxtLink>
                         </li>
+                         <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/notice">NOTICE BOARD</NuxtLink>
+                                                                              
+                        </li>
                         <li class="nav-item">
                             <NuxtLink class="nav-link" to="/blog">BLOG</NuxtLink>
                         </li>
@@ -68,16 +72,123 @@
                         <li class="nav-item">
                             <NuxtLink class="nav-link" to="/gallery">GALLERY</NuxtLink>
                         </li>
+                        
                         <!-- <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/members">ALUMNI</NuxtLink>
-                        </li> -->
-                        <li class="nav-item">
                             <NuxtLink class="nav-link" to="/login">LOGIN</NuxtLink>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </nav>
   </div>
 </template>
-<style></style>
+<style scope>
+.navbar{
+    background: rgb(48, 67, 132);
+}
+.top-icon img{
+  height: 25px;
+  width: auto;
+  padding-right: 10px;
+}
+
+.top-logo img{
+    height: 100px;
+    margin-top: 25px;
+
+}
+.top-title{
+    margin-top: 20px;
+    
+}
+.top-title h2{   
+    color: rgb(24, 35, 72);
+    /* font-size: 20px; */
+}
+.dropdown-toggle {  
+    color: #fff;
+}
+
+.dropdown-toggle::after {
+    
+    cursor: pointer;
+    color: #fff;
+}
+.nav-link{
+    font-size: 18px;
+    color: #fff !important;
+    margin-right: 20px; 
+  
+}
+.nav-item {
+    color: #fff;
+}
+.dropdown-item{
+    color: #000;
+}
+.navbar {
+    background:rgb(24, 35, 72);
+}
+.menu_icon{
+    color: rgb(87, 10, 10);
+}
+
+.dropdown-item{
+    color: rgb(48, 67, 132);
+    line-height: 20px;
+    font-size: 14px;
+    padding: 15px 40px 15px 40px;
+}
+.top-icon{
+    font-size: 15px;
+    line-height: 25px;
+}
+.top-icon i{
+    margin-right: 10px;
+}
+.btn-lang{
+    border: 2px solid rgb(24, 35, 72);
+    margin-right: 10px;
+    padding: 0px 10px;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-lang:hover{
+    background:rgb(24, 35, 72);
+    color: #fff;
+
+}
+
+/* Header */
+.content-block{
+    margin-bottom: 10px;;
+ 
+ }
+ .content-block h2{
+     font-size: 50px;
+     text-transform: uppercase;
+     margin-bottom: 50px;
+ }
+ .read-story{
+     padding: 15px 40px 15px 40px;
+     margin-top: 80px;
+     color: white;
+ }
+ .bnt-apply{
+    background: rgb(48, 67, 132);
+     padding: 12px 25px;
+     border-radius: 8px;     
+     color: #fff;
+     font-size: 18px;
+ }
+ .bnt-apply:hover{
+    background: rgb(24, 35, 72);
+     padding: 12px 25px;     
+     cursor: pointer;
+     color: #fff;
+     
+ }
+
+
+</style>
