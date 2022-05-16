@@ -13,7 +13,7 @@
         <slider>
             <div class="our-staff">
                 <div class="pic">
-                    <img src="images/staff1.jpg" alt="">
+                    <img src="images/staff11.jpg" alt="">
                 </div>
                 <div class="team-content">
                     <h3 class="text-white pb-2">Williamson</h3>
@@ -30,7 +30,7 @@
         <slider>
             <div class="our-staff">
                 <div class="pic">
-                    <img src="images/staff2.jpg" alt="">
+                    <img src="images/staff22.jpg" alt="" >
                 </div>
                 <div class="team-content">
                     <h3 class="text-white pb-2">Williamson</h3>
@@ -47,7 +47,7 @@
         <slider>
             <div class="our-staff">
                 <div class="pic">
-                    <img src="images/staff3.jpg" alt="">
+                    <img src="images/staff33.jpg" alt="" >
                 </div>
                 <div class="team-content">
                     <h3 class="text-white pb-2">Williamson</h3>
@@ -96,6 +96,9 @@ export default {
     text-align: center;
     color: #000;
 }
+.pic img{
+    /* height: 400px; */
+}
 .our-staff{
     text-align: center;
     width: 95%;
@@ -103,6 +106,7 @@ export default {
 .our-staff .pic{
     /* padding: 30px 20px 0; */
     position: relative;
+    height: 400px;
     
 }
 .our-staff .pic:before,

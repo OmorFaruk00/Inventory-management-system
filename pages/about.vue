@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div class="about-us-title text-center">
-      <div class="">
-        <h1 class="heading-bold text-uppercase p-5 text-white">About Us</h1>
-      </div>
+    <div class="about">
+      <h2 class="title">about Us</h2>
+      <p class="">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque,
+        cumque!
+      </p>
     </div>
     <!-- about-intro -->
     <div class="about-intro">
@@ -64,12 +66,12 @@
 
     <!-- our mission -->
     <Mission />
-    <Experienced-staffs />
-    <!-- <Committee /> -->
+    <Teaching-staffs />
+    <Committee />
   </div>
 </template>
 <style>
-.about-us-title {
+.about {
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.7) 0%,
@@ -79,8 +81,19 @@
   background-size: cover;
   height: 200px !important;
   background-position: bottom;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  margin-bottom: 80px;
+}
+.about h2 {
+  text-align: center;
+  padding-top: 40px;
+  font-size: 45px;
+  color: #fff;
+}
+.about p {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #fff;
 }
 .about-intro {
   padding: 80px;

@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 .our-mission {  
-  background: rgb(233, 229, 229);
+ background-color: hsl(60, 22%, 96%);
   padding: 80px 0px;
 }
 .mission-body {

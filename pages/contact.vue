@@ -2,7 +2,7 @@
   <div class="contact-page">
     <div class="contact">
       <h2 class="title">Contact Us</h2>
-      <p>
+      <p class="">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque,
         cumque!
       </p>

@@ -111,6 +111,7 @@ export default {
   width: 95%;
   transform: scale(1);
   transition: all 1s ease-in-out 0s;
+  border-radius: 10px;
 }
 .card:hover {
   transform: scale(1.05);
