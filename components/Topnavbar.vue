@@ -7,16 +7,16 @@
             <img src="/images/logo.png" alt="logo" />
           </div>
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-12">
-          <div class="row d-flex">
-            <div class="col-sm-12 col-md-6 col-xl-6">
+        <div class="col-lg-10 col-md-10 col-sm-12 name">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-xl-8">
               <div class="top-title">
                 <h2>দারুল উলূম মনিরাম</h2>
                 <h2>دارول أولوم منيرام</h2>
                 <h2>DARUL ULOOM MONIRAM</h2>
               </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-xl-6 d-flex justify-content-end">
+            <div class="col-sm-12 col-md-6 col-xl-4 ">
               <div class="pt-4 top-icon">
                 <img src="images/phone.png" alt="phone"><span>+8809612607772</span
                 ><br />
@@ -60,6 +60,10 @@
                         </li>
                          <li class="nav-item">
                             <NuxtLink class="nav-link" to="/notice">NOTICE BOARD</NuxtLink>
+                                                                              
+                        </li>
+                         <li class="nav-item">
+                            <NuxtLink class="nav-link" to="/admission">ADMISSION</NuxtLink>
                                                                               
                         </li>
                         <li class="nav-item">
@@ -119,6 +123,12 @@
     color: #fff !important;
     margin-right: 20px; 
   
+}
+.nuxt-link-exact-active{
+    /* background: rgb(0, 255, 166) !important;
+    border-radius: 4px; */
+    color: rgb(84, 239, 198) !important;
+
 }
 .nav-item {
     color: #fff;
@@ -188,6 +198,16 @@
      cursor: pointer;
      color: #fff;
      
+ }
+ @media only screen and (max-width: 767px) {
+     .top-logo{
+     width: fit-content;
+    margin: 0rem auto;
+
+     }
+     .name{
+         padding-left: 50px;
+     }
  }
 
 

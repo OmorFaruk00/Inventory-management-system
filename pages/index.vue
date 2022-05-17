@@ -4,6 +4,7 @@
     <Facilities />
     <Notice />
     <Programs />
+    <Counter />
     
   </div>
 </template>

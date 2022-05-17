@@ -126,4 +126,12 @@ export default {
 .owl-theme .owl-nav {
   font-size: 50px !important;
 }
+ @media only screen and (max-width: 767px) {
+   .card {
+  width: 100%;
+
+}
+
+    
+ }
 </style>

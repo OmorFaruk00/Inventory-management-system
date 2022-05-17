@@ -64,7 +64,7 @@
 </template>
 <style scoped>
 .notice{
-  padding: 80px;
+  padding: 3%;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.7) 100%),url("/images/bg2.webp");
   background-position: center;
   background-repeat: no-repeat;

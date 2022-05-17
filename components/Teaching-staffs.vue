@@ -16,8 +16,8 @@
                     <img src="images/staff11.jpg" alt="">
                 </div>
                 <div class="team-content">
-                    <h3 class="text-white pb-2">Williamson</h3>
-                    <span class="post">web developer</span>
+                    <h3 class="text-white pb-2">Mahamudul Hasan</h3>
+                    <span class="post">Professor</span>
                     <ul class="social">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -33,8 +33,8 @@
                     <img src="images/staff22.jpg" alt="" >
                 </div>
                 <div class="team-content">
-                    <h3 class="text-white pb-2">Williamson</h3>
-                    <span class="post">web developer</span>
+                    <h3 class="text-white pb-2">Junayed Khan</h3>
+                    <span class="post">Professor</span>
                     <ul class="social">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -50,8 +50,8 @@
                     <img src="images/staff33.jpg" alt="" >
                 </div>
                 <div class="team-content">
-                    <h3 class="text-white pb-2">Williamson</h3>
-                    <span class="post">web developer</span>
+                    <h3 class="text-white pb-2">Abul kalam </h3>
+                    <span class="post">Professor</span>
                     <ul class="social">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>

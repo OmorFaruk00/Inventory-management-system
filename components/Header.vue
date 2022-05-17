@@ -39,7 +39,7 @@
       <div class="carousel-item">
         <img
           src="images/slider4.jpg"
-          alt="New York"
+          alt=""
           width="2100"
           height="700"
         />
@@ -64,4 +64,15 @@
     </a>
   </div>
 </template>
-<style></style>
+<style scope>
+@media only screen and (max-width: 767px) {
+  .content-block h2 span{
+    font-size: 1.2rem;
+    line-height: 0.1 !important;
+  }
+  .carousel-item{
+    height: 400px;
+  }
+     
+ }
+</style>

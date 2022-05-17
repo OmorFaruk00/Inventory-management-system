@@ -19,7 +19,7 @@
 
             <div
               id="faq1"
-              class="collapse show"
+              class="collapse"
               aria-labelledby="faqhead1"
               data-parent="#faq"
             >
@@ -28,7 +28,7 @@
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/1.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -37,15 +37,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/2.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -54,15 +54,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Kristiana</h3>
-                        <span class="post">Web Designer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -71,15 +71,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/4.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -88,8 +88,8 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
@@ -121,7 +121,7 @@
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/5.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -130,15 +130,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -147,15 +147,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Kristiana</h3>
-                        <span class="post">Web Designer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -164,15 +164,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/8.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -181,8 +181,8 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
@@ -214,7 +214,7 @@
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/1.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -223,15 +223,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/8.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -240,15 +240,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Kristiana</h3>
-                        <span class="post">Web Designer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -257,15 +257,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/5.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -274,8 +274,8 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
@@ -307,7 +307,7 @@
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/2.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -316,15 +316,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -333,15 +333,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Kristiana</h3>
-                        <span class="post">Web Designer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/4.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -350,15 +350,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -367,8 +367,8 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
@@ -400,7 +400,7 @@
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/5.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -409,15 +409,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/3.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -426,15 +426,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Kristiana</h3>
-                        <span class="post">Web Designer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member1.jpeg" />
+                        <img src="images/8.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -443,15 +443,15 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-12 col-xl-3">
                     <div class="our-committee">
                       <div class="pic">
-                        <img src="images/member3.jpeg" />
+                        <img src="images/2.jpeg" />
                         <ul class="social">
                           <li><a href="#" class="fab fa-facebook"></a></li>
                           <li><a href="#" class="fab fa-google-plus"></a></li>
@@ -460,8 +460,8 @@
                         </ul>
                       </div>
                       <div class="content">
-                        <h3 class="">Williamson</h3>
-                        <span class="post">Web Developer</span>
+                        <h3 class="">Name </h3>
+                        <span class="post">Position</span>
                       </div>
                     </div>
                   </div>
@@ -477,7 +477,7 @@
 <style scoped>
 .committee {
   background-color: hsl(60, 22%, 96%);
-  padding: 70px;
+  padding: 3%;
 }
 #main {
   /* margin: 50px 0; */
@@ -556,7 +556,8 @@
     border: none;
 }
 .pic {
-  height: 200px;
+  height: 15%;
+  
 }
 .our-committee .pic {
   overflow: hidden;
