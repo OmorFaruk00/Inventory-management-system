@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Darul uloom',
+    title: 'cms',
     htmlAttrs: {
       lang: 'en'
     },
@@ -12,32 +12,19 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.png'},
-      {rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.png'},
-      {rel: 'apple-touch-icon', sizes: '120x120', href: '/favicon.png'},
-      {rel: 'apple-touch-icon', sizes: '152x152', href: '/favicon.png'},
-      {rel: 'stylesheet', id: 'bootstrap-style', href: '/css/bootstrap.min.css'},
-      {rel: 'stylesheet', href: '/css/icons.min.css'},
-      // {rel: 'stylesheet', href: '/css/app.min.css'},
-      // {rel: 'stylesheet', href: '/css/app.css'},
-      {rel: 'stylesheet', href: '/bootstrap-select/dist/css/bootstrap-select.min.css'},
-      // {rel: 'stylesheet', href: '/css/style.css'},
-      // {rel: 'stylesheet', href: '/css/style.min.css'},
-      // {rel: 'stylesheet', href: '/css/responsive.css'},
-      // {rel: 'stylesheet', href: '/css/responsive.min.css'},
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.png'},      
+      {rel: 'stylesheet', id: 'bootstrap-style', href: '/css/bootstrap.min.css'},      
+      // {rel: 'stylesheet', href: '/bootstrap-select/dist/css/bootstrap-select.min.css'},
+      
     ],
 
     script: [
       {src: '/libs/jquery/jquery.min.js', defer: true},
-      {src: '/libs/bootstrap/js/bootstrap.bundle.min.js', defer: true},
-      // {src: '/js/facebook.js'},
-      {src: '/bootstrap-select/dist/js/bootstrap-select.min.js', defer: true},
+      {src: '/libs/bootstrap/js/bootstrap.bundle.min.js', defer: true},      
+      // {src: '/bootstrap-select/dist/js/bootstrap-select.min.js', defer: true},
       {src: '/libs/metismenu/metisMenu.min.js', defer: true},
       {src: '/libs/simplebar/simplebar.min.js', defer: true},
-      // {src: '/libs/node-waves/waves.min.js'},
-      // {src: '/js/pages/dashboard.init.js'},
-      {src: '/js/app.js', defer: true},
-      {src: '/js/main.js', defer: true},
+      
     ],
   },
 
