@@ -1,5 +1,5 @@
 <template>
-  <div class="bg">
+  <div class="bg">	 
   <div class="container ">
 	<div class="d-flex justify-content-end h-100">
 		<div class="card">
@@ -53,6 +53,7 @@
 </template>
 <script>
 export default {
+	
   methods:{
     login(){
       console.log(this.$router);

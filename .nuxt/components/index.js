@@ -1,4 +1,4 @@
-
+export { default as DumMenu } from '../../components/Dum-menu.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -4,7 +4,7 @@
             <h2>Central Management System</h2>
         </div>
         <div class="main-content d-flex "> 
-            <nuxt-link class="app-link" to="/dum/dashboard">
+            <nuxt-link class="app-link" to="/dum-ac">
                 <div class="app-icon">
                  <img src="images/dum.png" alt="">
                  <p>Dum.ac</p>                 
