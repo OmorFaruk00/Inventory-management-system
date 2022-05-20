@@ -6,9 +6,13 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _116605ec = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _c32f0986 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
+const _05388fc8 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
 const _134d73c0 = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
+const _fdbcf31c = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
 const _a103c2ee = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
+const _6ce49814 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
 const _7e154efe = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
+const _6a78dae8 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
 const _67f9fd55 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
 const _0d6efafb = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -32,17 +36,33 @@ export const routerOptions = {
     component: _c32f0986,
     name: "dum-ac"
   }, {
+    path: "/dum-ac/event",
+    component: _05388fc8,
+    name: "dum-ac-event"
+  }, {
     path: "/dum-ac/notice",
     component: _134d73c0,
     name: "dum-ac-notice"
+  }, {
+    path: "/dum-ac/program",
+    component: _fdbcf31c,
+    name: "dum-ac-program"
   }, {
     path: "/dum-ac/slider",
     component: _a103c2ee,
     name: "dum-ac-slider"
   }, {
+    path: "/dum-ac/event/create",
+    component: _6ce49814,
+    name: "dum-ac-event-create"
+  }, {
     path: "/dum-ac/notice/create",
     component: _7e154efe,
     name: "dum-ac-notice-create"
+  }, {
+    path: "/dum-ac/program/create",
+    component: _6a78dae8,
+    name: "dum-ac-program-create"
   }, {
     path: "/dum-ac/slider/create",
     component: _67f9fd55,
