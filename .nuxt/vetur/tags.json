@@ -1,10 +1,4 @@
 {
-  "DumContent": {
-    "description": "Auto imported from components/Dum-content.vue"
-  },
-  "DumMenu": {
-    "description": "Auto imported from components/Dum-menu.vue"
-  },
   "Topnav": {
     "description": "Auto imported from components/Topnav.vue"
   }

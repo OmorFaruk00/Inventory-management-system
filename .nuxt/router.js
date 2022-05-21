@@ -6,6 +6,8 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _116605ec = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _c32f0986 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
+const _0c4ed327 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _6afcaf79 = () => interopDefault(import('../pages/test.vue' /* webpackChunkName: "pages/test" */))
 const _05388fc8 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
 const _134d73c0 = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
 const _fdbcf31c = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
@@ -35,6 +37,14 @@ export const routerOptions = {
     path: "/dum-ac",
     component: _c32f0986,
     name: "dum-ac"
+  }, {
+    path: "/student",
+    component: _0c4ed327,
+    name: "student"
+  }, {
+    path: "/test",
+    component: _6afcaf79,
+    name: "test"
   }, {
     path: "/dum-ac/event",
     component: _05388fc8,

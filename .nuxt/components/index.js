@@ -1,5 +1,3 @@
-export { default as DumContent } from '../../components/Dum-content.vue'
-export { default as DumMenu } from '../../components/Dum-menu.vue'
 export { default as Topnav } from '../../components/Topnav.vue'
 
 // nuxt/nuxt.js#8607

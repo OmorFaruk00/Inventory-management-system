@@ -13,11 +13,12 @@ import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 import '../assets/css/main.css'
 
 import _1a3a6a4b from '../layouts/App.vue'
-import _e7284296 from '../layouts/Dum-sidebar.vue'
+import _48d907d2 from '../layouts/Dum-content.vue'
 import _75b8b67c from '../layouts/Index.vue'
+import _d1839fde from '../layouts/Student-content.vue'
 import _6f6c098b from './layouts/default.vue'
 
-const layouts = { "_App": sanitizeComponent(_1a3a6a4b),"_Dum-sidebar": sanitizeComponent(_e7284296),"_Index": sanitizeComponent(_75b8b67c),"_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_App": sanitizeComponent(_1a3a6a4b),"_Dum-content": sanitizeComponent(_48d907d2),"_Index": sanitizeComponent(_75b8b67c),"_Student-content": sanitizeComponent(_d1839fde),"_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {

@@ -1,26 +1,37 @@
 <template>
-    <div >
-        <nav class="navbar navbar-expand-lg topnav">
-        <button class="btn btn-primary" id="menu-toggle"> <img src="/images/menu.png" alt="">
-        </button>
-        <h4 class="cms-title">Central Management System | Darul Uloom Moniram</h4>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <img src="/images/user.png" alt="user" class="user">
-              <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-            </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link" href="#">Link</a> -->
-            </li>
-          </ul>
+  <div>
+    <nav class="navbar navbar-expand-lg topnav">
+      <button class="btn btn-primary" id="menu-toggle"> <img src="/images/menu.png" alt="">
+      </button>
+      <nuxt-link to="/app">
+      <h4 class="cms-title">Central Management System | Darul Uloom Moniram</h4>
+      </nuxt-link>
+      <div class="ml-auto">
+        <div class="dropdown">
+          <img src="/images/user.png" alt="user" class="user-icon" @click="user()">
+          <div id="user" class="dropdown-content">
+            <div class="user-info d-flex justify-content-center">
+              <img src="/images/user.png" alt="user" class="user-img">
+            </div>
+            <div class="user-text">
+              <h4>Md. Omor Faruk</h4>              
+              <p>Junior Officer, Office of the IT & Admission & Information
+                omorfaruk.it@diu.ac</p>
+            </div>   
+              
+              <button class="btn-logout">Log out</button>
+            
+            
+
+          </div>
         </div>
-      </nav>
-    </div>
+      </div>
+
+
+
+
+    </nav>
+  </div>
 </template>
 <script>
 export default {
@@ -32,32 +43,107 @@ export default {
       $("#wrapper").toggleClass("toggled");
     });
   },
+  methods: {
+    user() {
+      document.getElementById("user").classList.toggle("show");
+    }
+  }
 
 }
 </script>
 <style scoped>
-.sidebar{
-  text-align: center;
-  line-height: 50px; 
-  
+.btn-logout{
+  position: relative;
+  float: right;
+  margin: 10px 20px;
+  background: rgb(212, 78, 20);
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 8px;
 }
-.sidebar-item{
-  font-size: 18px;
-  color: #000;  
+.btn-logout:hover{
+  background: rgb(119, 48, 48);
+}
+.dropdown {
+  float: right;
+  position: relative;
+  display: inline-block;
 }
 
-.user{
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 300px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  z-index: 1111;
+  margin-top: 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+  padding-bottom: 30px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.sidebar {
+  text-align: center;
+  line-height: 50px;
+
+}
+
+.sidebar-item {
+  font-size: 18px;
+  color: #000;
+}
+
+.user-icon {
   height: 30px;
   padding-right: 30px;
+  cursor: pointer;
 }
-.cms-title{
+
+.user-img {
+  height: 70px;
+  margin: 30px 0px;
+
+}
+.user-text{
+  text-align: center;
+  margin: 0px 20px;
+}
+.user-text h4{
+  font-size: 20px;
+}
+.user-text p{
+  font-size: 12px;
+}
+
+.cms-title {
   padding-left: 50px;
   color: #fff;
   font-weight: bolder;
+  /* text-align: center; */
 }
-.topnav{
+
+.topnav {
   background: #337ab7;
-  
+
 }
 
 #sidebar-wrapper {
@@ -79,13 +165,13 @@ export default {
 }
 
 #menu-toggle:hover {
-  background: #21537f; 
+  background: #21537f;
 
 }
 
 #menu-toggle img {
   height: 20px;
-  
+
 
 }
 
@@ -127,14 +213,14 @@ export default {
   }
 }
 
-.bg-light {  
-   background-color: rgb(10, 94, 118);  
-  
+.bg-light {
+  background-color: rgb(10, 94, 118);
+
 }
 
 #page-content-wrapper {
   background-color: #fff;
-  
+
 }
 </style>
 

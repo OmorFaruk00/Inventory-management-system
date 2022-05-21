@@ -84,7 +84,7 @@
 </template>
 <script>
 export default {
-    layout: "Dum-sidebar"
+    layout: "Dum-content"
 }
 </script>
 <style scoped>
