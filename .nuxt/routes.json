@@ -21,13 +21,6 @@
     "_name": "_0c4ed327"
   },
   {
-    "name": "test",
-    "path": "/test",
-    "component": "/media/faruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/test.vue",
-    "chunkName": "pages/test",
-    "_name": "_6afcaf79"
-  },
-  {
     "name": "dum-ac-event",
     "path": "/dum-ac/event",
     "component": "/media/faruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/index.vue",
