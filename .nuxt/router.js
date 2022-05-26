@@ -4,18 +4,20 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _116605ec = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
-const _c32f0986 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
-const _0c4ed327 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
-const _05388fc8 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
-const _134d73c0 = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
-const _fdbcf31c = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
-const _a103c2ee = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
-const _6ce49814 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
-const _7e154efe = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
-const _6a78dae8 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
-const _67f9fd55 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
-const _0d6efafb = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _4a558092 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
+const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
+const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _17cc1bd8 = () => interopDefault(import('../pages/test.vue' /* webpackChunkName: "pages/test" */))
+const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
+const _e54c44fe = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
+const _48a254d1 = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
+const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
+const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
+const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
+const _1946dfe6 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
+const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
+const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -29,52 +31,60 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/about",
+    component: _4a558092,
+    name: "about"
+  }, {
     path: "/app",
-    component: _116605ec,
+    component: _78bf08cb,
     name: "app"
   }, {
     path: "/dum-ac",
-    component: _c32f0986,
+    component: _1f1dcec8,
     name: "dum-ac"
   }, {
     path: "/student",
-    component: _0c4ed327,
+    component: _094c3cb0,
     name: "student"
   }, {
+    path: "/test",
+    component: _17cc1bd8,
+    name: "test"
+  }, {
     path: "/dum-ac/event",
-    component: _05388fc8,
+    component: _f5f12c32,
     name: "dum-ac-event"
   }, {
     path: "/dum-ac/notice",
-    component: _134d73c0,
+    component: _e54c44fe,
     name: "dum-ac-notice"
   }, {
     path: "/dum-ac/program",
-    component: _fdbcf31c,
+    component: _48a254d1,
     name: "dum-ac-program"
   }, {
     path: "/dum-ac/slider",
-    component: _a103c2ee,
+    component: _298a884a,
     name: "dum-ac-slider"
   }, {
     path: "/dum-ac/event/create",
-    component: _6ce49814,
+    component: _439a1db7,
     name: "dum-ac-event-create"
   }, {
     path: "/dum-ac/notice/create",
-    component: _7e154efe,
+    component: _45961d5d,
     name: "dum-ac-notice-create"
   }, {
     path: "/dum-ac/program/create",
-    component: _6a78dae8,
+    component: _1946dfe6,
     name: "dum-ac-program-create"
   }, {
     path: "/dum-ac/slider/create",
-    component: _67f9fd55,
+    component: _2f7acbb4,
     name: "dum-ac-slider-create"
   }, {
     path: "/",
-    component: _0d6efafb,
+    component: _0ae5cb08,
     name: "index"
   }],
 
