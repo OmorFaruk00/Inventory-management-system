@@ -14,6 +14,7 @@
               <img src="/images/user.png" alt="user" class="user-img">
             </div>
             <div class="user-text">
+              
               <h4>Md. Omor Faruk</h4>              
               <p>Junior Officer, Office of the IT & Admission & Information
                 omorfaruk.it@diu.ac</p>

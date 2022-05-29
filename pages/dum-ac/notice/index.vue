@@ -62,8 +62,12 @@
 </template>
 <script>
 export default {
-  layout:"Dum-content"
+  layout:"Dum-content",
+
+
+  
 }
+
 </script>
 <style scoped>
 

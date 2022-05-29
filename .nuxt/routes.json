@@ -1,100 +1,74 @@
 [
   {
-    "name": "about",
-    "path": "/about",
-    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/about.vue",
-    "chunkName": "pages/about",
-    "_name": "_4a558092"
-  },
-  {
     "name": "app",
     "path": "/app",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/app.vue",
-    "chunkName": "pages/app",
-    "_name": "_78bf08cb"
+    "chunkName": "pages/app"
   },
   {
     "name": "dum-ac",
     "path": "/dum-ac",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/index.vue",
-    "chunkName": "pages/dum-ac/index",
-    "_name": "_1f1dcec8"
+    "chunkName": "pages/dum-ac/index"
   },
   {
     "name": "student",
     "path": "/student",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/index.vue",
-    "chunkName": "pages/student/index",
-    "_name": "_094c3cb0"
-  },
-  {
-    "name": "test",
-    "path": "/test",
-    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/test.vue",
-    "chunkName": "pages/test",
-    "_name": "_17cc1bd8"
+    "chunkName": "pages/student/index"
   },
   {
     "name": "dum-ac-event",
     "path": "/dum-ac/event",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/index.vue",
-    "chunkName": "pages/dum-ac/event/index",
-    "_name": "_f5f12c32"
+    "chunkName": "pages/dum-ac/event/index"
   },
   {
     "name": "dum-ac-notice",
     "path": "/dum-ac/notice",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/notice/index.vue",
-    "chunkName": "pages/dum-ac/notice/index",
-    "_name": "_e54c44fe"
+    "chunkName": "pages/dum-ac/notice/index"
   },
   {
     "name": "dum-ac-program",
     "path": "/dum-ac/program",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/program/index.vue",
-    "chunkName": "pages/dum-ac/program/index",
-    "_name": "_48a254d1"
+    "chunkName": "pages/dum-ac/program/index"
   },
   {
     "name": "dum-ac-slider",
     "path": "/dum-ac/slider",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/slider/index.vue",
-    "chunkName": "pages/dum-ac/slider/index",
-    "_name": "_298a884a"
+    "chunkName": "pages/dum-ac/slider/index"
   },
   {
     "name": "dum-ac-event-create",
     "path": "/dum-ac/event/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/create.vue",
-    "chunkName": "pages/dum-ac/event/create",
-    "_name": "_439a1db7"
+    "chunkName": "pages/dum-ac/event/create"
   },
   {
     "name": "dum-ac-notice-create",
     "path": "/dum-ac/notice/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/notice/create.vue",
-    "chunkName": "pages/dum-ac/notice/create",
-    "_name": "_45961d5d"
+    "chunkName": "pages/dum-ac/notice/create"
   },
   {
     "name": "dum-ac-program-create",
     "path": "/dum-ac/program/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/program/create.vue",
-    "chunkName": "pages/dum-ac/program/create",
-    "_name": "_1946dfe6"
+    "chunkName": "pages/dum-ac/program/create"
   },
   {
     "name": "dum-ac-slider-create",
     "path": "/dum-ac/slider/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/slider/create.vue",
-    "chunkName": "pages/dum-ac/slider/create",
-    "_name": "_2f7acbb4"
+    "chunkName": "pages/dum-ac/slider/create"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_0ae5cb08"
+    "chunkName": "pages/index"
   }
 ]

@@ -18,7 +18,7 @@
                 <input type="file" class="form-control" id="name" placeholder="Image">
             </div>
             <div class="d-flex justify-content-end">
-                <button class="btn-submit">Submit</button>
+                <button class="btn-submit" @click.prevent="addNotice()">Submit</button>
             </div>
             
         </form>
@@ -28,6 +28,17 @@
 </template>
 <script>
 export default {
-    layout:"Dum-content"
+    layout:"Dum-content",
+      mounted() {
+    let token = this.$axios.$get("/sanctum/csrf-cookie");
+    
+    
+  },
+  methods:{    
+      addNotice(){
+       console.log("addNotice");
+      }
+    
+  }
 }
 </script>
