@@ -64,9 +64,58 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     'bootstrap-vue/nuxt'
   ],
+  router:{
+    middleware: ['auth']
+  },
+  auth: {
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: 'http://localhost:8000',
+        endpoints:{
+          login:{
+            method:"post",
+            url:'/api/login'
+          },
+          logout:{
+            method:"post",
+            url:'/api/logout'
+          },
+          user:{
+            url:'/api/user'
+          },
+          user:{
+            property:false
+          },
+          // tokenRequired: false,
+          // tokenType: false
+        }
+      },
+    },
+  
+    redirect:{
+      login:'/',
+      logout:'/',
+      home:'/'
+    },
+  },
+ 
+
+  axios:{
+    baseURL:'http://localhost:8000',
+    credentials:true
+
+  },
+  proxy: {
+    '/laravel': {
+      target: 'http://127.0.0.1:8000',
+      pathRewrite: { '^/laravel': '/' }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

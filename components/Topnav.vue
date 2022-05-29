@@ -17,9 +17,9 @@
               <h4>Md. Omor Faruk</h4>              
               <p>Junior Officer, Office of the IT & Admission & Information
                 omorfaruk.it@diu.ac</p>
-            </div>   
+            </div> 
               
-              <button class="btn-logout">Log out</button>
+              <button class="btn-logout" @click="logout">Log out</button>
             
             
 
@@ -37,6 +37,7 @@
 export default {
 
   mounted() {
+    this.$axios.$get('/sanctum/csrf-cookie');
     //toggle sidebar
     $("#menu-toggle").click(function (e) {
       e.preventDefault();
@@ -46,6 +47,15 @@ export default {
   methods: {
     user() {
       document.getElementById("user").classList.toggle("show");
+    },
+
+    logout(){
+      this.$auth.logout().then(response => {
+        console.log(response);
+        // this.$router.push('/')
+      }).catch(error => {
+        console.log(error);
+      });
     }
   }
 
