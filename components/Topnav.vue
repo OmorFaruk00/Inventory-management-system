@@ -8,16 +8,18 @@
       </nuxt-link>
       <div class="ml-auto">
         <div class="dropdown">
-          <img src="/images/user.png" alt="user" class="user-icon" @click="user()">
+          <img src="/images/user.png" alt="user" class="user-icon" @click="userprofile()">
           <div id="user" class="dropdown-content">
             <div class="user-info d-flex justify-content-center">
               <img src="/images/user.png" alt="user" class="user-img">
             </div>
             <div class="user-text">
               
+            {{ this.$auth.user.name }}
               <h4>Md. Omor Faruk</h4>              
               <p>Junior Officer, Office of the IT & Admission & Information
                 omorfaruk.it@diu.ac</p>
+                
             </div> 
               
               <button class="btn-logout" @click="logout">Log out</button>
@@ -36,6 +38,12 @@
 </template>
 <script>
 export default {
+  // middleware: 'auth',
+  data() {
+    return {
+      
+    }
+  },
 
   mounted() {
     this.$axios.$get('/sanctum/csrf-cookie');
@@ -46,14 +54,14 @@ export default {
     });
   },
   methods: {
-    user() {
+    userprofile() {
       document.getElementById("user").classList.toggle("show");
     },
 
     logout(){
       this.$auth.logout().then(response => {
         console.log(response);
-        // this.$router.push('/')
+        this.$router.push('/')
       }).catch(error => {
         console.log(error);
       });

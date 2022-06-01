@@ -65,7 +65,8 @@
 </template>
 <script>
 export default {
-    layout: "Dum-content"
+    layout: "Dum-content",
+    // middleware: ["auth"],
 
 }
 </script>

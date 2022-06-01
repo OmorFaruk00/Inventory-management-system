@@ -61,61 +61,56 @@ export default {
    
   },
 
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/auth-next',
-    'bootstrap-vue/nuxt'
-  ],
-  router:{
-    middleware: ['auth']
-  },
+  // router: {
+  //   middleware: 'auth'
+  // },
+  
   auth: {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
         url: 'http://localhost:8000',
-        endpoints:{
-          login:{
-            method:"post",
-            url:'/api/login'
-          },
-          logout:{
-            method:"post",
-            url:'/api/logout'
-          },
-          user:{
-            url:'/api/user'
-          },
-          user:{
-            property:false
-          },
-          // tokenRequired: false,
-          // tokenType: false
-        }
+        token: {
+          property: 'token',
+          global: true,
+          required: true,
+          type: 'Bearer'
+        },
+        user: {
+          property: false,
+          autoFetch: true
+        },  
+        endpoints: {
+          login: { url: '/api/login', method: 'post'},
+          logout: { url: '/api/logout', method: 'post' },
+          user: { url: '/api/user', method: 'get'}
+        },        
       },
+     
     },
-  
-    redirect:{
-      login:'/',
-      logout:'/',
-      home:'/'
-    },
+     redirect:{
+          login: '/',
+          logout: '/',
+          home:'/app',
+        }
   },
+    
+
  
-
-  axios:{
-    baseURL:'http://localhost:8000',
-    credentials:true
-
+  axios: {   
+    baseURL: 'http://localhost:8000',
+    credentials: true
   },
-  proxy: {
-    '/laravel': {
-      target: 'http://127.0.0.1:8000',
-      pathRewrite: { '^/laravel': '/' }
-    }
-  },
+  
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',    
+    'bootstrap-vue/nuxt'
+  ],
+ 
+ 
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

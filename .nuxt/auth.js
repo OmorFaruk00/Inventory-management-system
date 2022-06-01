@@ -18,7 +18,7 @@ export default function (ctx, inject) {
   "redirect": {
     "login": "/",
     "logout": "/",
-    "home": "/",
+    "home": "/app",
     "callback": "/login"
   },
   "vuex": {
@@ -43,6 +43,16 @@ export default function (ctx, inject) {
   // laravelSanctum
   $auth.registerStrategy('laravelSanctum', new CookieScheme($auth, {
   "url": "http://localhost:8000",
+  "token": {
+    "property": "token",
+    "global": true,
+    "required": true,
+    "type": "Bearer"
+  },
+  "user": {
+    "property": false,
+    "autoFetch": true
+  },
   "endpoints": {
     "csrf": {
       "withCredentials": true,
@@ -81,15 +91,12 @@ export default function (ctx, inject) {
         "Accept": "application/json"
       },
       "url": "http://localhost:8000/api/user",
-      "property": false
+      "method": "get"
     }
   },
   "name": "laravelSanctum",
   "cookie": {
     "name": "XSRF-TOKEN"
-  },
-  "user": {
-    "property": false
   }
 }))
 
