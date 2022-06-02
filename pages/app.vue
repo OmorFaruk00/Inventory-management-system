@@ -50,11 +50,6 @@
 
 export default {
 	// middleware: 'auth',
-
-	
-
-
-
 }
 </script>
 <style scoped>

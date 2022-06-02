@@ -10,6 +10,7 @@
           <nuxt-link class="sidebar-item" to="/dum-ac/notice">Notice</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/event">Event</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/program">Program</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/dum-ac/facilitie">Facilities</nuxt-link>
 
         </div>
       </div>

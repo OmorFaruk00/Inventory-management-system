@@ -8,10 +8,12 @@ const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunk
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
 const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
+const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.vue' /* webpackChunkName: "pages/dum-ac/facilitie/index" */))
 const _e54c44fe = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
 const _48a254d1 = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
 const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
+const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.vue' /* webpackChunkName: "pages/dum-ac/facilitie/create" */))
 const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
 const _1946dfe6 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
 const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
@@ -45,6 +47,10 @@ export const routerOptions = {
     component: _f5f12c32,
     name: "dum-ac-event"
   }, {
+    path: "/dum-ac/facilitie",
+    component: _1c49947f,
+    name: "dum-ac-facilitie"
+  }, {
     path: "/dum-ac/notice",
     component: _e54c44fe,
     name: "dum-ac-notice"
@@ -60,6 +66,10 @@ export const routerOptions = {
     path: "/dum-ac/event/create",
     component: _439a1db7,
     name: "dum-ac-event-create"
+  }, {
+    path: "/dum-ac/facilitie/create",
+    component: _d6c573c2,
+    name: "dum-ac-facilitie-create"
   }, {
     path: "/dum-ac/notice/create",
     component: _45961d5d,

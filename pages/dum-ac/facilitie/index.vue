@@ -1,0 +1,215 @@
+<template>
+  <div>
+    <div class="pt-5">
+      <div class="row">
+        <div class="mx-auto col-md-12">
+          <div class="panel">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col col-sm-5 col-xs-12">
+                  <h4 class="title">Facilitie List</h4>
+                </div>
+                <div class="col-sm-7 col-xs-12 text-right">
+                  <nuxt-link to="/dum-ac/facilitie/create" class="btn-add"
+                    >Add Facilitie</nuxt-link
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="panel-body table-responsive">
+              <table class="table table-striped  text-center">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>                    
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="facilitie in facilities" :key="facilitie._id">
+                    <td>{{ facilitie.id }}</td>
+                    <td>{{ facilitie.title }}</td>
+                    <td>{{ facilitie.description }}</td>                    
+                    <td>
+                      <button
+                        v-if="facilitie.status == 1"
+                        class="btn-active"
+                        @click="facilitieStatus(facilitie.id,facilitie.status)"
+                      >
+                        Active
+                      </button>
+                      <button
+                        v-if="facilitie.status == 0"
+                        class="btn-inactive"
+                        @click="facilitieStatus(facilitie.id,facilitie.status)"
+                      >
+                        Inactive
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn-edit" @click="facilitieEdit(facilitie.id)">Edit</button>
+                      <button
+                        class="btn-delete"
+                        @click="deletefacilitie(facilitie.id)"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+<div class="modal fade" id="facilitieUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Facilitie Update</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="form-group">
+          <label for="" class="">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Title"
+            v-model="facilitie.title"
+          />
+          <p
+            v-if="errors.title"
+            v-text="errors.title[0]"
+            class="text-danger"
+          ></p>
+        </div>
+        <div class="form-group">
+          <label for="" class="">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Description"
+            v-model="facilitie.description"
+          />
+          <p
+            v-if="errors.description"
+            v-text="errors.description[0]"
+            class="text-danger"
+          ></p>
+        </div>
+       
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-submit" @click="facilitieUpdate()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  layout: "Dum-content",
+  mounted() {
+    // this.$axios.$get("/sanctum/csrf-cookie");
+    this.getfacilitie();
+  },
+  data() {
+    return {
+      facilities: [],
+           facilitie: {
+        id: "",
+        title: "",
+        description: "",        
+        created_by: this.$auth.user.name,
+      },
+      errors: {},
+    };
+  },
+  methods: {
+    getfacilitie() {
+      this.$axios
+        .$get("/facilitie/show")
+        .then((res) => {
+          this.facilities = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    facilitieEdit(id){
+       $("#facilitieUpdate").modal("show");
+       this.$axios
+        .$get("/facilitie/edit/" + id)
+        .then((res) => {            
+            this.facilitie = res;
+        
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+    },
+    facilitieUpdate(){
+      this.$axios
+        .$post("/facilitie/update/" + this.facilitie.id , this.facilitie)
+        .then((res) => {          
+          this.getfacilitie();
+          $("#facilitieUpdate").modal("hide");
+          this.$toaster.success(res.message);
+          this.errors="";
+        })
+        .catch((err) => {
+          console.log(err);
+          this.errors = err.response.data.errors;
+        });
+    },
+    deletefacilitie(id) {
+        if(confirm("Are you sure to delete this Facilitie?")){
+           this.$axios
+        .$get("/facilitie/delete/" + id)
+        .then((res) => {
+          this.getfacilitie();
+          this.$toaster.error(res.message);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+        }
+    
+    },
+    facilitieStatus(id,status) {    
+      this.$axios
+        .$get("/facilitie/status/" + id + "/" + status)
+        .then((res) => {
+          this.getfacilitie();
+          this.$toaster.success(res.message);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },   
+        
+    
+
+
+
+
+
+
+
+  }
+};
+</script>
+<style scoped></style>

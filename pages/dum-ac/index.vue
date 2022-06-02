@@ -66,7 +66,7 @@
 <script>
 export default {
     layout: "Dum-content",
-    // middleware: ["auth"],
+    
 
 }
 </script>

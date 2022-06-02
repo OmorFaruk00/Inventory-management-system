@@ -24,6 +24,7 @@ export default {
       // {src: '/bootstrap-select/dist/js/bootstrap-select.min.js', defer: true},
       {src: '/libs/metismenu/metisMenu.min.js', defer: true},
       {src: '/libs/simplebar/simplebar.min.js', defer: true},
+      {src: '/js/main.js', defer: true},
       
     ],
   },
@@ -36,15 +37,16 @@ export default {
   ],
 
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  
   plugins: [
     {src: 'plugins/owl.js', ssr: false},
+    {src: '~/plugins/vue-toaster.js', ssr: false},
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  
   buildModules: [
     '@nuxtjs/google-fonts'
   ],
@@ -61,9 +63,9 @@ export default {
    
   },
 
-  // router: {
-  //   middleware: 'auth'
-  // },
+  router: {
+    middleware: 'auth'
+  },
   
   auth: {
     strategies: {
@@ -94,16 +96,16 @@ export default {
           home:'/app',
         }
   },
-    
+      
 
  
   axios: {   
-    baseURL: 'http://localhost:8000',
+    baseURL: 'http://localhost:8000/api',
     credentials: true
   },
   
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',    

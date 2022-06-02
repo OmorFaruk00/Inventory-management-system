@@ -17,6 +17,7 @@ import nuxt_plugin_plugin_341f0c8c from 'nuxt_plugin_plugin_341f0c8c' // Source:
 import nuxt_plugin_bootstrapvue_22d6745e from 'nuxt_plugin_bootstrapvue_22d6745e' // Source: ./bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_axios_e732acbc from 'nuxt_plugin_axios_e732acbc' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_owl_7562b290 from 'nuxt_plugin_owl_7562b290' // Source: ../plugins/owl.js (mode: 'client')
+import nuxt_plugin_vuetoaster_a0853800 from 'nuxt_plugin_vuetoaster_a0853800' // Source: ../plugins/vue-toaster.js (mode: 'client')
 import nuxt_plugin_auth_4210434e from 'nuxt_plugin_auth_4210434e' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -85,7 +86,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"cms","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.png"},{"rel":"stylesheet","id":"bootstrap-style","href":"\u002Fcss\u002Fbootstrap.min.css"},{"hid":"gf-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"gf-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"gf-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100"}],"script":[{"src":"\u002Flibs\u002Fjquery\u002Fjquery.min.js","defer":true},{"src":"\u002Flibs\u002Fbootstrap\u002Fjs\u002Fbootstrap.bundle.min.js","defer":true},{"src":"\u002Flibs\u002Fmetismenu\u002FmetisMenu.min.js","defer":true},{"src":"\u002Flibs\u002Fsimplebar\u002Fsimplebar.min.js","defer":true},{"hid":"gf-script","innerHTML":"(function(){var l=document.createElement('link');l.rel=\"stylesheet\";l.href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\";document.querySelector(\"head\").appendChild(l);})();"}],"style":[],"noscript":[{"hid":"gf-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"gf-script":["innerHTML"],"gf-noscript":["innerHTML"]}},
+    head: {"title":"cms","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.png"},{"rel":"stylesheet","id":"bootstrap-style","href":"\u002Fcss\u002Fbootstrap.min.css"},{"hid":"gf-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"gf-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"gf-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100"}],"script":[{"src":"\u002Flibs\u002Fjquery\u002Fjquery.min.js","defer":true},{"src":"\u002Flibs\u002Fbootstrap\u002Fjs\u002Fbootstrap.bundle.min.js","defer":true},{"src":"\u002Flibs\u002Fmetismenu\u002FmetisMenu.min.js","defer":true},{"src":"\u002Flibs\u002Fsimplebar\u002Fsimplebar.min.js","defer":true},{"src":"\u002Fjs\u002Fmain.js","defer":true},{"hid":"gf-script","innerHTML":"(function(){var l=document.createElement('link');l.rel=\"stylesheet\";l.href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\";document.querySelector(\"head\").appendChild(l);})();"}],"style":[],"noscript":[{"hid":"gf-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"gf-script":["innerHTML"],"gf-noscript":["innerHTML"]}},
 
     store,
     router,
@@ -228,6 +229,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_owl_7562b290 === 'function') {
     await nuxt_plugin_owl_7562b290(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuetoaster_a0853800 === 'function') {
+    await nuxt_plugin_vuetoaster_a0853800(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_4210434e === 'function') {

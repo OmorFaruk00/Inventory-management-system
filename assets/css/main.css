@@ -9,7 +9,7 @@
 .btn-add{
     background: #337ab7;
     padding: 5px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #fff;
 }
 .btn-add:hover{
@@ -22,7 +22,7 @@
     color:#fff;
     border:none;
     padding: 5px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .btn-edit:hover{
     background: #21537f;;
@@ -32,7 +32,7 @@
     color:#fff;
     border:none;
     padding: 5px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .btn-delete:hover{
     background: #21537f;;
@@ -42,9 +42,19 @@
     color:#fff;
     border:none;
     padding: 5px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .btn-active:hover{
+    background: #21537f;;
+}
+.btn-inactive{
+    background:#b02f0f;
+    color:#fff;
+    border:none;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.btn-inactive:hover{
     background: #21537f;;
 }
 .btn-submit{

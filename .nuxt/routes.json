@@ -28,6 +28,13 @@
     "_name": "_f5f12c32"
   },
   {
+    "name": "dum-ac-facilitie",
+    "path": "/dum-ac/facilitie",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/facilitie/index.vue",
+    "chunkName": "pages/dum-ac/facilitie/index",
+    "_name": "_1c49947f"
+  },
+  {
     "name": "dum-ac-notice",
     "path": "/dum-ac/notice",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/notice/index.vue",
@@ -54,6 +61,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/create.vue",
     "chunkName": "pages/dum-ac/event/create",
     "_name": "_439a1db7"
+  },
+  {
+    "name": "dum-ac-facilitie-create",
+    "path": "/dum-ac/facilitie/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/facilitie/create.vue",
+    "chunkName": "pages/dum-ac/facilitie/create",
+    "_name": "_d6c573c2"
   },
   {
     "name": "dum-ac-notice-create",
