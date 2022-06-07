@@ -1,8 +1,7 @@
 <template>
 	<div class="bg">
 		<div class="">
-			<div class="welcome">
-				<!-- <h1 class="text-white">Welcome</h1> -->
+			<div class="welcome">				
 				<h1 aria-label="welcome"></h1>
 			</div>
 			<div class="d-flex justify-content-end h-100">
@@ -21,10 +20,14 @@
 
 						</div>
 					</div>
+					
 
-					<div class="card-body">						
+					<div class="card-body">	
+						<div class="alert alert-danger" v-if="login_error">
+                   <strong>{{login_error}}!</strong> 
+                      </div>					
 						
-							<div class="input-group form-group">
+							<div class="input-group form-group pb-2">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg"
 											class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -34,8 +37,14 @@
 										</svg></span>
 								</div>
 								<input type="text" class="form-control" placeholder="username" v-model="login.email" autocomplete>
-
+			
 							</div>
+								<p
+								v-if="errors.email"
+								v-text="errors.email[0]"
+								class="text-danger"
+							  ></p>
+
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +56,12 @@
 								</div>
 								<input type="password" class="form-control" placeholder="password" v-model="login.password">
 							</div>
+								<p
+								v-if="errors.password"
+								v-text="errors.password[0]"
+								class="text-danger"
+							  ></p>
+							
 						
 							<div class="row">
 								<div class="col-sm-12 col-md-6 col-xl-6">
@@ -70,14 +85,14 @@
 						
 					</div>
 
-					<div class="card-footer">
+					<!-- <div class="card-footer">
 						<div class="d-flex justify-content-center links">
 							Don't have an account?<a href="#">Sign Up</a>
 						</div>
 						<div class="d-flex justify-content-center">
-							<!-- <a href="#">Forgot your password?</a> -->
+							
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -98,19 +113,32 @@ export default {
       login: {
         email: '',
         password: ''
-      }
+      },
+	  errors:[],
+	  login_error:''
     }
   },
   methods: {
-    async userLogin() {
+    async userLogin() {		
       try {
-        let response = await this.$auth.loginWith('laravelSanctum', { data: this.login })
-        console.log(response)
+        let response = await this.$auth.loginWith('laravelSanctum', { data: this.login }) 	  
 		this.$router.push('/app');
-      } catch (err) {
-        console.log(err)
-      }
-    }
+
+      } catch (error) { 
+		   
+		 if(error.response.status == 422){			 
+			  this.errors = error.response.data.errors;
+		  }else{
+			 this.login_error = error.response.data.message;			  
+		  }
+		  
+	  }
+	}
+		  
+	
+
+		  
+    
   }
 }
 </script>
