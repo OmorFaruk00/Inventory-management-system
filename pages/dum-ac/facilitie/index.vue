@@ -17,12 +17,12 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped  text-center">
+              <table class="table table-striped text-center">
                 <thead>
                   <tr>
                     <th>ID</th>
                     <th>Title</th>
-                    <th>Description</th>                    
+                    <th>Description</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -31,25 +31,30 @@
                   <tr v-for="facilitie in facilities" :key="facilitie._id">
                     <td>{{ facilitie.id }}</td>
                     <td>{{ facilitie.title }}</td>
-                    <td>{{ facilitie.description }}</td>                    
+                    <td>{{ facilitie.description }}</td>
                     <td>
                       <button
                         v-if="facilitie.status == 1"
                         class="btn-active"
-                        @click="facilitieStatus(facilitie.id,facilitie.status)"
+                        @click="facilitieStatus(facilitie.id, facilitie.status)"
                       >
                         Active
                       </button>
                       <button
                         v-if="facilitie.status == 0"
                         class="btn-inactive"
-                        @click="facilitieStatus(facilitie.id,facilitie.status)"
+                        @click="facilitieStatus(facilitie.id, facilitie.status)"
                       >
                         Inactive
                       </button>
                     </td>
                     <td>
-                      <button class="btn-edit" @click="facilitieEdit(facilitie.id)">Edit</button>
+                      <button
+                        class="btn-edit"
+                        @click="facilitieEdit(facilitie.id)"
+                      >
+                        Edit
+                      </button>
                       <button
                         class="btn-delete"
                         @click="deletefacilitie(facilitie.id)"
@@ -66,55 +71,73 @@
       </div>
 
       <!-- Modal -->
-<div class="modal fade" id="facilitieUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Facilitie Update</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div class="form-group">
-          <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Title"
-            v-model="facilitie.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
+      <div
+        class="modal fade"
+        id="facilitieUpdate"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Facilitie Update
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="" class="">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Title"
+                  v-model="facilitie.title"
+                />
+                <p
+                  v-if="errors.title"
+                  v-text="errors.title[0]"
+                  class="text-danger"
+                ></p>
+              </div>
+              <div class="form-group">
+                <label for="" class="">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Description"
+                  v-model="facilitie.description"
+                />
+                <p
+                  v-if="errors.description"
+                  v-text="errors.description[0]"
+                  class="text-danger"
+                ></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-submit"
+                @click="facilitieUpdate()"
+              >
+                Update
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="" class="">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Description"
-            v-model="facilitie.description"
-          />
-          <p
-            v-if="errors.description"
-            v-text="errors.description[0]"
-            class="text-danger"
-          ></p>
-        </div>
-       
       </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="button" class="btn btn-submit" @click="facilitieUpdate()">Update</button>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 </template>
@@ -122,17 +145,14 @@
 export default {
   layout: "Dum-content",
   mounted() {
-    // this.$axios.$get("/sanctum/csrf-cookie");
     this.getfacilitie();
   },
   data() {
     return {
       facilities: [],
-           facilitie: {
-        id: "",
+      facilitie: {
         title: "",
-        description: "",        
-        created_by: this.$auth.user.name,
+        description: "",
       },
       errors: {},
     };
@@ -148,27 +168,25 @@ export default {
           console.log(err);
         });
     },
-    facilitieEdit(id){
-       $("#facilitieUpdate").modal("show");
-       this.$axios
+    facilitieEdit(id) {
+      $("#facilitieUpdate").modal("show");
+      this.$axios
         .$get("/facilitie/edit/" + id)
-        .then((res) => {            
-            this.facilitie = res;
-        
+        .then((res) => {
+          this.facilitie = res;
         })
         .catch((err) => {
           console.log(err);
         });
-
     },
-    facilitieUpdate(){
+    facilitieUpdate() {
       this.$axios
-        .$post("/facilitie/update/" + this.facilitie.id , this.facilitie)
-        .then((res) => {          
+        .$post("/facilitie/update/" + this.facilitie.id, this.facilitie)
+        .then((res) => {
           this.getfacilitie();
           $("#facilitieUpdate").modal("hide");
           this.$toaster.success(res.message);
-          this.errors="";
+          this.errors = "";
         })
         .catch((err) => {
           console.log(err);
@@ -176,20 +194,19 @@ export default {
         });
     },
     deletefacilitie(id) {
-        if(confirm("Are you sure to delete this Facilitie?")){
-           this.$axios
-        .$get("/facilitie/delete/" + id)
-        .then((res) => {
-          this.getfacilitie();
-          this.$toaster.error(res.message);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        }
-    
+      if (confirm("Are you sure to delete this Facilitie?")) {
+        this.$axios
+          .$get("/facilitie/delete/" + id)
+          .then((res) => {
+            this.getfacilitie();
+            this.$toaster.error(res.message);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     },
-    facilitieStatus(id,status) {    
+    facilitieStatus(id, status) {
       this.$axios
         .$get("/facilitie/status/" + id + "/" + status)
         .then((res) => {
@@ -199,17 +216,8 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-    },   
-        
-    
-
-
-
-
-
-
-
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

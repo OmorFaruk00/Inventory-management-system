@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped  text-center">
+              <table class="table table-striped text-center">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -38,24 +38,23 @@
                       <button
                         v-if="event.status == 1"
                         class="btn-active"
-                        @click="eventStatus(event.id,event.status)"
+                        @click="eventStatus(event.id, event.status)"
                       >
                         Active
                       </button>
                       <button
                         v-if="event.status == 0"
                         class="btn-inactive"
-                        @click="eventStatus(event.id,event.status)"
+                        @click="eventStatus(event.id, event.status)"
                       >
                         Inactive
                       </button>
                     </td>
                     <td>
-                      <button class="btn-edit" @click="eventEdit(event.id)">Edit</button>
-                      <button
-                        class="btn-delete"
-                        @click="eventDelete(event.id)"
-                      >
+                      <button class="btn-edit" @click="eventEdit(event.id)">
+                        Edit
+                      </button>
+                      <button class="btn-delete" @click="eventDelete(event.id)">
                         Delete
                       </button>
                     </td>
@@ -68,83 +67,89 @@
       </div>
 
       <!-- Modal -->
-<div class="modal fade" id="eventUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Event Update</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div class="form-group">
-          <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Title"
-            v-model="event.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
+      <div
+        class="modal fade"
+        id="eventUpdate"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Event Update
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="" class="">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Title"
+                  v-model="event.title"
+                />
+                <p
+                  v-if="errors.title"
+                  v-text="errors.title[0]"
+                  class="text-danger"
+                ></p>
+              </div>
+              <div class="form-group">
+                <label for="" class="">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Description"
+                  v-model="event.description"
+                />
+                <p
+                  v-if="errors.description"
+                  v-text="errors.description[0]"
+                  class="text-danger"
+                ></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-submit"
+                @click="eventUpdate()"
+              >
+                Update
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="" class="">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Description"
-            v-model="event.description"
-          />
-          <p
-            v-if="errors.description"
-            v-text="errors.description[0]"
-            class="text-danger"
-          ></p>
-        </div>
-        <div class="form-group">
-          <label for="" class="">Slug</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Slug"
-            v-model="event.slug"
-          />
-          <p v-if="errors.slug" v-text="errors.slug[0]" class="text-danger"></p>
-        </div>
       </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="button" class="btn btn-submit" @click="eventUpdate()">Update</button>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 </template>
 <script>
 export default {
   layout: "Dum-content",
-  mounted() {   
+  mounted() {
     this.getEvent();
   },
   data() {
     return {
       events: [],
-           event: {
+      event: {
         id: "",
         title: "",
         description: "",
-        slug: "",
-        created_by: this.$auth.user.name,
       },
       errors: {},
     };
@@ -160,27 +165,25 @@ export default {
           console.log(err);
         });
     },
-    eventEdit(id){
-       $("#eventUpdate").modal("show");
-       this.$axios
+    eventEdit(id) {
+      $("#eventUpdate").modal("show");
+      this.$axios
         .$get("/event/edit/" + id)
-        .then((res) => {            
-            this.event = res;
-        
+        .then((res) => {
+          this.event = res;
         })
         .catch((err) => {
           console.log(err);
         });
-
     },
-    eventUpdate(){
+    eventUpdate() {
       this.$axios
-        .$post("/event/update/" + this.event.id , this.event)
-        .then((res) => {          
+        .$post("/event/update/" + this.event.id, this.event)
+        .then((res) => {
           this.getEvent();
           $("#eventUpdate").modal("hide");
           this.$toaster.success(res.message);
-          this.errors="";
+          this.errors = "";
         })
         .catch((err) => {
           console.log(err);
@@ -188,20 +191,19 @@ export default {
         });
     },
     eventDelete(id) {
-        if(confirm("Are you sure to delete this event?")){
-           this.$axios
-        .$get("/event/delete/" + id)
-        .then((res) => {
-          this.getEvent();
-          this.$toaster.error(res.message);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        }
-    
+      if (confirm("Are you sure to delete this event?")) {
+        this.$axios
+          .$get("/event/delete/" + id)
+          .then((res) => {
+            this.getEvent();
+            this.$toaster.error(res.message);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     },
-    eventStatus(id,status) {    
+    eventStatus(id, status) {
       this.$axios
         .$get("/event/status/" + id + "/" + status)
         .then((res) => {
@@ -211,17 +213,8 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-    },   
-        
-    
-
-
-
-
-
-
-
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

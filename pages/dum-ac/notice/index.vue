@@ -107,18 +107,7 @@
             v-text="errors.description[0]"
             class="text-danger"
           ></p>
-        </div>
-        <div class="form-group">
-          <label for="" class="">Slug</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Slug"
-            v-model="notice.slug"
-          />
-          <p v-if="errors.slug" v-text="errors.slug[0]" class="text-danger"></p>
-        </div>
+        </div>        
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
@@ -145,7 +134,7 @@ export default {
         title: "",
         description: "",
         slug: "",
-        created_by: this.$auth.user.name,
+        
       },
       errors: {},
     };

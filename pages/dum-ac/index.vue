@@ -15,7 +15,7 @@
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg></div>
                         <h3>Event</h3>
-                        <span class="dashboard-value">60</span>
+                        <span class="dashboard-value">{{events}}</span>
                     </div>
                     </nuxt-link>
                 </div>
@@ -28,7 +28,7 @@
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg></div>
                         <h3>Notice</h3>
-                        <span class="dashboard-value">0</span>
+                        <span class="dashboard-value">{{notices }}</span>
                     </div>
                     </nuxt-link>
                 </div>
@@ -41,7 +41,7 @@
                                     d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg></div>
                         <h3>Program</h3>
-                        <span class="dashboard-value">0</span>
+                        <span class="dashboard-value">{{programs}}</span>
                     </div>
                     </nuxt-link>
                 </div>
@@ -54,7 +54,7 @@
                                     d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                             </svg></div>
                         <h3>Slider</h3>
-                        <span class="dashboard-value">0</span>
+                        <span class="dashboard-value">{{sliders}}</span>
                     </div>
                     </nuxt-link>
                 </div>
@@ -66,6 +66,65 @@
 <script>
 export default {
     layout: "Dum-content",
+
+    mounted() {
+        this.getNotice();
+        this.getEvent();
+        this.getSlider();
+        this.getProgram() 
+    },
+    data(){
+        return {
+            notices: [], 
+            events: [], 
+            sliders: [], 
+            programs:[],         
+            
+        }
+    },
+    methods: {
+         getNotice() {
+      this.$axios
+        .$get("/notice/show")
+        .then((res) => {           
+          this.notices =res.length;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+     getEvent() {
+      this.$axios
+        .$get("/event/show")
+        .then((res) => {
+          this.events = res.length;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+       getSlider() {
+      this.$axios
+        .$get("/slider/show")
+        .then((res) => {
+          this.sliders = res.length;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+      getProgram() {
+      this.$axios
+        .$get("/program/show")
+        .then((res) => {
+          this.programs = res.length;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    }
+    
     
 
 }
