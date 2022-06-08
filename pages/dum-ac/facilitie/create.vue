@@ -65,7 +65,8 @@ export default {
         .then((res) => {
           this.facilitie = "";
           this.errors = {};
-          this.$toaster.success(res.message);          
+          this.$toaster.success(res.message);
+          this.$router.push("/dum-ac/facilitie");          
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

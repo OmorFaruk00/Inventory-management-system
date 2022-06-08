@@ -45,7 +45,7 @@
 								class="text-danger"
 							  ></p>
 
-							<div class="input-group form-group">
+							<div class="input-group form-group pb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg"
 											class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -123,9 +123,10 @@ export default {
       try {
         let response = await this.$auth.loginWith('laravelSanctum', { data: this.login }) 	  
 		this.$router.push('/app');
+		// this.$toaster.success("Login Successful");
+	 
 
-      } catch (error) { 
-		   
+      } catch (error) {		   
 		 if(error.response.status == 422){			 
 			  this.errors = error.response.data.errors;
 		  }else{

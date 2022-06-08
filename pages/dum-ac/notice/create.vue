@@ -79,7 +79,7 @@ export default {
           this.notice = "";
           this.errors = {};
           this.$toaster.success("Notice Added Successfully");
-          //    this.$router.push("/dum-ac/notice");
+          this.$router.push("/dum-ac/notice");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

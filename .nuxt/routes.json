@@ -14,11 +14,25 @@
     "_name": "_1f1dcec8"
   },
   {
+    "name": "employee",
+    "path": "/employee",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/index.vue",
+    "chunkName": "pages/employee/index",
+    "_name": "_68d6c877"
+  },
+  {
     "name": "student",
     "path": "/student",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/index.vue",
     "chunkName": "pages/student/index",
     "_name": "_094c3cb0"
+  },
+  {
+    "name": "dum-ac-contact",
+    "path": "/dum-ac/contact",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/contact.vue",
+    "chunkName": "pages/dum-ac/contact",
+    "_name": "_ec440f2c"
   },
   {
     "name": "dum-ac-event",
@@ -56,6 +70,27 @@
     "_name": "_298a884a"
   },
   {
+    "name": "employee-department",
+    "path": "/employee/department",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/department/index.vue",
+    "chunkName": "pages/employee/department/index",
+    "_name": "_3af8abc0"
+  },
+  {
+    "name": "employee-designation",
+    "path": "/employee/designation",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/designation/index.vue",
+    "chunkName": "pages/employee/designation/index",
+    "_name": "_4b5b78df"
+  },
+  {
+    "name": "employee-employee",
+    "path": "/employee/employee",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/employee/index.vue",
+    "chunkName": "pages/employee/employee/index",
+    "_name": "_2221a4dc"
+  },
+  {
     "name": "dum-ac-event-create",
     "path": "/dum-ac/event/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/create.vue",
@@ -89,6 +124,27 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/slider/create.vue",
     "chunkName": "pages/dum-ac/slider/create",
     "_name": "_2f7acbb4"
+  },
+  {
+    "name": "employee-department-create",
+    "path": "/employee/department/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/department/create.vue",
+    "chunkName": "pages/employee/department/create",
+    "_name": "_4bd116fe"
+  },
+  {
+    "name": "employee-designation-create",
+    "path": "/employee/designation/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/designation/create.vue",
+    "chunkName": "pages/employee/designation/create",
+    "_name": "_47c7edbf"
+  },
+  {
+    "name": "employee-employee-create",
+    "path": "/employee/employee/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/employee/create.vue",
+    "chunkName": "pages/employee/employee/create",
+    "_name": "_49c74162"
   },
   {
     "name": "index",

@@ -27,7 +27,7 @@
 				</nuxt-link>
 			</div>
 			<div class="col-md-3 col-xl-2 col-sm-6 app">
-				<nuxt-link class="app-link" to="/dum/dashboard">
+				<nuxt-link class="app-link" to="/employee">
 					<div class="app">
 						<div class="app-icon">
 							<img src="images/employee4.png" class="" alt="">

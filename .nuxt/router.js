@@ -6,17 +6,25 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
+const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
 const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
 const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.vue' /* webpackChunkName: "pages/dum-ac/facilitie/index" */))
 const _e54c44fe = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
 const _48a254d1 = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
 const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
+const _3af8abc0 = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
+const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
+const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
 const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.vue' /* webpackChunkName: "pages/dum-ac/facilitie/create" */))
 const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
 const _1946dfe6 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
 const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
+const _4bd116fe = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
+const _47c7edbf = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
+const _49c74162 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -39,9 +47,17 @@ export const routerOptions = {
     component: _1f1dcec8,
     name: "dum-ac"
   }, {
+    path: "/employee",
+    component: _68d6c877,
+    name: "employee"
+  }, {
     path: "/student",
     component: _094c3cb0,
     name: "student"
+  }, {
+    path: "/dum-ac/contact",
+    component: _ec440f2c,
+    name: "dum-ac-contact"
   }, {
     path: "/dum-ac/event",
     component: _f5f12c32,
@@ -63,6 +79,18 @@ export const routerOptions = {
     component: _298a884a,
     name: "dum-ac-slider"
   }, {
+    path: "/employee/department",
+    component: _3af8abc0,
+    name: "employee-department"
+  }, {
+    path: "/employee/designation",
+    component: _4b5b78df,
+    name: "employee-designation"
+  }, {
+    path: "/employee/employee",
+    component: _2221a4dc,
+    name: "employee-employee"
+  }, {
     path: "/dum-ac/event/create",
     component: _439a1db7,
     name: "dum-ac-event-create"
@@ -82,6 +110,18 @@ export const routerOptions = {
     path: "/dum-ac/slider/create",
     component: _2f7acbb4,
     name: "dum-ac-slider-create"
+  }, {
+    path: "/employee/department/create",
+    component: _4bd116fe,
+    name: "employee-department-create"
+  }, {
+    path: "/employee/designation/create",
+    component: _47c7edbf,
+    name: "employee-designation-create"
+  }, {
+    path: "/employee/employee/create",
+    component: _49c74162,
+    name: "employee-employee-create"
   }, {
     path: "/",
     component: _0ae5cb08,

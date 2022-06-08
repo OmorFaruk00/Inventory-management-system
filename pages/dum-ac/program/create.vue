@@ -80,7 +80,8 @@ export default {
         .then((res) => {            
           this.program = "";
           this.errors = {};
-          this.$toaster.success("program Added Successfully");         
+          this.$toaster.success("program Added Successfully"); 
+          this.$router.push("/dum-ac/program");        
         })
         .catch((error) => {            
           this.errors = error.response.data.errors;

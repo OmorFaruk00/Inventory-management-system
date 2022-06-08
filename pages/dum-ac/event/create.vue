@@ -78,7 +78,8 @@ export default {
         .then((res) => {           
           this.event = "";
           this.errors = {};
-          this.$toaster.success(res.message);          
+          this.$toaster.success(res.message);  
+          this.$router.push("/dum-ac/event");        
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

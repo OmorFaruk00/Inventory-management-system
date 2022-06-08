@@ -95,7 +95,8 @@ export default {
         .then((res) => {            
           this.slider = "";
           this.errors = {};
-          this.$toaster.success("Slider Added Successfully");         
+          this.$toaster.success("Slider Added Successfully");  
+          this.$router.push("/dum-ac/slider");       
         })
         .catch((error) => {            
           this.errors = error.response.data.errors;
