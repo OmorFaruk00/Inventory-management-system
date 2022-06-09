@@ -156,8 +156,10 @@ export default {
 .cms-title {
   padding-left: 50px;
   color: #fff;
-  font-weight: bolder;
-  /* text-align: center; */
+  font-weight: bolder;  
+}
+a{
+ text-decoration: none; 
 }
 
 .topnav {

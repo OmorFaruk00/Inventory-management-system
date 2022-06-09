@@ -21,27 +21,27 @@
                 <thead>
                   <tr>                    
                     <th>Type</th>
-                    <th>Name</th>                    
+                    <th>Department Name</th>                    
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="department in departments" :key="department._id">                    
-                    <td>{{ department.title }}</td>
-                    <td>{{ department.description }}</td>                    
+                    <td>{{ department.type }}</td>
+                    <td>{{ department.department}}</td>                    
                     <td>
                       <button
                         v-if="department.status == 1"
                         class="btn-active"
-                        @click="departmentStatus(department.id, department.status)"
+                        @click="departmentStatus(department.id)"
                       >
                         Active
                       </button>
                       <button
                         v-if="department.status == 0"
                         class="btn-inactive"
-                        @click="departmentStatus(department.id, department.status)"
+                        @click="departmentStatus(department.id)"
                       >
                         Inactive
                       </button>
@@ -74,8 +74,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">
-                department Update
+              <h5 class="title">
+                Department Update
               </h5>
               <button
                 type="button"
@@ -87,16 +87,35 @@
               </button>
             </div>
             <div class="modal-body">
+               <div class="form-horizontal">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select class="form-control" v-model="department.type">
+                            <option disabled selected value="">Select Type</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Non Academic">Non Academic</option>
+                        </select>
+                        <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
+                    </div>
+                    <div class="form-group">
+                        <label>Department Name </label>
+                        <input type="text" class="form-control" placeholder="Department Name "
+                            v-model="department.department" />
+                    </div>
+                    <h6 v-if="errors.department" v-text="errors.department[0]" class="text-danger"></h6>
+                    
+
+                </div>
               
             </div>
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-submit"
+                class="btn-submit"
                 @click="departmentUpdate()"
               >
                 Update
-              </button>
+              </button>              
             </div>
           </div>
         </div>
@@ -108,16 +127,21 @@
 export default {
   layout: "Emp-content",
   mounted() {
+    this.getDepartment();
     
   },
   data() {
     return {
-    
+    departments:'',
+    department: {
+      type:"",
+      name:'',
+    },
       errors: {},
     };
   },
   methods: {
-    getdepartment() {
+    getDepartment() {
       this.$axios
         .$get("/department/show")
         .then((res) => {
@@ -142,10 +166,12 @@ export default {
       this.$axios
         .$post("/department/update/" + this.department.id, this.department)
         .then((res) => {
-          this.getdepartment();
+          this.getDepartment();
           $("#departmentUpdate").modal("hide");
           this.$toaster.success(res.message);
           this.errors = "";
+          
+                    
         })
         .catch((err) => {
           console.log(err);
@@ -157,7 +183,7 @@ export default {
         this.$axios
           .$get("/department/delete/" + id)
           .then((res) => {
-            this.getdepartment();
+            this.getDepartment();
             this.$toaster.error(res.message);
           })
           .catch((err) => {
@@ -165,17 +191,23 @@ export default {
           });
       }
     },
-    departmentStatus(id, status) {
+    departmentStatus(id) {
       this.$axios
-        .$get("/department/status/" + id + "/" + status)
+        .$get("/department/status/" +id)
         .then((res) => {
-          this.getdepartment();
+          console.log(res);
+          this.getDepartment();
           this.$toaster.success(res.message);
         })
         .catch((err) => {
           console.log(err);
         });
     },
+
+
+
+
+    
   },
 };
 </script>

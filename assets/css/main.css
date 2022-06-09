@@ -22,6 +22,7 @@
     box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
     outline: none;
     color: #fff;
+    text-decoration: none;
 }
 .btn-edit{
     background:#daaa1d;
@@ -143,4 +144,7 @@
 
 .form-container .form-horizontal .form-control:focus {
     box-shadow: 1px 1px 5px #dcdcdc;
+}
+a:hover{
+    text-decoration: none;
 }

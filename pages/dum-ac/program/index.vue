@@ -107,8 +107,7 @@
             v-text="errors.image[0]"
             class="text-danger"
           ></p>
-        </div>
-        <img :src="'http://localhost:8000/images/dum/'+program.image" alt="image" style="height:80px"/>
+        </div>        
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->

@@ -123,7 +123,7 @@
 export default {
   layout: "Dum-content",
   mounted() {
-    // this.$axios.$get("/sanctum/csrf-cookie");
+    this.$axios.$get("/sanctum/csrf-cookie");
     this.getNotice();
   },
   data() {

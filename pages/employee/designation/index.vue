@@ -7,11 +7,11 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col col-sm-5 col-xs-12">
-                  <h4 class="title">Designation List</h4>
+                  <h4 class="title">designation List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
                   <nuxt-link to="/employee/designation/create" class="btn-add"
-                    >Add Designation</nuxt-link
+                    >Add designation</nuxt-link
                   >
                 </div>
               </div>
@@ -19,29 +19,29 @@
             <div class="panel-body table-responsive">
               <table class="table table-striped text-center">
                 <thead>
-                  <tr>
-                    <th>Designation Name</th>                     
-                    <th>Type</th>                                       
+                  <tr>                    
+                    <th>Type</th>
+                    <th>designation Name</th>                    
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="designation in designations" :key="designation._id">                    
-                    <td>{{ designation.title }}</td>
-                    <td>{{ designation.description }}</td>                    
+                    <td>{{ designation.type }}</td>
+                    <td>{{ designation.designation}}</td>                    
                     <td>
                       <button
                         v-if="designation.status == 1"
                         class="btn-active"
-                        @click="designationStatus(designation.id, designation.status)"
+                        @click="designationStatus(designation.id)"
                       >
                         Active
                       </button>
                       <button
                         v-if="designation.status == 0"
                         class="btn-inactive"
-                        @click="designationStatus(designation.id, designation.status)"
+                        @click="designationStatus(designation.id)"
                       >
                         Inactive
                       </button>
@@ -74,7 +74,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">
+              <h5 class="title">
                 designation Update
               </h5>
               <button
@@ -87,16 +87,35 @@
               </button>
             </div>
             <div class="modal-body">
+               <div class="form-horizontal">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select class="form-control" v-model="designation.type">
+                            <option disabled selected value="">Select Type</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Non Academic">Non Academic</option>
+                        </select>
+                        <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
+                    </div>
+                    <div class="form-group">
+                        <label>designation Name </label>
+                        <input type="text" class="form-control" placeholder="designation Name "
+                            v-model="designation.designation" />
+                    </div>
+                    <h6 v-if="errors.designation" v-text="errors.designation[0]" class="text-danger"></h6>
+                    
+
+                </div>
               
             </div>
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-submit"
+                class="btn-submit"
                 @click="designationUpdate()"
               >
                 Update
-              </button>
+              </button>              
             </div>
           </div>
         </div>
@@ -108,16 +127,21 @@
 export default {
   layout: "Emp-content",
   mounted() {
+    this.getDesignation();
     
   },
   data() {
     return {
-    
+    designations:'',
+    designation: {
+      type:"",
+      name:'',
+    },
       errors: {},
     };
   },
   methods: {
-    getdesignation() {
+    getDesignation() {
       this.$axios
         .$get("/designation/show")
         .then((res) => {
@@ -142,10 +166,12 @@ export default {
       this.$axios
         .$post("/designation/update/" + this.designation.id, this.designation)
         .then((res) => {
-          this.getdesignation();
+          this.getDesignation();
           $("#designationUpdate").modal("hide");
           this.$toaster.success(res.message);
           this.errors = "";
+          
+                    
         })
         .catch((err) => {
           console.log(err);
@@ -157,7 +183,7 @@ export default {
         this.$axios
           .$get("/designation/delete/" + id)
           .then((res) => {
-            this.getdesignation();
+            this.getDesignation();
             this.$toaster.error(res.message);
           })
           .catch((err) => {
@@ -165,17 +191,23 @@ export default {
           });
       }
     },
-    designationStatus(id, status) {
+    designationStatus(id) {
       this.$axios
-        .$get("/designation/status/" + id + "/" + status)
+        .$get("/designation/status/" +id)
         .then((res) => {
-          this.getdesignation();
+          console.log(res);
+          this.getDesignation();
           this.$toaster.success(res.message);
         })
         .catch((err) => {
           console.log(err);
         });
     },
+
+
+
+
+    
   },
 };
 </script>

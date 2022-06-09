@@ -19,6 +19,7 @@
     "jquery": "^3.6.0",
     "node-sass": "^7.0.1",
     "nuxt": "^2.15.8",
+    "nuxt-sweetalert2": "^1.0.0",
     "popper.js": "^1.16.1",
     "v-owl-carousel": "^1.0.8",
     "v-toaster": "^1.0.3",
