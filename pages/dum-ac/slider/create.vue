@@ -7,58 +7,24 @@
       <form>
         <div class="form-group">
           <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Title"
-            v-model="slider.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
+          <input type="text" class="form-control" placeholder="Title" v-model="slider.title" />
+          <p v-if="errors.title" v-text="errors.title[0]" class="text-danger"></p>
         </div>
         <div class="form-group">
           <label for="" class="">Short Description</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Short Description"
-            v-model="slider.description"
-          />
-          <p
-            v-if="errors.description"
-            v-text="errors.description[0]"
-            class="text-danger"
-          ></p>
+          <input type="text" class="form-control" placeholder="Short Description" v-model="slider.description" />
+          <p v-if="errors.description" v-text="errors.description[0]" class="text-danger"></p>
         </div>
         <div class="form-group">
           <label for="" class="">Slug</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Slug"
-            v-model="slider.slug"
-          />
+          <input type="text" class="form-control" placeholder="Slug" v-model="slider.slug" />
           <p v-if="errors.slug" v-text="errors.slug[0]" class="text-danger"></p>
         </div>
         <div class="form-group">
           <label for="" class="">Image</label>
-          <input
-            required
-            type="file"
-            id="slider_image"
-            class=""
-            name="image"
-            @change="(e) => (slider.image = e.target.files[0])"            
-            accept="image/*"
-          />
-          <p
-            v-if="errors.image"
-            v-text="errors.image[0]"
-            class="text-danger"
-          ></p>
+          <input required type="file" id="slider_image" class="" name="image"
+            @change="(e) => (slider.image = e.target.files[0])" accept="image/*" />
+          <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
         </div>
 
         <div class="d-flex justify-content-end">
@@ -76,29 +42,29 @@ export default {
   data() {
     return {
       slider: {
-        title: "",        
+        title: "",
         image: "",
-        slug: "",        
+        slug: "",
       },
       errors: {},
     };
   },
   methods: {
     addslider() {
-        let formData = new FormData();
-        formData.append('title', this.slider.title)
-        formData.append('description', this.slider.description)
-        formData.append('slug', this.slider.slug)
-        formData.append('image', this.slider.image)
+      let formData = new FormData();
+      formData.append('title', this.slider.title)
+      formData.append('description', this.slider.description)
+      formData.append('slug', this.slider.slug)
+      formData.append('image', this.slider.image)
       this.$axios
         .$post("/slider/add", formData)
-        .then((res) => {            
+        .then((res) => {
           this.slider = "";
           this.errors = {};
-          this.$toaster.success("Slider Added Successfully");  
-          this.$router.push("/dum-ac/slider");       
+          this.$toaster.success("Slider Added Successfully");
+          this.$router.push("/dum-ac/slider");
         })
-        .catch((error) => {            
+        .catch((error) => {
           this.errors = error.response.data.errors;
         });
     },

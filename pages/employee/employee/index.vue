@@ -10,41 +10,35 @@
                   <h4 class="title">Employee List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
-                  <nuxt-link to="/employee/employee/create" class="btn-add"
-                    >Add Employee</nuxt-link
-                  >
+                  <nuxt-link to="/employee/employee/create" class="btn-add">Add Employee</nuxt-link>
                 </div>
               </div>
             </div>
             <div class="panel-body table-responsive">
               <table class="table table-striped text-center">
                 <thead>
-                  <tr>                    
+                  <tr>
                     <th>Name</th>
-                    <th>Designation</th>                    
+                    <th>Designation</th>
                     <th>Depertment</th>
                     <th>E-mail</th>
                     <th>Job Type</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="employee in employees" :key="employee._id">                    
-                    <td>{{ employee.title }}</td>
-                    <td>{{ employee.description }}</td>                    
+                  <tr v-for="employee in employees" :key="employee._id">
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.rel_designation.designation }}</td>
+                    <td>{{ employee.rel_department.department }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.jobtype }}</td>
                     <td>
-                      <button
-                        v-if="employee.status == 1"
-                        class="btn-active"
-                        @click="employeeStatus(employee.id, employee.status)"
-                      >
+                      <button v-if="employee.status == 1" class="btn-active" @click="employeeStatus(employee.id)">
                         Active
                       </button>
-                      <button
-                        v-if="employee.status == 0"
-                        class="btn-inactive"
-                        @click="employeeStatus(employee.id, employee.status)"
-                      >
+                      <button v-if="employee.status == 0" class="btn-inactive" @click="employeeStatus(employee.id)">
                         Inactive
                       </button>
                     </td>
@@ -65,38 +59,23 @@
       </div>
 
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="employeeUpdate"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="employeeUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">
                 employee Update
               </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              
+
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-submit"
-                @click="employeeUpdate()"
-              >
+              <button type="button" class="btn btn-submit" @click="employeeUpdate()">
                 Update
               </button>
             </div>
@@ -110,16 +89,17 @@
 export default {
   layout: "Emp-content",
   mounted() {
-    
+    this.getEmployee();
+
   },
   data() {
     return {
-    
+      employees: [],
       errors: {},
     };
   },
   methods: {
-    getemployee() {
+    getEmployee() {
       this.$axios
         .$get("/employee/show")
         .then((res) => {
@@ -159,7 +139,7 @@ export default {
         this.$axios
           .$get("/employee/delete/" + id)
           .then((res) => {
-            this.getemployee();
+            this.getEmployee();
             this.$toaster.error(res.message);
           })
           .catch((err) => {
@@ -169,9 +149,9 @@ export default {
     },
     employeeStatus(id, status) {
       this.$axios
-        .$get("/employee/status/" + id + "/" + status)
+        .$get("/employee/status/" + id)
         .then((res) => {
-          this.getemployee();
+          this.getEmployee();
           this.$toaster.success(res.message);
         })
         .catch((err) => {
@@ -181,4 +161,5 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+</style>

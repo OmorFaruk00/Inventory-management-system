@@ -10,39 +10,31 @@
                   <h4 class="title">designation List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
-                  <nuxt-link to="/employee/designation/create" class="btn-add"
-                    >Add designation</nuxt-link
-                  >
+                  <nuxt-link to="/employee/designation/create" class="btn-add">Add designation</nuxt-link>
                 </div>
               </div>
             </div>
             <div class="panel-body table-responsive">
               <table class="table table-striped text-center">
                 <thead>
-                  <tr>                    
+                  <tr>
                     <th>Type</th>
-                    <th>designation Name</th>                    
+                    <th>designation Name</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="designation in designations" :key="designation._id">                    
+                  <tr v-for="designation in designations" :key="designation._id">
                     <td>{{ designation.type }}</td>
-                    <td>{{ designation.designation}}</td>                    
+                    <td>{{ designation.designation }}</td>
                     <td>
-                      <button
-                        v-if="designation.status == 1"
-                        class="btn-active"
-                        @click="designationStatus(designation.id)"
-                      >
+                      <button v-if="designation.status == 1" class="btn-active"
+                        @click="designationStatus(designation.id)">
                         Active
                       </button>
-                      <button
-                        v-if="designation.status == 0"
-                        class="btn-inactive"
-                        @click="designationStatus(designation.id)"
-                      >
+                      <button v-if="designation.status == 0" class="btn-inactive"
+                        @click="designationStatus(designation.id)">
                         Inactive
                       </button>
                     </td>
@@ -63,59 +55,44 @@
       </div>
 
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="designationUpdate"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="designationUpdate" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="title">
                 designation Update
               </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-               <div class="form-horizontal">
-                    <div class="form-group">
-                        <label>Type</label>
-                        <select class="form-control" v-model="designation.type">
-                            <option disabled selected value="">Select Type</option>
-                            <option value="Academic">Academic</option>
-                            <option value="Non Academic">Non Academic</option>
-                        </select>
-                        <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
-                    </div>
-                    <div class="form-group">
-                        <label>designation Name </label>
-                        <input type="text" class="form-control" placeholder="designation Name "
-                            v-model="designation.designation" />
-                    </div>
-                    <h6 v-if="errors.designation" v-text="errors.designation[0]" class="text-danger"></h6>
-                    
-
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label>Type</label>
+                  <select class="form-control" v-model="designation.type">
+                    <option disabled selected value="">Select Type</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Non Academic">Non Academic</option>
+                  </select>
+                  <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
                 </div>
-              
+                <div class="form-group">
+                  <label>designation Name </label>
+                  <input type="text" class="form-control" placeholder="designation Name "
+                    v-model="designation.designation" />
+                </div>
+                <h6 v-if="errors.designation" v-text="errors.designation[0]" class="text-danger"></h6>
+
+
+              </div>
+
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn-submit"
-                @click="designationUpdate()"
-              >
+              <button type="button" class="btn-submit" @click="designationUpdate()">
                 Update
-              </button>              
+              </button>
             </div>
           </div>
         </div>
@@ -128,15 +105,15 @@ export default {
   layout: "Emp-content",
   mounted() {
     this.getDesignation();
-    
+
   },
   data() {
     return {
-    designations:'',
-    designation: {
-      type:"",
-      name:'',
-    },
+      designations: '',
+      designation: {
+        type: "",
+        name: '',
+      },
       errors: {},
     };
   },
@@ -170,8 +147,8 @@ export default {
           $("#designationUpdate").modal("hide");
           this.$toaster.success(res.message);
           this.errors = "";
-          
-                    
+
+
         })
         .catch((err) => {
           console.log(err);
@@ -193,7 +170,7 @@ export default {
     },
     designationStatus(id) {
       this.$axios
-        .$get("/designation/status/" +id)
+        .$get("/designation/status/" + id)
         .then((res) => {
           console.log(res);
           this.getDesignation();
@@ -207,8 +184,9 @@ export default {
 
 
 
-    
+
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+</style>

@@ -36,6 +36,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [   
    '@/assets/css/main.css',
+  //  '/css/font-awesome.min.css',
   
   
   ],

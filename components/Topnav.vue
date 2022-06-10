@@ -9,14 +9,16 @@
       <div class="ml-auto">
         <div class="dropdown">
           <img src="/images/user.png" alt="user" class="user-icon" @click="userprofile()">
-          <div id="user" class="dropdown-content">
+          <div id="user" class="dropdown-content pt-4">
             <div class="user-info d-flex justify-content-center">
-              <img src="/images/user.png" alt="user" class="user-img">
+              
+              <!-- <img :src="'http://localhost:8000/images/emp/'+profile.user.profile_photo" alt="image" class="profile"/> -->
             </div>
             <div class="user-text">
               
-            {{ this.$auth.user.name }}
-              <h4>Md. Omor Faruk</h4>              
+           
+              <!-- <h4>{{profile.user.name}}</h4>  -->
+              <!-- <h4>{{profile.user.rel_designation.designation}}</h4>               -->
               <p>Junior Officer, Office of the IT & Admission & Information
                 omorfaruk.it@diu.ac</p>
                 
@@ -41,11 +43,13 @@ export default {
   // middleware: 'auth',
   data() {
     return {
+      profile:[],
       
     }
   },
 
   mounted() {
+    this.getProfile();
     this.$axios.$get('/sanctum/csrf-cookie');
     //toggle sidebar
     $("#menu-toggle").click(function (e) {
@@ -54,6 +58,16 @@ export default {
     });
   },
   methods: {
+       getProfile() {
+      this.$axios
+        .$get("/employee/profile")
+        .then((res) => {
+          this.profile = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     userprofile() {
       document.getElementById("user").classList.toggle("show");
     },
@@ -71,6 +85,13 @@ export default {
 }
 </script>
 <style scoped>
+.profile{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0px 50px;
+  /* padding: 0px 40px; */
+}
 .btn-logout{
   position: relative;
   float: right;
