@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
+const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
 const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
 const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
@@ -17,6 +18,9 @@ const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue'
 const _3af8abc0 = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
 const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
 const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
+const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
+const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
+const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
 const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.vue' /* webpackChunkName: "pages/dum-ac/facilitie/create" */))
 const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
@@ -25,6 +29,7 @@ const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue
 const _4bd116fe = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
 const _47c7edbf = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
 const _49c74162 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
+const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -50,6 +55,10 @@ export const routerOptions = {
     path: "/employee",
     component: _68d6c877,
     name: "employee"
+  }, {
+    path: "/profile",
+    component: _3fdc10d4,
+    name: "profile"
   }, {
     path: "/student",
     component: _094c3cb0,
@@ -91,6 +100,18 @@ export const routerOptions = {
     component: _2221a4dc,
     name: "employee-employee"
   }, {
+    path: "/employee/office-time",
+    component: _e1bd1134,
+    name: "employee-office-time"
+  }, {
+    path: "/profile/qualification",
+    component: _33ac7e76,
+    name: "profile-qualification"
+  }, {
+    path: "/profile/social",
+    component: _28f4c8c8,
+    name: "profile-social"
+  }, {
     path: "/dum-ac/event/create",
     component: _439a1db7,
     name: "dum-ac-event-create"
@@ -122,6 +143,10 @@ export const routerOptions = {
     path: "/employee/employee/create",
     component: _49c74162,
     name: "employee-employee-create"
+  }, {
+    path: "/employee/employee/update/:id?",
+    component: _374488da,
+    name: "employee-employee-update-id"
   }, {
     path: "/",
     component: _0ae5cb08,

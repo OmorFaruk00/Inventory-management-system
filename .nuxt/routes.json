@@ -21,6 +21,13 @@
     "_name": "_68d6c877"
   },
   {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/profile/index.vue",
+    "chunkName": "pages/profile/index",
+    "_name": "_3fdc10d4"
+  },
+  {
     "name": "student",
     "path": "/student",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/index.vue",
@@ -91,6 +98,27 @@
     "_name": "_2221a4dc"
   },
   {
+    "name": "employee-office-time",
+    "path": "/employee/office-time",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/office-time/index.vue",
+    "chunkName": "pages/employee/office-time/index",
+    "_name": "_e1bd1134"
+  },
+  {
+    "name": "profile-qualification",
+    "path": "/profile/qualification",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/profile/qualification/index.vue",
+    "chunkName": "pages/profile/qualification/index",
+    "_name": "_33ac7e76"
+  },
+  {
+    "name": "profile-social",
+    "path": "/profile/social",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/profile/social/index.vue",
+    "chunkName": "pages/profile/social/index",
+    "_name": "_28f4c8c8"
+  },
+  {
     "name": "dum-ac-event-create",
     "path": "/dum-ac/event/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/create.vue",
@@ -145,6 +173,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/employee/create.vue",
     "chunkName": "pages/employee/employee/create",
     "_name": "_49c74162"
+  },
+  {
+    "name": "employee-employee-update-id",
+    "path": "/employee/employee/update/:id?",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/employee/update/_id.vue",
+    "chunkName": "pages/employee/employee/update/_id",
+    "_name": "_374488da"
   },
   {
     "name": "index",

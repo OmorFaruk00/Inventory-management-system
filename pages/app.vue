@@ -36,6 +36,16 @@
 					<p class="app-title">Employee Management</p>
 				</nuxt-link>
 			</div>
+			<div class="col-md-3 col-xl-2 col-sm-6 app">
+				<nuxt-link class="app-link" to="/profile">
+					<div class="app">
+						<div class="app-icon">
+							<img src="images/app-profile.png" class="" alt="">
+						</div>
+					</div>
+					<p class="app-title">Profile</p>
+				</nuxt-link>
+			</div>
 
 
 

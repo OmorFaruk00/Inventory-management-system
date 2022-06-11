@@ -42,7 +42,8 @@
     border-radius: 10px;
 }
 .btn-delete:hover{
-    background: #21537f;;
+    background: #21537f;
+    color: #fff;
 }
 .btn-active{
     background:#3a900c;
@@ -52,7 +53,8 @@
     border-radius: 10px;
 }
 .btn-active:hover{
-    background: #21537f;;
+    background: #21537f;
+    color: #fff;
 }
 .btn-inactive{
     background:#b02f0f;
@@ -62,7 +64,8 @@
     border-radius: 10px;
 }
 .btn-inactive:hover{
-    background: #21537f;;
+    background: #21537f;
+    color: #fff;
 }
 .btn-submit{
     color: #fff;
@@ -80,6 +83,7 @@
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
     outline: none;
+    color: #fff;
 }
 /* form */
 .form-container {

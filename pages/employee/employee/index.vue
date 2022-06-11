@@ -7,7 +7,7 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col col-sm-5 col-xs-12">
-                  <h4 class="title">Employee List</h4>
+                  <h6 class="title">Employee List</h6>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
                   <nuxt-link to="/employee/employee/create" class="btn-add">Add Employee</nuxt-link>
@@ -43,12 +43,11 @@
                       </button>
                     </td>
                     <td>
-                      <button class="btn-edit" @click="employeeEdit(employee.id)">
-                        Edit
-                      </button>
-                      <button class="btn-delete" @click="employeeDelete(employee.id)">
+                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn btn-edit">Edit</nuxt-link>
+
+                      <!-- <button class="btn-delete " @click="employeeDelete(employee.id)">
                         Delete
-                      </button>
+                      </button> -->
                     </td>
                   </tr>
                 </tbody>
@@ -75,9 +74,10 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-submit" @click="employeeUpdate()">
+
+              <!-- <button type="button" class="btn btn-submit" @click="employeeUpdate()">
                 Update
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -108,32 +108,7 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-    },
-    employeeEdit(id) {
-      $("#employeeUpdate").modal("show");
-      this.$axios
-        .$get("/employee/edit/" + id)
-        .then((res) => {
-          this.employee = res;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    employeeUpdate() {
-      this.$axios
-        .$post("/employee/update/" + this.employee.id, this.employee)
-        .then((res) => {
-          this.getemployee();
-          $("#employeeUpdate").modal("hide");
-          this.$toaster.success(res.message);
-          this.errors = "";
-        })
-        .catch((err) => {
-          console.log(err);
-          this.errors = err.response.data.errors;
-        });
-    },
+    },    
     employeeDelete(id) {
       if (confirm("Are you sure to delete this employee?")) {
         this.$axios

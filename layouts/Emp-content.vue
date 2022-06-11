@@ -10,6 +10,7 @@
               <path
                 d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>Employee</nuxt-link>
+            <nuxt-link class="sidebar-item" to="/employee/office-time"><img src="/images/time.png" alt="" /> Manage Office Time</nuxt-link>
           <nuxt-link class="sidebar-item" to="/employee/department"><img src="/images/dept.png" alt="" /> Department
           </nuxt-link>
           <nuxt-link class="sidebar-item" to="/employee/designation"><svg xmlns="http://www.w3.org/2000/svg"
@@ -37,15 +38,13 @@ export default {};
 </script>
 <style scoped>
 .sidebar {
-  line-height: 50px;
-  padding-left: 20px;
-  padding-right: 40px;
+  line-height: 50px;  
+  
 }
 
 .sidebar-item {
-  font-size: 18px;
-  color: #000;
-  /* padding: 0px 50px; */
+  font-size: 15px;
+  color: #000;  
 }
 
 .sidebar-item svg,
@@ -55,25 +54,11 @@ img {
   padding-left: 20px;
 }
 
-.user {
-  height: 30px;
-  padding-right: 30px;
-}
 
-.cms-title {
-  padding-left: 50px;
-  color: #fff;
-  font-weight: bolder;
-}
-
-.topnav {
-  background: #337ab7;
-}
 
 .nuxt-link-exact-active {
   background: #fff !important;
-  color: #000;
-  border-radius: 10px;
+  color: #000;  
 }
 
 #sidebar-wrapper {
