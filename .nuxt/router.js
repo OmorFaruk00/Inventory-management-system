@@ -21,6 +21,7 @@ const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.
 const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
 const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
+const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
 const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.vue' /* webpackChunkName: "pages/dum-ac/facilitie/create" */))
 const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
@@ -29,6 +30,9 @@ const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue
 const _4bd116fe = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
 const _47c7edbf = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
 const _49c74162 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
+const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
+const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
+const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -112,6 +116,10 @@ export const routerOptions = {
     component: _28f4c8c8,
     name: "profile-social"
   }, {
+    path: "/profile/training",
+    component: _25a963c9,
+    name: "profile-training"
+  }, {
     path: "/dum-ac/event/create",
     component: _439a1db7,
     name: "dum-ac-event-create"
@@ -143,6 +151,18 @@ export const routerOptions = {
     path: "/employee/employee/create",
     component: _49c74162,
     name: "employee-employee-create"
+  }, {
+    path: "/profile/qualification/create",
+    component: _69979b08,
+    name: "profile-qualification-create"
+  }, {
+    path: "/profile/social/create",
+    component: _a63bbabc,
+    name: "profile-social-create"
+  }, {
+    path: "/profile/training/create",
+    component: _91913fd6,
+    name: "profile-training-create"
   }, {
     path: "/employee/employee/update/:id?",
     component: _374488da,

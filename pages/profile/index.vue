@@ -5,39 +5,47 @@
                 <div class="profile-body">
                     <h2 class="text-center pb-4 font-weight-bold">Profile</h2>
                     <hr>
-                    <div class="text-center py-3">                        
-                        <img :src="'http://localhost:8000/images/emp/'+$auth.user.profile_photo" alt="image" width="200" class="rounded-circle"/>
+                    <div class="text-center ">
+                        <img :src="'http://localhost:8000/images/emp/' + $auth.user.profile_photo" alt="image"
+                            class="rounded-circle profile_img" />
                     </div>
-                    <div class="text-center mt-3">
-                        <h4 class=" mb-2">{{$auth.user.name}}</h4>
-                        <h6>{{$auth.user.rel_designation.designation}}</h6>
-                        <ul class="social">
-                            <li>
-                                 <a href="#" ><img src="/images/fb.png" alt="" class="social-icon"></a>
+                    <div class="text-center ">
+                        <h4 class=" mb-2">{{ $auth.user.name }}</h4>
+                        <h6>{{ $auth.user.rel_designation.designation }}</h6> 
+                        
+                                             
+                      <div class="d-flex justify-content-center" v-if="socials!=''">
+                            <ul class="social" v-for="social in socials" :key="social._id" >
+                            <li v-if="social.social_name=='Facebook'">
+                                <a :href="social.social_url"><img src="/images/fb.png" alt="" class="social-icon"></a>
                             </li>
-                            <li>
-                                <a href="#" ><img src="/images/twi.png" alt="" class="social-icon"></a>
+                            <li v-if="social.social_name=='Twitter'">
+                                <a :href="social.social_url"><img src="/images/twi.png" alt="" class="social-icon"></a>
                             </li>
-                            <li>
-                                 <a href="#" ><img src="/images/ins.png" alt="" class="social-icon"></a>
+                          <li v-if="social.social_name=='Instagram'">
+                                <a :href="social.social_url"><img src="/images/ins.png" alt="" class="social-icon"></a>
                             </li>
-                            <li>
-                                 <a href="#" ><img src="/images/google.png" alt="" class="social-icon"></a>
+                            <li v-if="social.social_name=='LinkedIn'">
+                                <a :href="social.social_url"><img src="/images/linkedin.png" alt="" class="social-icon"></a>
+                            </li>
+                             <li v-if="social.social_name=='WhatsApp'">
+                                <a :href="social.social_url"><img src="/images/whatsapp.png" alt="" class="social-icon"></a>
                             </li>
                         </ul>
-                        <div class="contact-info">
+                      </div>
+                        <div class="contact-info pt-3 ">
                             <h6>E-mail :
-                                <small>{{$auth.user.email}}</small>
+                                <small>{{ $auth.user.email }}</small>
                             </h6>
                             <h6>Phone :
-                                <small>{{$auth.user.personal_phone_no}}</small>
+                                <small>{{ $auth.user.personal_phone_no }}</small>
                             </h6>
                             <h6>Mobile :
-                               <small>{{$auth.user.alternative_phone_no}}</small>
+                                <small>{{ $auth.user.alternative_phone_no }}</small>
                             </h6>
                         </div>
-                        <hr>
-                        <div class="profile-info">
+                        <hr>                        
+                        <div class="profile-info pb-4" v-if="about!=''">
                             <div class="about">
                                 <h4 class="about-title">About</h4>
                                 <p class="about-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -48,6 +56,57 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="profile-info pb-4" v-if="qualifications !=''">
+                            <div class="about">
+                                <h4 class="about-title">Academic Qualification</h4>
+                                <div class="px-3">
+                                    <table class="table table-striped text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>Degree Name</th>
+                                                <th>Institute Name</th>
+                                                <th>Department</th>
+                                                <th>Passsing Year</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="qualification in qualifications" :key="qualification._id">
+                                                <td>{{ qualification.degree_name }}</td>
+                                                <td>{{ qualification.institute_name }}</td>
+                                                <td>{{ qualification.subject }}</td>
+                                                <td>{{ qualification.passing_year }}</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-info pb-4" v-if="trainings!=''">
+                            <div class="about">
+                                <h4 class="about-title">Training Experience</h4>
+                                <div class="px-3">
+                                    <table class="table table-striped text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>Training Name</th>
+                                                <th>Institute Name</th>
+                                                <th>Duration</th>
+                                                <th>Training Year</th>                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="training in trainings" :key="training._id">
+                                                <td>{{ training.training_name }}</td>
+                                                <td>{{ training.institute_name }}</td>
+                                                <td>{{ training.duration }}</td>
+                                                <td>{{ training.training_year }}</td>                                              
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,13 +115,59 @@
 </template>
             <script>
 export default {
-    layout: "Profile-content"
+    layout: "Profile-content",
+    mounted() {
+        this.getQualification();
+        this.getTraining();
+        this.getsocial();
+    },
+    data() {
+        return {
+            qualifications: [],
+            trainings: [],
+            socials: [],
+            about:1,
+        }
+    },
+
+    methods: {
+     getsocial() {
+      this.$axios
+        .$get("/social/show")
+        .then((res) => {            
+          this.socials = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+        getQualification() {
+            this.$axios
+                .$get("/qualification/show")
+                .then((res) => {
+                    this.qualifications = res;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+        getTraining() {
+      this.$axios
+        .$get("/training/show")
+        .then((res) => {
+          console.log(res);
+          this.trainings = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    }
 }
 </script>
             <style scoped>
-
-
 .profile-body {
+    width: 100%;
     border: none;
     position: relative;
     overflow: hidden;
@@ -77,7 +182,12 @@ export default {
 .profile-body:hover::after {
     transform: scaleY(1)
 }
-
+.profile_img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
 .profile-info {
     padding: 0px 100px;
 }
@@ -116,7 +226,7 @@ export default {
     margin-bottom: 10px;
 }
 
-.social-icon{
+.social-icon {
     display: block;
     width: 35px;
     height: 35px;
@@ -125,7 +235,7 @@ export default {
     background: #fff;
     font-size: 20px;
     color: #4c5462;
-    margin-right: 5px;
+    margin-right: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     transition: all 0.5s ease 0s;
 }
