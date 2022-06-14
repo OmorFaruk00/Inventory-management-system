@@ -67,6 +67,17 @@
     background: #21537f;
     color: #fff;
 }
+.btn-details{
+    background:#3fb43d;
+    color:#fff;
+    border:none;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.btn-details:hover{
+    background: #21537f;
+    color: #fff;
+}
 .btn-submit{
     color: #fff;
     background: #00a9ef;

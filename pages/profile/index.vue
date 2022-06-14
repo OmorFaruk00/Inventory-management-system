@@ -6,15 +6,15 @@
                     <h2 class="text-center pb-4 font-weight-bold">Profile</h2>
                     <hr>
                     <div class="text-center ">
-                        <img :src="'http://localhost:8000/images/emp/' + $auth.user.profile_photo" alt="image"
+                        <img :src="'http://localhost:8000/images/emp/' + profile.profile_photo" alt="image"
                             class="rounded-circle profile_img" />
                     </div>
                     <div class="text-center ">
-                        <h4 class=" mb-2">{{ $auth.user.name }}</h4>
-                        <h6>{{ $auth.user.rel_designation.designation }}</h6> 
+                        <h4 class=" mb-2">{{ profile.name }}</h4>
+                        <h6 v-if="profile.rel_designation">{{ profile.rel_designation.designation}}</h6> 
                         
                                              
-                      <div class="d-flex justify-content-center" v-if="socials!=''">
+                      <div class="d-flex justify-content-center" v-if="profile.rel_social!=''">
                             <ul class="social" v-for="social in socials" :key="social._id" >
                             <li v-if="social.social_name=='Facebook'">
                                 <a :href="social.social_url"><img src="/images/fb.png" alt="" class="social-icon"></a>
@@ -35,28 +35,25 @@
                       </div>
                         <div class="contact-info pt-3 ">
                             <h6>E-mail :
-                                <small>{{ $auth.user.email }}</small>
+                                <small>{{ profile.email }}</small>
                             </h6>
                             <h6>Phone :
-                                <small>{{ $auth.user.personal_phone_no }}</small>
+                                <small>{{ profile.personal_phone_no }}</small>
                             </h6>
                             <h6>Mobile :
-                                <small>{{ $auth.user.alternative_phone_no }}</small>
+                                <small>{{ profile.alternative_phone_no }}</small>
                             </h6>
                         </div>
+                        
                         <hr>                        
-                        <div class="profile-info pb-4" v-if="about!=''">
+                        <div class="profile-info pb-4" v-if="profile.about!=null">
                             <div class="about">
                                 <h4 class="about-title">About</h4>
-                                <p class="about-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Eveniet, quas aspernatur. Deleniti, autem. Facere error natus odio repudiandae,
-                                    iusto quibusdam repellendus! Ullam nihil est unde cumque, voluptate eveniet
-                                    quidem dolore, culpa possimus minima dignissimos ducimus aliquam molestiae velit
-                                    sed non!
-                                </p>
+                                <p class="about-desc">{{ profile.about }}</p>
+                                
                             </div>
                         </div>
-                        <div class="profile-info pb-4" v-if="qualifications !=''">
+                        <div class="profile-info pb-4" v-if="profile.rel_qualification.length>0">
                             <div class="about">
                                 <h4 class="about-title">Academic Qualification</h4>
                                 <div class="px-3">
@@ -70,7 +67,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="qualification in qualifications" :key="qualification._id">
+                                            <tr v-for="qualification in profile.rel_qualification" :key="qualification._id">
                                                 <td>{{ qualification.degree_name }}</td>
                                                 <td>{{ qualification.institute_name }}</td>
                                                 <td>{{ qualification.subject }}</td>
@@ -82,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-info pb-4" v-if="trainings!=''">
+                        <div class="profile-info pb-4" v-if="profile.rel_training.length>0">
                             <div class="about">
                                 <h4 class="about-title">Training Experience</h4>
                                 <div class="px-3">
@@ -96,7 +93,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="training in trainings" :key="training._id">
+                                            <tr v-for="training in profile.rel_training" :key="training._id">
                                                 <td>{{ training.training_name }}</td>
                                                 <td>{{ training.institute_name }}</td>
                                                 <td>{{ training.duration }}</td>
@@ -117,52 +114,28 @@
 export default {
     layout: "Profile-content",
     mounted() {
-        this.getQualification();
-        this.getTraining();
-        this.getsocial();
+        this.getUser();
+        
     },
     data() {
         return {
             qualifications: [],
             trainings: [],
             socials: [],
+            profile:[],
             about:1,
         }
     },
 
     methods: {
-     getsocial() {
-      this.$axios
-        .$get("/social/show")
-        .then((res) => {            
-          this.socials = res;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-        getQualification() {
-            this.$axios
-                .$get("/qualification/show")
-                .then((res) => {
-                    this.qualifications = res;
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        },
-        getTraining() {
-      this.$axios
-        .$get("/training/show")
-        .then((res) => {
-          console.log(res);
-          this.trainings = res;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+        getUser(){
+            this.$axios.get('/profile')
+            .then(response => {              
+                this.profile = response.data;
+            });
+        }
     }
+    
 }
 </script>
             <style scoped>

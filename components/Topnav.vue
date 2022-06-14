@@ -12,34 +12,30 @@
           <div id="user" class="dropdown-content pt-4">
             <div class="user-info d-flex justify-content-center">
 
-              <img :src="'http://localhost:8000/images/emp/' + $auth.user.profile_photo" alt="image" class="profile" />
+              <img :src="'http://localhost:8000/images/emp/' + profile.profile_photo" alt="image" class="profile" />
             </div>
             <div class="user-text">
-              <h4 class="pt-3">{{ $auth.user.name }}</h4>
-              <p>{{ $auth.user.rel_designation.designation }}</p>
-              <!-- <p>Junior Officer, Office of the IT & Admission & Information
-                omorfaruk.it@diu.ac</p> -->
+              <h4 class="pt-3">{{ profile.name }}</h4>
+              <p v-if="profile.rel_designation">{{ profile.rel_designation.designation }}</p>
             </div>
             <button class="btn-logout" @click="logout">Log out</button>
+
           </div>
         </div>
       </div>
-
     </nav>
   </div>
 </template>
 <script>
 export default {
-  // middleware: 'auth',
   data() {
     return {
       profile: [],
-
     }
   },
 
   mounted() {
-    this.$axios.$get('/sanctum/csrf-cookie');
+    this.getUser();
     //toggle sidebar
     $("#menu-toggle").click(function (e) {
       e.preventDefault();
@@ -49,6 +45,12 @@ export default {
   methods: {
     userprofile() {
       document.getElementById("user").classList.toggle("show");
+    },
+    getUser() {
+      this.$axios.get('/profile')
+        .then(response => {
+          this.profile = response.data;
+        });
     },
 
     logout() {

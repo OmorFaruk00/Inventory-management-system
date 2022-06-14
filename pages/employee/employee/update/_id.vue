@@ -21,28 +21,7 @@
                                     v-model="employee.email" />
                                 <h6 v-if="errors.email" v-text="errors.email[0]" class="text-danger"></h6>
                             </div>
-                        </div>
-                        <!-- <div class="col-md-6 col-xl-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Password*</label>
-                                <input type="password" class="form-control" placeholder="" id="showpassword"
-                                    v-model="employee.password" />
-                                <h6 v-if="errors.password" v-text="errors.password[0]" class="text-danger"></h6>
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" class="form-control" placeholder=""
-                                    v-model="employee.password_confirmation" />
-                                <h6 v-if="errors.password_confirmation" v-text="errors.password_confirmation[0]"
-                                    class="text-danger"></h6>
-
-
-                            </div>
-                        </div> -->
+                        </div>                       
                     </div>
 
 
@@ -196,9 +175,7 @@ export default {
             errors: [],
             employee: {
                 name: '',
-                email: '',
-                // password: '',
-                // password_confirmation: '',
+                email: '',                
                 date_of_birth: '',
                 personal_phone_no: '',
                 alternative_phone_no: '',
@@ -247,15 +224,12 @@ export default {
                     console.log(err);
                 });
         },
-        updateEmployee() {
-            console.log(this.employee);
+        updateEmployee() {       
 
 
             let formData = new FormData();
             formData.append('name', this.employee.name)
-            formData.append('email', this.employee.email)
-            // formData.append('password', this.employee.password)
-            // formData.append('password_confirmation', this.employee.password_confirmation)
+            formData.append('email', this.employee.email)           
             formData.append('date_of_birth', this.employee.date_of_birth)
             formData.append('personal_phone_no', this.employee.personal_phone_no)
             formData.append('alternative_phone_no', this.employee.alternative_phone_no)

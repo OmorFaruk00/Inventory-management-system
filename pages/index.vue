@@ -79,20 +79,9 @@
 							<div class="form-group py-4">
 								<!-- <nuxt-link class="btn float-right login_btn" to="/app">Login</nuxt-link> -->
 								<button class="btn float-right login_btn" @click="userLogin">Login</button>
-
-							</div>
-							
+							</div>						
 						
 					</div>
-
-					<!-- <div class="card-footer">
-						<div class="d-flex justify-content-center links">
-							Don't have an account?<a href="#">Sign Up</a>
-						</div>
-						<div class="d-flex justify-content-center">
-							
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
@@ -103,8 +92,7 @@
 
 export default {
 	auth:false,
-	mounted(){
-		this.$axios.$get('/sanctum/csrf-cookie');
+	mounted(){		
 
 
 },
@@ -120,20 +108,9 @@ export default {
   },
   methods: {
     async userLogin() {		
-      try {
-        let response = await this.$auth.loginWith('laravelSanctum', { data: this.login }) 	  
+      await this.$auth.loginWith('laravelSanctum', {data:this.login} ); 	  
 		this.$router.push('/app');
-		// this.$toaster.success("Login Successful");
-	 
-
-      } catch (error) {		   
-		 if(error.response.status == 422){			 
-			  this.errors = error.response.data.errors;
-		  }else{
-			 this.login_error = error.response.data.message;			  
-		  }
-		  
-	  }
+		this.$toaster.success("Login Successful");
 	}
 		  
 	

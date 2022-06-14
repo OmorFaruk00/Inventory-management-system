@@ -33,6 +33,7 @@ const _49c74162 = () => interopDefault(import('../pages/employee/employee/create
 const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -163,6 +164,10 @@ export const routerOptions = {
     path: "/profile/training/create",
     component: _91913fd6,
     name: "profile-training-create"
+  }, {
+    path: "/employee/employee/detail/:id?",
+    component: _01ba6062,
+    name: "employee-employee-detail-id"
   }, {
     path: "/employee/employee/update/:id?",
     component: _374488da,
