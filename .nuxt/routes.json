@@ -1,5 +1,12 @@
 [
   {
+    "name": "admission",
+    "path": "/admission",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/index.vue",
+    "chunkName": "pages/admission/index",
+    "_name": "_4275d176"
+  },
+  {
     "name": "app",
     "path": "/app",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/app.vue",
@@ -33,6 +40,27 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/index.vue",
     "chunkName": "pages/student/index",
     "_name": "_094c3cb0"
+  },
+  {
+    "name": "admission-form-import",
+    "path": "/admission/form-import",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/form-import.vue",
+    "chunkName": "pages/admission/form-import",
+    "_name": "_d353031c"
+  },
+  {
+    "name": "admission-form-sale",
+    "path": "/admission/form-sale",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/form-sale.vue",
+    "chunkName": "pages/admission/form-sale",
+    "_name": "_97d25958"
+  },
+  {
+    "name": "admission-form-stock",
+    "path": "/admission/form-stock",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/form-stock.vue",
+    "chunkName": "pages/admission/form-stock",
+    "_name": "_22fdd159"
   },
   {
     "name": "dum-ac-contact",

@@ -4,11 +4,15 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _4275d176 = () => interopDefault(import('../pages/admission/index.vue' /* webpackChunkName: "pages/admission/index" */))
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _d353031c = () => interopDefault(import('../pages/admission/form-import.vue' /* webpackChunkName: "pages/admission/form-import" */))
+const _97d25958 = () => interopDefault(import('../pages/admission/form-sale.vue' /* webpackChunkName: "pages/admission/form-sale" */))
+const _22fdd159 = () => interopDefault(import('../pages/admission/form-stock.vue' /* webpackChunkName: "pages/admission/form-stock" */))
 const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
 const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
 const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.vue' /* webpackChunkName: "pages/dum-ac/facilitie/index" */))
@@ -49,6 +53,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/admission",
+    component: _4275d176,
+    name: "admission"
+  }, {
     path: "/app",
     component: _78bf08cb,
     name: "app"
@@ -68,6 +76,18 @@ export const routerOptions = {
     path: "/student",
     component: _094c3cb0,
     name: "student"
+  }, {
+    path: "/admission/form-import",
+    component: _d353031c,
+    name: "admission-form-import"
+  }, {
+    path: "/admission/form-sale",
+    component: _97d25958,
+    name: "admission-form-sale"
+  }, {
+    path: "/admission/form-stock",
+    component: _22fdd159,
+    name: "admission-form-stock"
   }, {
     path: "/dum-ac/contact",
     component: _ec440f2c,

@@ -4,11 +4,28 @@
     <div class="d-flex" id="wrapper">
       <div class=" " id="sidebar-wrapper">
         <div class="list-group sidebar">
-          <nuxt-link class="sidebar-item" to="/profile"><img src="/images/profile.png" alt="" /> Profile</nuxt-link>
-          <nuxt-link class="sidebar-item" to="/profile/qualification"><img src="/images/qualification.png" alt="" /> Academic Qualification</nuxt-link>
-          <nuxt-link class="sidebar-item" to="/profile/social"><img src="/images/social.png" alt="" /> Social Contact
-          </nuxt-link>
-          <nuxt-link class="sidebar-item" to="/profile/training"><img src="/images/training.png" alt="" />Training Experience</nuxt-link>
+
+          <nuxt-link class="sidebar-item" to="/admission"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>
+        
+          <div class="dropdown_menu">
+            <a class="sidebar-item" @click.prevent="menu=!menu"><img src="/images/right-arrow1.png" alt="" style="height:15px"/>
+              
+               Admission Form
+            </a>
+            <div v-if="menu" class="dropdown_item">
+              <nuxt-link to="/admission/form-import" class="">                
+                Form Import
+              </nuxt-link>
+                <nuxt-link to="/admission/form-stock" class="">                
+                Form Stock
+              </nuxt-link>
+                <nuxt-link to="/admission/form-sale" class="">                
+                Form Sale
+              </nuxt-link>
+            </div>
+          </div>
+        
+          
         </div>
       </div>
       <!-- /#sidebar-wrapper -->
@@ -25,9 +42,35 @@
 </template>
 
 <script>
-export default {};
+export default {
+data(){
+    return {
+        menu: false,
+    }
+
+}
+}
 </script>
 <style scoped>
+.dropdown_menu a{  
+  cursor: pointer;
+  
+}
+.dropdown_item a{  
+  border: none;
+  padding-left: 60px;
+  line-height: 50px;
+  color: #000;
+  display: block;
+  font-size: 14px;
+
+  
+}
+
+/* .dropdown_item a:hover{  
+ background: #fff;
+  
+} */
 .sidebar {
   line-height: 50px;  
   
@@ -40,7 +83,7 @@ export default {};
 
 .sidebar-item svg,
 img {
-  height: 25px;
+  height: 20px;
   padding-right: 10px;
   padding-left: 20px;
 }

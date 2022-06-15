@@ -53,7 +53,7 @@
                                 
                             </div>
                         </div>
-                        <div class="profile-info pb-4" v-if="profile.rel_qualification.length>0">
+                        <div class="profile-info pb-4" v-if="profile.rel_qualification!=''">
                             <div class="about">
                                 <h4 class="about-title">Academic Qualification</h4>
                                 <div class="px-3">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-info pb-4" v-if="profile.rel_training.length>0">
+                        <div class="profile-info pb-4" v-if="profile.rel_training!=''">
                             <div class="about">
                                 <h4 class="about-title">Training Experience</h4>
                                 <div class="px-3">
