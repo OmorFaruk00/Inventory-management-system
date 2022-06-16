@@ -39,6 +39,7 @@ const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vu
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
+const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -192,6 +193,10 @@ export const routerOptions = {
     path: "/employee/employee/update/:id?",
     component: _374488da,
     name: "employee-employee-update-id"
+  }, {
+    path: "/admission/print-receive/:id?",
+    component: _21940a12,
+    name: "admission-print-receive-id"
   }, {
     path: "/",
     component: _0ae5cb08,

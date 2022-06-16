@@ -245,6 +245,13 @@
     "_name": "_374488da"
   },
   {
+    "name": "admission-print-receive-id",
+    "path": "/admission/print-receive/:id?",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/print-receive/_id.vue",
+    "chunkName": "pages/admission/print-receive/_id",
+    "_name": "_21940a12"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/index.vue",

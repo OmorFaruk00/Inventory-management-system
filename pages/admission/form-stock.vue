@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
       <h4 class="title pt-4">Form Import List</h4>
     <table class="table table-striped text-center">
       <thead>

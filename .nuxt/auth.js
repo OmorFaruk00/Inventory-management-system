@@ -83,7 +83,16 @@ export default function (ctx, inject) {
       "url": "http://localhost:8000/api/logout",
       "method": "post"
     },
-    "user": false
+    "user": {
+      "withCredentials": true,
+      "headers": {
+        "X-Requested-With": "XMLHttpRequest",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      "url": "http://localhost:8000/api/user",
+      "method": "get"
+    }
   },
   "name": "laravelSanctum",
   "cookie": {

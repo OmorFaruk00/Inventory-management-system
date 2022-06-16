@@ -78,6 +78,36 @@
     background: #21537f;
     color: #fff;
 }
+.btn-reset{
+    color: #fff;
+    background: #daaa1d;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 15px 9px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    border: none;
+}
+.btn-reset:hover{
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: #fff;
+}
+.btn-submit:hover{
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: #fff;
+}
+.btn-print:hover{
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: #fff;
+}
 .btn-submit{
     color: #fff;
     background: #00a9ef;
@@ -90,12 +120,19 @@
     transition: all 0.3s ease 0s;
     border: none;
 }
-.btn-submit:hover{
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
-    outline: none;
+.btn-print{
     color: #fff;
+    background: #49916d;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 15px 9px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    border: none;
 }
+
 /* form */
 .form-container {
     background-color: #fff;
