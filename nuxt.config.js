@@ -113,10 +113,11 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next',    
+    '@nuxtjs/auth-next',
     'bootstrap-vue/nuxt',
     'nuxt-sweetalert2',
   ],
+ 
  
  
 
