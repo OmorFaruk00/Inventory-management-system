@@ -2,51 +2,25 @@
   <div class="pt-5">
     <div class="col-md-6 mx-auto form-shadow p-5">
       <div class="d-flex justify-content-end">
-        <nuxt-link to="/dum-ac/event" class="btn-add"> Event List</nuxt-link>
+        <nuxt-link to="/dum-ac/event" class="btn-add"> event List</nuxt-link>
       </div>
       <form>
         <div class="form-group">
           <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Title"
-            v-model="event.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
+          <input type="text" class="form-control" placeholder="Title" v-model="event.title" />
+          <p v-if="errors.title" v-text="errors.title[0]" class="text-danger"></p>
         </div>
         <div class="form-group">
           <label for="" class="">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Description"
-            v-model="event.description"
-          />
-          <p
-            v-if="errors.description"
-            v-text="errors.description[0]"
-            class="text-danger"
-          ></p>
-        </div>
+          <input type="text" class="form-control" placeholder="Short Description" v-model="event.description" />
+          <p v-if="errors.description" v-text="errors.description[0]" class="text-danger"></p>
+        </div>       
         <div class="form-group">
-          <label for="" class="">Slug</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Slug"
-            v-model="event.slug"
-          />
-          <p v-if="errors.slug" v-text="errors.slug[0]" class="text-danger"></p>
+          <label for="" class="">Image</label>
+          <input required type="file" id="event_image" class="form-control" name="image"
+            @change="(e) => (event.image = e.target.files[0])" accept="image/*" />
+          <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
         </div>
-        <!-- {{$auth.user.name}} -->
 
         <div class="d-flex justify-content-end">
           <button class="btn-submit" @click.prevent="addevent()">
@@ -59,27 +33,31 @@
 </template>
 <script>
 export default {
-  layout: "Dum-content", 
+  layout: "Dum-content",
   data() {
     return {
       event: {
         title: "",
+        image: "",
         description: "",
-        slug: "",
-        created_by: this.$auth.user.name,
+       
       },
       errors: {},
     };
   },
   methods: {
-    addevent() {        
+    addevent() {
+      let formData = new FormData();
+      formData.append('title', this.event.title)
+      formData.append('description', this.event.description)      
+      formData.append('image', this.event.image)
       this.$axios
-        .$post("/event/add", this.event)
-        .then((res) => {           
+        .$post("/event/add", formData)
+        .then((res) => {
           this.event = "";
           this.errors = {};
-          this.$toaster.success(res.message);  
-          this.$router.push("/dum-ac/event");        
+          this.$toaster.success("Event Added Successfully");
+          this.$router.push("/dum-ac/event");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

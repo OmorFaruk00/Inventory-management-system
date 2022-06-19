@@ -14,15 +14,10 @@
           <label for="" class="">Short Description</label>
           <input type="text" class="form-control" placeholder="Short Description" v-model="slider.description" />
           <p v-if="errors.description" v-text="errors.description[0]" class="text-danger"></p>
-        </div>
-        <div class="form-group">
-          <label for="" class="">Slug</label>
-          <input type="text" class="form-control" placeholder="Slug" v-model="slider.slug" />
-          <p v-if="errors.slug" v-text="errors.slug[0]" class="text-danger"></p>
-        </div>
+        </div>       
         <div class="form-group">
           <label for="" class="">Image</label>
-          <input required type="file" id="slider_image" class="" name="image"
+          <input required type="file" id="slider_image" class="form-control" name="image"
             @change="(e) => (slider.image = e.target.files[0])" accept="image/*" />
           <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
         </div>
@@ -44,6 +39,7 @@ export default {
       slider: {
         title: "",
         image: "",
+        description: "",
         slug: "",
       },
       errors: {},

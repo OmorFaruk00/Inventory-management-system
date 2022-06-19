@@ -24,7 +24,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th style="width:200px">Action</th>
                   </tr>
                 </thead>
                 <tbody>

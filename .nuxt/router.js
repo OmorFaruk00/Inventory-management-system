@@ -19,6 +19,7 @@ const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.v
 const _e54c44fe = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
 const _48a254d1 = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
 const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
+const _eb70d104 = () => interopDefault(import('../pages/dum-ac/tution/index.vue' /* webpackChunkName: "pages/dum-ac/tution/index" */))
 const _3af8abc0 = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
 const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
 const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
@@ -31,6 +32,7 @@ const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.
 const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
 const _1946dfe6 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
 const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
+const _3340ba00 = () => interopDefault(import('../pages/dum-ac/tution/create.vue' /* webpackChunkName: "pages/dum-ac/tution/create" */))
 const _4bd116fe = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
 const _47c7edbf = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
 const _49c74162 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
@@ -114,6 +116,10 @@ export const routerOptions = {
     component: _298a884a,
     name: "dum-ac-slider"
   }, {
+    path: "/dum-ac/tution",
+    component: _eb70d104,
+    name: "dum-ac-tution"
+  }, {
     path: "/employee/department",
     component: _3af8abc0,
     name: "employee-department"
@@ -161,6 +167,10 @@ export const routerOptions = {
     path: "/dum-ac/slider/create",
     component: _2f7acbb4,
     name: "dum-ac-slider-create"
+  }, {
+    path: "/dum-ac/tution/create",
+    component: _3340ba00,
+    name: "dum-ac-tution-create"
   }, {
     path: "/employee/department/create",
     component: _4bd116fe,

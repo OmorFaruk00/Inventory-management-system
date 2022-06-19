@@ -7,11 +7,11 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col col-sm-5 col-xs-12">
-                  <h4 class="title">Notice List</h4>
+                  <h4 class="title">notice List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
                   <nuxt-link to="/dum-ac/notice/create" class="btn-add"
-                    >Add Notice</nuxt-link
+                    >Add notice</nuxt-link
                   >
                 </div>
               </div>
@@ -23,9 +23,9 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Description</th>
-                    <!-- <th>Slug</th> -->
+                    <th>Image</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th style="width:200px">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                     <td>{{ notice.id }}</td>
                     <td>{{ notice.title }}</td>
                     <td>{{ notice.description }}</td>
-                    <!-- <td>{{ notice.slug }}</td> -->
+                    <td><img :src="'http://localhost:8000/images/dum/'+notice.image" alt="image" style="height:80px"/></td>
                     <td>
                       <button
                         v-if="notice.status == 1"
@@ -54,7 +54,7 @@
                       <button class="btn-edit" @click="noticeEdit(notice.id)">Edit</button>
                       <button
                         class="btn-delete"
-                        @click="deleteNotice(notice.id)"
+                        @click="deletenotice(notice.id)"
                       >
                         Delete
                       </button>
@@ -68,11 +68,11 @@
       </div>
 
       <!-- Modal -->
-<div class="modal fade" id="NoticeUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="noticeUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Notice Update</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">notice Update</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -94,12 +94,12 @@
           ></p>
         </div>
         <div class="form-group">
-          <label for="" class="">Description</label>
+          <label for="" class="">Short Description</label>
           <input
             type="text"
             class="form-control"
             id="name"
-            placeholder="Description"
+            placeholder="Short Description"
             v-model="notice.description"
           />
           <p
@@ -107,8 +107,25 @@
             v-text="errors.description[0]"
             class="text-danger"
           ></p>
-        </div>        
-      </div>
+        </div>       
+          <div class="form-group">
+          <label for="" class="">Image</label>
+          <input
+            required
+            type="file"
+            id="notice_image"
+            class=""
+            name="image"
+            @change="(e) => (notice.image = e.target.files[0])"            
+            accept="image/*"
+          />
+          <p
+            v-if="errors.image"
+            v-text="errors.image[0]"
+            class="text-danger"
+          ></p>
+        </div>
+        </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
         <button type="button" class="btn btn-submit" @click="noticeUpdate()">Update</button>
@@ -122,25 +139,23 @@
 <script>
 export default {
   layout: "Dum-content",
-  mounted() {
-    this.$axios.$get("/sanctum/csrf-cookie");
-    this.getNotice();
+  mounted() {    
+    this.getnotice();
   },
   data() {
     return {
       notices: [],
-           notice: {
-        id: "",
+          notice: {        
         title: "",
         description: "",
-        slug: "",
-        
+        image:"",
+        slug: "",        
       },
       errors: {},
     };
   },
   methods: {
-    getNotice() {
+    getnotice() {
       this.$axios
         .$get("/notice/show")
         .then((res) => {
@@ -151,7 +166,7 @@ export default {
         });
     },
     noticeEdit(id){
-       $("#NoticeUpdate").modal("show");
+       $("#noticeUpdate").modal("show");
        this.$axios
         .$get("/notice/edit/" + id)
         .then((res) => {            
@@ -164,11 +179,15 @@ export default {
 
     },
     noticeUpdate(){
+        let formData = new FormData();
+        formData.append('title', this.notice.title)
+        formData.append('description', this.notice.description)        
+        formData.append('image', this.notice.image)
       this.$axios
-        .$post("/notice/update/" + this.notice.id , this.notice)
+        .$post("/notice/update/" + this.notice.id ,formData )
         .then((res) => {          
-          this.getNotice();
-          $("#NoticeUpdate").modal("hide");
+          this.getnotice();
+          $("#noticeUpdate").modal("hide");
           this.$toaster.success(res.message);
           this.errors="";
         })
@@ -177,12 +196,12 @@ export default {
           this.errors = err.response.data.errors;
         });
     },
-    deleteNotice(id) {
+    deletenotice(id) {
         if(confirm("Are you sure to delete this notice?")){
            this.$axios
         .$get("/notice/delete/" + id)
         .then((res) => {
-          this.getNotice();
+          this.getnotice();
           this.$toaster.error(res.message);
         })
         .catch((err) => {
@@ -195,7 +214,7 @@ export default {
       this.$axios
         .$get("/notice/status/" + id + "/" + status)
         .then((res) => {
-          this.getNotice();
+          this.getnotice();
           this.$toaster.success(res.message);
         })
         .catch((err) => {

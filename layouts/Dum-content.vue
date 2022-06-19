@@ -28,6 +28,7 @@
           <nuxt-link class="sidebar-item" to="/dum-ac/facilitie"><img src="/images/fac.png" alt="" />Facilities
           </nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/contact"><img src="/images/mail.png" alt="" />Contacts</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/dum-ac/tution"><img src="/images/fee.png" alt="" />Tution Fee</nuxt-link>
         </div>
       </div>
       <!-- /#sidebar-wrapper -->

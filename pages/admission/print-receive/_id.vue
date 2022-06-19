@@ -90,8 +90,6 @@ export default {
     layout: 'Adm-content',
     methods: {
         download() {
-
-
             window.html2canvas = html2canvas;
             var doc = new jsPDF('p', 'pt', 'a4');
             doc.html(document.querySelector("#html"), {
