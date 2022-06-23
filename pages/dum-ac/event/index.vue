@@ -10,9 +10,7 @@
                   <h4 class="title">event List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
-                  <nuxt-link to="/dum-ac/event/create" class="btn-add"
-                    >Add event</nuxt-link
-                  >
+                  <nuxt-link to="/dum-ac/event/create" class="btn-add">Add event</nuxt-link>
                 </div>
               </div>
             </div>
@@ -33,29 +31,19 @@
                     <td>{{ event.id }}</td>
                     <td>{{ event.title }}</td>
                     <td>{{ event.description }}</td>
-                    <td><img :src="'http://localhost:8000/images/dum/'+event.image" alt="image" style="height:80px"/></td>
+                    <td><img :src="'http://localhost:8000/images/dum/' + event.image" alt="image" style="height:80px" />
+                    </td>
                     <td>
-                      <button
-                        v-if="event.status == 1"
-                        class="btn-active"
-                        @click="eventStatus(event.id,event.status)"
-                      >
+                      <button v-if="event.status == 1" class="btn-active" @click="eventStatus(event.id)">
                         Active
                       </button>
-                      <button
-                        v-if="event.status == 0"
-                        class="btn-inactive"
-                        @click="eventStatus(event.id,event.status)"
-                      >
+                      <button v-if="event.status == 0" class="btn-inactive" @click="eventStatus(event.id)">
                         Inactive
                       </button>
                     </td>
                     <td>
                       <button class="btn-edit" @click="eventEdit(event.id)">Edit</button>
-                      <button
-                        class="btn-delete"
-                        @click="deleteevent(event.id)"
-                      >
+                      <button class="btn-delete" @click="deleteevent(event.id)">
                         Delete
                       </button>
                     </td>
@@ -68,88 +56,59 @@
       </div>
 
       <!-- Modal -->
-<div class="modal fade" id="eventUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">event Update</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal fade" id="eventUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">event Update</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="" class="">Title</label>
+                <input type="text" class="form-control" id="name" placeholder="Title" v-model="event.title" />
+                <p v-if="errors.title" v-text="errors.title[0]" class="text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label for="" class="">Short Description</label>
+                <input type="text" class="form-control" id="name" placeholder="Short Description"
+                  v-model="event.description" />
+                <p v-if="errors.description" v-text="errors.description[0]" class="text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label for="" class="">Image</label>
+                <input required type="file" id="event_image" class="" name="image"
+                  @change="(e) => (event.new_image = e.target.files[0])" accept="image/*" />
+                <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-submit" @click="eventUpdate()">Update</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-       <div class="form-group">
-          <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Title"
-            v-model="event.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
-        </div>
-        <div class="form-group">
-          <label for="" class="">Short Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Short Description"
-            v-model="event.description"
-          />
-          <p
-            v-if="errors.description"
-            v-text="errors.description[0]"
-            class="text-danger"
-          ></p>
-        </div>       
-          <div class="form-group">
-          <label for="" class="">Image</label>
-          <input
-            required
-            type="file"
-            id="event_image"
-            class=""
-            name="image"
-            @change="(e) => (event.image = e.target.files[0])"            
-            accept="image/*"
-          />
-          <p
-            v-if="errors.image"
-            v-text="errors.image[0]"
-            class="text-danger"
-          ></p>
-        </div>
-        </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="button" class="btn btn-submit" @click="eventUpdate()">Update</button>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 </template>
 <script>
 export default {
   layout: "Dum-content",
-  mounted() {    
+  mounted() {
     this.getevent();
   },
   data() {
     return {
       events: [],
-          event: {        
+      event: {
         title: "",
         description: "",
-        image:"",
-        slug: "",        
+        new_image: "",
+        slug: "",
       },
       errors: {},
     };
@@ -165,31 +124,34 @@ export default {
           console.log(err);
         });
     },
-    eventEdit(id){
-       $("#eventUpdate").modal("show");
-       this.$axios
+    eventEdit(id) {
+      $("#eventUpdate").modal("show");
+      this.$axios
         .$get("/event/edit/" + id)
-        .then((res) => {            
-            this.event = res;
-        
+        .then((res) => {
+          this.event = res;
+
         })
         .catch((err) => {
           console.log(err);
         });
 
     },
-    eventUpdate(){
-        let formData = new FormData();
-        formData.append('title', this.event.title)
-        formData.append('description', this.event.description)        
-        formData.append('image', this.event.image)
+    eventUpdate() {
+      let formData = new FormData();
+      formData.append('title', this.event.title)
+      formData.append('description', this.event.description)
+      if(this.event.new_image) {
+        formData.append('image', this.event.new_image)
+      }
+      
       this.$axios
-        .$post("/event/update/" + this.event.id ,formData )
-        .then((res) => {          
+        .$post("/event/update/" + this.event.id, formData)
+        .then((res) => {
           this.getevent();
           $("#eventUpdate").modal("hide");
           this.$toaster.success(res.message);
-          this.errors="";
+          this.errors = "";
         })
         .catch((err) => {
           console.log(err);
@@ -197,22 +159,22 @@ export default {
         });
     },
     deleteevent(id) {
-        if(confirm("Are you sure to delete this event?")){
-           this.$axios
-        .$get("/event/delete/" + id)
-        .then((res) => {
-          this.getevent();
-          this.$toaster.error(res.message);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        }
-    
+      if (confirm("Are you sure to delete this event?")) {
+        this.$axios
+          .$get("/event/delete/" + id)
+          .then((res) => {
+            this.getevent();
+            this.$toaster.error(res.message);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+
     },
-    eventStatus(id,status) {    
+    eventStatus(id) {
       this.$axios
-        .$get("/event/status/" + id + "/" + status)
+        .$get("/event/status/" + id)
         .then((res) => {
           this.getevent();
           this.$toaster.success(res.message);
@@ -220,9 +182,9 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-    },   
-        
-    
+    },
+
+
 
 
 
@@ -233,4 +195,5 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+</style>

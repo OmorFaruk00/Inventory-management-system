@@ -13,6 +13,8 @@ const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* we
 const _d353031c = () => interopDefault(import('../pages/admission/form-import.vue' /* webpackChunkName: "pages/admission/form-import" */))
 const _97d25958 = () => interopDefault(import('../pages/admission/form-sale.vue' /* webpackChunkName: "pages/admission/form-sale" */))
 const _22fdd159 = () => interopDefault(import('../pages/admission/form-stock.vue' /* webpackChunkName: "pages/admission/form-stock" */))
+const _2f8ce56a = () => interopDefault(import('../pages/dum-ac/blog/index.vue' /* webpackChunkName: "pages/dum-ac/blog/index" */))
+const _af4473ec = () => interopDefault(import('../pages/dum-ac/committee/index.vue' /* webpackChunkName: "pages/dum-ac/committee/index" */))
 const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
 const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
 const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.vue' /* webpackChunkName: "pages/dum-ac/facilitie/index" */))
@@ -27,6 +29,8 @@ const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/ind
 const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
+const _46ac66d3 = () => interopDefault(import('../pages/dum-ac/blog/create.vue' /* webpackChunkName: "pages/dum-ac/blog/create" */))
+const _e9e17418 = () => interopDefault(import('../pages/dum-ac/committee/create.vue' /* webpackChunkName: "pages/dum-ac/committee/create" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
 const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.vue' /* webpackChunkName: "pages/dum-ac/facilitie/create" */))
 const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
@@ -39,6 +43,7 @@ const _49c74162 = () => interopDefault(import('../pages/employee/employee/create
 const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/_id.vue' /* webpackChunkName: "pages/dum-ac/committee/update/_id" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
 const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
@@ -91,6 +96,14 @@ export const routerOptions = {
     path: "/admission/form-stock",
     component: _22fdd159,
     name: "admission-form-stock"
+  }, {
+    path: "/dum-ac/blog",
+    component: _2f8ce56a,
+    name: "dum-ac-blog"
+  }, {
+    path: "/dum-ac/committee",
+    component: _af4473ec,
+    name: "dum-ac-committee"
   }, {
     path: "/dum-ac/contact",
     component: _ec440f2c,
@@ -148,6 +161,14 @@ export const routerOptions = {
     component: _25a963c9,
     name: "profile-training"
   }, {
+    path: "/dum-ac/blog/create",
+    component: _46ac66d3,
+    name: "dum-ac-blog-create"
+  }, {
+    path: "/dum-ac/committee/create",
+    component: _e9e17418,
+    name: "dum-ac-committee-create"
+  }, {
     path: "/dum-ac/event/create",
     component: _439a1db7,
     name: "dum-ac-event-create"
@@ -195,6 +216,10 @@ export const routerOptions = {
     path: "/profile/training/create",
     component: _91913fd6,
     name: "profile-training-create"
+  }, {
+    path: "/dum-ac/committee/update/:id",
+    component: _56181728,
+    name: "dum-ac-committee-update-id"
   }, {
     path: "/employee/employee/detail/:id?",
     component: _01ba6062,

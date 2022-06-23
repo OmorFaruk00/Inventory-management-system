@@ -36,14 +36,14 @@
                       <button
                         v-if="facilitie.status == 1"
                         class="btn-active"
-                        @click="facilitieStatus(facilitie.id, facilitie.status)"
+                        @click="facilitieStatus(facilitie.id)"
                       >
                         Active
                       </button>
                       <button
                         v-if="facilitie.status == 0"
                         class="btn-inactive"
-                        @click="facilitieStatus(facilitie.id, facilitie.status)"
+                        @click="facilitieStatus(facilitie.id)"
                       >
                         Inactive
                       </button>
@@ -206,9 +206,9 @@ export default {
           });
       }
     },
-    facilitieStatus(id, status) {
+    facilitieStatus(id) {
       this.$axios
-        .$get("/facilitie/status/" + id + "/" + status)
+        .$get("/facilitie/status/" + id )
         .then((res) => {
           this.getfacilitie();
           this.$toaster.success(res.message);

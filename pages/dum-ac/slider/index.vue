@@ -38,14 +38,14 @@
                       <button
                         v-if="slider.status == 1"
                         class="btn-active"
-                        @click="sliderStatus(slider.id,slider.status)"
+                        @click="sliderStatus(slider.id)"
                       >
                         Active
                       </button>
                       <button
                         v-if="slider.status == 0"
                         class="btn-inactive"
-                        @click="sliderStatus(slider.id,slider.status)"
+                        @click="sliderStatus(slider.id)"
                       >
                         Inactive
                       </button>
@@ -210,9 +210,9 @@ export default {
         }
     
     },
-    sliderStatus(id,status) {    
+    sliderStatus(id) {    
       this.$axios
-        .$get("/slider/status/" + id + "/" + status)
+        .$get("/slider/status/" + id)
         .then((res) => {
           this.getslider();
           this.$toaster.success(res.message);

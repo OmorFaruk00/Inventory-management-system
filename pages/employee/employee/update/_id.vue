@@ -21,7 +21,7 @@
                                     v-model="employee.email" />
                                 <h6 v-if="errors.email" v-text="errors.email[0]" class="text-danger"></h6>
                             </div>
-                        </div>                       
+                        </div>
                     </div>
 
 
@@ -78,8 +78,7 @@
                                 <label>Date Of Joining *</label>
                                 <input type="date" class="form-control" placeholder=""
                                     v-model="employee.date_of_join" />
-                                <h6 v-if="errors.date_of_join" v-text="errors.date_of_join[0]"
-                                    class="text-danger"></h6>
+                                <h6 v-if="errors.date_of_join" v-text="errors.date_of_join[0]" class="text-danger"></h6>
                             </div>
                         </div>
 
@@ -151,8 +150,8 @@
                     </div>
                     <!-- <p class="text-danger">{{ employee }}</p> -->
                 </form>
-                
-                
+
+
 
             </div>
         </div>
@@ -162,12 +161,12 @@
 export default {
     layout: "Emp-content",
     mounted() {
-        this.employeeEdit() ;
+        this.employeeEdit();
         this.getDesignation();
         this.getDepartment();
 
     },
-    
+
     data() {
         return {
             designations: [],
@@ -175,7 +174,7 @@ export default {
             errors: [],
             employee: {
                 name: '',
-                email: '',                
+                email: '',
                 date_of_birth: '',
                 personal_phone_no: '',
                 alternative_phone_no: '',
@@ -192,18 +191,18 @@ export default {
 
     },
     methods: {
-          employeeEdit() {      
-      this.$axios
-        .$get("/employee/edit/" +this.$route.params.id)
-        .then((res) => {
-            
-            console.log(res);
-          this.employee = res;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+        employeeEdit() {
+            this.$axios
+                .$get("/employee/edit/" + this.$route.params.id)
+                .then((res) => {
+
+                    console.log(res);
+                    this.employee = res;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
         getDesignation() {
             this.$axios
                 .$get("/designation/show")
@@ -224,12 +223,12 @@ export default {
                     console.log(err);
                 });
         },
-        updateEmployee() {       
+        updateEmployee() {
 
 
             let formData = new FormData();
             formData.append('name', this.employee.name)
-            formData.append('email', this.employee.email)           
+            formData.append('email', this.employee.email)
             formData.append('date_of_birth', this.employee.date_of_birth)
             formData.append('personal_phone_no', this.employee.personal_phone_no)
             formData.append('alternative_phone_no', this.employee.alternative_phone_no)
@@ -249,7 +248,7 @@ export default {
                     this.employee = "";
                     this.errors = {};
                     this.$toaster.success(res.message);
-                      this.$router.push("/employee/employee");       
+                    this.$router.push("/employee/employee");
                 })
                 .catch((error) => {
                     this.errors = error.response.data.errors;

@@ -6,6 +6,15 @@
             </div>
             <div>
                 <div class="form-group">
+                    <label for="" class="">Name Of Program</label>
+                      <select class="form-control" v-model="tution.name_of_program">
+                        <option disabled selected value="">Select Program</option>
+                        <option :value="program.name" v-for="program in programs" :key="program.id">{{program.name}}</option>         
+                        
+                    </select>
+                    <p v-if="errors.name_of_program" v-text="errors.name_of_program[0]" class="text-danger"></p>
+                </div>
+                <div class="form-group">
                     <label>Type</label>
                     <select class="form-control" v-model="tution.type">
                         <option disabled selected value="">Select Type</option>
@@ -14,13 +23,7 @@
                         <option value="day_care">Day Care</option>
                     </select>
                     <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
-                </div>
-                <div class="form-group">
-                    <label for="" class="">Name Of Program</label>
-                    <input type="text" class="form-control" id="name_of_program" placeholder="Name Of Program"
-                        v-model="tution.name_of_program" />
-                    <p v-if="errors.name_of_program" v-text="errors.name_of_program[0]" class="text-danger"></p>
-                </div>
+                </div>                
                 <div class="form-group">
                     <label>Duration</label>
                     <select class="form-control" v-model="tution.duration">
@@ -28,7 +31,7 @@
                         <option value="1 Year">1 Year</option>
                         <option value="2 Year">2 Year</option>
                         <option value="3 Year">3 Year</option>
-                        <option value="4 Year">4 Year</option>
+                        <option value="4 Year">4 Year</option>                              
                         
                     </select>
                     <h6 v-if="errors.duration" v-text="errors.duration[0]" class="text-danger"></h6>
@@ -43,8 +46,9 @@
                 <div class="d-flex justify-content-end">
                     <button class="btn-submit" @click.prevent="addTution()">
                         Submit
-                    </button>
-                </div>
+                    </button>                    
+                </div> 
+                            
             </div>
         </div>
     </div>
@@ -61,11 +65,27 @@ export default {
                 type: "",
 
 
-            },
+            },            
+            programs:'',
             errors: {},
         };
     },
+    mounted(){
+        this.getProgram();
+
+    },
     methods: {
+          getProgram() {
+      this.$axios
+        .$get("/program/show")
+        .then((res) => {
+          this.programs = res;          
+                  
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
         addTution() {
             this.$axios
                 .$post("/tution/add", this.tution)

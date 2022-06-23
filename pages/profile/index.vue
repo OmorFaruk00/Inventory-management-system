@@ -14,8 +14,8 @@
                         <h6 v-if="profile.rel_designation">{{ profile.rel_designation.designation}}</h6> 
                         
                                              
-                      <div class="d-flex justify-content-center" v-if="profile.rel_social!=''">
-                            <ul class="social" v-for="social in socials" :key="social._id" >
+                      <div class="d-flex justify-content-center" v-if="profile.rel_social">
+                            <ul class="social" v-for="social in profile.rel_social" :key="social._id" >
                             <li v-if="social.social_name=='Facebook'">
                                 <a :href="social.social_url"><img src="/images/fb.png" alt="" class="social-icon"></a>
                             </li>
@@ -32,7 +32,8 @@
                                 <a :href="social.social_url"><img src="/images/whatsapp.png" alt="" class="social-icon"></a>
                             </li>
                         </ul>
-                      </div>
+                      </div>  
+                      <!-- {{profile.rel_social}}                    -->
                         <div class="contact-info pt-3 ">
                             <h6>E-mail :
                                 <small>{{ profile.email }}</small>

@@ -29,6 +29,8 @@
           </nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/contact"><img src="/images/mail.png" alt="" />Contacts</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/tution"><img src="/images/fee.png" alt="" />Tution Fee</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/dum-ac/blog"><img src="/images/blog.png" alt="" />Blogs</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/dum-ac/committee"><img src="/images/committee.png" alt="" />Committee</nuxt-link>
         </div>
       </div>
       <!-- /#sidebar-wrapper -->
@@ -59,7 +61,7 @@ export default {
 .sidebar {
   
   line-height: 50px;
-  padding-left: 40px; 
+  padding-left: 20px; 
   padding-right: 40px;
 }
 

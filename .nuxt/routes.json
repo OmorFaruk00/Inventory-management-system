@@ -63,6 +63,20 @@
     "_name": "_22fdd159"
   },
   {
+    "name": "dum-ac-blog",
+    "path": "/dum-ac/blog",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/blog/index.vue",
+    "chunkName": "pages/dum-ac/blog/index",
+    "_name": "_2f8ce56a"
+  },
+  {
+    "name": "dum-ac-committee",
+    "path": "/dum-ac/committee",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/committee/index.vue",
+    "chunkName": "pages/dum-ac/committee/index",
+    "_name": "_af4473ec"
+  },
+  {
     "name": "dum-ac-contact",
     "path": "/dum-ac/contact",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/contact.vue",
@@ -161,6 +175,20 @@
     "_name": "_25a963c9"
   },
   {
+    "name": "dum-ac-blog-create",
+    "path": "/dum-ac/blog/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/blog/create.vue",
+    "chunkName": "pages/dum-ac/blog/create",
+    "_name": "_46ac66d3"
+  },
+  {
+    "name": "dum-ac-committee-create",
+    "path": "/dum-ac/committee/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/committee/create.vue",
+    "chunkName": "pages/dum-ac/committee/create",
+    "_name": "_e9e17418"
+  },
+  {
     "name": "dum-ac-event-create",
     "path": "/dum-ac/event/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/event/create.vue",
@@ -243,6 +271,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/profile/training/create.vue",
     "chunkName": "pages/profile/training/create",
     "_name": "_91913fd6"
+  },
+  {
+    "name": "dum-ac-committee-update-id",
+    "path": "/dum-ac/committee/update/:id",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/committee/update/_id.vue",
+    "chunkName": "pages/dum-ac/committee/update/_id",
+    "_name": "_56181728"
   },
   {
     "name": "employee-employee-detail-id",

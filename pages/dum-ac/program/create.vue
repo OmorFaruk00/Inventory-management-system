@@ -6,45 +6,27 @@
       </div>
       <form>
         <div class="form-group">
-          <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Title"
-            v-model="program.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
-        </div>       
-        <div class="form-group">
-          <label for="" class="">Slug</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Slug"
-            v-model="program.slug"
-          />
-          <p v-if="errors.slug" v-text="errors.slug[0]" class="text-danger"></p>
+          <label for="" class="">Program Name</label>
+          <input type="text" class="form-control" placeholder="Program Name" v-model="program.name" />
+          <p v-if="errors.title" v-text="errors.title[0]" class="text-danger"></p>
         </div>
         <div class="form-group">
+                    <label>Duration</label>
+                    <select class="form-control" v-model="program.duration">
+                        <option disabled selected value="">Select Duration</option>
+                        <option value="1 Year">1 Year</option>
+                        <option value="2 Year">2 Year</option>
+                        <option value="3 Year">3 Year</option>
+                        <option value="4 Year">4 Year</option>
+                        
+                    </select>
+                    <h6 v-if="errors.duration" v-text="errors.duration[0]" class="text-danger"></h6>
+          </div>
+        <div class="form-group">
           <label for="" class="">Image</label>
-          <input
-            required
-            type="file"
-            id="program_image"
-            class=""
-            name="image"
-            @change="(e) => (program.image = e.target.files[0])"            
-            accept="image/*"
-          />
-          <p
-            v-if="errors.image"
-            v-text="errors.image[0]"
-            class="text-danger"
-          ></p>
+          <input required type="file" id="program_image" class="form-control" name="image"
+            @change="(e) => (program.image = e.target.files[0])" accept="image/*" />
+          <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
         </div>
 
         <div class="d-flex justify-content-end">
@@ -62,28 +44,28 @@ export default {
   data() {
     return {
       program: {
-        title: "",        
+        name: "",
         image: "",
-        slug: "",        
+        duration: "",
       },
       errors: {},
     };
   },
   methods: {
     addprogram() {
-        let formData = new FormData();
-        formData.append('title', this.program.title)       
-        formData.append('slug', this.program.slug)
-        formData.append('image', this.program.image)
+      let formData = new FormData();
+      formData.append('name', this.program.name)
+      formData.append('duration', this.program.duration)
+      formData.append('image', this.program.image)
       this.$axios
         .$post("/program/add", formData)
-        .then((res) => {            
+        .then((res) => {
           this.program = "";
           this.errors = {};
-          this.$toaster.success("program Added Successfully"); 
-          this.$router.push("/dum-ac/program");        
+          this.$toaster.success("program Added Successfully");
+          this.$router.push("/dum-ac/program");
         })
-        .catch((error) => {            
+        .catch((error) => {
           this.errors = error.response.data.errors;
         });
     },

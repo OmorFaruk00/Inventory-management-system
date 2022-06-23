@@ -23,6 +23,7 @@
                     <th>ID</th>
                     <th>Name Of Program</th>
                     <th>Duration</th>
+                    <th>Type</th>
                     <th>Total Fee</th>                    
                     <th>Status</th>
                     <th style="width:200px">Action</th>
@@ -33,6 +34,7 @@
                     <td>{{ tution.id }}</td>
                     <td>{{ tution.name_of_program}}</td>
                     <td>{{ tution.duration }}</td>
+                    <td>{{ tution.type }}</td>
                     <td>{{ tution.total_fee }}</td>
                     <td>
                       <button
@@ -85,7 +87,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">
-                tution Update
+                Tution Fee Update
               </h5>
               <button
                 type="button"
@@ -97,36 +99,40 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="form-group">
-                <label for="" class="">Title</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Title"
-                  v-model="tution.title"
-                />
-                <p
-                  v-if="errors.title"
-                  v-text="errors.title[0]"
-                  class="text-danger"
-                ></p>
-              </div>
-              <div class="form-group">
-                <label for="" class="">Description</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Description"
-                  v-model="tution.description"
-                />
-                <p
-                  v-if="errors.description"
-                  v-text="errors.description[0]"
-                  class="text-danger"
-                ></p>
-              </div>
+               <div class="form-group">
+                    <label for="" class="">Name Of Program</label>
+                      <select class="form-control" v-model="tution.name_of_program">
+                        <option disabled selected value="">Select Program</option>
+                        <option :value="program.name" v-for="program in programs" :key="program.id">{{program.name}}</option>         
+                        
+                    </select>
+                    <p v-if="errors.name_of_program" v-text="errors.name_of_program[0]" class="text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select class="form-control" v-model="tution.type">
+                        <option disabled selected value="">Select Type</option>
+                        <option value="residential">Residential</option>
+                        <option value="non_residential">Non Residential</option>
+                        <option value="day_care">Day Care</option>
+                    </select>
+                    <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
+                </div>                
+                <div class="form-group">
+                    <label>Duration</label>
+                    <select class="form-control" v-model="tution.duration">
+                        <option disabled selected value="">Select Duration</option>
+                        <option :value="program.duration" v-for="program in programs" :key="program.id">{{program.duration}}</option>         
+                        
+                    </select>
+                    <h6 v-if="errors.duration" v-text="errors.duration[0]" class="text-danger"></h6>
+                </div>
+                <div class="form-group">
+                    <label for="" class="">Total Fee</label>
+                    <input type="text" class="form-control" id="name_of_program" placeholder="Total Fee"
+                        v-model="tution.total_fee" />
+                    <p v-if="errors.total_fee" v-text="errors.total_fee[0]" class="text-danger"></p>
+                </div>
             </div>
             <div class="modal-footer">
               <button
@@ -148,18 +154,32 @@ export default {
   layout: "Dum-content",
   mounted() {
     this.getTution();
+    this.getProgram();
   },
   data() {
     return {
       tutions: [],
       tution: {
-        title: "",
-        description: "",
+        name_of_program: "",
+        duration: "",
+        type: "",
+        total_fee: "",
       },
       errors: {},
+      programs:'',
     };
   },
   methods: {
+          getProgram() {
+      this.$axios
+        .$get("/program/show")
+        .then((res) => {
+          this.programs = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     getTution() {
       this.$axios
         .$get("/tution/show")
