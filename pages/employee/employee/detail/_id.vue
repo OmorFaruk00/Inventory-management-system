@@ -174,7 +174,10 @@ export default {
     font-size: 15px;
     text-align: justify;
     padding-bottom: 20px;
-    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 10px;
+    /* box-shadow: 0 0 30px rgba(31, 45, 61, 0.125); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .about-title {

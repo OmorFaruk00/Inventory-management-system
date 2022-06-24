@@ -18,6 +18,7 @@ const _af4473ec = () => interopDefault(import('../pages/dum-ac/committee/index.v
 const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
 const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
 const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.vue' /* webpackChunkName: "pages/dum-ac/facilitie/index" */))
+const _3499841f = () => interopDefault(import('../pages/dum-ac/gallery/index.vue' /* webpackChunkName: "pages/dum-ac/gallery/index" */))
 const _e54c44fe = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
 const _48a254d1 = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
 const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
@@ -116,6 +117,10 @@ export const routerOptions = {
     path: "/dum-ac/facilitie",
     component: _1c49947f,
     name: "dum-ac-facilitie"
+  }, {
+    path: "/dum-ac/gallery",
+    component: _3499841f,
+    name: "dum-ac-gallery"
   }, {
     path: "/dum-ac/notice",
     component: _e54c44fe,

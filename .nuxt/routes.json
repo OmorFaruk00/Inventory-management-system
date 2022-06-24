@@ -98,6 +98,13 @@
     "_name": "_1c49947f"
   },
   {
+    "name": "dum-ac-gallery",
+    "path": "/dum-ac/gallery",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/gallery/index.vue",
+    "chunkName": "pages/dum-ac/gallery/index",
+    "_name": "_3499841f"
+  },
+  {
     "name": "dum-ac-notice",
     "path": "/dum-ac/notice",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/dum-ac/notice/index.vue",

@@ -27,10 +27,11 @@
             </svg>Program</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/facilitie"><img src="/images/fac.png" alt="" />Facilities
           </nuxt-link>
-          <nuxt-link class="sidebar-item" to="/dum-ac/contact"><img src="/images/mail.png" alt="" />Contacts</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/tution"><img src="/images/fee.png" alt="" />Tution Fee</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/blog"><img src="/images/blog.png" alt="" />Blogs</nuxt-link>
           <nuxt-link class="sidebar-item" to="/dum-ac/committee"><img src="/images/committee.png" alt="" />Committee</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/dum-ac/gallery"><img src="/images/gallery.png" alt="" />Gallery</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/dum-ac/contact"><img src="/images/mail.png" alt="" />Contacts</nuxt-link>
         </div>
       </div>
       <!-- /#sidebar-wrapper -->

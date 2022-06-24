@@ -3,7 +3,7 @@
         <div class="container">
             <div class="form-container">
                 <h3 class="title">Create Employee</h3>
-                <form class="form-horizontal">
+                <form class="form-horizontal ">
                     <div class="row">
                         <div class="col-md-6 col-xl-6 col-sm-12">
                             <div class="form-group">
@@ -79,6 +79,13 @@
                                 <label>Home Phone No</label>
                                 <input type="text" class="form-control" placeholder="Home Phone No"
                                     v-model="employee.home_phone_no" />
+                            </div>
+                        </div>
+                         <div class="col-md-4 col-xl-4 col-sm-12">
+                            <div class="form-group">
+                                <label>Parents Phone No</label>
+                                <input type="text" class="form-control" placeholder="parents Phone No"
+                                    v-model="employee.parent_phone_no" />
                             </div>
                         </div>
                         <div class="col-md-4 col-xl-4 col-sm-12">
@@ -167,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end pt-3">
+                    <div class="d-flex justify-content-end  py-4">
                         <button class="btn-submit" @click.prevent="addEmployee()">Create Account</button>
                     </div>
                 </form>
@@ -198,6 +205,7 @@ export default {
                 personal_phone_no: '',
                 alternative_phone_no: '',
                 home_phone_no: '',
+                parent_phone_no: '',
                 nid_no: '',
                 date_of_joining: '',
                 department: '',
@@ -231,9 +239,7 @@ export default {
                 });
         },
         addEmployee() {
-            console.log(this.employee);
-
-
+            
             let formData = new FormData();
             formData.append('name', this.employee.name)
             formData.append('email', this.employee.email)
@@ -243,6 +249,7 @@ export default {
             formData.append('personal_phone_no', this.employee.personal_phone_no)
             formData.append('alternative_phone_no', this.employee.alternative_phone_no)
             formData.append('home_phone_no', this.employee.home_phone_no)
+            formData.append('parent_phone_no', this.employee.parent_phone_no)
             formData.append('nid_no', this.employee.nid_no)
             formData.append('date_of_joining', this.employee.date_of_joining)
             formData.append('department', this.employee.department)

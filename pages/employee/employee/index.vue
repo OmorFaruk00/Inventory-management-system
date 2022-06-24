@@ -18,22 +18,26 @@
               <table class="table table-striped text-center">
                 <thead>
                   <tr>
+                    <!-- <th>SL</th> -->
                     <th>Name</th>
                     <th>Designation</th>
                     <th>Depertment</th>
                     <th>E-mail</th>
                     <th>Job Type</th>
+                    <th>Image</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="employee in employees" :key="employee._id">
+                    <!-- <td>{{ employee.id}}</td> -->
                     <td>{{ employee.name }}</td>
                     <td>{{ employee.rel_designation.designation }}</td>
                     <td>{{ employee.rel_department.department }}</td>
                     <td>{{ employee.email }}</td>
                     <td>{{ employee.jobtype }}</td>
+                    <td><img :src="'http://localhost:8000/images/emp/' + employee.profile_photo" alt="image" style="height:80px" /></td>
                     <td>
                       <button v-if="employee.status == 1" class="btn-active" @click="employeeStatus(employee.id)">
                         Active

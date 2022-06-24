@@ -60,6 +60,13 @@
                                     v-model="employee.home_phone_no" />
                             </div>
                         </div>
+                         <div class="col-md-4 col-xl-4 col-sm-12">
+                            <div class="form-group">
+                                <label>Parents Phone No</label>
+                                <input type="text" class="form-control" placeholder="Parents Phone No"
+                                    v-model="employee.parent_phone_no" />
+                            </div>
+                        </div>
                         <div class="col-md-4 col-xl-4 col-sm-12">
                             <div class="form-group">
                                 <label>NID No *</label>
@@ -140,7 +147,7 @@
                             <div class="form-group">
                                 <label>Image *</label>
                                 <input type="file" class="form-control" placeholder=""
-                                    @change="(e) => (employee.image = e.target.files[0])" accept="image/*" />
+                                    @change="(e) => (employee.new_image = e.target.files[0])" accept="image/*" />
                                 <h6 v-if="errors.image" v-text="errors.image[0]" class="text-danger"></h6>
                             </div>
                         </div>
@@ -179,12 +186,14 @@ export default {
                 personal_phone_no: '',
                 alternative_phone_no: '',
                 home_phone_no: '',
+                parent_phone_no: '',
                 nid_no: '',
                 date_of_join: '',
                 department_id: '',
                 designation_id: '',
                 jobtype: '',
                 merit: '',
+                new_image:'',
 
             }
         }
@@ -233,13 +242,17 @@ export default {
             formData.append('personal_phone_no', this.employee.personal_phone_no)
             formData.append('alternative_phone_no', this.employee.alternative_phone_no)
             formData.append('home_phone_no', this.employee.home_phone_no)
+            formData.append('parent_phone_no', this.employee.parent_phone_no)
             formData.append('nid_no', this.employee.nid_no)
             formData.append('date_of_join', this.employee.date_of_join)
             formData.append('department', this.employee.department_id)
             formData.append('designation', this.employee.designation_id)
             formData.append('jobtype', this.employee.jobtype)
             formData.append('merit', this.employee.merit)
-            formData.append('image', this.employee.image)
+            if(this.employee.new_image){
+                formData.append('image', this.employee.new_image)
+            }
+            
 
 
             this.$axios

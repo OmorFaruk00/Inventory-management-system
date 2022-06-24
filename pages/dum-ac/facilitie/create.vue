@@ -7,34 +7,14 @@
       <form>
         <div class="form-group">
           <label for="" class="">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Title"
-            v-model="facilitie.title"
-          />
-          <p
-            v-if="errors.title"
-            v-text="errors.title[0]"
-            class="text-danger"
-          ></p>
+          <input type="text" class="form-control" id="name" placeholder="Title" v-model="facilitie.title" />
+          <p v-if="errors.title" v-text="errors.title[0]" class="text-danger"></p>
         </div>
         <div class="form-group">
           <label for="" class="">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Description"
-            v-model="facilitie.description"
-          />
-          <p
-            v-if="errors.description"
-            v-text="errors.description[0]"
-            class="text-danger"
-          ></p>
-        </div>      
+          <input type="text" class="form-control" id="name" placeholder="Description" v-model="facilitie.description" />
+          <p v-if="errors.description" v-text="errors.description[0]" class="text-danger"></p>
+        </div>
 
         <div class="d-flex justify-content-end">
           <button class="btn-submit" @click.prevent="addFacilitie()">
@@ -47,12 +27,12 @@
 </template>
 <script>
 export default {
-  layout: "Dum-content", 
+  layout: "Dum-content",
   data() {
     return {
       facilitie: {
         title: "",
-        description: "",        
+        description: "",
         created_by: this.$auth.user.name,
       },
       errors: {},
@@ -66,7 +46,7 @@ export default {
           this.facilitie = "";
           this.errors = {};
           this.$toaster.success(res.message);
-          this.$router.push("/dum-ac/facilitie");          
+          this.$router.push("/dum-ac/facilitie");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
