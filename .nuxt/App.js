@@ -10,8 +10,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
-import '../assets/css/main.css'
-
 import _514a6c80 from '../layouts/Adm-content.vue'
 import _48d907d2 from '../layouts/Dum-content.vue'
 import _0f8102c4 from '../layouts/Emp-content.vue'
