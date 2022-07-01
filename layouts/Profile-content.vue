@@ -5,6 +5,7 @@
       <div class=" " id="sidebar-wrapper">
         <div class="list-group sidebar">
           <nuxt-link class="sidebar-item" to="/profile"><img src="/images/profile.png" alt="" /> Profile</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/profile/update"><img src="/images/profile-edit.png" alt="" /> Upadte Profile</nuxt-link>
           <nuxt-link class="sidebar-item" to="/profile/qualification"><img src="/images/qualification.png" alt="" /> Academic Qualification</nuxt-link>
           <nuxt-link class="sidebar-item" to="/profile/social"><img src="/images/social.png" alt="" /> Social Contact
           </nuxt-link>

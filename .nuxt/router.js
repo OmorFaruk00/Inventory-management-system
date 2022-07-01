@@ -30,6 +30,7 @@ const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/ind
 const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
+const _32bda196 = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
 const _46ac66d3 = () => interopDefault(import('../pages/dum-ac/blog/create.vue' /* webpackChunkName: "pages/dum-ac/blog/create" */))
 const _e9e17418 = () => interopDefault(import('../pages/dum-ac/committee/create.vue' /* webpackChunkName: "pages/dum-ac/committee/create" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
@@ -165,6 +166,10 @@ export const routerOptions = {
     path: "/profile/training",
     component: _25a963c9,
     name: "profile-training"
+  }, {
+    path: "/profile/update",
+    component: _32bda196,
+    name: "profile-update"
   }, {
     path: "/dum-ac/blog/create",
     component: _46ac66d3,
