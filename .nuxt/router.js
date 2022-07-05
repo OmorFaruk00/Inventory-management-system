@@ -4,12 +4,16 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _bff9b9cc = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
 const _4275d176 = () => interopDefault(import('../pages/admission/index.vue' /* webpackChunkName: "pages/admission/index" */))
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _31236216 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/index.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/index" */))
+const _3f80983e = () => interopDefault(import('../pages/admission/batch/index.vue' /* webpackChunkName: "pages/admission/batch/index" */))
+const _a1cf453e = () => interopDefault(import('../pages/admission/department/index.vue' /* webpackChunkName: "pages/admission/department/index" */))
 const _d353031c = () => interopDefault(import('../pages/admission/form-import.vue' /* webpackChunkName: "pages/admission/form-import" */))
 const _97d25958 = () => interopDefault(import('../pages/admission/form-sale.vue' /* webpackChunkName: "pages/admission/form-sale" */))
 const _22fdd159 = () => interopDefault(import('../pages/admission/form-stock.vue' /* webpackChunkName: "pages/admission/form-stock" */))
@@ -31,6 +35,9 @@ const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/in
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
 const _32bda196 = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
+const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
+const _4f6b12fd = () => interopDefault(import('../pages/admission/batch/create.vue' /* webpackChunkName: "pages/admission/batch/create" */))
+const _5ba7997d = () => interopDefault(import('../pages/admission/department/create.vue' /* webpackChunkName: "pages/admission/department/create" */))
 const _46ac66d3 = () => interopDefault(import('../pages/dum-ac/blog/create.vue' /* webpackChunkName: "pages/dum-ac/blog/create" */))
 const _e9e17418 = () => interopDefault(import('../pages/dum-ac/committee/create.vue' /* webpackChunkName: "pages/dum-ac/committee/create" */))
 const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
@@ -45,6 +52,7 @@ const _49c74162 = () => interopDefault(import('../pages/employee/employee/create
 const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _3d2014f5 = () => interopDefault(import('../pages/admission/batch/update/_id.vue' /* webpackChunkName: "pages/admission/batch/update/_id" */))
 const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/_id.vue' /* webpackChunkName: "pages/dum-ac/committee/update/_id" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
@@ -63,6 +71,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/account",
+    component: _bff9b9cc,
+    name: "account"
+  }, {
     path: "/admission",
     component: _4275d176,
     name: "admission"
@@ -86,6 +98,18 @@ export const routerOptions = {
     path: "/student",
     component: _094c3cb0,
     name: "student"
+  }, {
+    path: "/admission/admissionInActiveBatch",
+    component: _31236216,
+    name: "admission-admissionInActiveBatch"
+  }, {
+    path: "/admission/batch",
+    component: _3f80983e,
+    name: "admission-batch"
+  }, {
+    path: "/admission/department",
+    component: _a1cf453e,
+    name: "admission-department"
   }, {
     path: "/admission/form-import",
     component: _d353031c,
@@ -171,6 +195,18 @@ export const routerOptions = {
     component: _32bda196,
     name: "profile-update"
   }, {
+    path: "/admission/admissionInActiveBatch/create",
+    component: _2e0fda69,
+    name: "admission-admissionInActiveBatch-create"
+  }, {
+    path: "/admission/batch/create",
+    component: _4f6b12fd,
+    name: "admission-batch-create"
+  }, {
+    path: "/admission/department/create",
+    component: _5ba7997d,
+    name: "admission-department-create"
+  }, {
     path: "/dum-ac/blog/create",
     component: _46ac66d3,
     name: "dum-ac-blog-create"
@@ -226,6 +262,10 @@ export const routerOptions = {
     path: "/profile/training/create",
     component: _91913fd6,
     name: "profile-training-create"
+  }, {
+    path: "/admission/batch/update/:id?",
+    component: _3d2014f5,
+    name: "admission-batch-update-id"
   }, {
     path: "/dum-ac/committee/update/:id",
     component: _56181728,
