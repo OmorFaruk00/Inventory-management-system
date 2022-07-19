@@ -118,6 +118,28 @@
                                                 v-html="errors.group_id[0]"></small>
                                         </div>
                                     </div>
+                                        <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Roll No<span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-md-9 mt-10">
+                                            <input type="text"  class="form-control"
+                                                placeholder="Enter Roll Number"  v-model="student.roll_no"/>                              
+
+                                            <small v-if="errors.roll_no" class="text-danger with-errors"
+                                                v-html="errors.roll_no[0]"></small>
+                                        </div>
+                                    </div>
+                                        <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">REG No<span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-md-9 mt-10">
+                                            <input type="text"  class="form-control"
+                                                placeholder="Enter Reg Number"  v-model="student.reg_no"/>                              
+
+                                            <small v-if="errors.reg_no" class="text-danger with-errors"
+                                                v-html="errors.reg_no[0]"></small>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label">Admission Form Sl
@@ -390,16 +412,16 @@
                                                                     <span class="text-danger">*</span></label>
                                                                 <textarea name="permanent_add"
                                                                     v-model="student.permanent_add" class="form-control"
-                                                                    id="permanent_add" cols="30" rows="2"
+                                                                    id="permanent_add" cols="30" rows="3"
                                                                     placeholder="Enter permanent add" required
-                                                                    readonly></textarea>
+                                                                    ></textarea>
                                                                 <small v-if="errors.permanent_add"
                                                                     class="text-danger with-errors"
                                                                     v-html="errors.permanent_add[0]"></small>
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-lg-3 col-md-6 col-sm-12">
+                                                        <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="division">Division</label>
                                                                 <select @change="fetchPermanentDistricts"
@@ -411,9 +433,9 @@
                                                                         v-text="division.name"></option>
                                                                 </select>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
 
-                                                        <div class="col-lg-3 col-md-6 col-sm-12">
+                                                        <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="district">District</label>
                                                                 <select @change="fetchPermanentThana" name="district"
@@ -425,9 +447,9 @@
                                                                         v-text="district.name"></option>
                                                                 </select>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
 
-                                                        <div class="col-lg-3 col-md-6 col-sm-12">
+                                                        <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="thana">Thana / Upazila</label>
                                                                 <select @change="fetchPermanentUnion" name="thana"
@@ -439,8 +461,8 @@
                                                                         v-text="upazila.name"></option>
                                                                 </select>
                                                             </div>
-                                                        </div>
-
+                                                        </div> -->
+<!-- 
                                                         <div class="col-lg-3 col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="union">Union</label>
@@ -453,9 +475,9 @@
                                                                     </option>
                                                                 </select>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
 
-                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <!-- <div class="col-lg-12 col-md-12 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="permanent_add">Road / House /
                                                                     Village</label>
@@ -464,7 +486,7 @@
                                                                     class="form-control"
                                                                     v-model="permanent_sub_address" />
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -491,15 +513,15 @@
                                                                     <span class="text-danger">*</span></label>
                                                                 <textarea name="mailing_add"
                                                                     v-model="student.mailing_add" class="form-control"
-                                                                    id="mailing_add" cols="30" rows="2"
-                                                                    placeholder="Enter mailing add" readonly></textarea>
+                                                                    id="mailing_add" cols="30" rows="3"
+                                                                    placeholder="Enter mailing add" ></textarea>
                                                                 <small v-if="errors.mailing_add"
                                                                     class="text-danger with-errors"
                                                                     v-html="errors.mailing_add[0]"></small>
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-lg-3 col-md-6 col-sm-12">
+                                                        <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <label for="division">Division</label>
                                                                 <select @change="fetchMailingtDistricts" name="division"
@@ -566,7 +588,7 @@
                                                                     class="form-control"
                                                                     v-model="mailing_sub_address" />
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -1383,8 +1405,9 @@ export default {
                 group_id: '',
                 adm_frm_sl: '',
                 admission_season: '',
-                // admission_semester_code: '',
-                // hall_code: '00',
+                roll_no:'',
+                reg_no:'',
+               
                 //personal
                 student_name: '',
                 blood_group: '',
@@ -1449,6 +1472,7 @@ export default {
                 refereed_by_parent_id: '',
                 refe_by_std_type: '',
                 ref_val: '',
+                
             },
 
             errors: [],
@@ -1512,7 +1536,7 @@ export default {
 
         fetchDepartmentInfo() {
 
-            this.$axios.$get('/admission/department').then(response => {
+            this.$axios.$get('/admission/department').then(response => {                
                 this.departments = response;
             }).catch((error) => {
                 this.$toaster.error("Department Not found");
@@ -1543,112 +1567,112 @@ export default {
 
         },
 
-        fetchCountry() {
+        // fetchCountry() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/country?token=${this.config.token}`).then((response) => {
-                this.countries = response.data;
-            }).catch((error) => {
-                this.$toaster.error("Countries Not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/country?token=${this.config.token}`).then((response) => {
+        //         this.countries = response.data;
+        //     }).catch((error) => {
+        //         this.$toaster.error("Countries Not found");
+        //     });
 
-        },
+        // },
 
-        fetchGroups() {
+        // fetchGroups() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/groups?token=${this.config.token}`).then((response) => {
-                this.groups = response.data;
-            }).catch((error) => {
-                this.$toaster.error("Groups Not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/groups?token=${this.config.token}`).then((response) => {
+        //         this.groups = response.data;
+        //     }).catch((error) => {
+        //         this.$toaster.error("Groups Not found");
+        //     });
 
-        },
+        // },
 
-        fetchReligions() {
+        // fetchReligions() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/religion?token=${this.config.token}`).then((response) => {
-                this.religions = response.data;
-            }).catch((error) => {
-                this.$toaster.error("Religions Not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/religion?token=${this.config.token}`).then((response) => {
+        //         this.religions = response.data;
+        //     }).catch((error) => {
+        //         this.$toaster.error("Religions Not found");
+        //     });
 
-        },
+        // },
 
-        fetchRefereedByParent() {
+        // fetchRefereedByParent() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/refereed-by-parent?token=${this.config.token}`).then((response) => {
-                this.refereedByParents = response.data;
-            }).catch((error) => {
-                this.$toaster.error("Refereed by parent not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/refereed-by-parent?token=${this.config.token}`).then((response) => {
+        //         this.refereedByParents = response.data;
+        //     }).catch((error) => {
+        //         this.$toaster.error("Refereed by parent not found");
+        //     });
 
-        },
+        // },
 
-        changeReferredBy() {
+        // changeReferredBy() {
 
-            if (this.student.refereed_by_parent_id == 1) {
+        //     if (this.student.refereed_by_parent_id == 1) {
 
-                this.student.ref_val = '';
+        //         this.student.ref_val = '';
 
-                this.$axios.$get(`${this.config.base_path}/admission/refereed-child-by-parent/${this.student.refereed_by_parent_id}?token=${this.config.token}`).then((response) => {
-                    this.refeByStdTypes = response.data;
-                }).catch((error) => {
-                    this.$toaster.error("Refereed by child not found");
-                });
+        //         this.$axios.$get(`${this.config.base_path}/admission/refereed-child-by-parent/${this.student.refereed_by_parent_id}?token=${this.config.token}`).then((response) => {
+        //             this.refeByStdTypes = response.data;
+        //         }).catch((error) => {
+        //             this.$toaster.error("Refereed by child not found");
+        //         });
 
-            } else {
-                this.refeByStdTypes = [];
-                this.student.refe_by_std_type = '';
-            }
+        //     } else {
+        //         this.refeByStdTypes = [];
+        //         this.student.refe_by_std_type = '';
+        //     }
 
-        },
+        // },
 
-        fetchDivision() {
+        // fetchDivision() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/division?token=${this.config.token}`).then((response) => {
-                this.divisions = response.data;
-                this.mailingDivisions = response.data;
-            }).catch((error) => {
-                this.$toaster.error("Divisions Not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/division?token=${this.config.token}`).then((response) => {
+        //         this.divisions = response.data;
+        //         this.mailingDivisions = response.data;
+        //     }).catch((error) => {
+        //         this.$toaster.error("Divisions Not found");
+        //     });
 
-        },
+        // },
 
-        fetchPermanentDistricts() {
+        // fetchPermanentDistricts() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/district/${this.permanent_division.id}?token=${this.config.token}`).then((response) => {
-                this.districts = response.data;
+        //     this.$axios.$get(`${this.config.base_path}/admission/district/${this.permanent_division.id}?token=${this.config.token}`).then((response) => {
+        //         this.districts = response.data;
 
-                this.permanentAdd();
-            }).catch((error) => {
-                this.$toaster.error("Districts Not found");
-            });
+        //         this.permanentAdd();
+        //     }).catch((error) => {
+        //         this.$toaster.error("Districts Not found");
+        //     });
 
-        },
+        // },
 
-        fetchPermanentThana() {
+        // fetchPermanentThana() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/upazila/${this.permanent_district.id}?token=${this.config.token}`).then((response) => {
-                this.upazilas = response.data;
-                this.permanentAdd();
-            }).catch((error) => {
-                this.$toaster.error("Upazilas Not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/upazila/${this.permanent_district.id}?token=${this.config.token}`).then((response) => {
+        //         this.upazilas = response.data;
+        //         this.permanentAdd();
+        //     }).catch((error) => {
+        //         this.$toaster.error("Upazilas Not found");
+        //     });
 
-        },
+        // },
 
-        fetchPermanentUnion() {
-            this.$axios.$get(`${this.config.base_path}/admission/union/${this.permanent_thana.id}?token=${this.config.token}`).then((response) => {
-                this.unions = response.data;
-                this.permanentAdd();
-            }).catch((error) => {
-                this.$toaster.error("Unions Not found");
-            });
+        // fetchPermanentUnion() {
+        //     this.$axios.$get(`${this.config.base_path}/admission/union/${this.permanent_thana.id}?token=${this.config.token}`).then((response) => {
+        //         this.unions = response.data;
+        //         this.permanentAdd();
+        //     }).catch((error) => {
+        //         this.$toaster.error("Unions Not found");
+        //     });
 
-        },
+        // },
 
-        fetchPermanentAddress() {
-            this.permanentAdd();
-        },
+        // fetchPermanentAddress() {
+        //     this.permanentAdd();
+        // },
 
         permanentAdd() {
 
@@ -1711,41 +1735,41 @@ export default {
             this.student.mailing_add = `${mailing_sub_address}${mailing_union}${mailing_thana}${mailing_district}${mailing_division}`;
         },
 
-        fetchMailingtDistricts() {
+        // fetchMailingtDistricts() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/district/${this.mailing_division.id}?token=${this.config.token}`).then((response) => {
-                this.mailingDistricts = response.data;
+        //     this.$axios.$get(`${this.config.base_path}/admission/district/${this.mailing_division.id}?token=${this.config.token}`).then((response) => {
+        //         this.mailingDistricts = response.data;
 
-                this.mailingAdd();
-            }).catch((error) => {
-                this.$toaster.error("Districts Not found");
-            });
+        //         this.mailingAdd();
+        //     }).catch((error) => {
+        //         this.$toaster.error("Districts Not found");
+        //     });
 
-        },
+        // },
 
-        fetchMailingThana() {
+        // fetchMailingThana() {
 
-            this.$axios.$get(`${this.config.base_path}/admission/upazila/${this.mailing_district.id}?token=${this.config.token}`).then((response) => {
-                this.mailingUpazilas = response.data;
-                this.mailingAdd();
-            }).catch((error) => {
-                this.$toaster.error("Upazilas Not found");
-            });
+        //     this.$axios.$get(`${this.config.base_path}/admission/upazila/${this.mailing_district.id}?token=${this.config.token}`).then((response) => {
+        //         this.mailingUpazilas = response.data;
+        //         this.mailingAdd();
+        //     }).catch((error) => {
+        //         this.$toaster.error("Upazilas Not found");
+        //     });
 
-        },
+        // },
 
-        fetchMailingtUnion() {
-            this.$axios.$get(`${this.config.base_path}/admission/union/${this.mailing_thana.id}?token=${this.config.token}`).then((response) => {
-                this.mailingUnions = response.data;
-                this.mailingAdd();
-            }).catch((error) => {
-                this.$toaster.error("Unions Not found");
-            });
-        },
+        // fetchMailingtUnion() {
+        //     this.$axios.$get(`${this.config.base_path}/admission/union/${this.mailing_thana.id}?token=${this.config.token}`).then((response) => {
+        //         this.mailingUnions = response.data;
+        //         this.mailingAdd();
+        //     }).catch((error) => {
+        //         this.$toaster.error("Unions Not found");
+        //     });
+        // },
 
-        fetchMailingAddress() {
-            this.mailingAdd();
-        },
+        // fetchMailingAddress() {
+        //     this.mailingAdd();
+        // },
 
         previewStep(step) {
 
@@ -1844,9 +1868,9 @@ export default {
             this.educationStep = false;
             this.othersStep = false;
 
-            this.fetchReligions();
-            this.fetchDivision();
-            this.fetchCountry();
+            // this.fetchReligions();
+            // this.fetchDivision();
+            // this.fetchCountry();
 
         },
 
@@ -2057,7 +2081,7 @@ export default {
                 return false;
             }
 
-            this.fetchRefereedByParent();
+            // this.fetchRefereedByParent();
 
             this.generalStep = false;
             this.personalStep = false;
@@ -2089,7 +2113,7 @@ export default {
             formData.append("signature", document.getElementById('signature').files[0]);
             console.log(formData);
 
-            this.$axios.$post('/admission/active', formData, {
+            this.$axios.$post('/admission/add_student', formData, {
 
                 headers: {
                     "Content-Type": "multipart/form-data",
@@ -2097,33 +2121,30 @@ export default {
 
             }).then((response) => {
 
-                this.$toaster.success(response.data.message);
+                this.$toaster.success(response.message);
                 console.log(response);
 
 
-                let path = this.config.redirect_path;
-                setTimeout(function () {
-                    window.location = path;
-                }(path), 5000);
+           
 
             }).catch((error) => {
 
-                if (error.response.status == 422) {
-                    this.$toaster.error('Validation error');
-                    return false;
-                }
+                // if (error.response.status == 422) {
+                //     this.$toaster.error('Validation error');
+                //     return false;
+                // }
 
-                if (error.response.status == 400) {
-                    this.$toaster.error(error.response.data.message);
-                    return false;
-                }
+                // if (error.response.status == 400) {
+                //     this.$toaster.error(error.response.data.message);
+                //     return false;
+                // }
 
-                if (error.response.status == 404) {
+                // if (error.response.status == 404) {
 
-                    this.$toaster.error(error.response.data.error);
-                    return false;
+                //     this.$toaster.error(error.response.data.error);
+                //     return false;
 
-                }
+                // }
 
                 this.$toaster.error("Something went wrong");
 
