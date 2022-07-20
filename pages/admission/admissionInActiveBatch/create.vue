@@ -243,7 +243,7 @@
                                                 <select name="religion_id" id="religion_id"
                                                     v-model="student.religion_id" class="form-control">
                                                     <option value="" disabled selected>Select Religion</option>
-                                                    <option value="Islam">Islam</option>
+                                                    <option value="1">Islam</option>
                                                     <!-- <option v-for="(religion, index) in religions" :key="index"
                                                         :value="religion.id" v-text="religion.name"></option> -->
                                                 </select>
@@ -931,16 +931,16 @@
 
                                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                                         <div class="form-group">
-                                                            <label for="e_board_university1">Board Or University
+                                                            <label for="e_board_institute1">Board Or Institute
                                                                 <span class="text-danger">*</span></label>
-                                                            <input id="e_board_university1" type="text"
+                                                            <input id="e_board_institute1" type="text"
                                                                 class="form-control"
-                                                                v-model="student.e_board_university1"
-                                                                placeholder="Enter Board Or University" />
+                                                                v-model="student.e_board_institute1"
+                                                                placeholder="Enter Board Or Institute" />
 
-                                                            <small v-if="errors.e_board_university1"
+                                                            <small v-if="errors.e_board_institute1"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_university1[0]"></small>
+                                                                v-html="errors.e_board_institute1[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1042,16 +1042,16 @@
 
                                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                                         <div class="form-group">
-                                                            <label for="e_board_university2">Board Or University
+                                                            <label for="e_board_institute2">Board Or Institute
                                                                 <span class="text-danger">*</span></label>
-                                                            <input id="e_board_university2" type="text"
+                                                            <input id="e_board_institute2" type="text"
                                                                 class="form-control"
-                                                                v-model="student.e_board_university2"
-                                                                placeholder="Enter Board Or University" />
+                                                                v-model="student.e_board_institute2"
+                                                                placeholder="Enter Board Or Institute" />
 
-                                                            <small v-if="errors.e_board_university2"
+                                                            <small v-if="errors.e_board_institute2"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_university1[0]"></small>
+                                                                v-html="errors.e_board_institute1[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1148,15 +1148,15 @@
 
                                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                                         <div class="form-group">
-                                                            <label for="e_board_university3">Board Or University</label>
-                                                            <input id="e_board_university3" type="text"
+                                                            <label for="e_board_institute3">Board Or Institute</label>
+                                                            <input id="e_board_institute3" type="text"
                                                                 class="form-control"
-                                                                v-model="student.e_board_university3"
-                                                                placeholder="Enter Board Or University" />
+                                                                v-model="student.e_board_institute3"
+                                                                placeholder="Enter Board Or Institute" />
 
-                                                            <small v-if="errors.e_board_university3"
+                                                            <small v-if="errors.e_board_institute3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_university1[0]"></small>
+                                                                v-html="errors.e_board_institute1[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1253,15 +1253,15 @@
 
                                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                                         <div class="form-group">
-                                                            <label for="e_board_university4">Board Or University</label>
-                                                            <input id="e_board_university4" type="text"
+                                                            <label for="e_board_institute4">Board Or Institute</label>
+                                                            <input id="e_board_institute4" type="text"
                                                                 class="form-control"
-                                                                v-model="student.e_board_university4"
-                                                                placeholder="Enter Board Or University" />
+                                                                v-model="student.e_board_institute4"
+                                                                placeholder="Enter Board Or Institute" />
 
-                                                            <small v-if="errors.e_board_university4"
+                                                            <small v-if="errors.e_board_institute4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_university1[0]"></small>
+                                                                v-html="errors.e_board_institute1[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1378,7 +1378,7 @@ export default {
     computed: {
         years() {
             const year = new Date().getFullYear();
-            let data = Array.from({ length: (year + 1) - 1993 }, (value, index) => 1993 + index);
+            let data = Array.from({ length: (year + 1) - 2020 }, (value, index) => 2020 + index);
             return data.slice().reverse();
         }
     },
@@ -1446,28 +1446,28 @@ export default {
                 e_passing_year1: '',
                 e_ltr_grd_tmarks1: '',
                 e_div_cls_cgpa1: '',
-                e_board_university1: '',
+                e_board_institute1: '',
                 e_exam_name2: '',
                 e_group2: '',
                 e_roll_no_2: '',
                 e_passing_year2: '',
                 e_ltr_grd_tmarks2: '',
                 e_div_cls_cgpa2: '',
-                e_board_university2: '',
+                e_board_institute2: '',
                 e_exam_name3: '',
                 e_group3: '',
                 e_roll_no_3: '',
                 e_passing_year3: '',
                 e_ltr_grd_tmarks3: '',
                 e_div_cls_cgpa3: '',
-                e_board_university3: '',
+                e_board_institute3: '',
                 e_exam_name4: '',
                 e_group4: '',
                 e_roll_no_4: '',
                 e_passing_year4: '',
                 e_ltr_grd_tmarks4: '',
                 e_div_cls_cgpa4: '',
-                e_board_university4: '',
+                e_board_institute4: '',
                 //others
                 refereed_by_parent_id: '',
                 refe_by_std_type: '',
@@ -2041,8 +2041,8 @@ export default {
                 return false;
             }
 
-            if (!this.student.e_board_university1) {
-                this.$toaster.error("Please enter board / university (Back Ground Education Info 1)");
+            if (!this.student.e_board_institute1) {
+                this.$toaster.error("Please enter board / institute (Back Ground Education Info 1)");
                 return false;
             }
 
@@ -2076,8 +2076,8 @@ export default {
                 return false;
             }
 
-            if (!this.student.e_board_university2) {
-                this.$toaster.error("Please enter board / university (Back Ground Education Info 2)");
+            if (!this.student.e_board_institute2) {
+                this.$toaster.error("Please enter board / institute (Back Ground Education Info 2)");
                 return false;
             }
 
@@ -2129,22 +2129,22 @@ export default {
 
             }).catch((error) => {
 
-                // if (error.response.status == 422) {
-                //     this.$toaster.error('Validation error');
-                //     return false;
-                // }
+                if (error.response.status == 422) {
+                    this.$toaster.error('Validation error');
+                    return false;
+                }
 
-                // if (error.response.status == 400) {
-                //     this.$toaster.error(error.response.data.message);
-                //     return false;
-                // }
+                if (error.response.status == 400) {
+                    this.$toaster.error(error.response.data.message);
+                    return false;
+                }
 
-                // if (error.response.status == 404) {
+                if (error.response.status == 404) {
 
-                //     this.$toaster.error(error.response.data.error);
-                //     return false;
+                    this.$toaster.error(error.response.data.error);
+                    return false;
 
-                // }
+                }
 
                 this.$toaster.error("Something went wrong");
 

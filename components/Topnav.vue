@@ -16,7 +16,7 @@
             </div>
             <div class="user-text">
               <h4 class="pt-3">{{ $auth.user.name }}</h4>
-              <p >{{ $auth.user.rel_designation?$auth.user.rel_designation:'' }}</p>
+              <p >{{ $auth.user.rel_designation.designation}}</p>
             </div>
             <button class="btn-logout" @click="logout">Log out</button>
           </div>
