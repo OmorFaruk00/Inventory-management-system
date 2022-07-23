@@ -20,7 +20,7 @@ const _1100527e = () => interopDefault(import('../pages/admission/dept-wish-stud
 const _d353031c = () => interopDefault(import('../pages/admission/form-import.vue' /* webpackChunkName: "pages/admission/form-import" */))
 const _97d25958 = () => interopDefault(import('../pages/admission/form-sale.vue' /* webpackChunkName: "pages/admission/form-sale" */))
 const _22fdd159 = () => interopDefault(import('../pages/admission/form-stock.vue' /* webpackChunkName: "pages/admission/form-stock" */))
-const _11068942 = () => interopDefault(import('../pages/admission/student.vue' /* webpackChunkName: "pages/admission/student" */))
+const _73225922 = () => interopDefault(import('../pages/admission/search-student.vue' /* webpackChunkName: "pages/admission/search-student" */))
 const _2f8ce56a = () => interopDefault(import('../pages/dum-ac/blog/index.vue' /* webpackChunkName: "pages/dum-ac/blog/index" */))
 const _af4473ec = () => interopDefault(import('../pages/dum-ac/committee/index.vue' /* webpackChunkName: "pages/dum-ac/committee/index" */))
 const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
@@ -61,6 +61,7 @@ const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
 const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
+const _7d3d8652 = () => interopDefault(import('../pages/admission/student-update/_id.vue' /* webpackChunkName: "pages/admission/student-update/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -139,9 +140,9 @@ export const routerOptions = {
     component: _22fdd159,
     name: "admission-form-stock"
   }, {
-    path: "/admission/student",
-    component: _11068942,
-    name: "admission-student"
+    path: "/admission/search-student",
+    component: _73225922,
+    name: "admission-search-student"
   }, {
     path: "/dum-ac/blog",
     component: _2f8ce56a,
@@ -302,6 +303,10 @@ export const routerOptions = {
     path: "/admission/print-receive/:id?",
     component: _21940a12,
     name: "admission-print-receive-id"
+  }, {
+    path: "/admission/student-update/:id?",
+    component: _7d3d8652,
+    name: "admission-student-update-id"
   }, {
     path: "/",
     component: _0ae5cb08,

@@ -44,7 +44,6 @@ export default {
   ],
 
 
-
   plugins: [
     {src: '~/plugins/owl.js', ssr: false},
     {src: '~/plugins/vue-toaster.js', ssr: false},
@@ -79,7 +78,7 @@ export default {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        // url: 'https://api.darululoom-moniram.com',
+        // url: 'https://www.api.darululoom-islamia.org',
         url: 'http://localhost:8000',
         token: {
           property: 'token',
@@ -109,7 +108,7 @@ export default {
  
   axios: {   
     baseURL: 'http://localhost:8000/api',
-    // baseURL: 'https://api.darululoom-moniram.com/api',
+    // baseURL: 'https://www.api.darululoom-islamia.org/api',
 
     credentials: true
   },

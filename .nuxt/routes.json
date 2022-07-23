@@ -112,11 +112,11 @@
     "_name": "_22fdd159"
   },
   {
-    "name": "admission-student",
-    "path": "/admission/student",
-    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/student.vue",
-    "chunkName": "pages/admission/student",
-    "_name": "_11068942"
+    "name": "admission-search-student",
+    "path": "/admission/search-student",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/search-student.vue",
+    "chunkName": "pages/admission/search-student",
+    "_name": "_73225922"
   },
   {
     "name": "dum-ac-blog",
@@ -397,6 +397,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/print-receive/_id.vue",
     "chunkName": "pages/admission/print-receive/_id",
     "_name": "_21940a12"
+  },
+  {
+    "name": "admission-student-update-id",
+    "path": "/admission/student-update/:id?",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/student-update/_id.vue",
+    "chunkName": "pages/admission/student-update/_id",
+    "_name": "_7d3d8652"
   },
   {
     "name": "index",
