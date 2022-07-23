@@ -39,6 +39,7 @@ const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/in
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
 const _32bda196 = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
+const _7a782142 = () => interopDefault(import('../pages/student/syllabus/index.vue' /* webpackChunkName: "pages/student/syllabus/index" */))
 const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
 const _4f6b12fd = () => interopDefault(import('../pages/admission/batch/create.vue' /* webpackChunkName: "pages/admission/batch/create" */))
 const _5ba7997d = () => interopDefault(import('../pages/admission/department/create.vue' /* webpackChunkName: "pages/admission/department/create" */))
@@ -56,10 +57,12 @@ const _49c74162 = () => interopDefault(import('../pages/employee/employee/create
 const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _077f5c88 = () => interopDefault(import('../pages/student/syllabus/create.vue' /* webpackChunkName: "pages/student/syllabus/create" */))
 const _3d2014f5 = () => interopDefault(import('../pages/admission/batch/update/_id.vue' /* webpackChunkName: "pages/admission/batch/update/_id" */))
 const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/_id.vue' /* webpackChunkName: "pages/dum-ac/committee/update/_id" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
+const _28ac4798 = () => interopDefault(import('../pages/student/syllabus/update/_id.vue' /* webpackChunkName: "pages/student/syllabus/update/_id" */))
 const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
 const _7d3d8652 = () => interopDefault(import('../pages/admission/student-update/_id.vue' /* webpackChunkName: "pages/admission/student-update/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -216,6 +219,10 @@ export const routerOptions = {
     component: _32bda196,
     name: "profile-update"
   }, {
+    path: "/student/syllabus",
+    component: _7a782142,
+    name: "student-syllabus"
+  }, {
     path: "/admission/admissionInActiveBatch/create",
     component: _2e0fda69,
     name: "admission-admissionInActiveBatch-create"
@@ -284,6 +291,10 @@ export const routerOptions = {
     component: _91913fd6,
     name: "profile-training-create"
   }, {
+    path: "/student/syllabus/create",
+    component: _077f5c88,
+    name: "student-syllabus-create"
+  }, {
     path: "/admission/batch/update/:id?",
     component: _3d2014f5,
     name: "admission-batch-update-id"
@@ -299,6 +310,10 @@ export const routerOptions = {
     path: "/employee/employee/update/:id?",
     component: _374488da,
     name: "employee-employee-update-id"
+  }, {
+    path: "/student/syllabus/update/:id?",
+    component: _28ac4798,
+    name: "student-syllabus-update-id"
   }, {
     path: "/admission/print-receive/:id?",
     component: _21940a12,

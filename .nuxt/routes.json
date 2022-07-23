@@ -245,6 +245,13 @@
     "_name": "_32bda196"
   },
   {
+    "name": "student-syllabus",
+    "path": "/student/syllabus",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/syllabus/index.vue",
+    "chunkName": "pages/student/syllabus/index",
+    "_name": "_7a782142"
+  },
+  {
     "name": "admission-admissionInActiveBatch-create",
     "path": "/admission/admissionInActiveBatch/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/admissionInActiveBatch/create.vue",
@@ -364,6 +371,13 @@
     "_name": "_91913fd6"
   },
   {
+    "name": "student-syllabus-create",
+    "path": "/student/syllabus/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/syllabus/create.vue",
+    "chunkName": "pages/student/syllabus/create",
+    "_name": "_077f5c88"
+  },
+  {
     "name": "admission-batch-update-id",
     "path": "/admission/batch/update/:id?",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/batch/update/_id.vue",
@@ -390,6 +404,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/employee/update/_id.vue",
     "chunkName": "pages/employee/employee/update/_id",
     "_name": "_374488da"
+  },
+  {
+    "name": "student-syllabus-update-id",
+    "path": "/student/syllabus/update/:id?",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/syllabus/update/_id.vue",
+    "chunkName": "pages/student/syllabus/update/_id",
+    "_name": "_28ac4798"
   },
   {
     "name": "admission-print-receive-id",

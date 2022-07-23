@@ -691,7 +691,7 @@
                                                             <label for="e_exam_name1">Name of Examination
                                                                 <span class="text-danger">*</span></label>
                                                             <input id="e_exam_name1" type="text" class="form-control"  
-                                                                v-model="student.education.exam_name1"
+                                                                v-model="education.exam_name1"
                                                                 placeholder="Enter name of examination" required />
 
                                                             <small v-if="errors.e_exam_name1"
@@ -705,7 +705,7 @@
                                                             <label for="e_group1">Group <span
                                                                     class="text-danger">*</span></label>
                                                             <input id="e_group1" type="text" class="form-control"
-                                                                v-model="student.education.group1" placeholder="Enter group no"
+                                                                v-model="education.group1" placeholder="Enter group no"
                                                                 required />
 
                                                             <small v-if="errors.e_group1"
@@ -719,7 +719,7 @@
                                                             <label for="e_roll_no_1">Roll <span
                                                                     class="text-danger">*</span></label>
                                                             <input id="e_roll_no_1" type="number" class="form-control"
-                                                                v-model="student.education.roll_no1"
+                                                                v-model="education.roll_no1"
                                                                 placeholder="Enter roll no" />
 
                                                             <small v-if="errors.e_roll_no_1"
@@ -733,7 +733,7 @@
                                                             <label for="e_passing_year1">Passing Year
                                                                 <span class="text-danger">*</span></label>
                                                             <select name="e_passing_year1" id="e_passing_year1"
-                                                                v-model="student.education.passing_year1" class="form-control">
+                                                                v-model="education.passing_year1" class="form-control">
                                                                 <option v-for="(year, index) in years" :key="index"
                                                                     :value="year" v-text="year"></option>
                                                             </select>
@@ -750,7 +750,7 @@
                                                                 Marks
                                                                 <span class="text-danger">*</span></label>
                                                             <input id="e_ltr_grd_tmarks1" type="text"
-                                                                class="form-control" v-model="student.education.ltr_grd_tmarks1"
+                                                                class="form-control" v-model="education.ltr_grd_tmarks1"
                                                                 placeholder="Enter letter or grade or total marks" />
 
                                                             <small v-if="errors.e_ltr_grd_tmarks1"
@@ -764,7 +764,7 @@
                                                             <label for="e_div_cls_cgpa1">Divission Or Class Or CGPA
                                                                 <span class="text-danger">*</span></label>
                                                             <input id="e_div_cls_cgpa1" type="text" class="form-control"
-                                                                v-model="student.education.div_cls_cgpa1"
+                                                                v-model="education.div_cls_cgpa1"
                                                                 placeholder="Enter Divission Or Class Or CGPA" />
 
                                                             <small v-if="errors.e_div_cls_cgpa1"
@@ -779,7 +779,7 @@
                                                                 <span class="text-danger">*</span></label>
                                                             <input id="e_board_institute1" type="text"
                                                                 class="form-control"
-                                                                v-model="student.education.board_institute1"
+                                                                v-model="education.board_institute1"
                                                                 placeholder="Enter Board Or Institute" />
 
                                                             <small v-if="errors.e_board_institute1"
@@ -1222,7 +1222,7 @@ export default {
     computed: {
         years() {
             const year = new Date().getFullYear();
-            let data = Array.from({ length: (year + 1) - 2020 }, (value, index) => 2020 + index);
+            let data = Array.from({ length: (year + 1) - 2000 }, (value, index) => 2020 + index);
             return data.slice().reverse();
         }
     },
@@ -1281,8 +1281,8 @@ export default {
                 e_occu: '',
                 e_relation: '',
                 //education
-                education:{
-                    exam_name1: '',
+                
+                exam_name1: '',
                 roup1: '',
                 roll_no_1: '',
                 passing_year1: '',
@@ -1310,12 +1310,20 @@ export default {
                 e_ltr_grd_tmarks4: '',
                 e_div_cls_cgpa4: '',
                 e_board_institute4: '',
-                },
-                //others
+                                //others
                 refereed_by: '',
                 refe_by_std_type: '',
                 refereed_by_email: '',
 
+            },
+            education:{
+                exam_name1: 'test',
+                group1: 'a',
+                roll_no1: '10',
+                passing_year1: '2020',
+                ltr_grd_tmarks1: '4',
+                div_cls_cgpa1: '4',
+                board_institute1: 'test',
             },
            
 
@@ -1728,7 +1736,7 @@ export default {
             formData.append("signature", document.getElementById('signature').files[0]);
             console.log(formData);
 
-            this.$axios.$post('/admission/student-update/'+this.$route.params.id, formData, {
+            this.$axios.$post('/admission/student-update/'+this.$route.params.id, formData,this.education, {
 
                 headers: {
                     "Content-Type": "multipart/form-data",

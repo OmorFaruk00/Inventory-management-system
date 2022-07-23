@@ -38,7 +38,7 @@
                         <th>E Name</th>
                         <th>E Cell</th>
                         <th>Student ID</th>
-                        <th>Action</th>
+                        <!-- <th>Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -55,10 +55,10 @@
                         <td>{{ student.e_cellno }}</td>
                         <td>{{ student.id }}</td>
                         <td>
-                            <nuxt-link :to="`/admission/student-update/${student.id}`" class="btn-edit mr-3"
+                            <!-- <nuxt-link :to="`/admission/student-update/${student.id}`" class="btn-edit mr-3"
                                 style="padding:7px 15px">
                                 Edit
-                            </nuxt-link>
+                            </nuxt-link> -->
                         </td>
                     </tr>
                 </tbody>
