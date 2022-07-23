@@ -1,1 +1,7 @@
+.env
+.env.local
+.env.production
+.nuxt
+.vscode
 node_modules
+dist
