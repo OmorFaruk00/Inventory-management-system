@@ -13,7 +13,7 @@
 							<img src="images/dum2.webp" alt="">
 						</div>
 					</div>
-					<p class="app-title">Dum.ac</p>
+					<p class="app-title">DUI Website</p>
 				</nuxt-link>
 			</div>
 			<div class="col-md-3 col-xl-2 col-sm-6 app">

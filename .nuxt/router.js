@@ -10,6 +10,7 @@ const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunk
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
+const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
 const _60de3e80 = () => interopDefault(import('../pages/account/class.vue' /* webpackChunkName: "pages/account/class" */))
 const _d1e8f534 = () => interopDefault(import('../pages/account/purpose.vue' /* webpackChunkName: "pages/account/purpose" */))
@@ -39,6 +40,12 @@ const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/in
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
 const _32bda196 = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
+const _35a8b053 = () => interopDefault(import('../pages/setting/assign-permission-to-role.vue' /* webpackChunkName: "pages/setting/assign-permission-to-role" */))
+const _415e41ff = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
+const _018337b4 = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
+const _49eda49b = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
+const _453bde48 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
+const _2b198203 = () => interopDefault(import('../pages/student/question/index.vue' /* webpackChunkName: "pages/student/question/index" */))
 const _7a782142 = () => interopDefault(import('../pages/student/syllabus/index.vue' /* webpackChunkName: "pages/student/syllabus/index" */))
 const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
 const _4f6b12fd = () => interopDefault(import('../pages/admission/batch/create.vue' /* webpackChunkName: "pages/admission/batch/create" */))
@@ -102,6 +109,10 @@ export const routerOptions = {
     path: "/profile",
     component: _3fdc10d4,
     name: "profile"
+  }, {
+    path: "/setting",
+    component: _9b83d106,
+    name: "setting"
   }, {
     path: "/student",
     component: _094c3cb0,
@@ -218,6 +229,30 @@ export const routerOptions = {
     path: "/profile/update",
     component: _32bda196,
     name: "profile-update"
+  }, {
+    path: "/setting/assign-permission-to-role",
+    component: _35a8b053,
+    name: "setting-assign-permission-to-role"
+  }, {
+    path: "/setting/assign-role",
+    component: _415e41ff,
+    name: "setting-assign-role"
+  }, {
+    path: "/setting/permission",
+    component: _018337b4,
+    name: "setting-permission"
+  }, {
+    path: "/setting/role",
+    component: _49eda49b,
+    name: "setting-role"
+  }, {
+    path: "/setting/special-permission",
+    component: _453bde48,
+    name: "setting-special-permission"
+  }, {
+    path: "/student/question",
+    component: _2b198203,
+    name: "student-question"
   }, {
     path: "/student/syllabus",
     component: _7a782142,

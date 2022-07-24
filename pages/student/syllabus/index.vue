@@ -21,7 +21,7 @@
                     <th>Sl</th>           
                     <th>Department</th>           
                     <th>Description</th>           
-                    <!-- <th>File</th>           -->
+                    <th>File</th>          
                    
                     <th style="width:200px">Action</th>
                   </tr>
@@ -31,6 +31,7 @@
                     <td>{{ index + 1 }}</td>
                     <td >{{ syllabus.department}}</td>
                     <td>{{ syllabus.description }}</td>                   
+                    <td><a href="#" @click="downloadFile(syllabus.id)">Download</a></td>                   
                     <!-- <td><img :src="base_url+'/images/syllabus/' + syllabus.file" alt="image" style="height:80px" />
                     </td> -->
                     <!-- <td>
@@ -94,7 +95,27 @@ export default{
                 tconsole.log(error);
             });
 
+        },
+        downloadFile($id){
+           this.$axios
+        .$get("/syllabus/file-download/" + $id, {
+          responseType: "blob",
+        })
+        .then((response) => {
+          const url = window.URL.createObjectURL(new Blob([response]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", "syllabus.pdf");
+          document.body.appendChild(link);
+          link.click();
+        })
+        .catch((error) => {
+          this.error = error.response.data.errors;
+        });
+          alert($id);
+
         }
+
     }
 
 }

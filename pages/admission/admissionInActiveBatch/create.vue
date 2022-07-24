@@ -1312,7 +1312,7 @@
                                                       
                                                     >
                                                         <div class="form-group">
-                                                          
+                                                          <label for="refereed_by">Referred By Email</label>
                                                             <input type="text" class="form-control"
                                                                 id="refereed_by_email" name="refereed_by_email"
                                                                 v-model="student.refereed_by_email" />
