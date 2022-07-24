@@ -11,7 +11,7 @@
                 v-for="emp in employees"
                 :key="emp.id"
                 :value="emp.id"
-                v-text="emp.employee"
+                v-text="emp.name"
               ></option>
             </select>
             <h6
@@ -23,12 +23,12 @@
           <div class="form-group focused">
             <label for="_id">Role</label>
             <select class="form-control" v-model="role" required>
-              <option  selected value="">Select Role</option>
+              <option selected value="">Select Role</option>
               <option
                 v-for="rl in roles"
                 :key="rl.id"
-                :value="rl.id"
-                v-text="rl.department_name"
+                :value="rl.name"
+                v-text="rl.name"
               ></option>
             </select>
             <h6
@@ -37,7 +37,7 @@
               v-text="error.role[0]"
             ></h6>
           </div>
-          <button class="btn btn-info">Assign</button>
+          <button class="btn btn-info" @click="givePermission">Assign</button>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
 <script>
 export default {
   layout: "Setting-content",
-  data(){
+  data() {
     return {
       employess: null,
       employee: "",
@@ -57,41 +57,59 @@ export default {
       loading: false,
     };
   },
+  mounted() {
+    this.getEmployees();
+    this.getRoles();
+  },
   methods: {
-    // createClass() {
-    //   this.$axios
-    //     .post("/accounts/class", {
-    //       name: this.name,
-    //       admissionFee: this.admissionFee,
-    //       monthlyFee: this.monthlyFee,
-    //     })
-    //     .then((response) => {
-    //       this.classes = [
-    //         ...this.classes,
-    //         {
-    //           id: this.classes.length + 1,
-    //           name: this.name,
-    //           admission_fee: this.admissionFee,
-    //           monthly_fee: this.monthlyFee,
-    //         },
-    //       ];
-    //       (this.name = ""),
-    //         (this.admissionFee = ""),
-    //         (this.monthlyFee = ""),
-    //         this.$toaster.success(response.data.message);
-    //       this.$router.push("/account/class");
-    //     })
-    //     .catch((error) => {
-    //       if (error.response.status === 422) {
-    //         this.error = error.response.data.errors;
-    //       }
-    //       console.log(error);
-    //     });
-    // },
+    givePermission() {
+      this.loading = true;
+      this.$axios
+        .post(`setting/assign-role/${this.employee}`, {
+          role: this.role,
+        })
+        .then((response) => {
+           this.$toaster.success(response.data.message);
+        })
+        .catch((error) => {
+          this.$toaster.error(error.response.data.message);
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
+    getPermissions() {
+      this.loading = true;
+      this.$axios
+        .get("/setting/permissions")
+        .then((response) => {
+          this.permissions = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
+    getEmployees() {
+      this.loading = true;
+      this.$axios
+        .get("/employee/show")
+        .then((response) => {
+          this.employees = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
     getRoles() {
       this.loading = true;
       this.$axios
-        .get("/roles")
+        .get("/setting/roles")
         .then((response) => {
           this.roles = response.data;
         })
@@ -102,21 +120,7 @@ export default {
           this.loading = false;
         });
     },
-    getEmplyees() {
-      this.loading = true;
-      this.$axios
-        .get("/roles")
-        .then((response) => {
-          this.employess = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          this.loading = false;
-        });
-    },
-  }
+  },
 };
 </script>
 

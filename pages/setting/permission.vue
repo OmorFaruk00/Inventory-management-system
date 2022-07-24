@@ -19,7 +19,7 @@
                 error.name[0]
               }}</span>
             </div>
-            <button class="btn btn-secondary">Make</button>
+            <button class="btn btn-secondary" @click="createPermission">Make</button>
           </div>
         </div>
       </div>
@@ -63,40 +63,28 @@ export default {
     this.getpermissions();
   },
   methods: {
-    // createClass() {
-    //   this.$axios
-    //     .post("/accounts/class", {
-    //       name: this.name,
-    //       admissionFee: this.admissionFee,
-    //       monthlyFee: this.monthlyFee,
-    //     })
-    //     .then((response) => {
-    //       this.classes = [
-    //         ...this.classes,
-    //         {
-    //           id: this.classes.length + 1,
-    //           name: this.name,
-    //           admission_fee: this.admissionFee,
-    //           monthly_fee: this.monthlyFee,
-    //         },
-    //       ];
-    //       (this.name = ""),
-    //         (this.admissionFee = ""),
-    //         (this.monthlyFee = ""),
-    //         this.$toaster.success(response.data.message);
-    //       this.$router.push("/account/class");
-    //     })
-    //     .catch((error) => {
-    //       if (error.response.status === 422) {
-    //         this.error = error.response.data.errors;
-    //       }
-    //       console.log(error);
-    //     });
-    // },
+    createPermission() {
+      this.loading = true;
+      this.$axios
+        .post(`setting/permission`, {
+          name: this.name,
+        })
+        .then((response) => {
+           this.$toaster.success(response.data.message);
+          this.getpermissions();
+        })
+        .catch((error) => {
+           this.$toaster.error(error.response.data.message);
+          console.log(error);
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
     getpermissions() {
       this.loading = true;
       this.$axios
-        .get("/permissions")
+        .get("/setting/permissions")
         .then((response) => {
           this.permissions = response.data;
         })
