@@ -14,7 +14,7 @@
                 v-for="emp in employees"
                 :key="emp.id"
                 :value="emp.id"
-                v-text="emp.employee"
+                v-text="emp.name"
               ></option>
             </select>
             <h6
@@ -23,19 +23,22 @@
               v-text="error.employee[0]"
             ></h6>
           </div>
-          <div class="form-check">
+          <div class="form-check" v-for="prm in permissions" :key="prm.i">
             <input
+              v-model="permission"
               class="form-check-input"
               type="checkbox"
-              id="checkbox1"
-              name="option1"
-              value="good"
+              :id="prm.name"
+              :name="prm.name"
+              :value="prm.name"
             />
-            <label for="checkbox1" class="form-check-label"> Post Image </label>
+            <label :for="prm.name" class="form-check-label">
+              {{ prm.name }}
+            </label>
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-info">Assign</button>
+          <button class="btn btn-info" @click="givePermission">Assign</button>
         </div>
       </div>
     </div>
@@ -47,21 +50,41 @@ export default {
   layout: "Setting-content",
   data() {
     return {
-      employess: null,
+      employees: null,
       employee: "",
-      roles: null,
-      role: "",
+      permissions: null,
+      permission: [],
       error: "",
       loading: false,
     };
   },
+  mounted() {
+    this.getPermissions();
+    this.getEmplyees();
+  },
   methods: {
+    givePermission() {
+      this.loading = true;
+      this.$axios
+        .post(`setting/special-permission/${this.employee}`, {
+          permissions: this.permission,
+        })
+        .then((response) => { this.$toaster.success(response.data.message);
+
+        })
+        .catch((error) => {
+          this.$toaster.success(error.response.data.error);
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
     getPermissions() {
       this.loading = true;
       this.$axios
-        .get("/roles")
+        .get("/setting/permissions")
         .then((response) => {
-          this.roles = response.data;
+          this.permissions = response.data;
         })
         .catch((error) => {
           console.log(error);
@@ -73,9 +96,9 @@ export default {
     getEmplyees() {
       this.loading = true;
       this.$axios
-        .get("/roles")
+        .get("/employee/show")
         .then((response) => {
-          this.employess = response.data;
+          this.employees = response.data;
         })
         .catch((error) => {
           console.log(error);

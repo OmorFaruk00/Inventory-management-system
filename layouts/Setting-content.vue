@@ -22,9 +22,6 @@
               <nuxt-link to="/setting/assign-role" class="">
                 Assign Role
               </nuxt-link>
-              <nuxt-link to="/setting/assign-permission-to-role" class="">
-                Assign Permission to Role
-              </nuxt-link>
             </div>
           </div>
           <div class="dropdown_final_admission_form">

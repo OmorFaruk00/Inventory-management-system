@@ -1,7 +1,11 @@
-.env
-.env.local
-.env.production
+.output
 .nuxt
-.vscode
 node_modules
+# System files
+*.log
 dist
+.vscode
+*.json.gz
+.nuxt/routes.json
+.nuxt/routes.json
+.nuxt/inedex.js
