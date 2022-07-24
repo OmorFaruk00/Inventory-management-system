@@ -5,6 +5,6 @@ node_modules
 dist
 .vscode
 *.json.gz
-.nuxt/routes.json
-.nuxt/routes.json
-.nuxt/inedex.js
+.nuxt/*.json
+.nuxt/*.json
+.nuxt/*.js
