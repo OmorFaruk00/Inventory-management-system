@@ -45,7 +45,10 @@ const _415e41ff = () => interopDefault(import('../pages/setting/assign-role.vue'
 const _018337b4 = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _49eda49b = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
 const _453bde48 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
+const _16fbe629 = () => interopDefault(import('../pages/student/lecture-sheet/index.vue' /* webpackChunkName: "pages/student/lecture-sheet/index" */))
+const _58afe312 = () => interopDefault(import('../pages/student/lesson-plan/index.vue' /* webpackChunkName: "pages/student/lesson-plan/index" */))
 const _2b198203 = () => interopDefault(import('../pages/student/question/index.vue' /* webpackChunkName: "pages/student/question/index" */))
+const _9753d596 = () => interopDefault(import('../pages/student/students/index.vue' /* webpackChunkName: "pages/student/students/index" */))
 const _7a782142 = () => interopDefault(import('../pages/student/syllabus/index.vue' /* webpackChunkName: "pages/student/syllabus/index" */))
 const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
 const _4f6b12fd = () => interopDefault(import('../pages/admission/batch/create.vue' /* webpackChunkName: "pages/admission/batch/create" */))
@@ -64,11 +67,17 @@ const _49c74162 = () => interopDefault(import('../pages/employee/employee/create
 const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _1f95ac96 = () => interopDefault(import('../pages/student/lecture-sheet/create.vue' /* webpackChunkName: "pages/student/lecture-sheet/create" */))
+const _6de3e9b2 = () => interopDefault(import('../pages/student/lesson-plan/create.vue' /* webpackChunkName: "pages/student/lesson-plan/create" */))
+const _5fcb091b = () => interopDefault(import('../pages/student/question/create.vue' /* webpackChunkName: "pages/student/question/create" */))
 const _077f5c88 = () => interopDefault(import('../pages/student/syllabus/create.vue' /* webpackChunkName: "pages/student/syllabus/create" */))
 const _3d2014f5 = () => interopDefault(import('../pages/admission/batch/update/_id.vue' /* webpackChunkName: "pages/admission/batch/update/_id" */))
 const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/_id.vue' /* webpackChunkName: "pages/dum-ac/committee/update/_id" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
+const _addfe0a6 = () => interopDefault(import('../pages/student/lecture-sheet/update/_id.vue' /* webpackChunkName: "pages/student/lecture-sheet/update/_id" */))
+const _82522fc2 = () => interopDefault(import('../pages/student/lesson-plan/update/_id.vue' /* webpackChunkName: "pages/student/lesson-plan/update/_id" */))
+const _db8867da = () => interopDefault(import('../pages/student/question/update/_id.vue' /* webpackChunkName: "pages/student/question/update/_id" */))
 const _28ac4798 = () => interopDefault(import('../pages/student/syllabus/update/_id.vue' /* webpackChunkName: "pages/student/syllabus/update/_id" */))
 const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
 const _7d3d8652 = () => interopDefault(import('../pages/admission/student-update/_id.vue' /* webpackChunkName: "pages/admission/student-update/_id" */))
@@ -250,9 +259,21 @@ export const routerOptions = {
     component: _453bde48,
     name: "setting-special-permission"
   }, {
+    path: "/student/lecture-sheet",
+    component: _16fbe629,
+    name: "student-lecture-sheet"
+  }, {
+    path: "/student/lesson-plan",
+    component: _58afe312,
+    name: "student-lesson-plan"
+  }, {
     path: "/student/question",
     component: _2b198203,
     name: "student-question"
+  }, {
+    path: "/student/students",
+    component: _9753d596,
+    name: "student-students"
   }, {
     path: "/student/syllabus",
     component: _7a782142,
@@ -326,6 +347,18 @@ export const routerOptions = {
     component: _91913fd6,
     name: "profile-training-create"
   }, {
+    path: "/student/lecture-sheet/create",
+    component: _1f95ac96,
+    name: "student-lecture-sheet-create"
+  }, {
+    path: "/student/lesson-plan/create",
+    component: _6de3e9b2,
+    name: "student-lesson-plan-create"
+  }, {
+    path: "/student/question/create",
+    component: _5fcb091b,
+    name: "student-question-create"
+  }, {
     path: "/student/syllabus/create",
     component: _077f5c88,
     name: "student-syllabus-create"
@@ -345,6 +378,18 @@ export const routerOptions = {
     path: "/employee/employee/update/:id?",
     component: _374488da,
     name: "employee-employee-update-id"
+  }, {
+    path: "/student/lecture-sheet/update/:id",
+    component: _addfe0a6,
+    name: "student-lecture-sheet-update-id"
+  }, {
+    path: "/student/lesson-plan/update/:id",
+    component: _82522fc2,
+    name: "student-lesson-plan-update-id"
+  }, {
+    path: "/student/question/update/:id?",
+    component: _db8867da,
+    name: "student-question-update-id"
   }, {
     path: "/student/syllabus/update/:id?",
     component: _28ac4798,

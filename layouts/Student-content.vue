@@ -6,8 +6,11 @@
         <div class="list-group sidebar">
 
           <nuxt-link class="sidebar-item" to="/student"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/student/students"><img src="/images/std.png" alt="" />Students</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/syllabus"><img src="/images/syllabus.png" alt="" />Syllabus</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/question"><img src="/images/question.png" alt="" />Questions</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/student/lesson-plan"><img src="/images/lesson.png" alt="" />Lesson Plan</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/student/lecture-sheet"><img src="/images/sheet.png" alt="" />Lecture Sheet</nuxt-link>
           
         
       

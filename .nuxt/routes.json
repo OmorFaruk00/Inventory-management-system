@@ -246,10 +246,28 @@
     "chunkName": "pages/setting/special-permission"
   },
   {
+    "name": "student-lecture-sheet",
+    "path": "/student/lecture-sheet",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/lecture-sheet/index.vue",
+    "chunkName": "pages/student/lecture-sheet/index"
+  },
+  {
+    "name": "student-lesson-plan",
+    "path": "/student/lesson-plan",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/lesson-plan/index.vue",
+    "chunkName": "pages/student/lesson-plan/index"
+  },
+  {
     "name": "student-question",
     "path": "/student/question",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/question/index.vue",
     "chunkName": "pages/student/question/index"
+  },
+  {
+    "name": "student-students",
+    "path": "/student/students",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/students/index.vue",
+    "chunkName": "pages/student/students/index"
   },
   {
     "name": "student-syllabus",
@@ -360,6 +378,24 @@
     "chunkName": "pages/profile/training/create"
   },
   {
+    "name": "student-lecture-sheet-create",
+    "path": "/student/lecture-sheet/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/lecture-sheet/create.vue",
+    "chunkName": "pages/student/lecture-sheet/create"
+  },
+  {
+    "name": "student-lesson-plan-create",
+    "path": "/student/lesson-plan/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/lesson-plan/create.vue",
+    "chunkName": "pages/student/lesson-plan/create"
+  },
+  {
+    "name": "student-question-create",
+    "path": "/student/question/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/question/create.vue",
+    "chunkName": "pages/student/question/create"
+  },
+  {
     "name": "student-syllabus-create",
     "path": "/student/syllabus/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/syllabus/create.vue",
@@ -388,6 +424,24 @@
     "path": "/employee/employee/update/:id?",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/employee/update/_id.vue",
     "chunkName": "pages/employee/employee/update/_id"
+  },
+  {
+    "name": "student-lecture-sheet-update-id",
+    "path": "/student/lecture-sheet/update/:id",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/lecture-sheet/update/_id.vue",
+    "chunkName": "pages/student/lecture-sheet/update/_id"
+  },
+  {
+    "name": "student-lesson-plan-update-id",
+    "path": "/student/lesson-plan/update/:id",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/lesson-plan/update/_id.vue",
+    "chunkName": "pages/student/lesson-plan/update/_id"
+  },
+  {
+    "name": "student-question-update-id",
+    "path": "/student/question/update/:id?",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/question/update/_id.vue",
+    "chunkName": "pages/student/question/update/_id"
   },
   {
     "name": "student-syllabus-update-id",

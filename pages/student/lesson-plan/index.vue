@@ -7,14 +7,14 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col col-sm-5 col-xs-12">
-                  <h6 class="title">question List</h6>
+                  <h6 class="title">lesson plan List</h6>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right mb-2">
-                  <nuxt-link to="/student/question/create" class="btn-add"><svg height='25px'
+                  <nuxt-link to="/student/lesson-plan/create" class="btn-add"><svg height='25px'
                       xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 mr-1" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg> Add question</nuxt-link>
+                    </svg> Add lesson plan</nuxt-link>
                 </div>
               </div>
             </div>
@@ -23,34 +23,34 @@
                 <thead class="bg-dark text-white">
                   <tr>                    
                     <th>Sl</th>           
-                    <th>Department</th>
-                    <th>Course Name</th>              
+                    <th>Department</th>           
+                    <th>Course Name</th>                    
                     <th>Description</th>           
-                    <th>File</th>                  
+                    <th>File</th>               
                     <th style="width:250px">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(question,index) in questions" :key="index">
+                  <tr v-for="(lesson,index) in lessons" :key="index">
                     <td>{{ index + 1 }}</td>
-                    <td >{{ question.department.department_name}}</td>
-                    <td>{{ question.course_name }}</td>                   
-                    <td>{{ question.description }}</td>                   
-                    <td><a :href="base_url+'/images/question/'+ question.file" download class="btn-download"><svg height="20px" xmlns="http://www.w3.org/2000/svg"
+                    <td >{{ lesson.department.department_name}}</td>
+                    <td>{{ lesson.course_name }}</td>                   
+                    <td>{{ lesson.description }}</td>                   
+                    <td><a :href="base_url+'/images/lessonplan/'+ lesson.file" download class="btn-download"><svg height="20px" xmlns="http://www.w3.org/2000/svg"
                         class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg> Download</a></td>                 
+                      </svg> Download</a></td>               
                  
                     <td>
-                      <nuxt-link :to="`/student/question/update/${question.id}`" class="btn-edit py-2 mr-3"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
+                      <nuxt-link :to="`/student/lesson-plan/update/${lesson.id}`" class="btn-edit btn-responsive py-2 mr-3"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                         <path fill-rule="evenodd"
                           d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
                           clip-rule="evenodd" />
                       </svg>Edit</nuxt-link>                      
-                      <button class="btn-delete" @click="questionDelete(question.id)"><svg height='18px'
+                      <button class="btn-delete btn-responsive" @click="lessonDelete(lesson.id)"><svg height='18px'
                         xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 pr-1" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -77,33 +77,32 @@ export default{
     layout:'Student-content',
     data(){
         return{
-            questions:'',
+            lessons:'',
             base_url:process.env.url
 
         }
     },
     mounted(){
-        this.fetchQuestionInfo();
+        this.fetchlessonInfo();
 
     },
     methods:{
-          fetchQuestionInfo() {
+          fetchlessonInfo() {
 
-            this.$axios.$get('/question/show').then(response => {
-                this.questions = response;
-                console.log(response);
+            this.$axios.$get('/lessonplan/show').then(response => {
+                this.lessons = response;
             }).catch((error) => {
                 tconsole.log(error);
             });
 
 
         },
-        questionDelete($id){
+        lessonDelete($id){
             if (confirm("Are you sure to delete this ?")) {
-                this.$axios.$get('/question/delete/'+$id).then(response => {
+                this.$axios.$get('/lessonplan/delete/'+$id).then(response => {
                 this.$toaster.success(response.message);
-                this.$router.push("/student/question");
-                this.fetchQuestionInfo();
+                this.$router.push("/student/lesson-plan");
+                this.fetchlessonInfo();
             }).catch((error) => {
                 tconsole.log(error);
             });
