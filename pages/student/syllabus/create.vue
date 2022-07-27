@@ -1,9 +1,9 @@
 <template>
     <div class="form-bg py-5">
         <div class="col-md-6 offset-md-3">
-            <div class="form-container">
+            <div class="form-shadow p-5">
                 <h3 class="title">Create Syllabus</h3>
-                <form class="form-horizontal">
+                <form class="">
                     <div class="row">
                         <div class="col-md-6 col-xl-6 col-sm-12">
                             <div class="form-group">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <!-- <div class="col-md-6 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Short Description *</label>
                                 <input type="text" class="form-control" placeholder="Enter Short Description"
@@ -46,15 +46,11 @@
                                 <h6 v-if="errors.short_description" v-text="errors.short_description[0]"
                                     class="text-danger"></h6>
                             </div>
-                        </div>
+                        </div> -->
 
-
-
-
-
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-6 col-xl-6 col-sm-6">
                             <div class="form-group">
-                                <label>File*</label>
+                                <label class="">File*</label>
                                 <input type="file" class="form-control" placeholder=""
                                     @change="(e) => (syllabus.file = e.target.files[0])" accept="image/*" />
                                 <h6 v-if="errors.file" v-text="errors.file[0]" class="text-danger"></h6>
@@ -84,8 +80,7 @@ export default {
             errors: [],
             departments: '',
             syllabus: {
-                description: '',
-                short_description: '',
+                description: '',                
                 department: '',
                 status: '',
                 file: '',
@@ -112,8 +107,7 @@ export default {
             let formData = new FormData();
             formData.append('department', this.syllabus.department)
             formData.append('status', this.syllabus.status)
-            formData.append('description', this.syllabus.description)
-            formData.append('short_description', this.syllabus.short_description)
+            formData.append('description', this.syllabus.description)            
             formData.append('file', this.syllabus.file)
 
             this.$axios

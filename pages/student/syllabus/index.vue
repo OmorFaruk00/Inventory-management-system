@@ -9,114 +9,103 @@
                 <div class="col col-sm-5 col-xs-12">
                   <h6 class="title">Syllabus List</h6>
                 </div>
-                <div class="col-sm-7 col-xs-12 text-right">
-                  <nuxt-link to="/student/syllabus/create" class="btn-add">Add Syllabus</nuxt-link>
+                <div class="col-sm-7 col-xs-12 text-right mb-2">
+                  <nuxt-link to="/student/syllabus/create" class="btn-add"><svg height='25px'
+                      xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 mr-1" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>Add Syllabus</nuxt-link>
                 </div>
               </div>
             </div>
-            <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
-                <thead class="bg-dark text-white">
-                  <tr>                    
-                    <th>Sl</th>           
-                    <th>Department</th>           
-                    <th>Description</th>           
-                    <th>File</th>          
-                   
-                    <th style="width:200px">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(syllabus,index) in syllabuss" :key="index">
-                    <td>{{ index + 1 }}</td>
-                    <td >{{ syllabus.department}}</td>
-                    <td>{{ syllabus.description }}</td>                   
-                    <td><a href="#" @click="downloadFile(syllabus.id)">Download</a></td>                   
-                    <!-- <td><img :src="base_url+'/images/syllabus/' + syllabus.file" alt="image" style="height:80px" />
-                    </td> -->
-                    <!-- <td>
-                      <button v-if="syllabus.status == 1" class="btn-active" @click="syllabusStatus(syllabus.id)">
-                        Active
-                      </button>
-                      <button v-if="syllabus.status == 0" class="btn-inactive" @click="syllabusStatus(syllabus.id)">
-                        Inactive
-                      </button>
-                    </td> -->
-                    <td>
-                      <nuxt-link :to="`/student/syllabus/update/${syllabus.id}`" class="btn-edit py-2 mr-3">Edit</nuxt-link>                      
-                      <button class="btn-delete" @click="syllabusDelete(syllabus.id)">Delete</button>                      
-
-                      
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              
-            </div>
+          </div>
+          <div class="table-responsive overflow-scroll">
+            <table class="table table-striped text-center">
+              <thead class="bg-dark text-white">
+                <tr>
+                  <th>Sl</th>
+                  <th>Department</th>
+                  <th>Description</th>
+                  <th>File</th>
+                  <th style="width:250px">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(syllabus, index) in syllabuss" :key="index">
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ syllabus.department }}</td>
+                  <td>{{ syllabus.description }}</td>
+                  <td><a :href="base_url + '/images/syllabus/' + syllabus.file" download
+                      class="btn-download "><svg height="20px" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg> Download</a></td>
+                  <td>
+                    <nuxt-link :to="`/student/syllabus/update/${syllabus.id}`"
+                      class="btn-edit btn-responsive py-2 mr-3"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                        <path fill-rule="evenodd"
+                          d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                          clip-rule="evenodd" />
+                      </svg> Edit</nuxt-link>
+                    <button class="btn-delete btn-responsive" @click="syllabusDelete(syllabus.id)"><svg height='18px'
+                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 pr-1" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-
-     
     </div>
   </div>
 </template>
 <script>
-export default{
-    layout:'Student-content',
-    data(){
-        return{
-            syllabuss:'',
-            base_url:process.env.url
-
-        }
-    },
-    mounted(){
-        this.fetchSyllbusInfo();
-
-    },
-    methods:{
-          fetchSyllbusInfo() {
-
-            this.$axios.$get('/syllabus/show').then(response => {
-                this.syllabuss = response;
-            }).catch((error) => {
-                tconsole.log(error);
-            });
-
-
-        },
-        syllabusDelete($id){
-                this.$axios.$get('/syllabus/delete/'+$id).then(response => {
-                this.$toaster.success(response.message);
-                this.$router.push("/student/syllabus");
-                this.fetchSyllbusInfo();
-            }).catch((error) => {
-                tconsole.log(error);
-            });
-
-        },
-        downloadFile($id){
-           this.$axios
-        .$get("/syllabus/file-download/" + $id, {
-          responseType: "blob",
-        })
-        .then((response) => {
-          const url = window.URL.createObjectURL(new Blob([response]));
-          const link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "syllabus.pdf");
-          document.body.appendChild(link);
-          link.click();
-        })
-        .catch((error) => {
-          this.error = error.response.data.errors;
-        });
-          alert($id);
-
-        }
+export default {
+  layout: 'Student-content',
+  data() {
+    return {
+      syllabuss: '',
+      base_url: process.env.url
 
     }
+  },
+  mounted() {
+    this.fetchSyllbusInfo();
+
+  },
+  methods: {
+    fetchSyllbusInfo() {
+
+      this.$axios.$get('/syllabus/show').then(response => {
+        this.syllabuss = response;
+      }).catch((error) => {
+        tconsole.log(error);
+      });
+
+
+    },
+    syllabusDelete($id) {
+      if (confirm("Are you sure to delete this ?")) {
+        this.$axios.$get('/syllabus/delete/' + $id).then(response => {
+          this.$toaster.success(response.message);
+          this.$router.push("/student/syllabus");
+          this.fetchSyllbusInfo();
+        }).catch((error) => {
+          tconsole.log(error);
+        });
+      }
+
+    },
+
+
+  }
 
 }
 </script>

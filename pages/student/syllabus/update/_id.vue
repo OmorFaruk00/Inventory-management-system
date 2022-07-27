@@ -1,7 +1,7 @@
 <template>
     <div class="form-bg py-5">
         <div class="col-md-6 offset-md-3">
-            <div class="form-container">
+            <div class="form-shadow p-5">
                 <h3 class="title">Update Syllabus</h3>
                 <form class="form-horizontal">
                     <div class="row">
@@ -36,25 +36,14 @@
                                     v-model="syllabus.description" />
                                 <h6 v-if="errors.description" v-text="errors.description[0]" class="text-danger"></h6>
                             </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Short Description *</label>
-                                <input type="text" class="form-control" placeholder="Enter Short Description"
-                                    v-model="syllabus.short_description" />
-                                <h6 v-if="errors.short_description" v-text="errors.short_description[0]"
-                                    class="text-danger"></h6>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        </div>                      
+                        <div class="col-md-6 col-xl-6 col-sm-6">
                             <div class="form-group">
                                 <label>File*</label>
                                 <input type="file" class="form-control" placeholder=""
                                     @change="(e) => (syllabus.new_file = e.target.files[0])" accept="image/*" />
-                                <h6 v-if="errors.file" v-text="errors.file[0]" class="text-danger"></h6>
+                                <h6 v-if="errors.new_file" v-text="errors.new_file[0]" class="text-danger"></h6>
                             </div>
-                            <img :src="base_url+'/images/syllabus/' + syllabus.file" alt="image" style="height:80px" />
                         </div>
 
                     </div>
@@ -82,11 +71,10 @@ export default {
             departments: '',
             base_url:process.env.url,
             syllabus: {
-                description: '',
-                short_description: '',
+                description: '',                
                 department: '',
                 status: '',
-                file: '',
+                new_file: '',
             }
         }
 
@@ -103,14 +91,11 @@ export default {
 
         },
          fetchSyllabusInfo() {
-
             this.$axios.$get('syllabus/edit/'+this.$route.params.id).then(response => {
                 this.syllabus = response;
             }).catch((error) => {
                 console.log(error);
             });
-
-
         },
 
         updateSyllabus() {
@@ -118,17 +103,15 @@ export default {
             let formData = new FormData();
             formData.append('department', this.syllabus.department)
             formData.append('status', this.syllabus.status)
-            formData.append('description', this.syllabus.description)
-            formData.append('short_description', this.syllabus.short_description)
+            formData.append('description', this.syllabus.description)            
              if(this.syllabus.new_file){
-                formData.append('file', this.syllabus.new_file)
+                formData.append('new_file', this.syllabus.new_file)
             }
             
 
             this.$axios
                 .$post("/syllabus/update/"+this.$route.params.id, formData)
-                .then((res) => {
-                    this.syllabus = "";
+                .then((res) => {                    
                     this.errors = {};
                     this.$toaster.success(res.message);
                     this.$router.push("/student/syllabus");
