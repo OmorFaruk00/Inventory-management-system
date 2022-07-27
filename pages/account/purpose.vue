@@ -48,7 +48,7 @@
               <select v-model="class_id" id="inputState" class="form-control">
                 <option selected disabled value="">Choose...</option>
                 <option :value="cls.id" v-for="cls in classes" :key="cls.id">
-                  {{ cls.name }}
+                  {{ cls.department_name }}
                 </option>
               </select>
                <span class="text-danger" v-if="error && error.class_id">{{
@@ -187,7 +187,7 @@ export default {
     },
     getClass() {
       this.$axios
-        .get("/accounts/class")
+        .get("/admission/department-show")
         .then((response) => {
           this.classes = response.data;
         })
