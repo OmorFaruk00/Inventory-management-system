@@ -9,14 +9,14 @@
                                 <div class="col col-sm-5 col-xs-12">
                                     <h6 class="title">batch List</h6>
                                 </div>
-                                <div class="col-sm-7 col-xs-12 text-right">
+                                <div class="col-sm-7 col-xs-12 text-right mb-2">
                                     <nuxt-link to="/admission/batch/create" class="btn-add">Add batch</nuxt-link>
                                 </div>
                             </div>
                         </div>
                         <div class="panel-body table-responsive">
                             <table class="table table-striped text-center">
-                                <thead>
+                                <thead class="bg-dark text-white">
                                     <tr>
                                         <th>Sl</th>
                                         <th>Department </th>
@@ -33,7 +33,7 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="batch in batchs" :key="batch._id">
-                                        <td>{{ batch.id}}</td>
+                                        <td>{{ batch.id }}</td>
                                         <td>{{ batch.department.department_name }}</td>
                                         <td>{{ batch.group }}/{{ batch.shift }}</td>
                                         <td>{{ batch.batch_name }}</td>
@@ -54,10 +54,11 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <nuxt-link :to="`/admission/batch/update/${batch.id}`" class="btn-edit mr-3" style="padding:7px 15px">
+                                            <nuxt-link :to="`/admission/batch/update/${batch.id}`" class="btn-edit mr-3"
+                                                style="padding:7px 15px">
                                                 Edit
                                             </nuxt-link>
-                                            <button class="btn-delete " @click="batchDelete(batch.id)">
+                                            <button class="btn-delete mt-2" @click="batchDelete(batch.id)">
                                                 Delete
                                             </button>
                                         </td>

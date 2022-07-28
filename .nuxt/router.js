@@ -40,7 +40,6 @@ const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/in
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
 const _32bda196 = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
-const _35a8b053 = () => interopDefault(import('../pages/setting/assign-permission-to-role.vue' /* webpackChunkName: "pages/setting/assign-permission-to-role" */))
 const _415e41ff = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
 const _018337b4 = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _49eda49b = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
@@ -238,10 +237,6 @@ export const routerOptions = {
     path: "/profile/update",
     component: _32bda196,
     name: "profile-update"
-  }, {
-    path: "/setting/assign-permission-to-role",
-    component: _35a8b053,
-    name: "setting-assign-permission-to-role"
   }, {
     path: "/setting/assign-role",
     component: _415e41ff,
