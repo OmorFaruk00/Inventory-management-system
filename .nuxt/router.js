@@ -44,9 +44,12 @@ const _415e41ff = () => interopDefault(import('../pages/setting/assign-role.vue'
 const _018337b4 = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _49eda49b = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
 const _453bde48 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
+const _1ff0e8c6 = () => interopDefault(import('../pages/student/attendance/index.vue' /* webpackChunkName: "pages/student/attendance/index" */))
+const _b2ec3f10 = () => interopDefault(import('../pages/student/course/index.vue' /* webpackChunkName: "pages/student/course/index" */))
 const _16fbe629 = () => interopDefault(import('../pages/student/lecture-sheet/index.vue' /* webpackChunkName: "pages/student/lecture-sheet/index" */))
 const _58afe312 = () => interopDefault(import('../pages/student/lesson-plan/index.vue' /* webpackChunkName: "pages/student/lesson-plan/index" */))
 const _2b198203 = () => interopDefault(import('../pages/student/question/index.vue' /* webpackChunkName: "pages/student/question/index" */))
+const _6faf3da0 = () => interopDefault(import('../pages/student/search-student.vue' /* webpackChunkName: "pages/student/search-student" */))
 const _9753d596 = () => interopDefault(import('../pages/student/students/index.vue' /* webpackChunkName: "pages/student/students/index" */))
 const _7a782142 = () => interopDefault(import('../pages/student/syllabus/index.vue' /* webpackChunkName: "pages/student/syllabus/index" */))
 const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
@@ -66,6 +69,9 @@ const _49c74162 = () => interopDefault(import('../pages/employee/employee/create
 const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _276252f0 = () => interopDefault(import('../pages/student/attendance/report.vue' /* webpackChunkName: "pages/student/attendance/report" */))
+const _521f4764 = () => interopDefault(import('../pages/student/attendance/test.vue' /* webpackChunkName: "pages/student/attendance/test" */))
+const _52667946 = () => interopDefault(import('../pages/student/course/create.vue' /* webpackChunkName: "pages/student/course/create" */))
 const _1f95ac96 = () => interopDefault(import('../pages/student/lecture-sheet/create.vue' /* webpackChunkName: "pages/student/lecture-sheet/create" */))
 const _6de3e9b2 = () => interopDefault(import('../pages/student/lesson-plan/create.vue' /* webpackChunkName: "pages/student/lesson-plan/create" */))
 const _5fcb091b = () => interopDefault(import('../pages/student/question/create.vue' /* webpackChunkName: "pages/student/question/create" */))
@@ -74,6 +80,8 @@ const _3d2014f5 = () => interopDefault(import('../pages/admission/batch/update/_
 const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/_id.vue' /* webpackChunkName: "pages/dum-ac/committee/update/_id" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
+const _69f4ac63 = () => interopDefault(import('../pages/student/attendance/create/_id.vue' /* webpackChunkName: "pages/student/attendance/create/_id" */))
+const _2805a284 = () => interopDefault(import('../pages/student/course/update/_id.vue' /* webpackChunkName: "pages/student/course/update/_id" */))
 const _addfe0a6 = () => interopDefault(import('../pages/student/lecture-sheet/update/_id.vue' /* webpackChunkName: "pages/student/lecture-sheet/update/_id" */))
 const _82522fc2 = () => interopDefault(import('../pages/student/lesson-plan/update/_id.vue' /* webpackChunkName: "pages/student/lesson-plan/update/_id" */))
 const _db8867da = () => interopDefault(import('../pages/student/question/update/_id.vue' /* webpackChunkName: "pages/student/question/update/_id" */))
@@ -254,6 +262,14 @@ export const routerOptions = {
     component: _453bde48,
     name: "setting-special-permission"
   }, {
+    path: "/student/attendance",
+    component: _1ff0e8c6,
+    name: "student-attendance"
+  }, {
+    path: "/student/course",
+    component: _b2ec3f10,
+    name: "student-course"
+  }, {
     path: "/student/lecture-sheet",
     component: _16fbe629,
     name: "student-lecture-sheet"
@@ -265,6 +281,10 @@ export const routerOptions = {
     path: "/student/question",
     component: _2b198203,
     name: "student-question"
+  }, {
+    path: "/student/search-student",
+    component: _6faf3da0,
+    name: "student-search-student"
   }, {
     path: "/student/students",
     component: _9753d596,
@@ -342,6 +362,18 @@ export const routerOptions = {
     component: _91913fd6,
     name: "profile-training-create"
   }, {
+    path: "/student/attendance/report",
+    component: _276252f0,
+    name: "student-attendance-report"
+  }, {
+    path: "/student/attendance/test",
+    component: _521f4764,
+    name: "student-attendance-test"
+  }, {
+    path: "/student/course/create",
+    component: _52667946,
+    name: "student-course-create"
+  }, {
     path: "/student/lecture-sheet/create",
     component: _1f95ac96,
     name: "student-lecture-sheet-create"
@@ -373,6 +405,14 @@ export const routerOptions = {
     path: "/employee/employee/update/:id?",
     component: _374488da,
     name: "employee-employee-update-id"
+  }, {
+    path: "/student/attendance/create/:id?",
+    component: _69f4ac63,
+    name: "student-attendance-create-id"
+  }, {
+    path: "/student/course/update/:id?",
+    component: _2805a284,
+    name: "student-course-update-id"
   }, {
     path: "/student/lecture-sheet/update/:id",
     component: _addfe0a6,

@@ -68,7 +68,7 @@ export default {
     methods:{
             getbatch() {
             this.$axios
-                .$get("admission/batch-show")
+                .$get("admission/active-batch")
                 .then((res) => {                   
                     this.activeBatchs = res;
                 })
