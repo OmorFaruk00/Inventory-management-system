@@ -71,6 +71,7 @@ const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vu
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
 const _276252f0 = () => interopDefault(import('../pages/student/attendance/report.vue' /* webpackChunkName: "pages/student/attendance/report" */))
 const _521f4764 = () => interopDefault(import('../pages/student/attendance/test.vue' /* webpackChunkName: "pages/student/attendance/test" */))
+const _3dea27b9 = () => interopDefault(import('../pages/student/course/assign.vue' /* webpackChunkName: "pages/student/course/assign" */))
 const _52667946 = () => interopDefault(import('../pages/student/course/create.vue' /* webpackChunkName: "pages/student/course/create" */))
 const _1f95ac96 = () => interopDefault(import('../pages/student/lecture-sheet/create.vue' /* webpackChunkName: "pages/student/lecture-sheet/create" */))
 const _6de3e9b2 = () => interopDefault(import('../pages/student/lesson-plan/create.vue' /* webpackChunkName: "pages/student/lesson-plan/create" */))
@@ -369,6 +370,10 @@ export const routerOptions = {
     path: "/student/attendance/test",
     component: _521f4764,
     name: "student-attendance-test"
+  }, {
+    path: "/student/course/assign",
+    component: _3dea27b9,
+    name: "student-course-assign"
   }, {
     path: "/student/course/create",
     component: _52667946,

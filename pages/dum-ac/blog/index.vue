@@ -91,7 +91,7 @@
                         </div>
                         <div class="modal-footer">
                             <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                            <button type="button" class="btn btn-submit" @click="blogUpdate()">Update</button>
+                            <button type="button" class="btn-submit" @click="blogUpdate()">Update</button>
                         </div>
                     </div>
                 </div>

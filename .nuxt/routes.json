@@ -469,6 +469,13 @@
     "_name": "_521f4764"
   },
   {
+    "name": "student-course-assign",
+    "path": "/student/course/assign",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/course/assign.vue",
+    "chunkName": "pages/student/course/assign",
+    "_name": "_3dea27b9"
+  },
+  {
     "name": "student-course-create",
     "path": "/student/course/create",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/student/course/create.vue",

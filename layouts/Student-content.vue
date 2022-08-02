@@ -7,12 +7,13 @@
 
           <nuxt-link class="sidebar-item" to="/student"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/students"><img src="/images/std.png" alt="" />Students</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/student/search-student"><img src="/images/search.png" alt="" />Search Student</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/course"><img src="/images/course.png" alt="" />Courses</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/student/course/assign"><img src="/images/assign.png" alt="" /> Assign Course Teacher</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/syllabus"><img src="/images/syllabus.png" alt="" />Syllabus</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/question"><img src="/images/question.png" alt="" />Questions</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/lesson-plan"><img src="/images/lesson.png" alt="" />Lesson Plan</nuxt-link>
-          <nuxt-link class="sidebar-item" to="/student/lecture-sheet"><img src="/images/sheet.png" alt="" />Lecture Sheet</nuxt-link>
-          <nuxt-link class="sidebar-item" to="/student/search-student"><img src="/images/search.png" alt="" />Search Student</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/student/lecture-sheet"><img src="/images/sheet.png" alt="" />Lecture Sheet</nuxt-link>          
           <nuxt-link class="sidebar-item" to="/student/attendance"><img src="/images/attendance.png" alt="" />Attendance</nuxt-link>
           <nuxt-link class="sidebar-item" to="/student/attendance/report"><img src="/images/report.png" alt="" />Attendance Report</nuxt-link>
           
