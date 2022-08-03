@@ -1,8 +1,9 @@
 <template>
 <div>
   <div v-if="courses.length>0">
-      <h2 class="text-center my-3">Attendance Courses</h2>
-    <table class="table table-striped text-center">
+      <h2 class="text-center my-3 ">Attendance Courses</h2>
+    <div class="table-responsive">
+        <table class="table table-striped text-center">
                 <thead class="bg-dark text-white">
                     <tr>
                         <th>SL</th>
@@ -10,7 +11,7 @@
                         <th>Batch</th>
                         <th>Course</th>                        
                         <th>Course Code</th>                        
-                        <th>Action</th>
+                        <th style="width:250px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,12 +21,13 @@
                     <td>{{course.batch[0].batch_name}}</td>
                     <td>{{course.course_name}}</td>
                     <td>{{course.course_code}}</td>
-                    <td >    <nuxt-link :to="`/student/attendance/create/${course.id}`" class="btn-submit select">Take Attendance</nuxt-link> </td>
+                    <td ><nuxt-link :to="`/student/attendance/create/${course.id}`" class="btn-submit select">Take Attendance</nuxt-link> </td>
                     </tr>
                  
                 </tbody>
             </table>
   </div>
+    </div>
   <div v-else>
     <h2 class="text-center mt-4">You have no assigned course</h2>
 
