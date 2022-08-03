@@ -9,14 +9,14 @@
                 <div class="col col-sm-5 col-xs-12">
                   <h4 class="title">department List</h4>
                 </div>
-                <div class="col-sm-7 col-xs-12 text-right">
+                <div class="col-sm-7 col-xs-12 text-right mb-2">
                   <nuxt-link to="/admission/department/create" class="btn-add">Add department</nuxt-link>
                 </div>
               </div>
             </div>
             <div class="panel-body table-responsive">
               <table class="table table-striped text-center">
-                <thead>
+                <thead class="bg-dark text-white">
                   <tr>
                     <th>ID</th>
                     <th>Department name</th>                    
@@ -37,7 +37,7 @@
                       </button>
                     </td>
                     <td>
-                      <button class="btn-edit" @click="departmentEdit(department.id)">
+                      <button class="btn-edit mb-2" @click="departmentEdit(department.id)">
                         Edit
                       </button>
                       <button class="btn-delete" @click="deletedepartment(department.id)">

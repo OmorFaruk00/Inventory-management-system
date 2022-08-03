@@ -636,7 +636,7 @@
 
                                                             <small v-if="errors.f_cellno"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.f_cellno[0]"></small>
+                                                                v-text="errors.f_cellno[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -992,7 +992,7 @@
 
                                                             <small v-if="errors.e_roll_no_2"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_roll_no_1[0]"></small>
+                                                                v-html="errors.e_roll_no_2[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1008,7 +1008,7 @@
 
                                                             <small v-if="errors.e_passing_year2"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_passing_year1[0]"></small>
+                                                                v-html="errors.e_passing_year2[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1023,7 +1023,7 @@
 
                                                             <small v-if="errors.e_ltr_grd_tmarks2"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_ltr_grd_tmarks1[0]"></small>
+                                                                v-html="errors.e_ltr_grd_tmarks2[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1037,7 +1037,7 @@
 
                                                             <small v-if="errors.e_div_cls_cgpa2"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_div_cls_cgpa1[0]"></small>
+                                                                v-html="errors.e_div_cls_cgpa2[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1052,7 +1052,7 @@
 
                                                             <small v-if="errors.e_board_institute2"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_institute1[0]"></small>
+                                                                v-html="errors.e_board_institute2[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1074,7 +1074,7 @@
 
                                                             <small v-if="errors.e_exam_name3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_exam_name1[0]"></small>
+                                                                v-html="errors.e_exam_name3[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1087,7 +1087,7 @@
 
                                                             <small v-if="errors.e_group3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_group1[0]"></small>
+                                                                v-html="errors.e_group3[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1100,7 +1100,7 @@
 
                                                             <small v-if="errors.e_roll_no_3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_roll_no_1[0]"></small>
+                                                                v-html="errors.e_roll_no_3[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1115,7 +1115,7 @@
 
                                                             <small v-if="errors.e_passing_year3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_passing_year1[0]"></small>
+                                                                v-html="errors.e_passing_year3[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1129,7 +1129,7 @@
 
                                                             <small v-if="errors.e_ltr_grd_tmarks3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_ltr_grd_tmarks1[0]"></small>
+                                                                v-html="errors.e_ltr_grd_tmarks3[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1143,7 +1143,7 @@
 
                                                             <small v-if="errors.e_div_cls_cgpa3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_div_cls_cgpa1[0]"></small>
+                                                                v-html="errors.e_div_cls_cgpa3[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1157,7 +1157,7 @@
 
                                                             <small v-if="errors.e_board_institute3"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_institute1[0]"></small>
+                                                                v-html="errors.e_board_institute3[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1179,7 +1179,7 @@
 
                                                             <small v-if="errors.e_exam_name4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_exam_name1[0]"></small>
+                                                                v-html="errors.e_exam_name4[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1192,7 +1192,7 @@
 
                                                             <small v-if="errors.e_group4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_group1[0]"></small>
+                                                                v-html="errors.e_group4[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1205,7 +1205,7 @@
 
                                                             <small v-if="errors.e_roll_no_4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_roll_no_1[0]"></small>
+                                                                v-html="errors.e_roll_no_4[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1220,7 +1220,7 @@
 
                                                             <small v-if="errors.e_passing_year4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_passing_year1[0]"></small>
+                                                                v-html="errors.e_passing_year4[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1234,7 +1234,7 @@
 
                                                             <small v-if="errors.e_ltr_grd_tmarks4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_ltr_grd_tmarks1[0]"></small>
+                                                                v-html="errors.e_ltr_grd_tmarks4[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1248,7 +1248,7 @@
 
                                                             <small v-if="errors.e_div_cls_cgpa4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_div_cls_cgpa1[0]"></small>
+                                                                v-html="errors.e_div_cls_cgpa4[0]"></small>
                                                         </div>
                                                     </div>
 
@@ -1262,7 +1262,7 @@
 
                                                             <small v-if="errors.e_board_institute4"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.e_board_institute1[0]"></small>
+                                                                v-html="errors.e_board_institute4[0]"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1292,34 +1292,34 @@
                                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                                         <div class="form-group">
                                                             <label for="refereed_by">Referred By</label>
-                                                            <select name="refereed_by" id="refereed_by" @change="refByEmail"
-                                                                v-model="student.refereed_by" class="form-control">
+                                                            <select name="refereed_by" id="refereed_by"
+                                                                class="form-control" v-model="student.refereed_by">
+                                                                <option value="" selected disabled>Select Referred By
+                                                                </option>
                                                                 <option v-for="(
                                     refereedByParent, index
-                                  ) in refBy" :key="index" :value="refereedByParent.id"
-                                                                    v-text="refereedByParent.name"></option>
+                                  ) in refBy" :key="index" :value="refereedByParent.id" v-text="refereedByParent.name">
+                                                                </option>
                                                                 <!-- <option value="test">Test</option> -->
                                                             </select>
 
-                                                            <small v-if="errors.refereed_by"
+                                                            <!-- <small v-if="errors.refereed_by"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.refereed_by[0]"></small>
+                                                                v-html="errors.refereed_by[0]"></small> -->
                                                         </div>
                                                     </div>
 
 
-                                                    <div class="col-lg-4 col-md-6 col-sm-12"
-                                                      
-                                                    >
+                                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                                         <div class="form-group">
-                                                          <label for="refereed_by">Referred By Email</label>
+                                                            <label for="refereed_by">Referred By Email</label>
                                                             <input type="text" class="form-control"
                                                                 id="refereed_by_email" name="refereed_by_email"
                                                                 v-model="student.refereed_by_email" />
 
-                                                            <small v-if="errors.refereed_by_email"
+                                                            <!-- <small v-if="errors.refereed_by_email"
                                                                 class="text-danger with-errors"
-                                                                v-html="errors.refereed_by_email[0]"></small>
+                                                                v-html="errors.refereed_by_email[0]"></small> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1331,7 +1331,7 @@
                                                 Previous
                                             </button>
 
-                                            <button type="button" @click="submitForm()" class="btn btn-success">
+                                            <button type="button" @click="submitForm()" class="btn-submit">
                                                 Submit
                                             </button>
                                         </ul>
@@ -1446,12 +1446,11 @@ export default {
                 e_board_institute4: '',
                 //others
                 refereed_by: '',
-                refe_by_std_type: '',
                 refereed_by_email: '',
 
             },
 
-            errors: [],
+            errors: '',
             loading: false,
             departments: '',
             batches: '',
@@ -1470,7 +1469,7 @@ export default {
                 { value: 'AB-', text: 'AB-' },
             ],
 
-         
+
             countries: [],
             refereedByParents: [],
             refBy: '',
@@ -1482,7 +1481,7 @@ export default {
         }
     },
     methods: {
-     
+
         fetchDepartmentInfo() {
 
             this.$axios.$get('/admission/department').then(response => {
@@ -1505,7 +1504,7 @@ export default {
         },
 
         fetchShiftGroup() {
-            this.$axios.$get("/admission/shift-group/" + this.student.batch_id).then((response) => {                
+            this.$axios.$get("/admission/shift-group/" + this.student.batch_id).then((response) => {
                 this.shifts = response;
                 this.groups = response;
             }).catch((error) => {
@@ -1513,22 +1512,15 @@ export default {
             });
 
         },
-         fetchRefBy() {
-            this.$axios.$get("/employee/show").then((response) => {                
+        fetchRefBy() {
+            this.$axios.$get("/employee/show").then((response) => {
                 this.refBy = response;
             }).catch((error) => {
                 this.$toaster.error("Employee Not found");
             });
 
         },
-           RefByEmail() {
-            this.$axios.$get("/employee/show").then((response) => {                
-                this.refBy = response;
-            }).catch((error) => {
-                this.$toaster.error("Employee Not found");
-            });
 
-        },
 
         previewStep(step) {
 
@@ -1604,13 +1596,13 @@ export default {
             if (!this.student.adm_frm_sl) {
                 this.$toaster.error("Please enter admission form sl");
                 return false;
-            }           
+            }
 
             this.generalStep = false;
             this.personalStep = true;
             this.familyStep = false;
             this.educationStep = false;
-            this.othersStep = false;            
+            this.othersStep = false;
 
         },
 
@@ -1851,7 +1843,6 @@ export default {
 
             formData.append("file", document.getElementById('file_input').files[0]);
             formData.append("signature", document.getElementById('signature').files[0]);
-            console.log(formData);
 
             this.$axios.$post('/admission/add_student', formData, {
 
@@ -1862,7 +1853,9 @@ export default {
             }).then((response) => {
 
                 this.$toaster.success(response.message);
-                console.log(response);
+                this.student = "";
+                this.$router.push("/admission/admissionInActiveBatch");
+
 
 
 
@@ -1870,6 +1863,7 @@ export default {
             }).catch((error) => {
 
                 if (error.response.status == 422) {
+                    this.errors = error.response.data.errors
                     this.$toaster.error('Validation error');
                     return false;
                 }
@@ -1880,20 +1874,16 @@ export default {
                 }
 
                 if (error.response.status == 404) {
-
                     this.$toaster.error(error.response.data.error);
                     return false;
-
                 }
 
                 this.$toaster.error("Something went wrong");
-
             });
 
         },
 
         fileValidationCheck() {
-
             let FileSize = document.getElementById('file_input').files[0].size / 1024 / 1024; // in MiB // 1MB
 
             const file = document.getElementById('file_input').files[0];

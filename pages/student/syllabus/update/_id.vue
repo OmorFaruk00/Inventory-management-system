@@ -1,11 +1,11 @@
 <template>
     <div class="form-bg py-5">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-8 offset-md-2">
             <div class="form-shadow p-5">
                 <h3 class="title">Update Syllabus</h3>
                 <form class="form-horizontal">
                     <div class="row">
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Department Name*</label>
                                 <select class="form-control" v-model="syllabus.department">
@@ -18,7 +18,7 @@
                                 </h6>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Publish Status*</label>
                                 <select class="form-control" v-model="syllabus.status">
@@ -29,7 +29,7 @@
                                 <h6 v-if="errors.status" v-text="errors.status[0]" class="text-danger"></h6>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Description *</label>
                                 <input type="text" class="form-control" placeholder="Enter Description "
@@ -37,7 +37,7 @@
                                 <h6 v-if="errors.description" v-text="errors.description[0]" class="text-danger"></h6>
                             </div>
                         </div>                      
-                        <div class="col-md-6 col-xl-6 col-sm-6">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>File*</label>
                                 <input type="file" class="form-control" placeholder=""

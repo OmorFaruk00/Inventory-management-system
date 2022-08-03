@@ -23,18 +23,31 @@
               v-text="error.employee[0]"
             ></h6>
           </div>
-          <div class="form-check" v-for="prm in permissions" :key="prm.i">
-            <input
-              v-model="permission"
-              class="form-check-input"
-              type="checkbox"
-              :id="prm.name"
-              :name="prm.name"
-              :value="prm.name"
-            />
-            <label :for="prm.name" class="form-check-label">
-              {{ prm.name }}
-            </label>
+          <div class="d-flex flex-wrap" style="gap: 1rem">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="check_all"
+                @click="checkAll"
+              />
+              <label for="check_all" class="form-check-label">
+                Check All
+              </label>
+            </div>
+            <div class="form-check" v-for="prm in permissions" :key="prm.i">
+              <input
+                v-model="permission"
+                class="form-check-input"
+                type="checkbox"
+                :id="prm.name"
+                :name="prm.name"
+                :value="prm.name"
+              />
+              <label :for="prm.name" class="form-check-label">
+                {{ prm.name }}
+              </label>
+            </div>
           </div>
         </div>
         <div class="card-footer">
@@ -42,7 +55,12 @@
         </div>
       </div>
     </div>
+
+
+
+    
   </div>
+
 </template>
 
 <script>
@@ -63,14 +81,17 @@ export default {
     this.getEmplyees();
   },
   methods: {
+    checkAll() {
+      this.permission = this.permissions.map((prm) => prm.name);
+    },
     givePermission() {
       this.loading = true;
       this.$axios
         .post(`setting/special-permission/${this.employee}`, {
           permissions: this.permission,
         })
-        .then((response) => { this.$toaster.success(response.data.message);
-
+        .then((response) => {
+          this.$toaster.success(response.data.message);
         })
         .catch((error) => {
           this.$toaster.success(error.response.data.error);

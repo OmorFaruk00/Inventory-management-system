@@ -6,20 +6,19 @@
         </div>
         <div class="panel-body table-responsive pt-5">
             <table class="table table-striped text-center" v-if="students">
-                <thead>
+                <thead class="bg-dark text-white">
                     <tr>
                         <th>Serial</th>
                         <th>Name</th>
                         <th>Roll</th>
-                        <th>Reg. Code</th>
-                        <!-- <th>Group</th> -->
+                        <th>Reg. Code</th>                        
                         <th>Email</th>
                         <th>Phone Number</th>
                         <th>F Name</th>
                         <th>E Name</th>
                         <th>E Cell</th>
                         <th>Student ID</th>
-                        <!-- <th>Action</th> -->
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,10 +35,10 @@
                         <td>{{ student.e_cellno }}</td>
                         <td>{{ student.id }}</td>
                         <td>
-                            <!-- <nuxt-link :to="`/admission/student-update/${student.id}`" class="btn-edit mr-3"
+                            <nuxt-link :to="`/admission/student-update/${student.id}`" class="btn-edit mr-3"
                                 style="padding:7px 15px">
                                 Edit
-                            </nuxt-link> -->
+                            </nuxt-link>
                         </td>
                     </tr>
                 </tbody>

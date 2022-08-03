@@ -1,12 +1,12 @@
 <template>
     <div class="form-bg py-5">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-8 offset-md-2">
             <div class="form-shadow p-5">
                 <h3 class="title">Create lecture</h3>
-                {{department_id}}
+                
                 <form class="">
                     <div class="row">
-                         <div class="col-md-6 col-xl-6 col-sm-12">
+                         <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Course Name *</label>
                                 <input type="text" class="form-control" placeholder="Enter Course Name"
@@ -15,7 +15,7 @@
                                     class="text-danger"></h6>
                             </div>
                         </div>
-                         <div class="col-md-6 col-xl-6 col-sm-12">
+                         <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Course Code *</label>
                                 <input type="text" class="form-control" placeholder="Enter Course Code"
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Department *</label>
                                 <select class="form-control" v-model="lecture.department" @change="fetchBatch">
@@ -38,7 +38,7 @@
                                 </h6>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Batch *</label>
                                
@@ -52,7 +52,7 @@
                                 <h6 v-if="errors.batch" v-text="errors.batch[0]" class="text-danger"></h6>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Description *</label>
                                 <input type="text" class="form-control" placeholder="Enter Description "
@@ -61,7 +61,7 @@
                             </div>
                         </div>                      
 
-                        <div class="col-md-6 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label class="">File *</label>
                                 <input type="file" class="form-control" placeholder=""
