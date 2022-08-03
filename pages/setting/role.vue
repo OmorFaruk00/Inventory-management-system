@@ -1,55 +1,54 @@
 <template>
   <div>
     <div class="col-md-6 col-12 mx-auto mt-3">
-      <div class="card">
+      <div class="form-shadow">
         <div class="card-header">
           <h4 title="create-role">Create Role</h4>
         </div>
         <div class="card-body">
           <div class="form-group">
             <label for="inputAddress2">Role Name</label>
-            <input
-              v-model="name"
-              type="text"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Role Name"
-            />
+            <input v-model="name" type="text" class="form-control" id="inputAddress2" placeholder="Role Name" />
             <span class="text-danger" v-if="error && error.name">{{
-              error.name[0]
+                error.name[0]
             }}</span>
           </div>
-          <div class="form-check" v-for="prm in permissions" :key="prm.i">
-            <input
-              v-model="permission"
-              class="form-check-input"
-              type="checkbox"
-              :id="prm.name"
-              :name="prm.name"
-              :value="prm.name"
-            />
-            <label :for="prm.name" class="form-check-label">
-              {{ prm.name }}
-            </label>
+          <div class="d-flex flex-wrap" style="gap: 1rem">
+            <div class="form-check" v-for="prm in permissions" :key="prm.i">
+              <input v-model="permission" class="form-check-input" type="checkbox" :id="prm.name" :name="prm.name"
+                :value="prm.name" />
+              <label :for="prm.name" class="form-check-label">
+                {{ prm.name }}
+              </label>
+            </div>
           </div>
-          <button class="btn btn-secondary" @click="createRole">Make</button>
+          <button class="btn-submit mt-3" @click="createRole">
+            Make
+          </button>
         </div>
       </div>
     </div>
     <hr />
-    <div>
+    <div class="container">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">SL NO</th>
             <th scope="col">Role Name</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(role, i) in roles" :key="role.id">
+          <tr v-for="(role, i) in roles" :key="i">
             <th scope="row">{{ ++i }}</th>
             <td>{{ role.name }}</td>
+            <td @click="roleEdit(role.id)" style="cursor: pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -57,6 +56,45 @@
         No Role Found...
       </h3>
       <h3 class="text-center" v-if="loading === true">Loading...</h3>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="roleUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Role Update</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="inputAddress2">Role Name</label>
+              <input v-model="roleInfo.name" type="text" class="form-control" id="inputAddress2"
+                placeholder="Role Name" />
+              <span class="text-danger" v-if="error && error.name">{{
+                  error.name[0]
+              }}</span>
+            </div>
+            <div class="d-flex flex-wrap" style="gap: 1rem">
+              <div class="form-check" v-for="prm in permissions" :key="prm.i">
+                <input v-model="roleInfo.permissions" class="form-check-input" type="checkbox" :id="prm.name + 1"
+                  :name="prm.name" :value="prm.name" />
+                <label :for="prm.name + 1" class="form-check-label">
+                  {{ prm.name }}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-submit" @click="roleUpdate()">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,7 +109,8 @@ export default {
       error: "",
       loading: false,
       permissions: null,
-      permission:[],
+      permission: [],
+      roleInfo: {},
     };
   },
   mounted() {
@@ -82,16 +121,16 @@ export default {
     createRole() {
       this.loading = true;
       this.$axios
-        .$post(`setting/role`, {
+        .$post(setting / role, {
           name: this.name,
           permissions: this.permission,
         })
         .then((response) => {
-           this.$toaster.success(response.data.message);
+          this.$toaster.success(response.data.message);
           this.getRoles();
         })
         .catch((error) => {
-           this.$toaster.error(error.response.data.message);
+          this.$toaster.error(error.response.data.message);
           console.log(error);
         })
         .finally(() => {
@@ -117,7 +156,7 @@ export default {
       this.$axios
         .$get("/setting/roles")
         .then((response) => {
-          this.roles = response.data;
+          this.roles = response;
         })
         .catch((error) => {
           console.log(error);
@@ -126,8 +165,36 @@ export default {
           this.loading = false;
         });
     },
+    roleEdit(id) {
+      $("#roleUpdate").modal("show");
+      this.$axios
+        .$get("setting/roles/" + id)
+        .then((res) => {
+          this.roleInfo = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    roleUpdate() {
+      this.$axios
+        .$post("/setting/role/" + this.roleInfo.id, {
+          ...this.roleInfo,
+        })
+        .then((res) => {
+          this.getRoles();
+          $("#roleUpdate").modal("hide");
+          this.$toaster.success(res.message);
+          this.errors = "";
+        })
+        .catch((err) => {
+          console.log(err);
+          this.errors = err.response.data.errors;
+        });
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+</style>

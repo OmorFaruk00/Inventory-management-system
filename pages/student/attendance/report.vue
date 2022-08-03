@@ -185,8 +185,7 @@ export default {
                     this.errors = error.response.data.errors;
                 });
         },
-        PrintReport($id) {            
-            console.log(this.report);
+        PrintReport($id) {       
             this.$axios
                 .$get("/student/attendance-report-print/"+ $id ,{
                     responseType: "blob",

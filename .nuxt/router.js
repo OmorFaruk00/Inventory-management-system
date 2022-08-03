@@ -9,6 +9,7 @@ const _4275d176 = () => interopDefault(import('../pages/admission/index.vue' /* 
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
 const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
+const _0d9ac0b8 = () => interopDefault(import('../pages/leave/index.vue' /* webpackChunkName: "pages/leave/index" */))
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
@@ -36,6 +37,7 @@ const _3af8abc0 = () => interopDefault(import('../pages/employee/department/inde
 const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
 const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
 const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
+const _750ebdf1 = () => interopDefault(import('../pages/leave/application_form.vue' /* webpackChunkName: "pages/leave/application_form" */))
 const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
@@ -70,7 +72,6 @@ const _69979b08 = () => interopDefault(import('../pages/profile/qualification/cr
 const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
 const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
 const _276252f0 = () => interopDefault(import('../pages/student/attendance/report.vue' /* webpackChunkName: "pages/student/attendance/report" */))
-const _521f4764 = () => interopDefault(import('../pages/student/attendance/test.vue' /* webpackChunkName: "pages/student/attendance/test" */))
 const _3dea27b9 = () => interopDefault(import('../pages/student/course/assign.vue' /* webpackChunkName: "pages/student/course/assign" */))
 const _52667946 = () => interopDefault(import('../pages/student/course/create.vue' /* webpackChunkName: "pages/student/course/create" */))
 const _1f95ac96 = () => interopDefault(import('../pages/student/lecture-sheet/create.vue' /* webpackChunkName: "pages/student/lecture-sheet/create" */))
@@ -122,6 +123,10 @@ export const routerOptions = {
     path: "/employee",
     component: _68d6c877,
     name: "employee"
+  }, {
+    path: "/leave",
+    component: _0d9ac0b8,
+    name: "leave"
   }, {
     path: "/profile",
     component: _3fdc10d4,
@@ -230,6 +235,10 @@ export const routerOptions = {
     path: "/employee/office-time",
     component: _e1bd1134,
     name: "employee-office-time"
+  }, {
+    path: "/leave/application_form",
+    component: _750ebdf1,
+    name: "leave-application_form"
   }, {
     path: "/profile/qualification",
     component: _33ac7e76,
@@ -366,10 +375,6 @@ export const routerOptions = {
     path: "/student/attendance/report",
     component: _276252f0,
     name: "student-attendance-report"
-  }, {
-    path: "/student/attendance/test",
-    component: _521f4764,
-    name: "student-attendance-test"
   }, {
     path: "/student/course/assign",
     component: _3dea27b9,

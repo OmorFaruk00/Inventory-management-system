@@ -77,6 +77,16 @@
           <p class="app-title">Setting</p>
         </nuxt-link>
       </div>
+         <div class="col-md-3 col-xl-2 col-sm-6 app mt-4">
+        <nuxt-link class="app-link" to="/leave">
+          <div class="app">
+            <div class="app-icon">
+              <img src="images/leave_app.png" class="" alt="" />
+            </div>
+          </div>
+          <p class="app-title">Leave Application</p>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
