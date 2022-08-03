@@ -42,7 +42,7 @@
                       </button>
                     </td>
                     <td>
-                      <button class="btn-edit" @click="sliderEdit(slider.id)">Edit</button>
+                      <button type="button" class="btn-edit" @click="sliderEdit(slider.id)">Edit</button>
                       <button class="btn-delete" @click="deleteslider(slider.id)">
                         Delete
                       </button>
@@ -87,7 +87,7 @@
             </div>
             <div class="modal-footer">
               <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-              <button type="button" class="btn btn-submit" @click="sliderUpdate()">Update</button>
+              <button type="button" class="btn-submit" @click="sliderUpdate()">Update</button>
             </div>
           </div>
         </div>

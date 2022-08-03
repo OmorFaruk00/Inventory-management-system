@@ -44,11 +44,11 @@
                                         <td>{{ batch.last_data_of_admission }}</td>
 
                                         <td>
-                                            <button v-if="batch.status == 1" class="btn-active"
+                                            <button v-if="batch.status == 1" class="btn-active mt-2"
                                                 @click="batchStatus(batch.id)">
                                                 Active
                                             </button>
-                                            <button v-if="batch.status == 0" class="btn-inactive"
+                                            <button v-if="batch.status == 0" class="btn-inactive mt-2"
                                                 @click="batchStatus(batch.id)">
                                                 Inactive
                                             </button>

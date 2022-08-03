@@ -81,7 +81,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-submit" @click="facilitieUpdate()">
+              <button type="button" class="btn-submit" @click="facilitieUpdate()">
                 Update
               </button>
             </div>

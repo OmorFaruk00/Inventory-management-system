@@ -10,9 +10,7 @@
                   <h4 class="title">tution List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right">
-                  <nuxt-link to="/dum-ac/tution/create" class="btn-add"
-                    >Add tution</nuxt-link
-                  >
+                  <nuxt-link to="/dum-ac/tution/create" class="btn-add">Add tution</nuxt-link>
                 </div>
               </div>
             </div>
@@ -24,7 +22,7 @@
                     <th>Name Of Program</th>
                     <th>Duration</th>
                     <th>Type</th>
-                    <th>Total Fee</th>                    
+                    <th>Total Fee</th>
                     <th>Status</th>
                     <th style="width:200px">Action</th>
                   </tr>
@@ -32,37 +30,23 @@
                 <tbody>
                   <tr v-for="tution in tutions" :key="tution.id">
                     <td>{{ tution.id }}</td>
-                    <td>{{ tution.name_of_program}}</td>
+                    <td>{{ tution.name_of_program }}</td>
                     <td>{{ tution.duration }}</td>
                     <td>{{ tution.type }}</td>
                     <td>{{ tution.total_fee }}</td>
                     <td>
-                      <button
-                        v-if="tution.status == 1"
-                        class="btn-active"
-                        @click="tutionStatus(tution.id)"
-                      >
+                      <button v-if="tution.status == 1" class="btn-active" @click="tutionStatus(tution.id)">
                         Active
                       </button>
-                      <button
-                        v-if="tution.status == 0"
-                        class="btn-inactive"
-                        @click="tutionStatus(tution.id)"
-                      >
+                      <button v-if="tution.status == 0" class="btn-inactive" @click="tutionStatus(tution.id)">
                         Inactive
                       </button>
                     </td>
                     <td>
-                      <button
-                        class="btn-edit"
-                        @click="tutionEdit(tution.id)"
-                      >
+                      <button class="btn-edit" @click="tutionEdit(tution.id)">
                         Edit
                       </button>
-                      <button
-                        class="btn-delete"
-                        @click="deletetution(tution.id)"
-                      >
+                      <button class="btn-delete" @click="deletetution(tution.id)">
                         Delete
                       </button>
                     </td>
@@ -75,71 +59,57 @@
       </div>
 
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="tutionUpdate"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="tutionUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">
                 Tution Fee Update
               </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-               <div class="form-group">
-                    <label for="" class="">Name Of Program</label>
-                      <select class="form-control" v-model="tution.name_of_program">
-                        <option disabled selected value="">Select Program</option>
-                        <option :value="program.name" v-for="program in programs" :key="program.id">{{program.name}}</option>         
-                        
-                    </select>
-                    <p v-if="errors.name_of_program" v-text="errors.name_of_program[0]" class="text-danger"></p>
-                </div>
-                <div class="form-group">
-                    <label>Type</label>
-                    <select class="form-control" v-model="tution.type">
-                        <option disabled selected value="">Select Type</option>
-                        <option value="residential">Residential</option>
-                        <option value="non_residential">Non Residential</option>
-                        <option value="day_care">Day Care</option>
-                    </select>
-                    <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
-                </div>                
-                <div class="form-group">
-                    <label>Duration</label>
-                    <select class="form-control" v-model="tution.duration">
-                        <option disabled selected value="">Select Duration</option>
-                        <option :value="program.duration" v-for="program in programs" :key="program.id">{{program.duration}}</option>         
-                        
-                    </select>
-                    <h6 v-if="errors.duration" v-text="errors.duration[0]" class="text-danger"></h6>
-                </div>
-                <div class="form-group">
-                    <label for="" class="">Total Fee</label>
-                    <input type="text" class="form-control" id="name_of_program" placeholder="Total Fee"
-                        v-model="tution.total_fee" />
-                    <p v-if="errors.total_fee" v-text="errors.total_fee[0]" class="text-danger"></p>
-                </div>
+              <div class="form-group">
+                <label for="" class="">Name Of Program</label>
+                <select class="form-control" v-model="tution.name_of_program">
+                  <option disabled selected value="">Select Program</option>
+                  <option :value="program.name" v-for="program in programs" :key="program.id">{{ program.name }}</option>
+
+                </select>
+                <p v-if="errors.name_of_program" v-text="errors.name_of_program[0]" class="text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label>Type</label>
+                <select class="form-control" v-model="tution.type">
+                  <option disabled selected value="">Select Type</option>
+                  <option value="residential">Residential</option>
+                  <option value="non_residential">Non Residential</option>
+                  <option value="day_care">Day Care</option>
+                </select>
+                <h6 v-if="errors.type" v-text="errors.type[0]" class="text-danger"></h6>
+              </div>
+              <div class="form-group">
+                <label>Duration</label>
+                <select class="form-control" v-model="tution.duration">
+                  <option disabled selected value="">Select Duration</option>
+                  <option :value="program.duration" v-for="program in programs" :key="program.id">{{ program.duration }}
+                  </option>
+
+                </select>
+                <h6 v-if="errors.duration" v-text="errors.duration[0]" class="text-danger"></h6>
+              </div>
+              <div class="form-group">
+                <label for="" class="">Total Fee</label>
+                <input type="text" class="form-control" id="name_of_program" placeholder="Total Fee"
+                  v-model="tution.total_fee" />
+                <p v-if="errors.total_fee" v-text="errors.total_fee[0]" class="text-danger"></p>
+              </div>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-submit"
-                @click="tutionUpdate()"
-              >
+              <button type="button" class="btn-submit" @click="tutionUpdate()">
                 Update
               </button>
             </div>
@@ -166,11 +136,11 @@ export default {
         total_fee: "",
       },
       errors: {},
-      programs:'',
+      programs: '',
     };
   },
   methods: {
-          getProgram() {
+    getProgram() {
       this.$axios
         .$get("/program/show")
         .then((res) => {
@@ -184,7 +154,7 @@ export default {
       this.$axios
         .$get("/tution/show")
         .then((res) => {
-            console.log(res);
+          console.log(res);
           this.tutions = res;
         })
         .catch((err) => {
@@ -231,7 +201,7 @@ export default {
     },
     tutionStatus(id) {
       this.$axios
-        .$get("/tution/status/" + id )
+        .$get("/tution/status/" + id)
         .then((res) => {
           this.getTution();
           this.$toaster.success(res.message);
@@ -243,4 +213,5 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+</style>

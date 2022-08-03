@@ -2,33 +2,15 @@
     <div class="form-bg py-5">
         <div class="col-md-8 offset-md-2">
             <div class="form-shadow p-5">
-                <h3 class="title">Create lesson</h3>
-                {{department_id}}
+                <h3 class="title">Update lesson</h3>
+                
                 <form class="">
-                    <div class="row">
-                         <div class="col-md-12 col-xl-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Course Name *</label>
-                                <input type="text" class="form-control" placeholder="Enter Course Name"
-                                    v-model="lesson.course_name" />
-                                <h6 v-if="errors.course_name" v-text="errors.course_name[0]"
-                                    class="text-danger"></h6>
-                            </div>
-                        </div>
-                         <div class="col-md-12 col-xl-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Course Code *</label>
-                                <input type="text" class="form-control" placeholder="Enter Course Code"
-                                    v-model="lesson.course_code" />
-                                <h6 v-if="errors.course_code" v-text="errors.course_code[0]"
-                                    class="text-danger"></h6>
-                            </div>
-                        </div>
+                   <div class="row">                       
                         
                         <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Department *</label>
-                                <select class="form-control" v-model="lesson.department" @change="fetchBatch">
+                                <select class="form-control" v-model="lesson.department" @change="fetchBatch(),fetchCourse()">
                                     <option disabled selected value="">Select Department</option>
                                     <option disable v-for="(department, index) in departments" :key="index"
                                         :value="department.id" v-text="department.department_name"></option>
@@ -41,8 +23,9 @@
                         <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Batch *</label>
-                               
-                                            <select class="form-control" v-model="lesson.batch" required 
+                                <input type="text" disabled class="form-control"
+                                                placeholder="Select Department first" v-if="!batches" />
+                                            <select class="form-control" v-model="lesson.batch" required v-else
                                                 >
                                                 <option selected value="">Select Batch</option>
                                                 <option v-for="batch in batches" :key="batch.id" :value="batch.id"
@@ -50,6 +33,33 @@
                                                 </option>
                                             </select>
                                 <h6 v-if="errors.batch" v-text="errors.batch[0]" class="text-danger"></h6>
+                            </div>
+                        </div>                        
+                         <div class="col-md-12 col-xl-6 col-sm-12">
+                            <div class="form-group">
+                                <label>Course Name *</label>
+                                <input type="text" disabled class="form-control"
+                                                placeholder="Select Department first" v-if="!courses" />
+                                            
+                                  <select class="form-control" v-model="lesson.course_name" @change="fetchCourseCode" v-else>
+                                    <option disabled selected value="">Select Course</option>
+                                    <option disable v-for="(course, index) in courses" :key="index"
+                                        :value="course.course_name" v-text="course.course_name"></option>
+
+                                </select>                                
+                                <h6 v-if="errors.course_name" v-text="errors.course_name[0]"
+                                    class="text-danger"></h6>
+                            </div>
+                        </div>
+                         <div class="col-md-12 col-xl-6 col-sm-12">
+                            <div class="form-group">
+                                <label>Course Code *</label>
+                                 <input type="text" disabled class="form-control"
+                                                placeholder="Select Course first" v-if="lesson.course_code==''" />
+                                <input type="text" class="form-control" placeholder="Enter Course Code"
+                                    v-model="lesson.course_code" v-else/>
+                                <h6 v-if="errors.course_code" v-text="errors.course_code[0]"
+                                    class="text-danger"></h6>
                             </div>
                         </div>
                         <div class="col-md-12 col-xl-6 col-sm-12">
@@ -65,13 +75,13 @@
                             <div class="form-group">
                                 <label class="">File *</label>
                                 <input type="file" class="form-control" placeholder=""
-                                    @change="(e) => (lesson.new_file = e.target.files[0])" accept="image/*" />
-                                <h6 v-if="errors.new_file" v-text="errors.new_file[0]" class="text-danger"></h6>
+                                    @change="(e) => (lesson.file = e.target.files[0])" accept="image/*" />
+                                <h6 v-if="errors.file" v-text="errors.file[0]" class="text-danger"></h6>
                             </div>
                         </div>
 
                     </div>
-                    <div class="d-flex justify-content-end pt-3">
+                     <div class="d-flex justify-content-end pt-3">
                         <button class="btn-submit" @click.prevent="updatelesson()">Submit</button>
                     </div>
                 </form>
@@ -94,6 +104,7 @@ export default {
             errors: [],
             departments: '',           
             batches:'',
+            courses:'',
             lesson: {
                 course_name:'',
                 course_code:'',
@@ -111,13 +122,14 @@ export default {
             this.$axios.$get('lessonplan/edit/'+this.$route.params.id).then(response => {
                 this.lesson = response;
                  this.fetchBatch() ;
+                 this.fetchCourse(); 
             }).catch((error) => {
                 console.log(error);
             });
         },
         fetchDepartmentInfo() {
             this.$axios.$get('/admission/department').then(response => {
-                this.departments = response;          
+                this.departments = response;                        
             }).catch((error) => {
                 this.$toaster.error("Department Not found");
             });
@@ -131,6 +143,20 @@ export default {
             });
 
         },
+         fetchCourse(){
+             this.$axios.$get("/student/course/"+this.lesson.department).then((response) => {                
+                this.courses = response;
+            }).catch((error) => {
+                this.$toaster.error("Batch Not found");
+            });
+        },
+        fetchCourseCode(){
+             this.$axios.$get("/student/course-code/"+this.lesson.course_name).then((response) => {                
+                this.lesson.course_code =response[0].course_code;         
+            }).catch((error) => {
+                this.$toaster.error("Batch Not found");
+            });
+        },
 
         updatelesson() {
 
@@ -143,13 +169,12 @@ export default {
               if(this.lesson.new_file){
                 formData.append('new_file', this.lesson.new_file)
             }            
-            // formData.append('file', this.lesson.file)
 
             this.$axios
                 .$post("/lessonplan/update/"+this.$route.params.id, formData)
                 .then((res) => {                    
                     this.errors = {};
-                    this.$toaster.success("lesson Update Successfully");
+                    this.$toaster.success("Lesson Update Successfully");
                     this.$router.push("/student/lesson-plan");
                 })
                 .catch((error) => {

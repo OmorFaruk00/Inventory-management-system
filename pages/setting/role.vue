@@ -19,7 +19,7 @@
               error.name[0]
             }}</span>
           </div>
-          <div class="d-flex" style="gap: 1rem">
+          <div class="d-flex flex-wrap" style="gap: 1rem">
             <div class="form-check" v-for="prm in permissions" :key="prm.i">
               <input
                 v-model="permission"
