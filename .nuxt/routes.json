@@ -63,6 +63,13 @@
     "_name": "_094c3cb0"
   },
   {
+    "name": "account-account",
+    "path": "/account/account",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/account/account.vue",
+    "chunkName": "pages/account/account",
+    "_name": "_63701a16"
+  },
+  {
     "name": "account-fund",
     "path": "/account/fund",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/account/fund.vue",

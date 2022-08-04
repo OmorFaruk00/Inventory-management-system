@@ -4,21 +4,20 @@
     <div class="d-flex" id="wrapper">
       <div class=" " id="sidebar-wrapper">
         <div class="list-group sidebar">
-          <nuxt-link class="sidebar-item" to="/"
+          <nuxt-link class="sidebar-item" to="/account"
             ><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link
           >
-          <nuxt-link class="sidebar-item" to="/account"
-            ><img src="/images/dashboard.png" alt="" />Account</nuxt-link
+          <nuxt-link class="sidebar-item" to="/account/account"
+            ><img src="/images/acc.png" alt="" />Account</nuxt-link
           >
           <nuxt-link class="sidebar-item" to="/account/fund"
-            ><img src="/images/dashboard.png" alt="" />Fund</nuxt-link
+            ><img src="/images/fund.png" alt="" />Fund</nuxt-link
           >
           <nuxt-link class="sidebar-item" to="/account/sub_fund"
-            ><img src="/images/dashboard.png" alt="" />Sub Fund</nuxt-link
+            ><img src="/images/fund.png" alt="" />Sub Fund</nuxt-link
           >
-
           <nuxt-link class="sidebar-item" to="/account/purpose"
-            ><img src="/images/dashboard.png" alt="" />Purpose</nuxt-link
+            ><img src="/images/purpose.png" alt="" />Purpose</nuxt-link
           >
         </div>
       </div>

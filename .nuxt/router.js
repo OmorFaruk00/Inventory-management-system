@@ -13,6 +13,7 @@ const _0d9ac0b8 = () => interopDefault(import('../pages/leave/index.vue' /* webp
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _63701a16 = () => interopDefault(import('../pages/account/account.vue' /* webpackChunkName: "pages/account/account" */))
 const _37ed142d = () => interopDefault(import('../pages/account/fund.vue' /* webpackChunkName: "pages/account/fund" */))
 const _d1e8f534 = () => interopDefault(import('../pages/account/purpose.vue' /* webpackChunkName: "pages/account/purpose" */))
 const _196d674c = () => interopDefault(import('../pages/account/sub_fund.vue' /* webpackChunkName: "pages/account/sub_fund" */))
@@ -140,6 +141,10 @@ export const routerOptions = {
     path: "/student",
     component: _094c3cb0,
     name: "student"
+  }, {
+    path: "/account/account",
+    component: _63701a16,
+    name: "account-account"
   }, {
     path: "/account/fund",
     component: _37ed142d,

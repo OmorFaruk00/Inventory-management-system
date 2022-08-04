@@ -1,49 +1,39 @@
 <template>
-  <div class="py-2">
-    <h3>Create Fund</h3>
-    <div class="row">
-      <div class="col-12">
-        <form @submit.prevent="createFund">
-          <div class="form-group">
-            <label for="inputAddress2">Fund Name</label>
-            <input
-              v-model="name"
-              type="text"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Class Name"
-            />
-            <span class="text-danger" v-if="error && error.name">{{
-              error.name[0]
-            }}</span>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Total Cash</label>
-            <input
-              v-model="total_cash"
-              type="number"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Class Description"
-            />
-
-            <span class="text-danger" v-if="error && error.total">{{
-              error.total[0]
-            }}</span>
-          </div>
-          <button class="btn btn-info">Make Fund</button>
-        </form>
+  <div class="py-5">
+    <div class="form-shadow p-5 col-md-6 mx-auto">
+      <h3 class="title">Create Fund</h3>
+      <div class="row">
+        <div class="col-12">
+          <form @submit.prevent="createFund">
+            <div class="form-group">
+              <label for="inputAddress2">Fund Name</label>
+              <input v-model="name" type="text" class="form-control" id="inputAddress2" placeholder="Class Name" />
+              <span class="text-danger" v-if="error && error.name">{{
+                  error.name[0]
+              }}</span>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Total Cash</label>
+              <input v-model="total_cash" type="number" class="form-control" id="inputAddress2"
+                placeholder="Class Description" />
+              <span class="text-danger" v-if="error && error.total">{{
+                  error.total[0]
+              }}</span>
+            </div>
+            <div class="float-right mt-3">
+              <button class="btn btn-info">Make Fund</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-    <hr />
-    <div>
-      <table class="table table-striped">
+    <div class="mt-5">
+      <table class="table table-striped text-center">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Sl NO</th>
             <th scope="col">Fund Name</th>
             <th scope="col">Total Cash</th>
-            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -51,9 +41,6 @@
             <th scope="row">{{ ++i }}</th>
             <td>{{ fund.name }}</td>
             <td>{{ fund.total_cash }}</td>
-            <td><button class="btn">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </button></td>
           </tr>
           <h3 class="text-center" v-if="funds === null">Loading...</h3>
         </tbody>
@@ -61,10 +48,9 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
-  layout:'Account-content',
+  layout: 'Account-content',
   data() {
     return {
       name: "",
@@ -107,4 +93,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

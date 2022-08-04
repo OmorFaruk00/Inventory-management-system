@@ -1,6 +1,7 @@
 <template>
-  <div class="py-2">
-    <h3>Create Sub Fund</h3>
+<div>
+  <div class="form-shadow p-5 mt-5 col-md-6 mx-auto">
+    <h3 class="title">Create Sub Fund</h3>
     <div class="row">
       <div class="col-12">
         <form @submit.prevent="createSubFund">
@@ -13,50 +14,40 @@
               </option>
             </select>
             <span class="text-danger" v-if="error && error.fund_id">{{
-              error.fund_id[0]
+                error.fund_id[0]
             }}</span>
           </div>
           <div class="form-group">
             <label for="inputAddress2">Sub-Fund Name</label>
-            <input
-              v-model="name"
-              type="text"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Class Name"
-            />
+            <input v-model="name" type="text" class="form-control" id="inputAddress2" placeholder="Class Name" />
             <span class="text-danger" v-if="error && error.name">{{
-              error.name[0]
+                error.name[0]
             }}</span>
           </div>
           <div class="form-group">
             <label for="inputAddress2">Total Cash</label>
-            <input
-              v-model="total_cash"
-              type="number"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Class Description"
-            />
+            <input v-model="total_cash" type="number" class="form-control" id="inputAddress2"
+              placeholder="Class Description" />
 
             <span class="text-danger" v-if="error && error.total">{{
-              error.total[0]
+                error.total[0]
             }}</span>
           </div>
-          <button class="btn btn-info">Make</button>
+          .<div class="float-right pt-3">
+              <button class="btn btn-info">Make</button>
+          </div>
         </form>
       </div>
     </div>
-    <hr />
-    <div>
-      <table class="table table-striped">
+  </div>
+   <div class="mt-5">
+      <table class="table table-striped text-center">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">SL NO</th>
             <th scope="col">Sub-Fund Name</th>
             <th scope="col">Fund Name</th>
             <th scope="col">Fund Ammount</th>
-            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -65,7 +56,6 @@
             <td>{{ sfund.name }}</td>
             <td>{{ sfund.rel_fund.name }}</td>
             <td>{{ sfund.rel_fund.total_cash }}</td>
-            <td>delete</td>
           </tr>
           <h3 class="text-center" v-if="sub_funds === null">Loading...</h3>
         </tbody>
@@ -133,4 +123,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
