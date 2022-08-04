@@ -8,3 +8,5 @@ dist
 .nuxt/*.json
 .nuxt/*.json
 .nuxt/*.js
+router.js
+router.json

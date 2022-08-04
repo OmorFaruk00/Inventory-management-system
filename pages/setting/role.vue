@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="col-md-6 col-12 mx-auto mt-3">
-      <div class="form-shadow">
+      <div class="form-shadow mt-5">
         <div class="card-header">
           <h4 title="create-role">Create Role</h4>
         </div>
@@ -17,19 +17,30 @@
             <div class="form-check" v-for="prm in permissions" :key="prm.i">
               <input v-model="permission" class="form-check-input" type="checkbox" :id="prm.name" :name="prm.name"
                 :value="prm.name" />
+              <input
+                v-model="permission"
+                class="form-check-input"
+                type="checkbox"
+                :id="prm.name"
+                :name="prm.name"
+                :value="prm.name"
+              />
               <label :for="prm.name" class="form-check-label">
                 {{ prm.name }}
               </label>
             </div>
           </div>
-          <button class="btn-submit mt-3" @click="createRole">
+          
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+          <button class="btn-submit " @click="createRole">
             Make
           </button>
-        </div>
+          </div>
       </div>
     </div>
-    <hr />
-    <div class="container">
+    
+    <div class="container mt-5">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -121,13 +132,15 @@ export default {
     createRole() {
       this.loading = true;
       this.$axios
-        .$post(setting / role, {
+        .$post("setting/role", {
           name: this.name,
           permissions: this.permission,
         })
         .then((response) => {
-          this.$toaster.success(response.data.message);
+          this.name = "";
           this.getRoles();
+          this.$toaster.success(response.data.message);
+          
         })
         .catch((error) => {
           this.$toaster.error(error.response.data.message);

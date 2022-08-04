@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-info" @click="givePermission">Assign</button>
+          <button class="btn btn-info float-right" @click="givePermission">Assign</button>
         </div>
       </div>
     </div>

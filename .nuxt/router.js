@@ -13,8 +13,9 @@ const _0d9ac0b8 = () => interopDefault(import('../pages/leave/index.vue' /* webp
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
-const _60de3e80 = () => interopDefault(import('../pages/account/class.vue' /* webpackChunkName: "pages/account/class" */))
+const _37ed142d = () => interopDefault(import('../pages/account/fund.vue' /* webpackChunkName: "pages/account/fund" */))
 const _d1e8f534 = () => interopDefault(import('../pages/account/purpose.vue' /* webpackChunkName: "pages/account/purpose" */))
+const _196d674c = () => interopDefault(import('../pages/account/sub_fund.vue' /* webpackChunkName: "pages/account/sub_fund" */))
 const _31236216 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/index.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/index" */))
 const _3f80983e = () => interopDefault(import('../pages/admission/batch/index.vue' /* webpackChunkName: "pages/admission/batch/index" */))
 const _a1cf453e = () => interopDefault(import('../pages/admission/department/index.vue' /* webpackChunkName: "pages/admission/department/index" */))
@@ -140,13 +141,17 @@ export const routerOptions = {
     component: _094c3cb0,
     name: "student"
   }, {
-    path: "/account/class",
-    component: _60de3e80,
-    name: "account-class"
+    path: "/account/fund",
+    component: _37ed142d,
+    name: "account-fund"
   }, {
     path: "/account/purpose",
     component: _d1e8f534,
     name: "account-purpose"
+  }, {
+    path: "/account/sub_fund",
+    component: _196d674c,
+    name: "account-sub_fund"
   }, {
     path: "/admission/admissionInActiveBatch",
     component: _31236216,
