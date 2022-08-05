@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label>No of Days *</label>
                               <input type="text" class="form-control" v-model="leave.no_of_day">
-                                <h6 v-if="errors.end_date" v-text="errors.end_date[0]" class="text-danger">
+                                <h6 v-if="errors.no_of_day" v-text="errors.no_of_day[0]" class="text-danger">
                                 </h6>
                             </div>
                         </div>
@@ -57,8 +57,8 @@
                                 <label>Do you need permission to leave office? ( If Yes, Please specify why? ) *</label>
 
                                 <input type="text" class="form-control"
-                                    v-model="leave.permission" />
-                                <h6 v-if="errors.permission" v-text="errors.permission[0]" class="text-danger"></h6>
+                                    v-model="leave.need_permission" />
+                                <h6 v-if="errors.need_permission" v-text="errors.need_permission[0]" class="text-danger"></h6>
                             </div>
                         </div>
                         <div class="col-md-12 col-xl-12 col-sm-12">
@@ -73,7 +73,10 @@
                                 <h6 v-if="errors.in_charge" v-text="errors.in_charge[0]" class="text-danger"></h6>
                             </div>
                         </div>
-
+                        <div class="form-group pl-3">
+                            <input type="checkbox" class="mr-2" v-model="leave.accept_it">
+                            <label for="">If I find any difference in my salary as leave rules. I'll accept it. *</label>
+                        </div>
                     </div>
                     <div class="d-flex justify-content-end pt-3">
                         <button class="btn-submit" @click.prevent="submitApplication()">Submit</button>
@@ -99,14 +102,14 @@ export default {
             leave:{
                 kinds_of_leave:'',
                 causes_of_leave:'',
+                need_permission:'',
                 start_date:'',
                 end_date:'',               
                 no_of_day:'',
-
+                accept_it:'',
+                in_charge:'',
             }
-
         }
-
     },
     methods: {     
 
@@ -121,19 +124,17 @@ export default {
 
 
         submitApplication() {
-            console.log(this.leave);      
-
-            // this.$axios
-            //     .$post("/leaveplan/add", formData)
-            //     .then((res) => {
-            //         this.leave = "";
-            //         this.errors = {};
-            //         this.$toaster.success("leave Added Successfully");
-            //         this.$router.push("/student/leave-plan");
-            //     })
-            //     .catch((error) => {
-            //         this.errors = error.response.data.errors;
-            //     });
+            this.$axios
+                .$post("/leave/application-store", this.leave)
+                .then((response) => {
+                    console.log(response);
+                    this.leave = "";
+                    this.errors = '';
+                    this.$toaster.success(response.message);                    
+                })
+                .catch((error) => {
+                    this.errors = error.response.data.errors;
+                });
         },
 
 

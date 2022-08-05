@@ -6,7 +6,12 @@
         <div class="list-group sidebar">
           <nuxt-link class="sidebar-item" to="/leave"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>
          
-          <nuxt-link class="sidebar-item" to="/leave/application_form"><img src="/images/leave.png" alt="" /> Leave Aplication Form</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/application_form"><img src="/images/leave.png" alt="" /> Leave Application Form</nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/approval_application"><img src="/images/approval.png" alt="" /> Approval for Applications </nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/pending_application"><img src="/images/pending.png" alt="" /> Pending Application </nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/deny_application"><img src="/images/deny.png" alt="" /> Deny Application </nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/approved_application"><img src="/images/approved.png" alt="" /> Approved Application </nuxt-link>
+          <!-- <nuxt-link class="sidebar-item" to="/leave/withdraw_application"><img src="/images/withdraw.png" alt="" /> Withdraw Application </nuxt-link> -->
         
         </div>
       </div>
@@ -43,7 +48,7 @@ export default {};
 
 .sidebar-item svg,
 img {
-  height: 20px;
+  height: 18px;
   padding-right: 10px;
   padding-left: 20px;
 }

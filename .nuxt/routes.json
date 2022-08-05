@@ -252,6 +252,34 @@
     "_name": "_750ebdf1"
   },
   {
+    "name": "leave-approval_application",
+    "path": "/leave/approval_application",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/approval_application.vue",
+    "chunkName": "pages/leave/approval_application",
+    "_name": "_26a48d72"
+  },
+  {
+    "name": "leave-approved_application",
+    "path": "/leave/approved_application",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/approved_application.vue",
+    "chunkName": "pages/leave/approved_application",
+    "_name": "_98c5b434"
+  },
+  {
+    "name": "leave-deny_application",
+    "path": "/leave/deny_application",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/deny_application.vue",
+    "chunkName": "pages/leave/deny_application",
+    "_name": "_dac7b38a"
+  },
+  {
+    "name": "leave-pending_application",
+    "path": "/leave/pending_application",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/pending_application.vue",
+    "chunkName": "pages/leave/pending_application",
+    "_name": "_1d739e0c"
+  },
+  {
     "name": "profile-qualification",
     "path": "/profile/qualification",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/profile/qualification/index.vue",
