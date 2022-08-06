@@ -1,7 +1,7 @@
 <template>
     <div >
     <div v-if="applications.length>0">
-        <div class="col-md-8 col-12 mx-auto my-5" v-for="(application,index) in applications" :key="index">
+        <div class="container my-5" v-for="(application,index) in applications" :key="index">
             <div class="form-shadow mt-5">
                 <div class="card-header line_height pt-4 pl-4">
                     <p> <strong class="font-weight-bold">Aplication ID :</strong> {{application.id}}</p>
@@ -60,7 +60,7 @@
         </div>  
         </div>
         <div v-else>
-            <h2 class="text-center mt-4">Application Not Found</h2>
+            <h2 class="text-center mt-4">Application Not Denied</h2>
 
         </div> 
     </div>

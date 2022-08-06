@@ -1,7 +1,7 @@
 <template>
     <div >
     <div v-if="applications.length>0">
-        <div class="col-md-8 col-12 mx-auto my-5" v-for="(application,index) in applications" :key="index">
+        <div class="container my-5" v-for="(application,index) in applications" :key="index">
             <div class="form-shadow mt-5">
                 <div class="card-header line_height pt-4 pl-4">
                     <p> <strong class="font-weight-bold">Aplication ID :</strong> {{application.id}}</p>
@@ -52,14 +52,21 @@
                         </table>
                     </div>
                 </div>
-                <div class="card-footer text-center">
-                   <h6> You are welcome as your leave application has been approved. Hope you join in time</h6>
+                <div class="card-footer d-flex justify-content-between">
+                   
+                    <p> You are welcome as your leave application has been approved. Hope you join in time</p>
+                   
+                  <div>
+                       <button class="btn-delete" @click='SelfDeniedApplication(application.id)' v-if="current_date<=application.start_date">
+                        Deny
+                    </button>  
+                  </div>                  
                 </div>
             </div>
         </div>  
         </div>
         <div v-else>
-            <h2 class="text-center mt-4">Application Not Found</h2>
+            <h2 class="text-center mt-4">Application Not Approved</h2>
 
         </div> 
     </div>
@@ -69,7 +76,8 @@ export default {
     layout: 'Leave-content',
     data(){
         return{
-            applications:'',           
+            applications:'',
+            current_date:''           
 
         }
     },
@@ -82,28 +90,24 @@ export default {
           getApprovedApplications() {
             this.$axios.$get("/leave/application-approved-show").then((response) => { 
                 console.log(response);               
-                this.applications = response;
+                this.applications = response.data;
+                this.current_date = response.date;
             }).catch((error) => {
                 this.$toaster.error("Something  wrong");
             });
         },
-        WidthdrawApplication($id){
-               this.$axios.$get("/leave/application-withdraw/"+$id).then((response) => { 
+        SelfDeniedApplication($id){
+               this.$axios.$get("/leave/application-self-denied/"+$id).then((response) => { 
                this.getApprovedApplications();    
                this.$toaster.success(response.message);
             }).catch((error) => {
                 this.$toaster.error("Something wrong");
             });
         }
-
-
     },
 
 };
 </script>
 <style scoped>
-.line_height {
-    line-height: 10px;
 
-}
 </style>

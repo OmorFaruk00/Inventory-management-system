@@ -2,23 +2,23 @@
   <div>
     <Topnav />
     <div class="d-flex" id="wrapper">
-      <div class="" id="sidebar-wrapper">
+      <div class=" " id="sidebar-wrapper">
         <div class="list-group sidebar">
-          <nuxt-link class="sidebar-item" to="/leave"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>
-         
+            <nuxt-link class="sidebar-item" to="/leave"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>         
           <nuxt-link class="sidebar-item" to="/leave/application_form"><img src="/images/leave.png" alt="" /> Leave Application Form</nuxt-link>
           <nuxt-link class="sidebar-item" to="/leave/approval_application"><img src="/images/approval.png" alt="" /> Approval for Applications </nuxt-link>
           <nuxt-link class="sidebar-item" to="/leave/pending_application"><img src="/images/pending.png" alt="" /> Pending Application </nuxt-link>
-          <nuxt-link class="sidebar-item" to="/leave/deny_application"><img src="/images/deny.png" alt="" /> Deny Application </nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/application_denied_by_other"><img src="/images/deny.png" alt="" /> Application Denied by Other</nuxt-link>
           <nuxt-link class="sidebar-item" to="/leave/approved_application"><img src="/images/approved.png" alt="" /> Approved Application </nuxt-link>
-          <!-- <nuxt-link class="sidebar-item" to="/leave/withdraw_application"><img src="/images/withdraw.png" alt="" /> Withdraw Application </nuxt-link> -->
-        
+          <nuxt-link class="sidebar-item" to="/leave/withdraw_application"><img src="/images/withdraw.png" alt="" /> Withdraw Application </nuxt-link>
+          <nuxt-link class="sidebar-item" to="/leave/self_denied_application"><img src="/images/deny.png" alt="" /> Self Denied Application </nuxt-link> 
+          
         </div>
       </div>
       <!-- /#sidebar-wrapper -->
       <!-- Page Content -->
       <div id="page-content-wrapper">
-        <div class="container-fluid ">
+        <div class="container-fluid">
           <router-view />
         </div>
       </div>
@@ -29,26 +29,45 @@
 </template>
 
 <script>
-export default {};
+export default {
+data(){
+    return {
+        syllabus: false,
+        final_admission: false,
+        students: false,
+    }
+
+}
+}
 </script>
 <style scoped>
-.main{
-  overflow: scroll;
-}
+.dropdown_final_syllabus a{  
+  cursor: pointer;
   
-.sidebar {
+}
+.dropdown_item a{  
+  border: none;
+  padding-left: 45px;
   line-height: 50px;
+  color: #000;
+  display: block;
+  font-size: 14px;
+
   
 }
 
+.sidebar {
+  line-height: 50px;  
+  
+}
 .sidebar-item {
-  font-size: 15px;
+  font-size: 14px;
   color: #000;  
 }
 
 .sidebar-item svg,
 img {
-  height: 18px;
+  height: 15px;
   padding-right: 10px;
   padding-left: 20px;
 }
@@ -62,23 +81,25 @@ img {
 
 #sidebar-wrapper {
   min-height: 100vh;
-  padding-top: 50px;  
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+  padding-top: 40px;
   background: #f6f6f6;
-  
- 
-
 }
 
-#menu-toggle {
+#final_syllabus-toggle {
   background: #fff;
   border: none;
 }
 
-#menu-toggle:hover {
+#final_syllabus-toggle:hover {
   background: #21537f;
 }
 
-#menu-toggle img {
+#final_syllabus-toggle img {
   height: 15px;
 }
 
@@ -120,6 +141,5 @@ img {
 
 #page-content-wrapper {
   background-color: #fff !important;
- 
 }
 </style>

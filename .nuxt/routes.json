@@ -245,6 +245,13 @@
     "_name": "_e1bd1134"
   },
   {
+    "name": "leave-application_denied_by_other",
+    "path": "/leave/application_denied_by_other",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/application_denied_by_other.vue",
+    "chunkName": "pages/leave/application_denied_by_other",
+    "_name": "_3310122f"
+  },
+  {
     "name": "leave-application_form",
     "path": "/leave/application_form",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/application_form.vue",
@@ -266,18 +273,25 @@
     "_name": "_98c5b434"
   },
   {
-    "name": "leave-deny_application",
-    "path": "/leave/deny_application",
-    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/deny_application.vue",
-    "chunkName": "pages/leave/deny_application",
-    "_name": "_dac7b38a"
-  },
-  {
     "name": "leave-pending_application",
     "path": "/leave/pending_application",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/pending_application.vue",
     "chunkName": "pages/leave/pending_application",
     "_name": "_1d739e0c"
+  },
+  {
+    "name": "leave-self_denied_application",
+    "path": "/leave/self_denied_application",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/self_denied_application.vue",
+    "chunkName": "pages/leave/self_denied_application",
+    "_name": "_55adc851"
+  },
+  {
+    "name": "leave-withdraw_application",
+    "path": "/leave/withdraw_application",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/withdraw_application.vue",
+    "chunkName": "pages/leave/withdraw_application",
+    "_name": "_9f90778e"
   },
   {
     "name": "profile-qualification",

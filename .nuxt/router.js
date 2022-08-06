@@ -39,11 +39,13 @@ const _3af8abc0 = () => interopDefault(import('../pages/employee/department/inde
 const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
 const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
 const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
+const _3310122f = () => interopDefault(import('../pages/leave/application_denied_by_other.vue' /* webpackChunkName: "pages/leave/application_denied_by_other" */))
 const _750ebdf1 = () => interopDefault(import('../pages/leave/application_form.vue' /* webpackChunkName: "pages/leave/application_form" */))
 const _26a48d72 = () => interopDefault(import('../pages/leave/approval_application.vue' /* webpackChunkName: "pages/leave/approval_application" */))
 const _98c5b434 = () => interopDefault(import('../pages/leave/approved_application.vue' /* webpackChunkName: "pages/leave/approved_application" */))
-const _dac7b38a = () => interopDefault(import('../pages/leave/deny_application.vue' /* webpackChunkName: "pages/leave/deny_application" */))
 const _1d739e0c = () => interopDefault(import('../pages/leave/pending_application.vue' /* webpackChunkName: "pages/leave/pending_application" */))
+const _55adc851 = () => interopDefault(import('../pages/leave/self_denied_application.vue' /* webpackChunkName: "pages/leave/self_denied_application" */))
+const _9f90778e = () => interopDefault(import('../pages/leave/withdraw_application.vue' /* webpackChunkName: "pages/leave/withdraw_application" */))
 const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
 const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
@@ -250,6 +252,10 @@ export const routerOptions = {
     component: _e1bd1134,
     name: "employee-office-time"
   }, {
+    path: "/leave/application_denied_by_other",
+    component: _3310122f,
+    name: "leave-application_denied_by_other"
+  }, {
     path: "/leave/application_form",
     component: _750ebdf1,
     name: "leave-application_form"
@@ -262,13 +268,17 @@ export const routerOptions = {
     component: _98c5b434,
     name: "leave-approved_application"
   }, {
-    path: "/leave/deny_application",
-    component: _dac7b38a,
-    name: "leave-deny_application"
-  }, {
     path: "/leave/pending_application",
     component: _1d739e0c,
     name: "leave-pending_application"
+  }, {
+    path: "/leave/self_denied_application",
+    component: _55adc851,
+    name: "leave-self_denied_application"
+  }, {
+    path: "/leave/withdraw_application",
+    component: _9f90778e,
+    name: "leave-withdraw_application"
   }, {
     path: "/profile/qualification",
     component: _33ac7e76,

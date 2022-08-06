@@ -11,7 +11,7 @@
                                 <select class="form-control" v-model="leave.kinds_of_leave">
                                     <option disabled selected value="">Open this select menu</option>
                                     <option value="Earned">Earned</option>
-                                    <option value="Without Pay">Without Pay</option>
+                                    <option value="Without_Pay">Without Pay</option>
                                     <option value="Study">Study</option>
                                     <option value="Maternity">Maternity</option>
                                     <option value="Others">Others</option>

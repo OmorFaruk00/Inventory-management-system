@@ -38,7 +38,7 @@
 
         </div>
         <div class="panel-body table-responsive  form-shadow p-5 container ">
-            <table class="table table-striped text-center">
+            <table class="table table-striped table-bordered text-center">
                 <thead class="table-bg">
                     <tr>
                         <th>Serial</th>

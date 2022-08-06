@@ -237,6 +237,10 @@ a:hover{
 .form-container .form-horizontal .form-control:focus {
     box-shadow: 1px 1px 5px #dcdcdc;
 }
+.line_height {
+    line-height: 10px;
+
+}
 @media only screen and (max-width: 880px){
     .btn-responsive{       
         display: flex;        
@@ -249,10 +253,14 @@ a:hover{
     
 	
 }
-@media only screen and (max-width: 1080px){
+@media only screen and (max-width: 1280px){
     .btn-download{       
         display: flex;        
         
+    }
+    .line_height {
+        line-height: 20px !important;
+    
     }
    
     

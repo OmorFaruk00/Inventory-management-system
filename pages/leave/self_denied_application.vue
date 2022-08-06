@@ -52,17 +52,12 @@
                         </table>
                     </div>
                 </div>
-                <div class="card-footer d-flex justify-content-end">
-                    <button class="btn-delete" @click='WidthdrawApplication(application.id)'>
-                        Withdraw
-                    </button>
-                </div>
+            
             </div>
         </div>  
         </div>
         <div v-else>
-            <h2 class="text-center mt-4">Application Not Pending</h2>
-
+            <h2 class="text-center mt-4">Application Not Denied</h2>
         </div> 
     </div>
 </template>
@@ -76,29 +71,23 @@ export default {
         }
     },
       mounted() {
-        this.getPandingApplications();       
+        this.getSelfDeniedApplications();       
 
     },
-        methods: {         
+        methods: {        
 
-          getPandingApplications() {
-            this.$axios.$get("/leave/application-pending").then((response) => {                              
+          getSelfDeniedApplications() {
+            this.$axios.$get("/leave/application-self-denied-show").then((response) => {                              
                 this.applications = response;
             }).catch((error) => {
                 this.$toaster.error("Something  wrong");
             });
-        },
-        WidthdrawApplication($id){
-               this.$axios.$get("/leave/application-withdraw/"+$id).then((response) => { 
-               this.getPandingApplications();    
-               this.$toaster.success(response.message);
-            }).catch((error) => {
-                this.$toaster.error("Something wrong");
-            });
-        }
+        },       
+
     },
 
 };
 </script>
 <style scoped>
+
 </style>
