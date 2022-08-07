@@ -33,6 +33,7 @@ a:hover{
     border:none;
     padding: 5px 15px;
     border-radius: 5px;
+    margin-right: 10px;
 }
 .btn-edit:hover{
     /* background: #21537f;
@@ -247,9 +248,9 @@ a:hover{
         align-items: center;
         margin-bottom: 5px;
     }
-    /* .btn-delete{
-        margin-top: 10px!important;
-    } */
+    .btn-edit{
+        margin-bottom: 10px!important;
+    }
     
 	
 }

@@ -81,7 +81,7 @@
                                     v-model="employee.home_phone_no" />
                             </div>
                         </div>
-                         <div class="col-md-4 col-xl-4 col-sm-12">
+                        <div class="col-md-4 col-xl-4 col-sm-12">
                             <div class="form-group">
                                 <label>Parents Phone No</label>
                                 <input type="text" class="form-control" placeholder="parents Phone No"
@@ -167,6 +167,30 @@
                         </div>
                         <div class="col-md-4 col-xl-4 col-sm-12">
                             <div class="form-group">
+                                <label>Role *</label>
+                                <select class="form-control" v-model="employee.role">
+                                    <option disabled selected value="">Select Role</option>
+                                    <option v-for="(role, index) in roles" :key="index" :value="role.name">{{ role.name
+                                    }}</option>
+                                </select>
+                                <h6 v-if="errors.role" v-text="errors.role[0]" class="text-danger"></h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xl-4 col-sm-12">
+                            <div class="form-group">
+                                <label>Supervised By*</label>
+                                <select class="form-control" v-model="employee.supervised_by">
+                                    <option disabled selected value="">Select Option</option>
+                                    <option v-for="(employee, index) in employees" :key="index" :value="employee.id">{{
+                                            employee.name
+                                    }}</option>
+                                </select>
+                                <h6 v-if="errors.supervised_by" v-text="errors.supervised_by[0]" class="text-danger">
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xl-4 col-sm-12">
+                            <div class="form-group">
                                 <label>Image *</label>
                                 <input type="file" class="form-control" placeholder=""
                                     @change="(e) => (employee.image = e.target.files[0])" accept="image/*" />
@@ -178,7 +202,6 @@
                         <button class="btn-submit" @click.prevent="addEmployee()">Create Account</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
@@ -189,12 +212,16 @@ export default {
     mounted() {
         this.getDesignation();
         this.getDepartment();
+        this.getEmployee();
+        this.getEmployeeRole();
 
     },
     data() {
         return {
             designations: [],
             departments: [],
+            employees: [],
+            roles: [],
             errors: [],
             employee: {
                 name: '',
@@ -212,6 +239,8 @@ export default {
                 designation: '',
                 job_type: '',
                 merit: '',
+                role: '',
+                supervised_by: '',
 
             }
         }
@@ -228,6 +257,26 @@ export default {
                     console.log(err);
                 });
         },
+        getEmployee() {
+            this.$axios
+                .$get("/employee/show")
+                .then((res) => {
+                    this.employees = res;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+        getEmployeeRole() {
+            this.$axios
+                .$get("/employee/role")
+                .then((res) => {
+                    this.roles = res;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
         getDepartment() {
             this.$axios
                 .$get("/department/show")
@@ -239,7 +288,7 @@ export default {
                 });
         },
         addEmployee() {
-            
+
             let formData = new FormData();
             formData.append('name', this.employee.name)
             formData.append('email', this.employee.email)
@@ -256,6 +305,8 @@ export default {
             formData.append('designation', this.employee.designation)
             formData.append('job_type', this.employee.job_type)
             formData.append('merit', this.employee.merit)
+            formData.append('role', this.employee.role)
+            formData.append('supervised_by', this.employee.supervised_by)
             formData.append('image', this.employee.image)
 
 
@@ -265,9 +316,12 @@ export default {
                     this.employee = "";
                     this.errors = {};
                     this.$toaster.success("Employee Added Successfully");
-                    //   this.$router.push("/dum-ac/slider");       
+                    this.$router.push("/employee/employee");       
                 })
                 .catch((error) => {
+                    if (error.response.status == 401) {
+                        this.$toaster.error(error.response.data.message);
+                    }
                     this.errors = error.response.data.errors;
                 });
         },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pt-5">
+    <div class="pt-5" v-if="auth" >
       <div class="row">
         <div class="mx-auto col-md-12">
           <div class="panel">
@@ -14,18 +14,20 @@
                 </div>
               </div>
             </div>
-            <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+            <div class="panel-body table-responsive" v-if="designations">
+              <table class="table table-striped table-bordered text-center">
                 <thead>
                   <tr>
+                    <th>SL</th>
                     <th>Type</th>
-                    <th>designation Name</th>
+                    <th>Designation Name</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="designation in designations" :key="designation._id">
+                  <tr v-for="(designation,index) in designations" :key="index">
+                    <td>{{ index + 1 }}</td>
                     <td>{{ designation.type }}</td>
                     <td>{{ designation.designation }}</td>
                     <td>
@@ -84,10 +86,7 @@
                     v-model="designation.designation" />
                 </div>
                 <h6 v-if="errors.designation" v-text="errors.designation[0]" class="text-danger"></h6>
-
-
               </div>
-
             </div>
             <div class="modal-footer">
               <button type="button" class="btn-submit" @click="designationUpdate()">
@@ -98,6 +97,7 @@
         </div>
       </div>
     </div>
+    <h2 v-else class="text-center mt-5 text-danger">You are not authorized</h2>
   </div>
 </template>
 <script>
@@ -109,6 +109,7 @@ export default {
   },
   data() {
     return {
+      auth:true,
       designations: '',
       designation: {
         type: "",
@@ -124,8 +125,12 @@ export default {
         .then((res) => {
           this.designations = res;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          if (error.response.status == 401) {
+            this.auth = false;
+            this.$toaster.error(error.response.data.message);
+          }
+          console.log(error);
         });
     },
     designationEdit(id) {

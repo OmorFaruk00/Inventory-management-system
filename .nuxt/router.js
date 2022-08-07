@@ -7,12 +7,12 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _bff9b9cc = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
 const _4275d176 = () => interopDefault(import('../pages/admission/index.vue' /* webpackChunkName: "pages/admission/index" */))
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
-const _1f1dcec8 = () => interopDefault(import('../pages/dum-ac/index.vue' /* webpackChunkName: "pages/dum-ac/index" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
 const _0d9ac0b8 = () => interopDefault(import('../pages/leave/index.vue' /* webpackChunkName: "pages/leave/index" */))
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _93ea1328 = () => interopDefault(import('../pages/web-dui/index.vue' /* webpackChunkName: "pages/web-dui/index" */))
 const _63701a16 = () => interopDefault(import('../pages/account/account.vue' /* webpackChunkName: "pages/account/account" */))
 const _37ed142d = () => interopDefault(import('../pages/account/fund.vue' /* webpackChunkName: "pages/account/fund" */))
 const _d1e8f534 = () => interopDefault(import('../pages/account/purpose.vue' /* webpackChunkName: "pages/account/purpose" */))
@@ -25,16 +25,6 @@ const _d353031c = () => interopDefault(import('../pages/admission/form-import.vu
 const _97d25958 = () => interopDefault(import('../pages/admission/form-sale.vue' /* webpackChunkName: "pages/admission/form-sale" */))
 const _22fdd159 = () => interopDefault(import('../pages/admission/form-stock.vue' /* webpackChunkName: "pages/admission/form-stock" */))
 const _73225922 = () => interopDefault(import('../pages/admission/search-student.vue' /* webpackChunkName: "pages/admission/search-student" */))
-const _2f8ce56a = () => interopDefault(import('../pages/dum-ac/blog/index.vue' /* webpackChunkName: "pages/dum-ac/blog/index" */))
-const _af4473ec = () => interopDefault(import('../pages/dum-ac/committee/index.vue' /* webpackChunkName: "pages/dum-ac/committee/index" */))
-const _ec440f2c = () => interopDefault(import('../pages/dum-ac/contact.vue' /* webpackChunkName: "pages/dum-ac/contact" */))
-const _f5f12c32 = () => interopDefault(import('../pages/dum-ac/event/index.vue' /* webpackChunkName: "pages/dum-ac/event/index" */))
-const _1c49947f = () => interopDefault(import('../pages/dum-ac/facilitie/index.vue' /* webpackChunkName: "pages/dum-ac/facilitie/index" */))
-const _3499841f = () => interopDefault(import('../pages/dum-ac/gallery/index.vue' /* webpackChunkName: "pages/dum-ac/gallery/index" */))
-const _e54c44fe = () => interopDefault(import('../pages/dum-ac/notice/index.vue' /* webpackChunkName: "pages/dum-ac/notice/index" */))
-const _48a254d1 = () => interopDefault(import('../pages/dum-ac/program/index.vue' /* webpackChunkName: "pages/dum-ac/program/index" */))
-const _298a884a = () => interopDefault(import('../pages/dum-ac/slider/index.vue' /* webpackChunkName: "pages/dum-ac/slider/index" */))
-const _eb70d104 = () => interopDefault(import('../pages/dum-ac/tution/index.vue' /* webpackChunkName: "pages/dum-ac/tution/index" */))
 const _3af8abc0 = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
 const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
 const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
@@ -62,17 +52,19 @@ const _2b198203 = () => interopDefault(import('../pages/student/question/index.v
 const _6faf3da0 = () => interopDefault(import('../pages/student/search-student.vue' /* webpackChunkName: "pages/student/search-student" */))
 const _9753d596 = () => interopDefault(import('../pages/student/students/index.vue' /* webpackChunkName: "pages/student/students/index" */))
 const _7a782142 = () => interopDefault(import('../pages/student/syllabus/index.vue' /* webpackChunkName: "pages/student/syllabus/index" */))
+const _3c31d17b = () => interopDefault(import('../pages/web-dui/blog/index.vue' /* webpackChunkName: "pages/web-dui/blog/index" */))
+const _6ad89fda = () => interopDefault(import('../pages/web-dui/committee/index.vue' /* webpackChunkName: "pages/web-dui/committee/index" */))
+const _5077a23a = () => interopDefault(import('../pages/web-dui/contact.vue' /* webpackChunkName: "pages/web-dui/contact" */))
+const _9fd0a892 = () => interopDefault(import('../pages/web-dui/event/index.vue' /* webpackChunkName: "pages/web-dui/event/index" */))
+const _42772362 = () => interopDefault(import('../pages/web-dui/facilitie/index.vue' /* webpackChunkName: "pages/web-dui/facilitie/index" */))
+const _46bedc22 = () => interopDefault(import('../pages/web-dui/gallery/index.vue' /* webpackChunkName: "pages/web-dui/gallery/index" */))
+const _775c549e = () => interopDefault(import('../pages/web-dui/notice/index.vue' /* webpackChunkName: "pages/web-dui/notice/index" */))
+const _1ead3abe = () => interopDefault(import('../pages/web-dui/program/index.vue' /* webpackChunkName: "pages/web-dui/program/index" */))
+const _6082807a = () => interopDefault(import('../pages/web-dui/slider/index.vue' /* webpackChunkName: "pages/web-dui/slider/index" */))
+const _7d80e0a4 = () => interopDefault(import('../pages/web-dui/tution/index.vue' /* webpackChunkName: "pages/web-dui/tution/index" */))
 const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
 const _4f6b12fd = () => interopDefault(import('../pages/admission/batch/create.vue' /* webpackChunkName: "pages/admission/batch/create" */))
 const _5ba7997d = () => interopDefault(import('../pages/admission/department/create.vue' /* webpackChunkName: "pages/admission/department/create" */))
-const _46ac66d3 = () => interopDefault(import('../pages/dum-ac/blog/create.vue' /* webpackChunkName: "pages/dum-ac/blog/create" */))
-const _e9e17418 = () => interopDefault(import('../pages/dum-ac/committee/create.vue' /* webpackChunkName: "pages/dum-ac/committee/create" */))
-const _439a1db7 = () => interopDefault(import('../pages/dum-ac/event/create.vue' /* webpackChunkName: "pages/dum-ac/event/create" */))
-const _d6c573c2 = () => interopDefault(import('../pages/dum-ac/facilitie/create.vue' /* webpackChunkName: "pages/dum-ac/facilitie/create" */))
-const _45961d5d = () => interopDefault(import('../pages/dum-ac/notice/create.vue' /* webpackChunkName: "pages/dum-ac/notice/create" */))
-const _1946dfe6 = () => interopDefault(import('../pages/dum-ac/program/create.vue' /* webpackChunkName: "pages/dum-ac/program/create" */))
-const _2f7acbb4 = () => interopDefault(import('../pages/dum-ac/slider/create.vue' /* webpackChunkName: "pages/dum-ac/slider/create" */))
-const _3340ba00 = () => interopDefault(import('../pages/dum-ac/tution/create.vue' /* webpackChunkName: "pages/dum-ac/tution/create" */))
 const _4bd116fe = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
 const _47c7edbf = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
 const _49c74162 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
@@ -86,8 +78,15 @@ const _1f95ac96 = () => interopDefault(import('../pages/student/lecture-sheet/cr
 const _6de3e9b2 = () => interopDefault(import('../pages/student/lesson-plan/create.vue' /* webpackChunkName: "pages/student/lesson-plan/create" */))
 const _5fcb091b = () => interopDefault(import('../pages/student/question/create.vue' /* webpackChunkName: "pages/student/question/create" */))
 const _077f5c88 = () => interopDefault(import('../pages/student/syllabus/create.vue' /* webpackChunkName: "pages/student/syllabus/create" */))
+const _71bca8a3 = () => interopDefault(import('../pages/web-dui/blog/create.vue' /* webpackChunkName: "pages/web-dui/blog/create" */))
+const _17efa624 = () => interopDefault(import('../pages/web-dui/committee/create.vue' /* webpackChunkName: "pages/web-dui/committee/create" */))
+const _7a9215e7 = () => interopDefault(import('../pages/web-dui/event/create.vue' /* webpackChunkName: "pages/web-dui/event/create" */))
+const _217da64f = () => interopDefault(import('../pages/web-dui/facilitie/create.vue' /* webpackChunkName: "pages/web-dui/facilitie/create" */))
+const _24c5a9a6 = () => interopDefault(import('../pages/web-dui/notice/create.vue' /* webpackChunkName: "pages/web-dui/notice/create" */))
+const _4c373c3d = () => interopDefault(import('../pages/web-dui/program/create.vue' /* webpackChunkName: "pages/web-dui/program/create" */))
+const _50fc4cf8 = () => interopDefault(import('../pages/web-dui/slider/create.vue' /* webpackChunkName: "pages/web-dui/slider/create" */))
+const _e3329e60 = () => interopDefault(import('../pages/web-dui/tution/create.vue' /* webpackChunkName: "pages/web-dui/tution/create" */))
 const _3d2014f5 = () => interopDefault(import('../pages/admission/batch/update/_id.vue' /* webpackChunkName: "pages/admission/batch/update/_id" */))
-const _56181728 = () => interopDefault(import('../pages/dum-ac/committee/update/_id.vue' /* webpackChunkName: "pages/dum-ac/committee/update/_id" */))
 const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
 const _69f4ac63 = () => interopDefault(import('../pages/student/attendance/create/_id.vue' /* webpackChunkName: "pages/student/attendance/create/_id" */))
@@ -96,6 +95,7 @@ const _addfe0a6 = () => interopDefault(import('../pages/student/lecture-sheet/up
 const _82522fc2 = () => interopDefault(import('../pages/student/lesson-plan/update/_id.vue' /* webpackChunkName: "pages/student/lesson-plan/update/_id" */))
 const _db8867da = () => interopDefault(import('../pages/student/question/update/_id.vue' /* webpackChunkName: "pages/student/question/update/_id" */))
 const _28ac4798 = () => interopDefault(import('../pages/student/syllabus/update/_id.vue' /* webpackChunkName: "pages/student/syllabus/update/_id" */))
+const _3d48bc9c = () => interopDefault(import('../pages/web-dui/committee/update/_id.vue' /* webpackChunkName: "pages/web-dui/committee/update/_id" */))
 const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
 const _7d3d8652 = () => interopDefault(import('../pages/admission/student-update/_id.vue' /* webpackChunkName: "pages/admission/student-update/_id" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -124,10 +124,6 @@ export const routerOptions = {
     component: _78bf08cb,
     name: "app"
   }, {
-    path: "/dum-ac",
-    component: _1f1dcec8,
-    name: "dum-ac"
-  }, {
     path: "/employee",
     component: _68d6c877,
     name: "employee"
@@ -147,6 +143,10 @@ export const routerOptions = {
     path: "/student",
     component: _094c3cb0,
     name: "student"
+  }, {
+    path: "/web-dui",
+    component: _93ea1328,
+    name: "web-dui"
   }, {
     path: "/account/account",
     component: _63701a16,
@@ -195,46 +195,6 @@ export const routerOptions = {
     path: "/admission/search-student",
     component: _73225922,
     name: "admission-search-student"
-  }, {
-    path: "/dum-ac/blog",
-    component: _2f8ce56a,
-    name: "dum-ac-blog"
-  }, {
-    path: "/dum-ac/committee",
-    component: _af4473ec,
-    name: "dum-ac-committee"
-  }, {
-    path: "/dum-ac/contact",
-    component: _ec440f2c,
-    name: "dum-ac-contact"
-  }, {
-    path: "/dum-ac/event",
-    component: _f5f12c32,
-    name: "dum-ac-event"
-  }, {
-    path: "/dum-ac/facilitie",
-    component: _1c49947f,
-    name: "dum-ac-facilitie"
-  }, {
-    path: "/dum-ac/gallery",
-    component: _3499841f,
-    name: "dum-ac-gallery"
-  }, {
-    path: "/dum-ac/notice",
-    component: _e54c44fe,
-    name: "dum-ac-notice"
-  }, {
-    path: "/dum-ac/program",
-    component: _48a254d1,
-    name: "dum-ac-program"
-  }, {
-    path: "/dum-ac/slider",
-    component: _298a884a,
-    name: "dum-ac-slider"
-  }, {
-    path: "/dum-ac/tution",
-    component: _eb70d104,
-    name: "dum-ac-tution"
   }, {
     path: "/employee/department",
     component: _3af8abc0,
@@ -344,6 +304,46 @@ export const routerOptions = {
     component: _7a782142,
     name: "student-syllabus"
   }, {
+    path: "/web-dui/blog",
+    component: _3c31d17b,
+    name: "web-dui-blog"
+  }, {
+    path: "/web-dui/committee",
+    component: _6ad89fda,
+    name: "web-dui-committee"
+  }, {
+    path: "/web-dui/contact",
+    component: _5077a23a,
+    name: "web-dui-contact"
+  }, {
+    path: "/web-dui/event",
+    component: _9fd0a892,
+    name: "web-dui-event"
+  }, {
+    path: "/web-dui/facilitie",
+    component: _42772362,
+    name: "web-dui-facilitie"
+  }, {
+    path: "/web-dui/gallery",
+    component: _46bedc22,
+    name: "web-dui-gallery"
+  }, {
+    path: "/web-dui/notice",
+    component: _775c549e,
+    name: "web-dui-notice"
+  }, {
+    path: "/web-dui/program",
+    component: _1ead3abe,
+    name: "web-dui-program"
+  }, {
+    path: "/web-dui/slider",
+    component: _6082807a,
+    name: "web-dui-slider"
+  }, {
+    path: "/web-dui/tution",
+    component: _7d80e0a4,
+    name: "web-dui-tution"
+  }, {
     path: "/admission/admissionInActiveBatch/create",
     component: _2e0fda69,
     name: "admission-admissionInActiveBatch-create"
@@ -355,38 +355,6 @@ export const routerOptions = {
     path: "/admission/department/create",
     component: _5ba7997d,
     name: "admission-department-create"
-  }, {
-    path: "/dum-ac/blog/create",
-    component: _46ac66d3,
-    name: "dum-ac-blog-create"
-  }, {
-    path: "/dum-ac/committee/create",
-    component: _e9e17418,
-    name: "dum-ac-committee-create"
-  }, {
-    path: "/dum-ac/event/create",
-    component: _439a1db7,
-    name: "dum-ac-event-create"
-  }, {
-    path: "/dum-ac/facilitie/create",
-    component: _d6c573c2,
-    name: "dum-ac-facilitie-create"
-  }, {
-    path: "/dum-ac/notice/create",
-    component: _45961d5d,
-    name: "dum-ac-notice-create"
-  }, {
-    path: "/dum-ac/program/create",
-    component: _1946dfe6,
-    name: "dum-ac-program-create"
-  }, {
-    path: "/dum-ac/slider/create",
-    component: _2f7acbb4,
-    name: "dum-ac-slider-create"
-  }, {
-    path: "/dum-ac/tution/create",
-    component: _3340ba00,
-    name: "dum-ac-tution-create"
   }, {
     path: "/employee/department/create",
     component: _4bd116fe,
@@ -440,13 +408,41 @@ export const routerOptions = {
     component: _077f5c88,
     name: "student-syllabus-create"
   }, {
+    path: "/web-dui/blog/create",
+    component: _71bca8a3,
+    name: "web-dui-blog-create"
+  }, {
+    path: "/web-dui/committee/create",
+    component: _17efa624,
+    name: "web-dui-committee-create"
+  }, {
+    path: "/web-dui/event/create",
+    component: _7a9215e7,
+    name: "web-dui-event-create"
+  }, {
+    path: "/web-dui/facilitie/create",
+    component: _217da64f,
+    name: "web-dui-facilitie-create"
+  }, {
+    path: "/web-dui/notice/create",
+    component: _24c5a9a6,
+    name: "web-dui-notice-create"
+  }, {
+    path: "/web-dui/program/create",
+    component: _4c373c3d,
+    name: "web-dui-program-create"
+  }, {
+    path: "/web-dui/slider/create",
+    component: _50fc4cf8,
+    name: "web-dui-slider-create"
+  }, {
+    path: "/web-dui/tution/create",
+    component: _e3329e60,
+    name: "web-dui-tution-create"
+  }, {
     path: "/admission/batch/update/:id?",
     component: _3d2014f5,
     name: "admission-batch-update-id"
-  }, {
-    path: "/dum-ac/committee/update/:id",
-    component: _56181728,
-    name: "dum-ac-committee-update-id"
   }, {
     path: "/employee/employee/detail/:id?",
     component: _01ba6062,
@@ -479,6 +475,10 @@ export const routerOptions = {
     path: "/student/syllabus/update/:id?",
     component: _28ac4798,
     name: "student-syllabus-update-id"
+  }, {
+    path: "/web-dui/committee/update/:id",
+    component: _3d48bc9c,
+    name: "web-dui-committee-update-id"
   }, {
     path: "/admission/print-receive/:id?",
     component: _21940a12,

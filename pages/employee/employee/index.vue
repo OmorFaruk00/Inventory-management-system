@@ -15,29 +15,30 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <!-- <th>SL</th> -->
+                    <th>SL</th>
                     <th>Name</th>
                     <th>Designation</th>
                     <th>Depertment</th>
                     <th>E-mail</th>
-                    <th>Job Type</th>
+                    <th>Phone</th>
                     <th>Image</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr v-for="employee in employees" :key="employee._id">
-                    <!-- <td>{{ employee.id}}</td> -->
+                <tbody v-if="employees">
+                  <tr v-for="(employee, index) in employees" :key="index">
+                    <td>{{ index + 1 }}</td>
                     <td>{{ employee.name }}</td>
                     <td>{{ employee.rel_designation.designation }}</td>
                     <td>{{ employee.rel_department.department }}</td>
                     <td>{{ employee.email }}</td>
-                    <td>{{ employee.jobtype }}</td>
-                    <td><img :src="'http://localhost:8000/images/emp/' + employee.profile_photo" alt="image" style="height:80px" /></td>
+                    <td>{{ employee.personal_phone_no }}</td>
+                    <td><img :src="'http://localhost:8000/images/emp/' + employee.profile_photo" alt="image"
+                        style="height:80px" /></td>
                     <td>
                       <button v-if="employee.status == 1" class="btn-active" @click="employeeStatus(employee.id)">
                         Active
@@ -47,12 +48,10 @@
                       </button>
                     </td>
                     <td class="pt-3">
-                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn-edit">Edit</nuxt-link>
-                      <nuxt-link :to="`/employee/employee/detail/${employee.id}`" class="btn-details">Details</nuxt-link>
-
-                      <!-- <button class="btn-delete " @click="employeeDelete(employee.id)">
-                        Delete
-                      </button> -->
+                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn-edit"
+                        style="padding:8px 15px">Edit</nuxt-link>
+                      <nuxt-link :to="`/employee/employee/detail/${employee.id}`" class="btn-details"
+                        style="padding:8px 15px">Details</nuxt-link>
                     </td>
                   </tr>
                 </tbody>
@@ -62,7 +61,7 @@
         </div>
       </div>
 
-     
+
     </div>
   </div>
 </template>
@@ -75,7 +74,7 @@ export default {
   },
   data() {
     return {
-      employees: [],
+      employees: '',
       errors: {},
     };
   },
@@ -86,10 +85,13 @@ export default {
         .then((res) => {
           this.employees = res;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          if (error.response.status == 401) {
+            this.$toaster.error(error.response.data.message);
+          }
+          console.log(error);
         });
-    },    
+    },
     employeeDelete(id) {
       if (confirm("Are you sure to delete this employee?")) {
         this.$axios
@@ -110,8 +112,11 @@ export default {
           this.getEmployee();
           this.$toaster.success(res.message);
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          if (error.response.status == 401) {
+            this.$toaster.error(error.response.data.message);
+          }
+          console.log(error);
         });
     },
   },

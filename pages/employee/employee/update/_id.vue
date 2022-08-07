@@ -143,6 +143,28 @@
                                 <h6 v-if="errors.jobtype" v-text="errors.jobtype[0]" class="text-danger"></h6>
                             </div>
                         </div>
+                          <div class="col-md-4 col-xl-4 col-sm-12">
+                            <div class="form-group">
+                                <label>Role *</label>
+                                <select class="form-control" v-model="employee.role">
+                                    <option disabled selected value="">Select Role</option>
+                                     <option v-for="(role,index) in roles" :key="index"
+                                        :value="role.name">{{ role.name }}</option>
+                                </select>
+                                <h6 v-if="errors.role" v-text="errors.role[0]" class="text-danger"></h6>
+                            </div>
+                        </div>
+                          <div class="col-md-4 col-xl-4 col-sm-12">
+                            <div class="form-group">
+                                <label>Supervised By*</label>
+                                <select class="form-control" v-model="employee.supervised_by">
+                                    <option disabled selected value="">Select Option</option>
+                                    <option v-for="(employee,index) in employees" :key="index"
+                                        :value="employee.id">{{ employee.name }}</option>
+                                </select>
+                                <h6 v-if="errors.supervised_by" v-text="errors.supervised_by[0]" class="text-danger"></h6>
+                            </div>
+                        </div>
                         <div class="col-md-4 col-xl-4 col-sm-12">
                             <div class="form-group">
                                 <label>Image *</label>
@@ -171,6 +193,8 @@ export default {
         this.employeeEdit();
         this.getDesignation();
         this.getDepartment();
+        this. getEmployee();
+        this.getEmployeeRole(); 
 
     },
 
@@ -178,6 +202,8 @@ export default {
         return {
             designations: [],
             departments: [],
+            employees: [],
+            roles: [],
             errors: [],
             employee: {
                 name: '',
@@ -194,6 +220,8 @@ export default {
                 jobtype: '',
                 merit: '',
                 new_image:'',
+                supervised_by:'',
+                role:'',
 
             }
         }
@@ -207,6 +235,26 @@ export default {
 
                     console.log(res);
                     this.employee = res;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+            getEmployee() {
+            this.$axios
+                .$get("/employee/show")
+                .then((res) => {
+                    this.employees = res;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+          getEmployeeRole() {
+            this.$axios
+                .$get("/employee/role")
+                .then((res) => {
+                    this.roles = res;
                 })
                 .catch((err) => {
                     console.log(err);
@@ -233,8 +281,6 @@ export default {
                 });
         },
         updateEmployee() {
-
-
             let formData = new FormData();
             formData.append('name', this.employee.name)
             formData.append('email', this.employee.email)
@@ -248,13 +294,12 @@ export default {
             formData.append('department', this.employee.department_id)
             formData.append('designation', this.employee.designation_id)
             formData.append('jobtype', this.employee.jobtype)
+            formData.append('supervised_by', this.employee.supervised_by)
+            formData.append('role', this.employee.role)
             formData.append('merit', this.employee.merit)
             if(this.employee.new_image){
                 formData.append('image', this.employee.new_image)
             }
-            
-
-
             this.$axios
                 .$post("/employee/update/" + this.$route.params.id, formData)
                 .then((res) => {
@@ -264,6 +309,9 @@ export default {
                     this.$router.push("/employee/employee");
                 })
                 .catch((error) => {
+                      if (error.response.status == 401) {
+                        this.$toaster.error(error.response.data.message);
+                    }
                     this.errors = error.response.data.errors;
                 });
         },

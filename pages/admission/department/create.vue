@@ -2,7 +2,7 @@
   <div class="pt-5">
     <div class="col-md-6 mx-auto form-shadow p-5">
       <div class="d-flex justify-content-end">
-        <!-- <nuxt-link to="/dum-ac/department" class="btn-add"> Department List</nuxt-link> -->
+        <!-- <nuxt-link to="/web-dui/department" class="btn-add"> Department List</nuxt-link> -->
       </div>
       <form>
         <div class="form-group">

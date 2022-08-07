@@ -7,7 +7,7 @@
 
     <div class="row main-content">
       <div class="col-md-3 col-xl-2 col-sm-6">
-        <nuxt-link class="app-link" to="/dum-ac">
+        <nuxt-link class="app-link" to="/web-dui">
           <div class="app">
             <div class="app-icon">
               <img src="images/dum2.webp" alt="" />
