@@ -6,21 +6,82 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputAddress2">Payment Name</label>
-            <input v-model="name" type="text" class="form-control" id="inputAddress2" placeholder="Payment Name" />
+            <input
+              v-model="name"
+              type="text"
+              class="form-control"
+              id="inputAddress2"
+              placeholder="Payment Name"
+            />
             <span class="text-danger" v-if="error && error.name">{{
-                error.name[0]
+              error.name[0]
             }}</span>
           </div>
-
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputAddress2">Amount</label>
-            <input v-model="amount" type="number" class="form-control" id="inputAddress2" placeholder="Amount" />
+            <input
+              v-model="amount"
+              type="number"
+              class="form-control"
+              id="inputAddress2"
+              placeholder="Amount"
+            />
 
             <span class="text-danger" v-if="error && error.amount">{{
-                error.amount[0]
+              error.amount[0]
             }}</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-xl-6 col-sm-12">
+          <div class="form-group">
+            <label>Department *</label>
+            <select
+              class="form-control"
+              v-model="department"
+              @change="fetchBatch()"
+            >
+              <option disabled selected value="">Select Department</option>
+              <option
+                disable
+                v-for="(dpt, index) in departments"
+                :key="index"
+                :value="dpt.id"
+                v-text="dpt.department_name"
+              ></option>
+            </select>
+            <h6
+              v-if="error && error.department"
+              v-text="error.department[0]"
+              class="text-danger"
+            ></h6>
+          </div>
+        </div>
+        <div class="col-md-12 col-xl-6 col-sm-12">
+          <div class="form-group">
+            <label>Batch *</label>
+            <input
+              type="text"
+              disabled
+              class="form-control"
+              placeholder="Select Department first"
+              v-if="!batches"
+            />
+            <select class="form-control" v-model="batch_id" required v-else>
+              <option selected value="">Select Batch</option>
+              <option
+                v-for="batch in batches"
+                :key="batch.id"
+                :value="batch.id"
+                v-text="batch.batch_name"
+              ></option>
+            </select>
+            <h6
+              v-if="error && error.batch_id"
+              v-text="error.batch_id[0]"
+              class="text-danger"
+            ></h6>
           </div>
         </div>
         <div class="col-md-6">
@@ -32,11 +93,11 @@
               <option value="1">Monthly</option>
             </select>
             <span class="text-danger" v-if="error && error.monthly_fee">{{
-                error.monthly_fee[0]
+              error.monthly_fee[0]
             }}</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <div class="form-group">
             <label for="inputState" class="form-label">Class</label>
             <select v-model="class_id" id="inputState" class="form-control">
@@ -46,21 +107,26 @@
               </option>
             </select>
             <span class="text-danger" v-if="error && error.class_id">{{
-                error.class_id[0]
+              error.class_id[0]
             }}</span>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputState" class="form-label">Fund</label>
-            <select v-model="fund_id" @change="getSubfund" id="inputState" class="form-control">
+            <select
+              v-model="fund_id"
+              @change="getSubfund"
+              id="inputState"
+              class="form-control"
+            >
               <option selected disabled value="">Choose...</option>
               <option :value="fun.id" v-for="fun in funds" :key="fun.id">
                 {{ fun.name }}
               </option>
             </select>
             <span class="text-danger" v-if="error && error.fund_id">{{
-                error.fund_id[0]
+              error.fund_id[0]
             }}</span>
           </div>
         </div>
@@ -74,13 +140,14 @@
               </option>
             </select>
             <span class="text-danger" v-if="error && error.sub_fund_id">{{
-                error.sub_fund_id[0]
+              error.sub_fund_id[0]
             }}</span>
           </div>
         </div>
       </div>
-      .<div class="float-right">
-        <button class="btn btn-info mt-3 " @click="createPurpose">Make</button>
+      .
+      <div class="float-right">
+        <button class="btn btn-info mt-3" @click="createPurpose">Make</button>
       </div>
     </div>
     <div>
@@ -98,7 +165,7 @@
           <tr v-for="(purpo, i) in purposes" :key="purpo.id">
             <th scope="row">{{ ++i }}</th>
             <td>{{ purpo.name }}</td>
-            <td>{{ purpo.rel_class ? purpo.rel_class.department : "NaN" }}</td>
+            <td>{{ purpo.rel_batch ? purpo.rel_batch.batch_name : "NaN" }}</td>
             <td>{{ purpo.amount }}</td>
             <td>{{ purpo.month_wise == 1 ? "yes" : "one time" }}</td>
           </tr>
@@ -114,12 +181,14 @@ export default {
   layout: "Account-content",
   data() {
     return {
+      departments: "",
+      department: "",
       name: "",
       amount: "",
-      class_id: "",
+      batch_id: "",
       fund_id: "",
       sub_fund_id: "",
-      classes: "",
+      batches: "",
       funds: "",
       subFunds: "",
       purposes: null,
@@ -128,7 +197,7 @@ export default {
     };
   },
   created() {
-    this.getClass();
+    this.fetchDepartmentInfo();
     this.getFund();
     this.getPurpose();
   },
@@ -140,13 +209,34 @@ export default {
     },
   },
   methods: {
+    fetchDepartmentInfo() {
+      this.$axios
+        .$get("/admission/department")
+        .then((response) => {
+          this.departments = response;
+        })
+        .catch((error) => {
+          this.$toaster.error("Department Not found");
+        });
+    },
+    fetchBatch() {
+      this.$axios
+        .$get("/admission/batch/" + this.department)
+        .then((response) => {
+          this.batches = response.data;
+        })
+        .catch((error) => {
+          this.$toaster.error("Batch Not found");
+        });
+    },
     createPurpose() {
       this.$axios
         .post("/accounts/purpose", {
           name: this.name,
           amount: this.amount,
           month_wise: this.month_wise,
-          class_id: this.class_id,
+          department_id: this.department,
+          batch_id: this.batch_id,
           fund_id: this.fund_id,
           sub_fund_id: this.sub_fund_id,
         })
@@ -213,5 +303,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
