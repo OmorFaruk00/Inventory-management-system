@@ -1,5 +1,6 @@
 <template>
-    <div class="form-bg py-5">
+<div>
+    <div class="form-bg py-5" v-if="$auth.user.permission.includes('Attendance-report')">
         <div class="col-md-8 offset-md-2" v-if="show">
             <div class="form-shadow p-5">
                 <h3 class="title">find report </h3>
@@ -52,17 +53,7 @@
                             <input type="date" class="form-control select" v-model="report.date" />
                             <h6 v-if="errors.date" v-text="errors.date[0]" class="text-danger mt-1"></h6>
                         </div>
-                    </div>
-                    <!-- <div class="col-md-12 col-xl-6 col-sm-12">
-                        <div class="form-group">
-                            <label>Course Code *</label>
-                            <input type="text" disabled class="form-control select" placeholder="Select Course First"
-                                v-if="report.course_code == ''" />
-                            <input type="text" class="form-control" placeholder="Enter Course Code"
-                                v-model="report.course_code" v-else />
-                            <h6 v-if="errors.course_code" v-text="errors.course_code[0]" class="text-danger"></h6>
-                        </div>
-                    </div> -->
+                    </div>                 
 
                 </div>
                 <div class="d-flex justify-content-end pt-3">
@@ -123,6 +114,8 @@
 
             </div>
         </div>
+        </div>
+       <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
     </div>
 </template>
 <script>

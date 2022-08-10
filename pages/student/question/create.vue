@@ -146,7 +146,7 @@ export default {
              this.$axios.$get("/student/course-code/"+this.question.course_name).then((response) => {                
                 this.question.course_code =response[0].course_code;         
             }).catch((error) => {
-                this.$toaster.error("Batch Not found");
+                console.log(error);
             });
         },
 

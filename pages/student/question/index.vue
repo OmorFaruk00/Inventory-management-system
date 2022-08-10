@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pt-5">
+    <div class="pt-5" v-if="auth">
       <div class="row">
         <div class="mx-auto col-md-12">
           <div class="panel">
@@ -10,7 +10,8 @@
                   <h6 class="title">question List</h6>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right mb-2">
-                  <nuxt-link to="/student/question/create" class="btn-add"><svg height='25px'
+                  <nuxt-link to="/student/question/create" class="btn-add"
+                    v-if="$auth.user.permission.includes('Question-add')"><svg height='25px'
                       xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 mr-1" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -19,7 +20,7 @@
               </div>
             </div>
             <div class="panel-body table-responsive" v-if="questions">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered">
                 <thead class="bg-dark text-white">
                   <tr>
                     <th>Sl</th>
@@ -35,7 +36,7 @@
                 <tbody>
                   <tr v-for="(question, index) in questions" :key="index">
                     <td>{{ index + 1 }}</td>
-                    <td>{{ question.department.department_name }}</td>               
+                    <td>{{ question.department.department_name }}</td>
                     <td>{{ question.batch[0].batch_name }}</td>
                     <td>{{ question.course.course_name }}</td>
                     <td>{{ question.course.course_code }}</td>
@@ -48,14 +49,17 @@
                         </svg> Download</a></td>
                     <td>
                       <nuxt-link :to="`/student/question/update/${question.id}`"
-                        class="btn-edit py-2 mr-3 btn-responsive"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
-                          class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20" fill="currentColor">
+                        class="btn-edit py-2 mr-3 btn-responsive"
+                        v-if="$auth.user.permission.includes('Question-update')"><svg height='20px'
+                          xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20"
+                          fill="currentColor">
                           <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                           <path fill-rule="evenodd"
                             d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
                             clip-rule="evenodd" />
                         </svg>Edit</nuxt-link>
-                      <button class="btn-delete" @click="questionDelete(question.id)"><svg height='18px'
+                      <button class="btn-delete" @click="questionDelete(question.id)"
+                        v-if="$auth.user.permission.includes('Question-delete')"><svg height='18px'
                           xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 pr-1" fill="none" viewBox="0 0 24 24"
                           stroke="currentColor" stroke-width="2">
                           <path stroke-linecap="round" stroke-linejoin="round"
@@ -64,12 +68,13 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>             
+              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
   </div>
 </template>
 <script>
@@ -77,6 +82,7 @@ export default {
   layout: 'Student-content',
   data() {
     return {
+      auth: true,
       questions: '',
       base_url: process.env.url
     }
@@ -90,6 +96,10 @@ export default {
       this.$axios.$get('/question/show').then(response => {
         this.questions = response;
       }).catch((error) => {
+        if (error.response.status == 401) {
+          this.auth = false;
+          this.$toaster.error(error.response.data.message);
+        }
         console.log(error);
       });
     },

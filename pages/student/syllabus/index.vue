@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pt-5">
+    <div class="pt-5" v-if="auth">
       <div class="row">
         <div class="mx-auto col-md-12">
           <div class="panel">
@@ -10,7 +10,8 @@
                   <h6 class="title">Syllabus List</h6>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right mb-2">
-                  <nuxt-link to="/student/syllabus/create" class="btn-add"><svg height='25px'
+                  <nuxt-link to="/student/syllabus/create" class="btn-add"
+                    v-if="$auth.user.permission.includes('Syllabus-add')"><svg height='25px'
                       xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 mr-1" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -20,7 +21,7 @@
             </div>
           </div>
           <div class="table-responsive overflow-scroll">
-            <table class="table table-striped text-center">
+            <table class="table table-striped table-bordered">
               <thead class="bg-dark text-white">
                 <tr>
                   <th>Sl</th>
@@ -35,22 +36,24 @@
                   <td>{{ index + 1 }}</td>
                   <td>{{ syllabus.department }}</td>
                   <td>{{ syllabus.description }}</td>
-                  <td><a :href="base_url + '/images/syllabus/' + syllabus.file" download
-                      target="_blank" class="btn-download"><svg height="20px" xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <td><a :href="base_url + '/images/syllabus/' + syllabus.file" download target="_blank"
+                      class="btn-download"><svg height="20px" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg> Download</a></td>
                   <td>
-                    <nuxt-link :to="`/student/syllabus/update/${syllabus.id}`"
-                      class="btn-edit btn-responsive py-2 mr-3"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <nuxt-link :to="`/student/syllabus/update/${syllabus.id}`" class="btn-edit btn-responsive py-2 mr-3"
+                      v-if="$auth.user.permission.includes('Syllabus-update')"><svg height='20px'
+                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20"
+                        fill="currentColor">
                         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                         <path fill-rule="evenodd"
                           d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
                           clip-rule="evenodd" />
                       </svg> Edit</nuxt-link>
-                    <button class="btn-delete btn-responsive" @click="syllabusDelete(syllabus.id)"><svg height='18px'
+                    <button class="btn-delete btn-responsive" @click="syllabusDelete(syllabus.id)"
+                      v-if="$auth.user.permission.includes('Syllabus-delete')"><svg height='18px'
                         xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 pr-1" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -64,6 +67,7 @@
         </div>
       </div>
     </div>
+    <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
   </div>
 </template>
 <script>
@@ -71,6 +75,7 @@ export default {
   layout: 'Student-content',
   data() {
     return {
+      auth: true,
       syllabuss: '',
       base_url: process.env.url
 
@@ -86,6 +91,10 @@ export default {
       this.$axios.$get('/syllabus/show').then(response => {
         this.syllabuss = response;
       }).catch((error) => {
+        if (error.response.status == 401) {
+          this.auth = false;
+          this.$toaster.error(error.response.data.message);
+        }
         tconsole.log(error);
       });
 

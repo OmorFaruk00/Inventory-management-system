@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pt-5">
+    <div class="pt-5" v-if="auth">
       <div class="row">
         <div class="mx-auto col-md-12">
           <div class="panel">
@@ -10,7 +10,7 @@
                   <h6 class="title">lecture Sheet List</h6>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right mb-2">
-                  <nuxt-link to="/student/lecture-sheet/create" class="btn-add"><svg height='25px'
+                  <nuxt-link to="/student/lecture-sheet/create" class="btn-add" v-if="$auth.user.permission.includes('Lecture-add')"><svg height='25px'
                       xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 mr-1" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -46,14 +46,14 @@
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg> Download</a></td>                 
                     <td>
-                      <nuxt-link :to="`/student/lecture-sheet/update/${lecture.id}`" class="btn-edit btn-responsive py-2 mr-3 mb-2 btn-responsive"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
+                      <nuxt-link :to="`/student/lecture-sheet/update/${lecture.id}`" class="btn-edit btn-responsive py-2 mr-3 mb-2 btn-responsive" v-if="$auth.user.permission.includes('Lecture-update')"><svg height='20px' xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5 mb-1 pr-1" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                         <path fill-rule="evenodd"
                           d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
                           clip-rule="evenodd" />
                       </svg>Edit</nuxt-link>                      
-                      <button class="btn-delete btn-responsive" @click="lectureDelete(lecture.id)"><svg height='18px'
+                      <button class="btn-delete btn-responsive" @click="lectureDelete(lecture.id)" v-if="$auth.user.permission.includes('Lecture-delete')"><svg height='18px'
                         xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1 pr-1" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -69,6 +69,7 @@
         </div>
       </div>     
     </div>
+     <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
   </div>
 </template>
 <script>
@@ -76,6 +77,7 @@ export default{
     layout:'Student-content',
     data(){
         return{
+          auth:true,
             lectures:'',
             base_url:process.env.url
         }
@@ -88,6 +90,10 @@ export default{
             this.$axios.$get('/lecture-sheet/show').then(response => {
                 this.lectures = response;                
             }).catch((error) => {
+               if(error.response.status == 401){
+                this.auth = false;
+                this.$toaster.error(error.response.data.message);
+              }
                 console.log(error);
             });
         },

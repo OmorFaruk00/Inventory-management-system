@@ -1,5 +1,6 @@
 <template>
-  <div>
+<div>
+  <div v-if="auth">
     <div class="col-md-6 col-12 mx-auto mt-3">
       <div class="form-shadow mt-5">
         <div class="card-header">
@@ -17,31 +18,23 @@
             <div class="form-check" v-for="prm in permissions" :key="prm.i">
               <input v-model="permission" class="form-check-input" type="checkbox" :id="prm.name" :name="prm.name"
                 :value="prm.name" />
-              <input
-                v-model="permission"
-                class="form-check-input"
-                type="checkbox"
-                :id="prm.name"
-                :name="prm.name"
-                :value="prm.name"
-              />
+              <input v-model="permission" class="form-check-input" type="checkbox" :id="prm.name" :name="prm.name"
+                :value="prm.name" />
               <label :for="prm.name" class="form-check-label">
                 {{ prm.name }}
               </label>
             </div>
           </div>
-          
         </div>
         <div class="card-footer d-flex justify-content-end">
           <button class="btn-submit " @click="createRole">
             Make
           </button>
-          </div>
+        </div>
       </div>
     </div>
-    
     <div class="container mt-5">
-      <table class="table table-striped">
+      <table class="table table-striped table-bordered text-center">
         <thead>
           <tr>
             <th scope="col">SL NO</th>
@@ -108,6 +101,8 @@
       </div>
     </div>
   </div>
+     <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
+  </div>
 </template>
 
 <script>
@@ -115,6 +110,7 @@ export default {
   layout: "Setting-content",
   data() {
     return {
+      auth:true,
       name: "",
       roles: null,
       error: "",
@@ -140,10 +136,9 @@ export default {
           this.name = "";
           this.getRoles();
           this.$toaster.success(response.data.message);
-          
+
         })
-        .catch((error) => {
-          this.$toaster.error(error.response.data.message);
+        .catch((error) => {        
           console.log(error);
         })
         .finally(() => {
@@ -158,6 +153,10 @@ export default {
           this.permissions = response.data;
         })
         .catch((error) => {
+           if (error.response.status == 401) {
+          this.auth = false;
+          this.$toaster.error(error.response.data.message);
+        }
           console.log(error);
         })
         .finally(() => {

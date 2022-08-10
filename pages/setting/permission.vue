@@ -23,7 +23,7 @@
     </div>
     
     <div class="container mt-5">
-      <table class="table table-striped text-center">
+      <table class="table table-striped table-bordered text-center">
         <thead>
           <tr>
             <th scope="col">#</th>

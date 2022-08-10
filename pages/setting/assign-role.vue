@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="col-md-6 col-12 mx-auto">
+    <div class="col-md-6 col-12 mx-auto" v-if="$auth.user.permission.includes('Permission')">
       <div class="form-shadow mt-5">
         <div class="card-header">
           <h4 title="create-role">Assign Role</h4>
@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+     <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
   </div>
 </template>
 

@@ -2,10 +2,10 @@
     <div class="form-bg py-5">
         <div class="col-md-8 offset-md-2">
             <div class="form-shadow p-5">
-                <h3 class="title">Create course</h3>                
+                <h3 class="title">Create course</h3>
                 <form class="">
-                    <div class="row">                        
-                        
+                    <div class="row">
+
                         <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Department *</label>
@@ -22,14 +22,13 @@
                         <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Batch *</label>
-                               
-                                            <select class="form-control" v-model="course.batch_id" required 
-                                                >
-                                                <option selected value="">Select Batch</option>
-                                                <option v-for="batch in batches" :key="batch.id" :value="batch.id"
-                                                    v-text="batch.batch_name">
-                                                </option>
-                                            </select>
+
+                                <select class="form-control" v-model="course.batch_id" required>
+                                    <option selected value="">Select Batch</option>
+                                    <option v-for="batch in batches" :key="batch.id" :value="batch.id"
+                                        v-text="batch.batch_name">
+                                    </option>
+                                </select>
                                 <h6 v-if="errors.batch" v-text="errors.batch[0]" class="text-danger"></h6>
                             </div>
                         </div>
@@ -38,17 +37,15 @@
                                 <label>Course Name *</label>
                                 <input type="text" class="form-control" placeholder="Enter Course Name"
                                     v-model="course.course_name" />
-                                <h6 v-if="errors.course_name" v-text="errors.course_name[0]"
-                                    class="text-danger"></h6>
+                                <h6 v-if="errors.course_name" v-text="errors.course_name[0]" class="text-danger"></h6>
                             </div>
                         </div>
-                         <div class="col-md-12 col-xl-6 col-sm-12">
+                        <div class="col-md-12 col-xl-6 col-sm-12">
                             <div class="form-group">
                                 <label>Course Code *</label>
                                 <input type="text" class="form-control" placeholder="Enter Course Code"
                                     v-model="course.course_code" />
-                                <h6 v-if="errors.course_code" v-text="errors.course_code[0]"
-                                    class="text-danger"></h6>
+                                <h6 v-if="errors.course_code" v-text="errors.course_code[0]" class="text-danger"></h6>
                             </div>
                         </div>
 
@@ -67,45 +64,45 @@ export default {
     layout: "Student-content",
     mounted() {
         this.fetchDepartmentInfo();
-        this.fetchcourseInfo();      
-        
+        this.fetchcourseInfo();
+
 
     },
     data() {
         return {
             errors: [],
-            departments: '',           
-            batches:'',
+            departments: '',
+            batches: '',
             course: {
-                course_name:'',
-                course_code:'',                                
+                course_name: '',
+                course_code: '',
                 department_id: '',
                 batch_id: '',
-                
+
 
             }
         }
 
     },
     methods: {
-          fetchcourseInfo() {
-            this.$axios.$get('course/edit/'+this.$route.params.id).then(response => {
+        fetchcourseInfo() {
+            this.$axios.$get('course/edit/' + this.$route.params.id).then(response => {
                 this.course = response;
-                 this.fetchBatch() ;
+                this.fetchBatch();
             }).catch((error) => {
                 console.log(error);
             });
         },
         fetchDepartmentInfo() {
             this.$axios.$get('/admission/department').then(response => {
-                this.departments = response;          
+                this.departments = response;
             }).catch((error) => {
                 this.$toaster.error("Department Not found");
             });
 
         },
         fetchBatch() {
-            this.$axios.$get("/admission/batch/"+this.course.department_id).then((response) => {
+            this.$axios.$get("/admission/batch/" + this.course.department_id).then((response) => {
                 this.batches = response.data;
             }).catch((error) => {
                 this.$toaster.error("Batch Not found");
@@ -118,17 +115,20 @@ export default {
             formData.append('course_name', this.course.course_name)
             formData.append('course_code', this.course.course_code)
             formData.append('department', this.course.department_id)
-            formData.append('batch', this.course.batch_id)          
-          
+            formData.append('batch', this.course.batch_id)
+
 
             this.$axios
-                .$post("/course/update/"+this.$route.params.id, formData)
-                .then((res) => {                    
+                .$post("/course/update/" + this.$route.params.id, formData)
+                .then((res) => {
                     this.errors = {};
                     this.$toaster.success("course Update Successfully");
                     this.$router.push("/student/course");
                 })
                 .catch((error) => {
+                    if (error.response.status == 401) {                      
+                        this.$toaster.error(error.response.data.message);
+                    }
                     this.errors = error.response.data.errors;
                 });
         },

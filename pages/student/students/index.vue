@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="pt-3">
+      <h3 class="title">Students List</h3>
       <div class="table-responsive overflow-scroll">
-        <table class="table table-striped text-center">
+        <table class="table table-striped table-bordered">
           <thead class="bg-dark text-white">
             <tr>
               <th>Sl</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Phone</th>
               <th>Roll</th>
               <th>Reg No</th>
               <th>Department</th>
@@ -20,6 +22,7 @@
               <td>{{ index + 1 }}</td>
               <td>{{ student.student_name }}</td>
               <td>{{ student.email }}</td>
+              <td>{{ student.phone_no }}</td>
               <td>{{ student.roll_no }}</td>
               <td>{{ student.reg_code }}</td>
               <td>{{ student.department[0].department_name }}</td>
@@ -38,13 +41,13 @@
           of
           <span v-html="meta.total"></span> entries
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-12" v-if="!loading">
+        <div class="col-lg-10 col-md-10 col-sm-12">
           <nav aria-label="Page navigation example" class="my-3 mx-2">
             <ul class="pagination pagination-sm justify-content-end">
               <li class="page-item" :class="meta.current_page > 1 ? '' : 'disabled'">
                 <a class="page-link" href="javaScript:void(0)" @click="paginatePreview" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
+                  <!-- <span aria-hidden="true">&laquo;</span> -->
+                  <span class="">Previous</span>
                 </a>
               </li>
               <li class="page-item" v-for="(row, index) in meta.last_page" :key="index"
@@ -53,8 +56,8 @@
               </li>
               <li class="page-item" :class="meta.last_page > meta.current_page ? '' : 'disabled'">
                 <a class="page-link" href="javaScript:void(0)" @click="paginateNext" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
+                  <!-- <span aria-hidden="true">&raquo;</span> -->
+                  <span class="">Next</span>
                 </a>
               </li>
             </ul>

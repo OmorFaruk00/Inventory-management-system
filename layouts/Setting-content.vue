@@ -5,7 +5,7 @@
       <div class=" " id="sidebar-wrapper">
         <div class="list-group sidebar">
           <nuxt-link class="sidebar-item" to="/setting"><img src="/images/dashboard.png" alt="" />Dashboard</nuxt-link>
-          <div class="dropdown_final_admission_form">
+          <div class="dropdown_final_admission_form" v-if="$auth.user.permission.includes('Permission')">
             <a class="sidebar-item" @click.prevent="role = !role"><img src="/images/right-arrow1.png" alt=""
                 style="height: 15px" />
 
@@ -18,7 +18,7 @@
               </nuxt-link>
             </div>
           </div>
-          <div class="dropdown_final_admission_form">
+          <div class="dropdown_final_admission_form" v-if="$auth.user.permission.includes('Permission')">
             <a class="sidebar-item" @click.prevent="permission = !permission"><img src="/images/right-arrow1.png" alt=""
                 style="height: 15px" />
 

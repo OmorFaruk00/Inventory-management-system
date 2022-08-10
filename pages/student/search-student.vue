@@ -5,8 +5,8 @@
             <button class="btn-submit ml-3" @click="studentSearch()">Search</button>
         </div>
         <div class="panel-body table-responsive pt-5">
-            <table class="table table-striped text-center" v-if="students">
-                <thead class="bg-dark text-white">
+            <table class="table table-stripedn table-bordered" v-if="students">
+                <thead>
                     <tr>
                         <th>Serial</th>
                         <th>Student ID</th>
