@@ -15,13 +15,13 @@
                Admission Form
             </a>
             <div v-if="admission_form" class="dropdown_item">
-              <nuxt-link to="/admission/form-import" class="">                
+              <nuxt-link to="/admission/form-import" v-if="$auth.user.permission.includes('Form-import')">                
                 Form Import
               </nuxt-link>
-                <nuxt-link to="/admission/form-stock" class="">                
+                <nuxt-link to="/admission/form-stock" v-if="$auth.user.permission.includes('Form-stock')">                
                 Form Stock
               </nuxt-link>
-                <nuxt-link to="/admission/form-sale" class="">                
+                <nuxt-link to="/admission/form-sale" v-if="$auth.user.permission.includes('Form-sale')">                
                 Form Sale
               </nuxt-link>
             </div>

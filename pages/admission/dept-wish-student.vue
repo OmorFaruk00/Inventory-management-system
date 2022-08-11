@@ -23,8 +23,9 @@
                 </div>
             </div>
         </div>
-        <div class="panel-body table-responsive pt-5" v-if="students">
-            <table class="table table-striped text-center">
+        <div v-if="show">
+        <div class="panel-body table-responsive pt-5" v-if="students.length>0">
+            <table class="table table-striped table-bordered text-center">
                 <thead class="bg-dark text-white">
                     <tr>
                         <th>Serial</th>
@@ -38,7 +39,7 @@
                         <th>E Name</th>
                         <th>E Cell</th>
                         <th>Student ID</th>
-                        <th>Action</th>
+                        <th v-if="$auth.user.permission.includes('Student-update')">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +55,7 @@
                         <td>{{ student.e_name }}</td>
                         <td>{{ student.e_cellno }}</td>
                         <td>{{ student.id }}</td>
-                        <td>
+                        <td v-if="$auth.user.permission.includes('Student-update')">
                             <nuxt-link :to="`/admission/student-update/${student.id}`" class="btn-edit mr-3"
                                 style="padding:7px 15px">
                                 Edit
@@ -64,9 +65,10 @@
                 </tbody>
             </table>
         </div>
-        <!-- <div v-else>
-                        <h4>No Student Fount</h4>
-                    </div> -->
+        <div v-else>
+            <h4 class="text-center mt-5">Student not Found</h4>
+        </div>
+        </div>
     </div>
 </template>
 <script>
@@ -74,6 +76,7 @@ export default {
     layout: "Adm-content",
     data() {
         return {
+            show:false,
             student: {
                 department_id: "",
                 batch_id: "",
@@ -111,10 +114,14 @@ export default {
             this.$axios
                 .$get("/admission/department-wise-student/" + this.student.department_id + '/' + this.student.batch_id)
                 .then((response) => {
+                    this.show = true;
                     this.students = response;
                 })
                 .catch((error) => {
-                    this.$toaster.error("Student Not found");
+                    if(error.response.status == 401){
+                        this.$toaster.error(error.response.data.message)
+                    }
+                    console.log(error);
                 });
         }
     },

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card mx-auto">
+        <div class="card mx-auto mt-5">
             <div class="card-header">
                 <div class="row">
                     <div class="col">Admission In Active Batch Create</div>
@@ -153,23 +153,7 @@
                                                 v-html="errors.adm_frm_sl[0]"></small>
                                         </div>
                                     </div>
-
-                                    <!-- <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Admission Season
-                                            <span class="text-danger">*</span></label>
-                                        <div class="col-md-9 mt-10">
-                                            <select name="admission_season" v-model="student.admission_season"
-                                                id="admission_season" class="form-control" required>
-                                                <option value="" disabled selected>Select Admission Session</option>
-                                                <option value="1">Spring</option>
-                                                <option value="2">Summer</option>
-                                                <option value="3">Other(Fall)</option>
-                                            </select>
-
-                                            <small v-if="errors.admission_season" class="text-danger with-errors"
-                                                v-html="errors.admission_season[0]"></small>
-                                        </div>
-                                    </div> -->
+                                   
 
                                     <ul class="pager wizard twitter-bs-wizard-pager-link text-right">
                                         <button type="button" @click="nextStep('general')" class="btn btn-success">
@@ -1851,14 +1835,9 @@ export default {
                 },
 
             }).then((response) => {
-
                 this.$toaster.success(response.message);
-                this.student = "";
-                this.$router.push("/admission/admissionInActiveBatch");
-
-
-
-
+                // this.student = "";
+                // this.$router.push("/admission/admissionInActiveBatch");
 
             }).catch((error) => {
 
@@ -1866,17 +1845,7 @@ export default {
                     this.errors = error.response.data.errors
                     this.$toaster.error('Validation error');
                     return false;
-                }
-
-                if (error.response.status == 400) {
-                    this.$toaster.error(error.response.data.message);
-                    return false;
-                }
-
-                if (error.response.status == 404) {
-                    this.$toaster.error(error.response.data.error);
-                    return false;
-                }
+                }             
 
                 this.$toaster.error("Something went wrong");
             });

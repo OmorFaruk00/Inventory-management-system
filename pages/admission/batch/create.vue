@@ -9,8 +9,6 @@
         </div>
         <hr>
         <div class="row">
-
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
@@ -27,75 +25,57 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
                         <label for="group_id">Group <span class="text-danger">*</span></label>
-
                         <select name="group_id" v-model="batch.group" class="form-control" required>
                             <option value="" disabled selected>Select Group</option>
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
                             <option value="D">D</option>
-
-
-
                         </select>
-
-                        <small v-if="errors.group_id" class="text-danger with-errors"
-                            v-html="errors.group_id[0]"></small>
-
+                        <small v-if="errors.group" class="text-danger with-errors"
+                            v-html="errors.group[0]"></small>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
                         <label for="shift">Shift <span class="text-danger">*</span></label>
 
                         <select name="shift" v-model="batch.shift" id="shift" class="form-control" required>
-
                             <option value="" disabled selected>Select Shift</option>
                             <option value="1st">1st</option>
                             <option value="2nd">2nd</option>
-
-
                         </select>
-
                         <small v-if="errors.shift" class="text-danger with-errors" v-html="errors.shift[0]"></small>
-
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
                         <label for="batch_name">Batch Name <span class="text-danger">*</span></label>
                         <input type="text" v-model="batch.batch_name" class="form-control"
                             placeholder="Enter batch name">
-
                         <small v-if="errors.batch_name" class="text-danger with-errors"
                             v-html="errors.batch_name[0]"></small>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
-                        <label for="said_fee">Said Fee <span class="text-danger">*</span></label>
-                        <input type="number" v-model="batch.said_fee" class="form-control" placeholder="Enter said fee">
-
-                        <small v-if="errors.said_fee" class="text-danger with-errors"
-                            v-html="errors.said_fee[0]"></small>
+                        <label for="tution_fee"> Tution Fee <span class="text-danger">*</span></label>
+                        <input type="number" v-model="batch.tution_fee" class="form-control" placeholder="Enter said fee">
+                        <small v-if="errors.tution_fee" class="text-danger with-errors"
+                            v-html="errors.tution_fee[0]"></small>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
@@ -131,28 +111,23 @@
                         <label for="year">Year <span class="text-danger">*</span></label>
 
                         <select name="year" v-model="batch.year" id="year" class="form-control" required>
-
-                            <option v-for="(year, index) in years" :value="year" v-text="year"></option>
+                        <option v-for="(year, index) in years" :key="index"
+                                :value="year" v-text="year"></option>                 
 
                         </select>
-
                         <small v-if="errors.year" class="text-danger with-errors" v-html="errors.year[0]"></small>
-
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="form-group">
                     <div class="form-group">
                         <label for="session">Session <span class="text-danger">*</span></label>
 
                         <select name="session" v-model="batch.session" id="session" class="form-control" required>
-
-                            <option v-for="(year, index) in years" :value="sessionYear(year)"
+                            <option v-for="(year, index) in years" :key="index"  :value="sessionYear(year)"
                                 v-text="sessionYear(year)">
                             </option>
-
                         </select>
 
                         <small v-if="errors.session" class="text-danger with-errors" v-html="errors.session[0]"></small>
@@ -279,7 +254,7 @@ export default {
                 group: '',
                 shift: '',
                 batch_name: '',
-                said_fee: '',
+                tution_fee: '',
                 common_scholarship: '',
                 no_of_seat: '',
                 year: '',
@@ -320,16 +295,13 @@ export default {
                 });
         },
 
-
-
-
-        createBatch() {
-            // console.log(this.batch);
+        createBatch() {            
             this.$axios
                 .$post("/admission/batch-add", this.batch)
                 .then((response) => {
                     this.$toaster.success(response.message);
                     this.batch = "";
+                    this.$router.push("/admission/batch");
 
                 })
                 .catch((error) => {

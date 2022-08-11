@@ -2,7 +2,7 @@
   <div class="form-bg pt-5">
     <div class="container">
       <div class="form-shadow offset-md-2 col-md-8 p-5">
-        <div class="">
+        <div>
           <div v-if="!show">
             <div class="form-group">
               <label>Form Number</label>
@@ -45,14 +45,14 @@
               
             </div>
 
-            <div class="d-flex justify-content-end">
-              <button type="submit" class="btn-submit mr-4" @click="form_sales">
-                Submit
-              </button>
-              <button type="reset" class=" btn-reset mr-3">
+            <div class="d-flex justify-content-end">             
+              <button type="button" class=" btn-reset mr-3" @click="reset_button">
                 Reset
               </button>
-              <button v-if='receipt_no' type="button" class=" btn-print" @click="print_recieve()">Print Recieve
+               <button type="submit" class="btn-submit" @click="form_sales">
+                Submit
+              </button>
+              <button v-if='receipt_no' type="button" class="btn-print ml-4" @click="print_recieve()">Print Recieve
               </button>
             </div>
           </div>
@@ -61,25 +61,25 @@
     </div>
 
     <div class="form_info container pt-5" v-if="form_info">
-      <table class="table table-striped text-center">
+      <table class="table table-striped table-bordered text-center">
         <thead>
           <tr>
             <th>Form Number</th>
             <th>Student Name</th>
             <th>Department</th>
             <th>Batch</th>
+            <th>Sold By</th>
             <th>Sale Date</th>
-            <!-- <th>Sold By</th> -->
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr>           
             <td v-text="form_info.form_number"></td>
             <td v-text="form_info.name_of_student"></td>
             <td v-text="form_info.department.department_name"></td>
             <td v-text="form_info.batch.batch_name"></td>
+            <td v-text="form_info.employee.name"></td>      
             <td v-text="form_info.sale_date"></td>
-            <!-- <td v-text="form_info.user.name"></td>       -->
           </tr>
         </tbody>
       </table>
@@ -112,10 +112,16 @@ export default {
     this.getDepartment();    
   },
   methods: {
-    searchForm() {
+    reset_button(){
+      this.student_name = "";
+      this.department = "";
+      this.batch = "";
+
+    },
+    searchForm() {      
       this.$axios
         .$get("/admission/form-search/" + this.form_number)
-        .then((response) => {
+        .then((response) => {          
           this.form_info = "";
           this.show = true;
           
@@ -123,11 +129,9 @@ export default {
         .catch((error) => {
           if (error.response.status == 302) {
             this.$toaster.error("Form not Available");
-            this.form_info = error.response.data.form_info;
-            // return false;
-            // this.$router.push(`print-receive/${this.form_number}`);
+            this.form_info = error.response.data.form_info;                        
           }
-          console.log(error);
+          
           this.error = error.response.data.errors;
         });
     },
@@ -145,8 +149,7 @@ export default {
       
       this.$axios
         .$get("/admission/batch/" + this.department)
-        .then((response) => {
-          console.log(response);
+        .then((response) => {        
           this.batch_list = response.data;
         })
         .catch((error) => {

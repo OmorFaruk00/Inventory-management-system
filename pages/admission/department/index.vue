@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pt-5">
+    <div class="pt-5" v-if="auth">
       <div class="row">
         <div class="mx-auto col-md-12">
           <div class="panel">
@@ -10,16 +10,17 @@
                   <h4 class="title">department List</h4>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right mb-2">
-                  <nuxt-link to="/admission/department/create" class="btn-add">Add department</nuxt-link>
+                  <nuxt-link to="/admission/department/create" class="btn-add"
+                    v-if="$auth.user.permission.includes('Std-department-add')">Add department</nuxt-link>
                 </div>
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered text-center">
                 <thead class="bg-dark text-white">
                   <tr>
                     <th>ID</th>
-                    <th>Department name</th>                    
+                    <th>Department name</th>
                     <th>Status</th>
                     <th style="width:200px">Action</th>
                   </tr>
@@ -27,20 +28,23 @@
                 <tbody>
                   <tr v-for="department in departments" :key="department._id">
                     <td>{{ department.id }}</td>
-                    <td>{{ department.department_name }}</td>                    
+                    <td>{{ department.department_name }}</td>
                     <td>
                       <button v-if="department.status == 1" class="btn-active" @click="departmentStatus(department.id)">
                         Active
                       </button>
-                      <button v-if="department.status == 0" class="btn-inactive" @click="departmentStatus(department.id)">
+                      <button v-if="department.status == 0" class="btn-inactive"
+                        @click="departmentStatus(department.id)">
                         Inactive
                       </button>
                     </td>
                     <td>
-                      <button class="btn-edit mb-2" @click="departmentEdit(department.id)">
+                      <button class="btn-edit mb-2" @click="departmentEdit(department.id)"
+                        v-if="$auth.user.permission.includes('Std-department-update')">
                         Edit
                       </button>
-                      <button class="btn-delete" @click="deletedepartment(department.id)">
+                      <button class="btn-delete" @click="deletedepartment(department.id)"
+                        v-if="$auth.user.permission.includes('Std-department-delete')">
                         Delete
                       </button>
                     </td>
@@ -53,8 +57,8 @@
       </div>
 
       <!-- Modal -->
-      <div class="modal fade" id="departmentUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+      <div class="modal fade" id="departmentUpdate" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -68,9 +72,10 @@
             <div class="modal-body">
               <div class="form-group">
                 <label for="" class="">Department Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Title" v-model="department.department_name" />
+                <input type="text" class="form-control" id="name" placeholder="Title"
+                  v-model="department.department_name" />
                 <p v-if="errors.title" v-text="errors.title[0]" class="text-danger"></p>
-              </div>          
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn-submit" @click="departmentUpdate()">
@@ -81,6 +86,7 @@
         </div>
       </div>
     </div>
+    <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
   </div>
 </template>
 <script>
@@ -91,10 +97,11 @@ export default {
   },
   data() {
     return {
+      auth: true,
       departments: [],
       department: {
         department_name: "",
-       
+
       },
       errors: {},
     };
@@ -106,8 +113,12 @@ export default {
         .then((res) => {
           this.departments = res;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          if (error.response.status == 401) {
+            this.auth = false;
+            this.$toaster.error(error.response.data.message);
+          }
+          console.log(error);
         });
     },
     departmentEdit(id) {
@@ -155,8 +166,11 @@ export default {
           this.getdepartment();
           this.$toaster.success(res.message);
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          if (error.response.status == 401) {            
+            this.$toaster.error(error.response.data.message);
+          }
+          console.log(error);
         });
     },
   },
