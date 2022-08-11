@@ -19,6 +19,9 @@
           <nuxt-link class="sidebar-item" to="/account/purpose"
             ><img src="/images/purpose.png" alt="" />Purpose</nuxt-link
           >
+          <nuxt-link class="sidebar-item" to="/account/statement"
+            ><img src="/images/purpose.png" alt="" />Student Account Statment</nuxt-link
+          >
         </div>
       </div>
       <!-- /#sidebar-wrapper -->
