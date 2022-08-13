@@ -69,9 +69,10 @@
                 </div>
                    <div class="col-md-12 col-xl-12 col-sm-12">
                     <div class="form-group">
-                        <label>Abour Me</label>
-                        <textarea type="text" class="form-control" placeholder=""
-                            v-model="user.about" />
+                        <label>About Me</label>
+                        <textarea type="text" class="form-control"
+                            v-model="user.about" >
+                        </textarea>
                     </div>
                 </div>
 

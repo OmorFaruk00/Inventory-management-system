@@ -29,61 +29,52 @@
 export default {};
 </script>
 <style scoped>
-.main{
-  overflow: scroll;
-}
+.dropdown_final_syllabus a{  
+  cursor: pointer;
   
+}
+.dropdown_item a{  
+  border: none;
+  padding-left: 45px;
+  line-height: 50px;
+  color: #000;
+  display: block;
+  font-size: 14px;  
+}
 .sidebar {
   line-height: 50px;
-  
+
 }
 
 .sidebar-item {
   font-size: 15px;
-  color: #000;  
+  color: #000; 
+  
 }
-
 .sidebar-item svg,
 img {
-  height: 25px;
+  height: 20px;
   padding-right: 10px;
   padding-left: 20px;
 }
-
-
-
 .nuxt-link-exact-active {
   background: #fff !important;
   color: #000;  
 }
-
 #sidebar-wrapper {
   min-height: 100vh;
-  padding-top: 50px;  
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+  padding-top: 40px;
   background: #f6f6f6;
-  
- 
-
 }
-
-#menu-toggle {
-  background: #fff;
-  border: none;
-}
-
-#menu-toggle:hover {
-  background: #21537f;
-}
-
-#menu-toggle img {
-  height: 15px;
-}
-
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
 }
-
 #sidebar-wrapper .list-group {
   width: 15rem;
 }
@@ -111,12 +102,5 @@ img {
   }
 }
 
-.bg-light {
-  background-color: rgb(10, 94, 118);
-}
 
-#page-content-wrapper {
-  background-color: #fff !important;
- 
-}
 </style>

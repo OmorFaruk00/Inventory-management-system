@@ -81,7 +81,7 @@ export default {
         methods: {         
 
           getDeniedApplications() {
-            this.$axios.$get("/leave/application-denied-show").then((response) => { 
+            this.$axios.$get("/leave/application-denied-other-show").then((response) => { 
                 console.log(response);               
                 this.applications = response;
             }).catch((error) => {

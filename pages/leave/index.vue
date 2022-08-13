@@ -92,6 +92,7 @@ export default {
                 this.this_year = response.this_year;
                 this.last_year = response.last_year;
             }).catch((error) => {
+                console.log(error);
                 this.$toaster.error("Something  wrong");
             });
         },

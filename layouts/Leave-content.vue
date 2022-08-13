@@ -18,9 +18,9 @@
       <!-- /#sidebar-wrapper -->
       <!-- Page Content -->
       <div id="page-content-wrapper">
-        <div class="container-fluid">
+        
           <router-view />
-        </div>
+        
       </div>
       <!-- /#page-content-wrapper -->
     </div>
@@ -51,34 +51,28 @@ data(){
   line-height: 50px;
   color: #000;
   display: block;
-  font-size: 14px;
-
-  
+  font-size: 14px;  
 }
-
 .sidebar {
-  line-height: 50px;  
-  
-}
-.sidebar-item {
-  font-size: 14px;
-  color: #000;  
+  line-height: 50px;
+
 }
 
+.sidebar-item {
+  font-size: 15px;
+  color: #000; 
+  
+}
 .sidebar-item svg,
 img {
-  height: 15px;
+  height: 20px;
   padding-right: 10px;
   padding-left: 20px;
 }
-
-
-
 .nuxt-link-exact-active {
   background: #fff !important;
   color: #000;  
 }
-
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
@@ -89,27 +83,12 @@ img {
   padding-top: 40px;
   background: #f6f6f6;
 }
-
-#final_syllabus-toggle {
-  background: #fff;
-  border: none;
-}
-
-#final_syllabus-toggle:hover {
-  background: #21537f;
-}
-
-#final_syllabus-toggle img {
-  height: 15px;
-}
-
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
 }
-
 #sidebar-wrapper .list-group {
-  width: 15rem;
+  width: 17rem;
 }
 
 #page-content-wrapper {
@@ -131,15 +110,7 @@ img {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
+    margin-left: -17rem;
   }
-}
-
-.bg-light {
-  background-color: rgb(10, 94, 118);
-}
-
-#page-content-wrapper {
-  background-color: #fff !important;
 }
 </style>
