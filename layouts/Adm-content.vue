@@ -101,7 +101,9 @@ data(){
   
 } */
 .sidebar {
-  line-height: 50px;  
+  line-height: 50px;
+  position: sticky;
+  top: 0  
   
 }
 

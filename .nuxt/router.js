@@ -16,6 +16,7 @@ const _93ea1328 = () => interopDefault(import('../pages/web-dui/index.vue' /* we
 const _63701a16 = () => interopDefault(import('../pages/account/account.vue' /* webpackChunkName: "pages/account/account" */))
 const _37ed142d = () => interopDefault(import('../pages/account/fund.vue' /* webpackChunkName: "pages/account/fund" */))
 const _d1e8f534 = () => interopDefault(import('../pages/account/purpose.vue' /* webpackChunkName: "pages/account/purpose" */))
+const _31d89592 = () => interopDefault(import('../pages/account/statement.vue' /* webpackChunkName: "pages/account/statement" */))
 const _196d674c = () => interopDefault(import('../pages/account/sub_fund.vue' /* webpackChunkName: "pages/account/sub_fund" */))
 const _31236216 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/index.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/index" */))
 const _3f80983e = () => interopDefault(import('../pages/admission/batch/index.vue' /* webpackChunkName: "pages/admission/batch/index" */))
@@ -159,6 +160,10 @@ export const routerOptions = {
     path: "/account/purpose",
     component: _d1e8f534,
     name: "account-purpose"
+  }, {
+    path: "/account/statement",
+    component: _31d89592,
+    name: "account-statement"
   }, {
     path: "/account/sub_fund",
     component: _196d674c,

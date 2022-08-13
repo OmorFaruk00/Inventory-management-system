@@ -69,9 +69,10 @@ data(){
  background: #fff;
   
 } */
+
 .sidebar {
   line-height: 50px;  
-  
+
 }
 
 .sidebar-item {
