@@ -18,7 +18,15 @@
               <h4 class="pt-3">{{ $auth.user.name }}</h4>
               <p >{{ $auth.user.rel_designation.designation}}</p>
             </div>
-            <button class="btn-logout" @click="logout">Log out</button>
+
+            <div class="d-flex justify-content-center mb-4">
+              <nuxt-link to="/change-password" class="btn-change" style="padding:5px 40px">Change Password</nuxt-link>              
+
+            </div>
+
+           <div class="d-flex justify-content-end">
+             <button class="btn-logout" @click="logout">Log out</button>
+           </div>
           </div>
         </div>
       </div>
@@ -67,29 +75,14 @@ export default {
   margin: 0px 50px;
   /* padding: 0px 40px; */
 }
-
-.btn-logout {
-  position: relative;
-  float: right;
-  margin: 10px 20px;
-  background: rgb(212, 78, 20);
-  color: #fff;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 18px;
-  font-weight: bolder;
+@media only screen and (max-width: 767px){
+    .btn{ margin-bottom: 30px; }
 }
-
-.btn-logout:hover {
-  background: rgb(119, 48, 48);
-}
-
 .dropdown {
   float: right;
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -115,11 +108,9 @@ export default {
 .dropdown a:hover {
   background-color: #ddd;
 }
-
 .show {
   display: block;
 }
-
 .sidebar {
   text-align: center;
   line-height: 50px;

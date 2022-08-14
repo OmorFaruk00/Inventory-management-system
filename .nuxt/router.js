@@ -7,8 +7,10 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _bff9b9cc = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
 const _4275d176 = () => interopDefault(import('../pages/admission/index.vue' /* webpackChunkName: "pages/admission/index" */))
 const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
+const _40fcc042 = () => interopDefault(import('../pages/change-password.vue' /* webpackChunkName: "pages/change-password" */))
 const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
 const _0d9ac0b8 = () => interopDefault(import('../pages/leave/index.vue' /* webpackChunkName: "pages/leave/index" */))
+const _79fae3e3 = () => interopDefault(import('../pages/password-reset.vue' /* webpackChunkName: "pages/password-reset" */))
 const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
@@ -99,6 +101,7 @@ const _28ac4798 = () => interopDefault(import('../pages/student/syllabus/update/
 const _3d48bc9c = () => interopDefault(import('../pages/web-dui/committee/update/_id.vue' /* webpackChunkName: "pages/web-dui/committee/update/_id" */))
 const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
 const _7d3d8652 = () => interopDefault(import('../pages/admission/student-update/_id.vue' /* webpackChunkName: "pages/admission/student-update/_id" */))
+const _087dd383 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
 const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -125,6 +128,10 @@ export const routerOptions = {
     component: _78bf08cb,
     name: "app"
   }, {
+    path: "/change-password",
+    component: _40fcc042,
+    name: "change-password"
+  }, {
     path: "/employee",
     component: _68d6c877,
     name: "employee"
@@ -132,6 +139,10 @@ export const routerOptions = {
     path: "/leave",
     component: _0d9ac0b8,
     name: "leave"
+  }, {
+    path: "/password-reset",
+    component: _79fae3e3,
+    name: "password-reset"
   }, {
     path: "/profile",
     component: _3fdc10d4,
@@ -492,6 +503,10 @@ export const routerOptions = {
     path: "/admission/student-update/:id?",
     component: _7d3d8652,
     name: "admission-student-update-id"
+  }, {
+    path: "/password-reset-confirm/:token?",
+    component: _087dd383,
+    name: "password-reset-confirm-token"
   }, {
     path: "/",
     component: _0ae5cb08,

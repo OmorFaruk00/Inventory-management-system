@@ -21,6 +21,13 @@
     "_name": "_78bf08cb"
   },
   {
+    "name": "change-password",
+    "path": "/change-password",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/change-password.vue",
+    "chunkName": "pages/change-password",
+    "_name": "_40fcc042"
+  },
+  {
     "name": "employee",
     "path": "/employee",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/employee/index.vue",
@@ -33,6 +40,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/leave/index.vue",
     "chunkName": "pages/leave/index",
     "_name": "_0d9ac0b8"
+  },
+  {
+    "name": "password-reset",
+    "path": "/password-reset",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/password-reset.vue",
+    "chunkName": "pages/password-reset",
+    "_name": "_79fae3e3"
   },
   {
     "name": "profile",
@@ -663,6 +677,13 @@
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/admission/student-update/_id.vue",
     "chunkName": "pages/admission/student-update/_id",
     "_name": "_7d3d8652"
+  },
+  {
+    "name": "password-reset-confirm-token",
+    "path": "/password-reset-confirm/:token?",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/password-reset-confirm/_token.vue",
+    "chunkName": "pages/password-reset-confirm/_token",
+    "_name": "_087dd383"
   },
   {
     "name": "index",

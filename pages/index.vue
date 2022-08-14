@@ -65,7 +65,7 @@
 							</div>
 							<div class="col-sm-12 col-md-6 col-xl-6">
 								<div class="forgot">
-									<a href="#" class="text-danger">Forgot your password?</a>
+									<nuxt-link to="password-reset" class="text-danger">Forgot your password?</nuxt-link>
 								</div>
 							</div>
 						</div>
@@ -86,8 +86,6 @@
 export default {
 	auth: false,
 	mounted() {
-
-
 	},
 	data() {
 		return {
@@ -99,14 +97,13 @@ export default {
 			login_error: ''
 		}
 	},
-	methods: {
-	
+	methods: {	
 		async userLogin() {
 			await this.$auth.loginWith('laravelSanctum', { data: this.login }).then(res=>{				
 				if(res.status==203){					
 					this.login_error = res.data.message
 				}
-				this.$toaster.success("Login Successful");
+				// this.$toaster.success("Login Successful");
 			    this.$router.push('/app');
 			}).catch(error=>{
 				console.log(error)
