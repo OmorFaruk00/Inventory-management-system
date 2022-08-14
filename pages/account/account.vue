@@ -293,6 +293,7 @@ export default {
           date: this.date,
           discount: this.discount,
           monthCount: this.monthCount,
+          lilha_pay: this.lilha_pay,
         })
         .then((response) => {
           (this.payBy = ""),
@@ -312,7 +313,7 @@ export default {
         .catch((error) => {
           if (error.response.status === 422) {
             if (error.response.data.message) {
-              this.$toaster.success(error.response.data.message);
+              this.$toaster.error(error.response.data.message);
             }
             this.errors = error.response.data.errors;
           } else {

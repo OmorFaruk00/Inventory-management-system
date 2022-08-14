@@ -98,13 +98,6 @@
     "_name": "_d1e8f534"
   },
   {
-    "name": "account-statement",
-    "path": "/account/statement",
-    "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/account/statement.vue",
-    "chunkName": "pages/account/statement",
-    "_name": "_31d89592"
-  },
-  {
     "name": "account-sub_fund",
     "path": "/account/sub_fund",
     "component": "/media/omorfaruk/0D3E384B49BCFC29/Darul-uloom-cms/pages/account/sub_fund.vue",
