@@ -15,9 +15,10 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered text-center">
                 <thead>
                   <tr>                   
+                    <th>Sl</th>
                     <th>Training Name</th>
                     <th>Institute Name</th>
                     <th>Duration</th>
@@ -26,7 +27,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="training in trainings" :key="training._id">
+                  <tr v-for="(training,index) in trainings" :key="index">
+                    <td>{{ index +1}}</td>
                     <td>{{ training.training_name}}</td>
                     <td>{{ training.institute_name }}</td>                  
                     <td>{{ training.duration}}</td>                  

@@ -25,13 +25,9 @@
                     <input v-model="training.institute_name" type="text" class="form-control" placeholder="Enter Institute Name" />
                     <h6 v-if="errors.institute_name" v-text="errors.institute_name[0]" class="text-danger"></h6>
                 </div>
-
-
-
             </div>
-
             <div class="d-flex justify-content-end">
-                <button class="btn-submit btn-lg" @click="addtraining()">Submit</button>
+                <button class="btn-submit mt-4" @click="addtraining()">Submit</button>
             </div>
         </div>
 

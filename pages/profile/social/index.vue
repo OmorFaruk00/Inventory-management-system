@@ -15,17 +15,18 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered text-center">
                 <thead>
                   <tr>                    
+                    <th>SL</th>
                     <th>Social Name</th>
-                    <th>Social Link</th>
-                    
+                    <th>Social Link</th>                    
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="social in socials" :key="social._id">
+                  <tr v-for="(social,index) in socials" :key="index">
+                    <td>{{ index+1}}</td>
                     <td>{{ social.social_name}}</td>
                     <td>{{ social.social_url }}</td>                  
                     <td>

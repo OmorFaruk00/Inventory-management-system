@@ -15,9 +15,10 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered text-center">
                 <thead>
                   <tr>                   
+                    <th>SL</th>
                     <th>Degree Name</th>
                     <th>Institute Name</th>
                     <th>Department</th>
@@ -26,7 +27,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="qualification in qualifications" :key="qualification._id">
+                  <tr v-for="(qualification, index ) in qualifications" :key="index">
+                    <td>{{ index +1}}</td>
                     <td>{{ qualification.degree_name}}</td>
                     <td>{{ qualification.institute_name }}</td>                  
                     <td>{{ qualification.subject}}</td>                  

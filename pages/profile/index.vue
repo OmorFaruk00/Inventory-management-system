@@ -72,9 +72,10 @@
                             <div class="about">
                                 <h4 class="about-title">Academic Qualification</h4>
                                 <div class="px-3">
-                                    <table class="table table-striped text-center">
+                                    <table class="table table-striped table-bordered text-center">
                                         <thead>
                                             <tr>
+                                                <th>Sl</th>
                                                 <th>Degree Name</th>
                                                 <th>Institute Name</th>
                                                 <th>Department</th>
@@ -82,8 +83,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="qualification in profile.rel_qualification"
-                                                :key="qualification._id">
+                                            <tr v-for="(qualification,index) in profile.rel_qualification"
+                                                :key="index">
+                                                <td>{{ index +1}}</td>
                                                 <td>{{ qualification.degree_name }}</td>
                                                 <td>{{ qualification.institute_name }}</td>
                                                 <td>{{ qualification.subject }}</td>
@@ -98,9 +100,10 @@
                             <div class="about">
                                 <h4 class="about-title">Training Experience</h4>
                                 <div class="px-3">
-                                    <table class="table table-striped text-center">
+                                    <table class="table table-striped table-bordered text-center">
                                         <thead>
                                             <tr>
+                                                <th>Sl</th>
                                                 <th>Training Name</th>
                                                 <th>Institute Name</th>
                                                 <th>Duration</th>
@@ -108,7 +111,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="training in profile.rel_training" :key="training._id">
+                                            <tr v-for="(training,index) in profile.rel_training" :key="index">
+                                                <td>{{ index +1}}</td>
                                                 <td>{{ training.training_name }}</td>
                                                 <td>{{ training.institute_name }}</td>
                                                 <td>{{ training.duration }}</td>
@@ -210,7 +214,7 @@ export default {
 }
 
 .profile-info {
-    padding: 0px 100px;
+    padding: 0px 100px;    
 }
 
 .contact-info {
@@ -223,6 +227,7 @@ export default {
     text-align: justify;
     padding-bottom: 20px;
     box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 5px;
 }
 
 .about-title {
