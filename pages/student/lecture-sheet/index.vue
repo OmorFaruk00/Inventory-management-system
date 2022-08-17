@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="panel-body table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped table-bordered text-center">
                 <thead class="bg-dark text-white">
                   <tr>                    
                     <th>Sl</th>           

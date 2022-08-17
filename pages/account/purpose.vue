@@ -6,82 +6,42 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputAddress2">Payment Name</label>
-            <input
-              v-model="name"
-              type="text"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Payment Name"
-            />
+            <input v-model="name" type="text" class="form-control" id="inputAddress2" placeholder="Payment Name" />
             <span class="text-danger" v-if="error && error.name">{{
-              error.name[0]
+                error.name[0]
             }}</span>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputAddress2">Amount</label>
-            <input
-              v-model="amount"
-              type="number"
-              class="form-control"
-              id="inputAddress2"
-              placeholder="Amount"
-            />
+            <input v-model="amount" type="number" class="form-control" id="inputAddress2" placeholder="Amount" />
 
             <span class="text-danger" v-if="error && error.amount">{{
-              error.amount[0]
+                error.amount[0]
             }}</span>
           </div>
         </div>
         <div class="col-md-12 col-xl-6 col-sm-12">
           <div class="form-group">
             <label>Department *</label>
-            <select
-              class="form-control"
-              v-model="department"
-              @change="fetchBatch()"
-            >
+            <select class="form-control" v-model="department" @change="fetchBatch()">
               <option disabled selected value="">Select Department</option>
-              <option
-                disable
-                v-for="(dpt, index) in departments"
-                :key="index"
-                :value="dpt.id"
-                v-text="dpt.department_name"
-              ></option>
+              <option disable v-for="(dpt, index) in departments" :key="index" :value="dpt.id"
+                v-text="dpt.department_name"></option>
             </select>
-            <h6
-              v-if="error && error.department"
-              v-text="error.department[0]"
-              class="text-danger"
-            ></h6>
+            <h6 v-if="error && error.department" v-text="error.department[0]" class="text-danger"></h6>
           </div>
         </div>
         <div class="col-md-12 col-xl-6 col-sm-12">
           <div class="form-group">
             <label>Batch *</label>
-            <input
-              type="text"
-              disabled
-              class="form-control"
-              placeholder="Select Department first"
-              v-if="!batches"
-            />
+            <input type="text" disabled class="form-control" placeholder="Select Department first" v-if="!batches" />
             <select class="form-control" v-model="batch_id" required v-else>
               <option selected value="">Select Batch</option>
-              <option
-                v-for="batch in batches"
-                :key="batch.id"
-                :value="batch.id"
-                v-text="batch.batch_name"
-              ></option>
+              <option v-for="batch in batches" :key="batch.id" :value="batch.id" v-text="batch.batch_name"></option>
             </select>
-            <h6
-              v-if="error && error.batch_id"
-              v-text="error.batch_id[0]"
-              class="text-danger"
-            ></h6>
+            <h6 v-if="error && error.batch_id" v-text="error.batch_id[0]" class="text-danger"></h6>
           </div>
         </div>
         <div class="col-md-6">
@@ -93,7 +53,7 @@
               <option value="1">Monthly</option>
             </select>
             <span class="text-danger" v-if="error && error.monthly_fee">{{
-              error.monthly_fee[0]
+                error.monthly_fee[0]
             }}</span>
           </div>
         </div>
@@ -114,19 +74,14 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputState" class="form-label">Fund</label>
-            <select
-              v-model="fund_id"
-              @change="getSubfund"
-              id="inputState"
-              class="form-control"
-            >
+            <select v-model="fund_id" @change="getSubfund" id="inputState" class="form-control">
               <option selected disabled value="">Choose...</option>
               <option :value="fun.id" v-for="fun in funds" :key="fun.id">
                 {{ fun.name }}
               </option>
             </select>
             <span class="text-danger" v-if="error && error.fund_id">{{
-              error.fund_id[0]
+                error.fund_id[0]
             }}</span>
           </div>
         </div>
@@ -140,7 +95,7 @@
               </option>
             </select>
             <span class="text-danger" v-if="error && error.sub_fund_id">{{
-              error.sub_fund_id[0]
+                error.sub_fund_id[0]
             }}</span>
           </div>
         </div>
@@ -151,12 +106,13 @@
       </div>
     </div>
     <div>
-      <table class="table table-striped text-center">
+      <table class="table table-striped text-center" v-if="purposes">
         <thead>
           <tr>
             <th scope="col">SL NO</th>
             <th scope="col">Payment Name</th>
-            <th scope="col">Department Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Batch</th>
             <th scope="col">Fee</th>
             <th scope="col">Monthly</th>
           </tr>
@@ -165,6 +121,7 @@
           <tr v-for="(purpo, i) in purposes" :key="purpo.id">
             <th scope="row">{{ ++i }}</th>
             <td>{{ purpo.name }}</td>
+            <td>{{ purpo.rel_batch ? purpo.rel_department.department_name : "NaN" }}</td>
             <td>{{ purpo.rel_batch ? purpo.rel_batch.batch_name : "NaN" }}</td>
             <td>{{ purpo.amount }}</td>
             <td>{{ purpo.month_wise == 1 ? "yes" : "one time" }}</td>
@@ -272,7 +229,6 @@ export default {
       this.$axios
         .get("/accounts/purpose")
         .then((response) => {
-          console.log(response);
           this.purposes = response.data;
         })
         .catch((error) => {
@@ -303,4 +259,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

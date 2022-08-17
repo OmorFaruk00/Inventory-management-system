@@ -34,14 +34,12 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
         <div class="panel-body table-responsive  form-shadow p-5 container ">
             <table class="table table-striped table-bordered text-center">
                 <thead class="table-bg">
                     <tr>
-                        <th>Serial</th>
+                        <th>Sl</th>
                         <th>Name</th>
                         <th>Roll</th>
                         <th>Comments</th>
@@ -68,7 +66,12 @@
                 </tbody>
             </table>
             <div class="d-flex justify-content-end pt-5">
-                <button class="btn-submit" @click.prevent="submitAttendance()">Take Attendance</button>
+                <nuxt-link to="/student/attendance" class="btn btn-info select mr-4 font-weight-bold"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-1" style="height:20px" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z" />
+                    </svg>Back</nuxt-link>
+                <button class="btn-submit select" @click.prevent="submitAttendance()">Take Attendance</button>
             </div>
         </div>
     </div>
@@ -115,21 +118,53 @@ export default {
                 console.log(error);
             });
         },
-        submitAttendance() {
-            if (confirm("Are you sure you want to submit this attendance?")) {
-                this.$axios
-                    .$post("/student/attendance-store", { 'student_id': this.student_id, 'comments': this.comment, 'date': this.date, 'time': this.time, 'batch_id': this.batch_id, 'department_name': this.department_name, 'department_id': this.department_id, 'course_code': this.course.course_code, 'course_name': this.course.course_name, 'course_id': this.course_id })
-                    .then((res) => {
-                        this.$toaster.success(res.message);
 
-                    })
-                    .catch((error) => {
-                        if (error.response.status == 200) {
-                            this.$toaster.success(error.response.message);
-                        }
-                        this.errors = error.response.data.errors;
-                    });
-            }
+        submitAttendance() {
+            let that = this;
+            this.$swal({
+                title: 'Are you sure.',
+                text: "You want to submit this attendance?",
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#C32A27',
+                confirmButtonText: 'Yes, Submit!'
+            }).then(function (result) {
+                if (result.value == true) {
+                    that.$axios
+                        .$post("/student/attendance-store", { 'student_id': that.student_id, 'comments': that.comment, 'date': that.date, 'time': that.time, 'batch_id': that.batch_id, 'department_name': that.department_name, 'department_id': that.department_id, 'course_code': that.course.course_code, 'course_name': that.course.course_name, 'course_id': that.course_id })
+                        .then((res) => {
+                            if (res.status == 200) {
+                                that.$swal({
+                                    title: "Good job!",
+                                    text: res.message,
+                                    timer: 4000,
+                                    type: "success",
+                                    showConfirmButton: false
+                                });
+                            }
+                            if (res.status == 409) {
+                                that.$swal({
+                                    title: "Sorry!",
+                                    text: res.message,
+                                    timer: 4000,
+                                    type: "error",
+                                    showConfirmButton: false
+                                });
+                                setTimeout(function () {
+                                    window.location.reload();
+                                }, 5000);
+                            }
+
+                        })
+                        .catch((error) => {
+                            console.log(error.response.data.errors);
+                            that.errors = error.response.data.errors;
+                        });
+                }
+
+            })
+
         }
     }
 }

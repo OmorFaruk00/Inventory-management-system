@@ -3,91 +3,44 @@
     <div class="container mt-5">
       <div class="form-shadow p-5">
         <div class="">
-          <p v-for="error in errors" class="text-danger" :key="error.id">
+          <!-- <p v-for="error in errors" class="text-danger" :key="error.id">
             * {{ error[0] }}
-          </p>
-          <p v-if="errors && errors.message">* {{ errors.message }}</p>
+          </p> -->
+          <!-- <p v-if="errors && errors.message">* {{ errors.message }}</p> -->
           <div class="row">
             <div class="col-md-12 col-xl-6 col-sm-12">
               <div class="form-group">
                 <label>Department *</label>
-                <select
-                  class="form-control"
-                  v-model="department"
-                  @change="fetchBatch()"
-                >
+                <select class="form-control" v-model="department" @change="fetchBatch()">
                   <option disabled selected value="">Select Department</option>
-                  <option
-                    disable
-                    v-for="(dpt, index) in departments"
-                    :key="index"
-                    :value="dpt.id"
-                    v-text="dpt.department_name"
-                  ></option>
+                  <option disable v-for="(dpt, index) in departments" :key="index" :value="dpt.id"
+                    v-text="dpt.department_name"></option>
                 </select>
-                <h6
-                  v-if="error && error.department"
-                  v-text="error.department[0]"
-                  class="text-danger"
-                ></h6>
+                <h6 v-if="error && error.department" v-text="error.department[0]" class="text-danger"></h6>
               </div>
             </div>
             <div class="col-md-12 col-xl-6 col-sm-12">
               <div class="form-group">
                 <label>Batch *</label>
-                <input
-                  type="text"
-                  disabled
-                  class="form-control"
-                  placeholder="Select Department first"
-                  v-if="!batches"
-                />
-                <select
-                  class="form-control"
-                  v-model="batch_id"
-                  required
-                  @change="getPurpose"
-                  v-else
-                >
+                <input type="text" disabled class="form-control" placeholder="Select Department first"
+                  v-if="!batches" />
+                <select class="form-control" v-model="batch_id" required @change="getPurpose" v-else>
                   <option selected value="">Select Batch</option>
-                  <option
-                    v-for="batch in batches"
-                    :key="batch.id"
-                    :value="batch.id"
-                    v-text="batch.batch_name"
-                  ></option>
+                  <option v-for="batch in batches" :key="batch.id" :value="batch.id" v-text="batch.batch_name"></option>
                 </select>
-                <h6
-                  v-if="error && error.batch_id"
-                  v-text="error.batch_id[0]"
-                  class="text-danger"
-                ></h6>
+                <h6 v-if="error && error.batch_id" v-text="error.batch_id[0]" class="text-danger"></h6>
               </div>
             </div>
             <div class="col-md-12 col-xl-6 col-sm-12">
               <div class="form-group">
                 <label>Roll *</label>
-                <input
-                  type="text"
-                  disabled
-                  class="form-control"
-                  placeholder="Select Batch first"
-                  v-if="!students"
-                />
+                <input type="text" disabled class="form-control" placeholder="Select Batch first" v-if="!students" />
                 <select class="form-control" v-model="roll" required v-else>
                   <option selected value="">Select Batch</option>
-                  <option
-                    v-for="student in students"
-                    :key="student.id"
-                    :value="student.id"
-                    v-text="`${student.student_name}|${student.roll_no}`"
-                  ></option>
+                  <option v-for="student in students" :key="student.id" :value="student.id"
+                    v-text="`${student.student_name}|${student.roll_no}`"></option>
                 </select>
-                <h6
-                  v-if="error && error.roll"
-                  v-text="error.roll[0]"
-                  class="text-danger"
-                ></h6>
+                <h6 v-if="error && error.roll" v-text="error.roll[0]" class="text-danger"></h6>
               </div>
             </div>
             <div class="col-md-6">
@@ -95,12 +48,7 @@
                 <label>Purpose</label>
                 <select v-model="purpose" id="inputState" class="form-control">
                   <option selected disabled value="">Choose...</option>
-                  <option
-                    v-for="(purpo, i) in purposes"
-                    :key="i"
-                    :value="purpo.id"
-                    v-text="purpo.name"
-                  ></option>
+                  <option v-for="(purpo, i) in purposes" :key="i" :value="purpo.id" v-text="purpo.name"></option>
                 </select>
               </div>
             </div>
@@ -118,96 +66,51 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="inpu4" class="form-label"
-                  >Total Pay
-                  <span
-                    readonly
-                    v-if="totalPay"
-                    v-text="'(' + totalPay + ')'"
-                  ></span>
+                <label for="inpu4" class="form-label">Total Pay
+                  <span readonly v-if="totalPay" v-text="'(' + totalPay + ')'"></span>
                 </label>
-                <input
-                  type="number"
-                  v-model="amount"
-                  class="form-control"
-                  id="inpu4"
-                />
+                <input type="number" v-model="amount" class="form-control" id="inpu4" />
               </div>
             </div>
             <div class="col-md-6" v-if="payBy === 'LILHA'">
               <div class="form-group">
-                <label for="inputAddress2" class="form-label"
-                  >LILHA PAY Amount</label
-                >
-                <input
-                  v-model="lilha_pay"
-                  type="number"
-                  class="form-control"
-                  id="inputAddress2"
-                  placeholder="Enter Amount"
-                />
+                <label for="inputAddress2" class="form-label">LILHA PAY Amount</label>
+                <input v-model="lilha_pay" type="number" class="form-control" id="inputAddress2"
+                  placeholder="Enter Amount" />
               </div>
             </div>
             <div class="col-md-6" v-if="payBy === 'BANK'">
               <div class="form-group">
                 <label for="inputAddress2" class="form-label">RECEIPT NO</label>
-                <input
-                  v-model="receiptNo"
-                  type="number"
-                  class="form-control"
-                  id="inputAddress2"
-                  placeholder="Enter Amount"
-                />
+                <input v-model="receiptNo" type="number" class="form-control" id="inputAddress2"
+                  placeholder="Enter Amount" />
               </div>
             </div>
             <div class="col-md-6" v-if="getPurposeMonth">
               <div class="form-group">
                 <label for="inputAddress2" class="form-label">Month No</label>
-                <input
-                  v-model="monthCount"
-                  type="number"
-                  class="form-control"
-                  id="inputAddress2"
-                  placeholder="Enter Amount"
-                />
+                <input v-model="monthCount" type="number" class="form-control" id="inputAddress2"
+                  placeholder="Enter Amount" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputAddress2" class="form-label">Discount</label>
-                <input
-                  v-model="scholarship"
-                  type="number"
-                  class="form-control"
-                  id="inputAddress2"
-                  placeholder="Discount"
-                />
+                <input v-model="scholarship" type="number" class="form-control" id="inputAddress2"
+                  placeholder="Discount" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="inputAddress2" class="form-label"
-                  >Discount Type</label
-                >
-                <input
-                  v-model="scholarship_type"
-                  type="text"
-                  class="form-control"
-                  id="inputAddress2"
-                  placeholder="Discount Type"
-                />
+                <label for="inputAddress2" class="form-label">Discount Type</label>
+                <input v-model="scholarship_type" type="text" class="form-control" id="inputAddress2"
+                  placeholder="Discount Type" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputAddress2" class="form-label">Date</label>
-                <input
-                  v-model="date"
-                  type="date"
-                  class="form-control"
-                  id="inputAddress2"
-                  placeholder="Date"
-                />
+                <input v-model="date" type="date" class="form-control" id="inputAddress2" placeholder="Date" />
               </div>
             </div>
           </div>
@@ -223,6 +126,7 @@
 </template>
 <script>
 export default {
+  layout: "Account-content",
   data() {
     return {
       payBy: "",
@@ -346,8 +250,9 @@ export default {
       return month;
     },
   },
-  layout: "Account-content",
+  
 };
 </script>
 
-<style></style>
+<style>
+</style>

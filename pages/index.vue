@@ -5,28 +5,21 @@
 				<h1 aria-label="welcome"></h1>
 			</div>
 			<div class="d-flex justify-content-end h-100">
-
 				<div class="login">
-					<div class="login-logo ">
-						<img src="/images/logo.png" alt="">
-
+					<div class="login-logo">
+						<img src="/images/logo.png" alt="" />
 					</div>
 					<div class="login-header">
 						<h2 class="">Central Management System | Darul Uloom Moniram</h2>
 					</div>
 					<div class="login-header">
 						<h3>Sign In</h3>
-						<div class="d-flex justify-content-end social_icon">
-
-						</div>
+						<div class="d-flex justify-content-end social_icon"></div>
 					</div>
-
-
 					<div class="card-body">
 						<div class="alert alert-danger" v-if="login_error">
 							<strong>{{ login_error }}!</strong>
 						</div>
-
 						<div class="input-group form-group pb-2">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
@@ -36,9 +29,8 @@
 											clip-rule="evenodd" />
 									</svg></span>
 							</div>
-							<input type="text" class="form-control" placeholder="username" v-model="login.email"
-								autocomplete>
-
+							<input type="text" class="form-control" id="email" placeholder="username" v-model="login.email"
+								autocomplete />
 						</div>
 						<p v-if="errors.email" v-text="errors.email[0]" class="text-danger"></p>
 
@@ -51,17 +43,35 @@
 											clip-rule="evenodd" />
 									</svg></span>
 							</div>
-							<input type="password" class="form-control" placeholder="password" v-model="login.password">
+							<input type="password" id="password" class="form-control" placeholder="password"
+								v-model="login.password" />
+							<div class="input-group-prepend">
+								<span class="input-group-text eye" @click="Password_Visibility" v-if="nonvisibile"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+										fill="currentColor">
+										<path fill-rule="evenodd"
+											d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
+											clip-rule="evenodd" />
+										<path
+											d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
+									</svg></span>
+								<span class="input-group-text eye" @click="Password_Visibility" v-if="visibile"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+										fill="currentColor">
+										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+										<path fill-rule="evenodd"
+											d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+											clip-rule="evenodd" />
+									</svg></span>
+							</div>
 						</div>
 						<p v-if="errors.password" v-text="errors.password[0]" class="text-danger"></p>
-
 
 						<div class="row">
 							<div class="col-sm-12 col-md-6 col-xl-6">
 								<div class="remember">
-									<input type="checkbox" class="text-white">Remember Me
+									<input type="checkbox" class="text-white" id="rememberMe"/>Remember Me
 								</div>
-
 							</div>
 							<div class="col-sm-12 col-md-6 col-xl-6">
 								<div class="forgot">
@@ -71,53 +81,65 @@
 						</div>
 						<div class="form-group py-4">
 							<!-- <nuxt-link class="btn float-right login_btn" to="/app">Login</nuxt-link> -->
-							<button class="btn float-right login_btn" @click="userLogin">Login</button>
+							<button class="btn float-right login_btn" @click="userLogin">
+								Login
+							</button>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </template>
 <script>
-
 export default {
 	auth: false,
-	mounted() {
-	},
+	mounted() { },
 	data() {
 		return {
 			login: {
-				email: '',
-				password: ''
+				email: "",
+				password: "",
 			},
 			errors: [],
-			login_error: ''
-		}
+			login_error: "",
+			visibile: false,
+			nonvisibile: true,
+		};
 	},
-	methods: {	
+	methods: {
+		Password_Visibility() {
+			const passwordField = document.querySelector("#password");
+
+			if (passwordField.getAttribute("type") === "password") {
+				passwordField.setAttribute("type", "text");
+				this.visibile = true;
+				this.nonvisibile = false;
+
+			}
+			else {
+				passwordField.setAttribute("type", "password");
+				this.nonvisibile = true;
+				this.visibile = false;
+			}
+		},	
+		
 		async userLogin() {
-			await this.$auth.loginWith('laravelSanctum', { data: this.login }).then(res=>{				
-				if(res.status==203){					
-					this.login_error = res.data.message
-				}
-				// this.$toaster.success("Login Successful");
-			    this.$router.push('/app');
-			}).catch(error=>{
-				console.log(error)
-			});
-			
-			
-		}
-
-
-
-
-
-	}
-}
+			await this.$auth
+				.loginWith("laravelSanctum", { data: this.login })
+				.then((res) => {
+					if (res.status == 203) {
+						this.login_error = res.data.message;
+					}
+					// this.$toaster.success("Login Successful");
+					this.$router.push("/app");
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		},
+	},
+};
 </script>
 <style scoped>
 .bg {
@@ -131,7 +153,6 @@ export default {
 	background-repeat: no-repeat;
 	height: 100vh;
 	/* position: relative; */
-
 }
 
 .welcome {
@@ -151,7 +172,6 @@ export default {
 .login-logo img {
 	height: 100px;
 	border-radius: 50px;
-
 }
 
 .login {
@@ -167,7 +187,7 @@ export default {
 .social_icon span {
 	font-size: 60px;
 	margin-left: 10px;
-	color: #FFC312;
+	color: #ffc312;
 }
 
 .social_icon span:hover {
@@ -195,8 +215,14 @@ export default {
 
 .input-group-prepend span {
 	width: 50px;
-	background-color: #FFC312;
+	background-color: #ffc312;
 	color: black;
+	border: 0 !important;
+}
+
+.input-group-prepend span.eye {
+	width: 50px;
+	background-color: rgb(232, 240, 254);
 	border: 0 !important;
 }
 
@@ -207,7 +233,6 @@ export default {
 input:focus {
 	outline: 0 0 0 0 !important;
 	box-shadow: 0 0 0 0 !important;
-
 }
 
 .remember {
@@ -223,7 +248,7 @@ input:focus {
 
 .login_btn {
 	color: black;
-	background-color: #FFC312;
+	background-color: #ffc312;
 	width: 100px;
 }
 
@@ -252,7 +277,7 @@ body {
 
 h1 {
 	position: relative;
-	font-family: 'Roboto', Arial, sans-serif;
+	font-family: "Roboto", Arial, sans-serif;
 	font-size: calc(10px + 10vw);
 	font-weight: 700;
 	color: #f5f5f5;

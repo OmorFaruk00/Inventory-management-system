@@ -42,7 +42,6 @@
                                 <option disabled selected value="">Select Course</option>
                                 <option disable v-for="(course, index) in courses" :key="index"
                                     :value="course.course_name" v-text="course.course_name"></option>
-
                             </select>
                             <h6 v-if="errors.course_name" v-text="errors.course_name[0]" class="text-danger mt-1"></h6>
                         </div>
@@ -53,8 +52,7 @@
                             <input type="date" class="form-control select" v-model="report.date" />
                             <h6 v-if="errors.date" v-text="errors.date[0]" class="text-danger mt-1"></h6>
                         </div>
-                    </div>                 
-
+                    </div>
                 </div>
                 <div class="d-flex justify-content-end pt-3">
                     <button class="btn-submit" @click.prevent="findReport()">Find</button>
@@ -72,7 +70,7 @@
                         <p><strong>Batch :</strong> {{ report_list[0].batch.batch_name }}</p>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xl-6">
-                        <p><strong>Course Name :</strong>{{ report_list[0].course_name }} </p>
+                        <p><strong>Course Name :</strong> {{ report_list[0].course_name }} </p>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xl-6">
                         <p><strong>Course Code :</strong> {{ report_list[0].course_code }}</p>
@@ -86,7 +84,7 @@
                 </div>
             </div>
             <div class="col-md-10 mx-auto panel-body table-responsive" v-if="report_list.length > 0">
-                <table class="table table-striped text-center">
+                <table class="table table-striped table-bordered text-center">
                     <thead class="bg-dark text-white">
                         <tr>
                             <th>SL</th>
@@ -111,7 +109,6 @@
             </div>
             <div v-else>
                 <h3 class="text-center">Attendance Not Found</h3>
-
             </div>
         </div>
         </div>
