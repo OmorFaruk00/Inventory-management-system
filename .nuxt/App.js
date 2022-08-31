@@ -10,17 +10,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
-import _23cd2603 from '../layouts/Account-content.vue'
-import _514a6c80 from '../layouts/Adm-content.vue'
-import _0f8102c4 from '../layouts/Emp-content.vue'
-import _307d030d from '../layouts/Leave-content.vue'
-import _0d822d02 from '../layouts/Profile-content.vue'
-import _982051b4 from '../layouts/Setting-content.vue'
-import _d1839fde from '../layouts/Student-content.vue'
-import _9b6b15ac from '../layouts/Web-content.vue'
+import _1a3b11ea from '../layouts/new.vue'
+import _1a4a52f4 from '../layouts/Sidebar.vue'
 import _6f6c098b from './layouts/default.vue'
 
-const layouts = { "_Account-content": sanitizeComponent(_23cd2603),"_Adm-content": sanitizeComponent(_514a6c80),"_Emp-content": sanitizeComponent(_0f8102c4),"_Leave-content": sanitizeComponent(_307d030d),"_Profile-content": sanitizeComponent(_0d822d02),"_Setting-content": sanitizeComponent(_982051b4),"_Student-content": sanitizeComponent(_d1839fde),"_Web-content": sanitizeComponent(_9b6b15ac),"_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_new": sanitizeComponent(_1a3b11ea),"_Sidebar": sanitizeComponent(_1a4a52f4),"_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {

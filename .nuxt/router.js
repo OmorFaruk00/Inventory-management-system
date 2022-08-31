@@ -4,105 +4,42 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _bff9b9cc = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
-const _4275d176 = () => interopDefault(import('../pages/admission/index.vue' /* webpackChunkName: "pages/admission/index" */))
-const _78bf08cb = () => interopDefault(import('../pages/app.vue' /* webpackChunkName: "pages/app" */))
-const _40fcc042 = () => interopDefault(import('../pages/change-password.vue' /* webpackChunkName: "pages/change-password" */))
-const _68d6c877 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
-const _0d9ac0b8 = () => interopDefault(import('../pages/leave/index.vue' /* webpackChunkName: "pages/leave/index" */))
-const _79fae3e3 = () => interopDefault(import('../pages/password-reset.vue' /* webpackChunkName: "pages/password-reset" */))
-const _3fdc10d4 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
-const _9b83d106 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
-const _094c3cb0 = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
-const _93ea1328 = () => interopDefault(import('../pages/web-dui/index.vue' /* webpackChunkName: "pages/web-dui/index" */))
-const _63701a16 = () => interopDefault(import('../pages/account/account.vue' /* webpackChunkName: "pages/account/account" */))
-const _37ed142d = () => interopDefault(import('../pages/account/fund.vue' /* webpackChunkName: "pages/account/fund" */))
-const _d1e8f534 = () => interopDefault(import('../pages/account/purpose.vue' /* webpackChunkName: "pages/account/purpose" */))
-const _31d89592 = () => interopDefault(import('../pages/account/statement.vue' /* webpackChunkName: "pages/account/statement" */))
-const _196d674c = () => interopDefault(import('../pages/account/sub_fund.vue' /* webpackChunkName: "pages/account/sub_fund" */))
-const _31236216 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/index.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/index" */))
-const _3f80983e = () => interopDefault(import('../pages/admission/batch/index.vue' /* webpackChunkName: "pages/admission/batch/index" */))
-const _a1cf453e = () => interopDefault(import('../pages/admission/department/index.vue' /* webpackChunkName: "pages/admission/department/index" */))
-const _1100527e = () => interopDefault(import('../pages/admission/dept-wish-student.vue' /* webpackChunkName: "pages/admission/dept-wish-student" */))
-const _d353031c = () => interopDefault(import('../pages/admission/form-import.vue' /* webpackChunkName: "pages/admission/form-import" */))
-const _97d25958 = () => interopDefault(import('../pages/admission/form-sale.vue' /* webpackChunkName: "pages/admission/form-sale" */))
-const _22fdd159 = () => interopDefault(import('../pages/admission/form-stock.vue' /* webpackChunkName: "pages/admission/form-stock" */))
-const _73225922 = () => interopDefault(import('../pages/admission/search-student.vue' /* webpackChunkName: "pages/admission/search-student" */))
-const _3af8abc0 = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
-const _4b5b78df = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
-const _2221a4dc = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
-const _e1bd1134 = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
-const _3310122f = () => interopDefault(import('../pages/leave/application_denied_by_other.vue' /* webpackChunkName: "pages/leave/application_denied_by_other" */))
-const _750ebdf1 = () => interopDefault(import('../pages/leave/application_form.vue' /* webpackChunkName: "pages/leave/application_form" */))
-const _26a48d72 = () => interopDefault(import('../pages/leave/approval_application.vue' /* webpackChunkName: "pages/leave/approval_application" */))
-const _98c5b434 = () => interopDefault(import('../pages/leave/approved_application.vue' /* webpackChunkName: "pages/leave/approved_application" */))
-const _1d739e0c = () => interopDefault(import('../pages/leave/pending_application.vue' /* webpackChunkName: "pages/leave/pending_application" */))
-const _55adc851 = () => interopDefault(import('../pages/leave/self_denied_application.vue' /* webpackChunkName: "pages/leave/self_denied_application" */))
-const _9f90778e = () => interopDefault(import('../pages/leave/withdraw_application.vue' /* webpackChunkName: "pages/leave/withdraw_application" */))
-const _33ac7e76 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
-const _28f4c8c8 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
-const _25a963c9 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
-const _32bda196 = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
-const _415e41ff = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
-const _018337b4 = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
-const _49eda49b = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
-const _453bde48 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
-const _1ff0e8c6 = () => interopDefault(import('../pages/student/attendance/index.vue' /* webpackChunkName: "pages/student/attendance/index" */))
-const _b2ec3f10 = () => interopDefault(import('../pages/student/course/index.vue' /* webpackChunkName: "pages/student/course/index" */))
-const _16fbe629 = () => interopDefault(import('../pages/student/lecture-sheet/index.vue' /* webpackChunkName: "pages/student/lecture-sheet/index" */))
-const _58afe312 = () => interopDefault(import('../pages/student/lesson-plan/index.vue' /* webpackChunkName: "pages/student/lesson-plan/index" */))
-const _2b198203 = () => interopDefault(import('../pages/student/question/index.vue' /* webpackChunkName: "pages/student/question/index" */))
-const _6faf3da0 = () => interopDefault(import('../pages/student/search-student.vue' /* webpackChunkName: "pages/student/search-student" */))
-const _9753d596 = () => interopDefault(import('../pages/student/students/index.vue' /* webpackChunkName: "pages/student/students/index" */))
-const _7a782142 = () => interopDefault(import('../pages/student/syllabus/index.vue' /* webpackChunkName: "pages/student/syllabus/index" */))
-const _3c31d17b = () => interopDefault(import('../pages/web-dui/blog/index.vue' /* webpackChunkName: "pages/web-dui/blog/index" */))
-const _6ad89fda = () => interopDefault(import('../pages/web-dui/committee/index.vue' /* webpackChunkName: "pages/web-dui/committee/index" */))
-const _5077a23a = () => interopDefault(import('../pages/web-dui/contact.vue' /* webpackChunkName: "pages/web-dui/contact" */))
-const _9fd0a892 = () => interopDefault(import('../pages/web-dui/event/index.vue' /* webpackChunkName: "pages/web-dui/event/index" */))
-const _42772362 = () => interopDefault(import('../pages/web-dui/facilitie/index.vue' /* webpackChunkName: "pages/web-dui/facilitie/index" */))
-const _46bedc22 = () => interopDefault(import('../pages/web-dui/gallery/index.vue' /* webpackChunkName: "pages/web-dui/gallery/index" */))
-const _775c549e = () => interopDefault(import('../pages/web-dui/notice/index.vue' /* webpackChunkName: "pages/web-dui/notice/index" */))
-const _1ead3abe = () => interopDefault(import('../pages/web-dui/program/index.vue' /* webpackChunkName: "pages/web-dui/program/index" */))
-const _6082807a = () => interopDefault(import('../pages/web-dui/slider/index.vue' /* webpackChunkName: "pages/web-dui/slider/index" */))
-const _7d80e0a4 = () => interopDefault(import('../pages/web-dui/tution/index.vue' /* webpackChunkName: "pages/web-dui/tution/index" */))
-const _2e0fda69 = () => interopDefault(import('../pages/admission/admissionInActiveBatch/create.vue' /* webpackChunkName: "pages/admission/admissionInActiveBatch/create" */))
-const _4f6b12fd = () => interopDefault(import('../pages/admission/batch/create.vue' /* webpackChunkName: "pages/admission/batch/create" */))
-const _5ba7997d = () => interopDefault(import('../pages/admission/department/create.vue' /* webpackChunkName: "pages/admission/department/create" */))
-const _4bd116fe = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
-const _47c7edbf = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
-const _49c74162 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
-const _69979b08 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
-const _a63bbabc = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
-const _91913fd6 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
-const _276252f0 = () => interopDefault(import('../pages/student/attendance/report.vue' /* webpackChunkName: "pages/student/attendance/report" */))
-const _3dea27b9 = () => interopDefault(import('../pages/student/course/assign.vue' /* webpackChunkName: "pages/student/course/assign" */))
-const _52667946 = () => interopDefault(import('../pages/student/course/create.vue' /* webpackChunkName: "pages/student/course/create" */))
-const _1f95ac96 = () => interopDefault(import('../pages/student/lecture-sheet/create.vue' /* webpackChunkName: "pages/student/lecture-sheet/create" */))
-const _6de3e9b2 = () => interopDefault(import('../pages/student/lesson-plan/create.vue' /* webpackChunkName: "pages/student/lesson-plan/create" */))
-const _5fcb091b = () => interopDefault(import('../pages/student/question/create.vue' /* webpackChunkName: "pages/student/question/create" */))
-const _077f5c88 = () => interopDefault(import('../pages/student/syllabus/create.vue' /* webpackChunkName: "pages/student/syllabus/create" */))
-const _71bca8a3 = () => interopDefault(import('../pages/web-dui/blog/create.vue' /* webpackChunkName: "pages/web-dui/blog/create" */))
-const _17efa624 = () => interopDefault(import('../pages/web-dui/committee/create.vue' /* webpackChunkName: "pages/web-dui/committee/create" */))
-const _7a9215e7 = () => interopDefault(import('../pages/web-dui/event/create.vue' /* webpackChunkName: "pages/web-dui/event/create" */))
-const _217da64f = () => interopDefault(import('../pages/web-dui/facilitie/create.vue' /* webpackChunkName: "pages/web-dui/facilitie/create" */))
-const _24c5a9a6 = () => interopDefault(import('../pages/web-dui/notice/create.vue' /* webpackChunkName: "pages/web-dui/notice/create" */))
-const _4c373c3d = () => interopDefault(import('../pages/web-dui/program/create.vue' /* webpackChunkName: "pages/web-dui/program/create" */))
-const _50fc4cf8 = () => interopDefault(import('../pages/web-dui/slider/create.vue' /* webpackChunkName: "pages/web-dui/slider/create" */))
-const _e3329e60 = () => interopDefault(import('../pages/web-dui/tution/create.vue' /* webpackChunkName: "pages/web-dui/tution/create" */))
-const _3d2014f5 = () => interopDefault(import('../pages/admission/batch/update/_id.vue' /* webpackChunkName: "pages/admission/batch/update/_id" */))
-const _01ba6062 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
-const _374488da = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
-const _69f4ac63 = () => interopDefault(import('../pages/student/attendance/create/_id.vue' /* webpackChunkName: "pages/student/attendance/create/_id" */))
-const _2805a284 = () => interopDefault(import('../pages/student/course/update/_id.vue' /* webpackChunkName: "pages/student/course/update/_id" */))
-const _addfe0a6 = () => interopDefault(import('../pages/student/lecture-sheet/update/_id.vue' /* webpackChunkName: "pages/student/lecture-sheet/update/_id" */))
-const _82522fc2 = () => interopDefault(import('../pages/student/lesson-plan/update/_id.vue' /* webpackChunkName: "pages/student/lesson-plan/update/_id" */))
-const _db8867da = () => interopDefault(import('../pages/student/question/update/_id.vue' /* webpackChunkName: "pages/student/question/update/_id" */))
-const _28ac4798 = () => interopDefault(import('../pages/student/syllabus/update/_id.vue' /* webpackChunkName: "pages/student/syllabus/update/_id" */))
-const _3d48bc9c = () => interopDefault(import('../pages/web-dui/committee/update/_id.vue' /* webpackChunkName: "pages/web-dui/committee/update/_id" */))
-const _21940a12 = () => interopDefault(import('../pages/admission/print-receive/_id.vue' /* webpackChunkName: "pages/admission/print-receive/_id" */))
-const _7d3d8652 = () => interopDefault(import('../pages/admission/student-update/_id.vue' /* webpackChunkName: "pages/admission/student-update/_id" */))
-const _087dd383 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
-const _0ae5cb08 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _f2643ee2 = () => interopDefault(import('../pages/brand/index.vue' /* webpackChunkName: "pages/brand/index" */))
+const _0aa38e68 = () => interopDefault(import('../pages/category/index.vue' /* webpackChunkName: "pages/category/index" */))
+const _e0dd7a46 = () => interopDefault(import('../pages/change-password.vue' /* webpackChunkName: "pages/change-password" */))
+const _c0adb5ce = () => interopDefault(import('../pages/dashboard.vue' /* webpackChunkName: "pages/dashboard" */))
+const _d6abf308 = () => interopDefault(import('../pages/employee/index.vue' /* webpackChunkName: "pages/employee/index" */))
+const _b463bc30 = () => interopDefault(import('../pages/password-reset.vue' /* webpackChunkName: "pages/password-reset" */))
+const _04c5b25c = () => interopDefault(import('../pages/pos/index.vue' /* webpackChunkName: "pages/pos/index" */))
+const _021cc8b7 = () => interopDefault(import('../pages/product/index.vue' /* webpackChunkName: "pages/product/index" */))
+const _238c64f1 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
+const _148ef650 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
+const _7aa27c0f = () => interopDefault(import('../pages/brand/create.vue' /* webpackChunkName: "pages/brand/create" */))
+const _fa65a91c = () => interopDefault(import('../pages/category/create.vue' /* webpackChunkName: "pages/category/create" */))
+const _ac6a2eca = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
+const _925e5138 = () => interopDefault(import('../pages/employee/designation/index.vue' /* webpackChunkName: "pages/employee/designation/index" */))
+const _22835c77 = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
+const _0ad2542a = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
+const _5a3107f8 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
+const _693098e7 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
+const _36e2f091 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
+const _77f181e1 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
+const _46b4ccce = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
+const _12746d3a = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
+const _5669ff1a = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
+const _75cdeb39 = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
+const _2b129fe0 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
+const _9e9d8666 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
+const _917314fa = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
+const _4afe5fda = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
+const _559c7d27 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
+const _65a12766 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
+const _a419f606 = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
+const _90cdd0a0 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
+const _655231a7 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
+const _ca474bc2 = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
+const _17e02ade = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
+const _87a7da52 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -116,400 +53,148 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/account",
-    component: _bff9b9cc,
-    name: "account"
+    path: "/brand",
+    component: _f2643ee2,
+    name: "brand"
   }, {
-    path: "/admission",
-    component: _4275d176,
-    name: "admission"
-  }, {
-    path: "/app",
-    component: _78bf08cb,
-    name: "app"
+    path: "/category",
+    component: _0aa38e68,
+    name: "category"
   }, {
     path: "/change-password",
-    component: _40fcc042,
+    component: _e0dd7a46,
     name: "change-password"
   }, {
+    path: "/dashboard",
+    component: _c0adb5ce,
+    name: "dashboard"
+  }, {
     path: "/employee",
-    component: _68d6c877,
+    component: _d6abf308,
     name: "employee"
   }, {
-    path: "/leave",
-    component: _0d9ac0b8,
-    name: "leave"
-  }, {
     path: "/password-reset",
-    component: _79fae3e3,
+    component: _b463bc30,
     name: "password-reset"
   }, {
+    path: "/pos",
+    component: _04c5b25c,
+    name: "pos"
+  }, {
+    path: "/product",
+    component: _021cc8b7,
+    name: "product"
+  }, {
     path: "/profile",
-    component: _3fdc10d4,
+    component: _238c64f1,
     name: "profile"
   }, {
     path: "/setting",
-    component: _9b83d106,
+    component: _148ef650,
     name: "setting"
   }, {
-    path: "/student",
-    component: _094c3cb0,
-    name: "student"
+    path: "/brand/create",
+    component: _7aa27c0f,
+    name: "brand-create"
   }, {
-    path: "/web-dui",
-    component: _93ea1328,
-    name: "web-dui"
-  }, {
-    path: "/account/account",
-    component: _63701a16,
-    name: "account-account"
-  }, {
-    path: "/account/fund",
-    component: _37ed142d,
-    name: "account-fund"
-  }, {
-    path: "/account/purpose",
-    component: _d1e8f534,
-    name: "account-purpose"
-  }, {
-    path: "/account/statement",
-    component: _31d89592,
-    name: "account-statement"
-  }, {
-    path: "/account/sub_fund",
-    component: _196d674c,
-    name: "account-sub_fund"
-  }, {
-    path: "/admission/admissionInActiveBatch",
-    component: _31236216,
-    name: "admission-admissionInActiveBatch"
-  }, {
-    path: "/admission/batch",
-    component: _3f80983e,
-    name: "admission-batch"
-  }, {
-    path: "/admission/department",
-    component: _a1cf453e,
-    name: "admission-department"
-  }, {
-    path: "/admission/dept-wish-student",
-    component: _1100527e,
-    name: "admission-dept-wish-student"
-  }, {
-    path: "/admission/form-import",
-    component: _d353031c,
-    name: "admission-form-import"
-  }, {
-    path: "/admission/form-sale",
-    component: _97d25958,
-    name: "admission-form-sale"
-  }, {
-    path: "/admission/form-stock",
-    component: _22fdd159,
-    name: "admission-form-stock"
-  }, {
-    path: "/admission/search-student",
-    component: _73225922,
-    name: "admission-search-student"
+    path: "/category/create",
+    component: _fa65a91c,
+    name: "category-create"
   }, {
     path: "/employee/department",
-    component: _3af8abc0,
+    component: _ac6a2eca,
     name: "employee-department"
   }, {
     path: "/employee/designation",
-    component: _4b5b78df,
+    component: _925e5138,
     name: "employee-designation"
   }, {
     path: "/employee/employee",
-    component: _2221a4dc,
+    component: _22835c77,
     name: "employee-employee"
   }, {
     path: "/employee/office-time",
-    component: _e1bd1134,
+    component: _0ad2542a,
     name: "employee-office-time"
   }, {
-    path: "/leave/application_denied_by_other",
-    component: _3310122f,
-    name: "leave-application_denied_by_other"
+    path: "/pos/test",
+    component: _5a3107f8,
+    name: "pos-test"
   }, {
-    path: "/leave/application_form",
-    component: _750ebdf1,
-    name: "leave-application_form"
-  }, {
-    path: "/leave/approval_application",
-    component: _26a48d72,
-    name: "leave-approval_application"
-  }, {
-    path: "/leave/approved_application",
-    component: _98c5b434,
-    name: "leave-approved_application"
-  }, {
-    path: "/leave/pending_application",
-    component: _1d739e0c,
-    name: "leave-pending_application"
-  }, {
-    path: "/leave/self_denied_application",
-    component: _55adc851,
-    name: "leave-self_denied_application"
-  }, {
-    path: "/leave/withdraw_application",
-    component: _9f90778e,
-    name: "leave-withdraw_application"
+    path: "/product/create",
+    component: _693098e7,
+    name: "product-create"
   }, {
     path: "/profile/qualification",
-    component: _33ac7e76,
+    component: _36e2f091,
     name: "profile-qualification"
   }, {
     path: "/profile/social",
-    component: _28f4c8c8,
+    component: _77f181e1,
     name: "profile-social"
   }, {
     path: "/profile/training",
-    component: _25a963c9,
+    component: _46b4ccce,
     name: "profile-training"
   }, {
     path: "/profile/update",
-    component: _32bda196,
+    component: _12746d3a,
     name: "profile-update"
   }, {
     path: "/setting/assign-role",
-    component: _415e41ff,
+    component: _5669ff1a,
     name: "setting-assign-role"
   }, {
     path: "/setting/permission",
-    component: _018337b4,
+    component: _75cdeb39,
     name: "setting-permission"
   }, {
     path: "/setting/role",
-    component: _49eda49b,
+    component: _2b129fe0,
     name: "setting-role"
   }, {
     path: "/setting/special-permission",
-    component: _453bde48,
+    component: _9e9d8666,
     name: "setting-special-permission"
   }, {
-    path: "/student/attendance",
-    component: _1ff0e8c6,
-    name: "student-attendance"
-  }, {
-    path: "/student/course",
-    component: _b2ec3f10,
-    name: "student-course"
-  }, {
-    path: "/student/lecture-sheet",
-    component: _16fbe629,
-    name: "student-lecture-sheet"
-  }, {
-    path: "/student/lesson-plan",
-    component: _58afe312,
-    name: "student-lesson-plan"
-  }, {
-    path: "/student/question",
-    component: _2b198203,
-    name: "student-question"
-  }, {
-    path: "/student/search-student",
-    component: _6faf3da0,
-    name: "student-search-student"
-  }, {
-    path: "/student/students",
-    component: _9753d596,
-    name: "student-students"
-  }, {
-    path: "/student/syllabus",
-    component: _7a782142,
-    name: "student-syllabus"
-  }, {
-    path: "/web-dui/blog",
-    component: _3c31d17b,
-    name: "web-dui-blog"
-  }, {
-    path: "/web-dui/committee",
-    component: _6ad89fda,
-    name: "web-dui-committee"
-  }, {
-    path: "/web-dui/contact",
-    component: _5077a23a,
-    name: "web-dui-contact"
-  }, {
-    path: "/web-dui/event",
-    component: _9fd0a892,
-    name: "web-dui-event"
-  }, {
-    path: "/web-dui/facilitie",
-    component: _42772362,
-    name: "web-dui-facilitie"
-  }, {
-    path: "/web-dui/gallery",
-    component: _46bedc22,
-    name: "web-dui-gallery"
-  }, {
-    path: "/web-dui/notice",
-    component: _775c549e,
-    name: "web-dui-notice"
-  }, {
-    path: "/web-dui/program",
-    component: _1ead3abe,
-    name: "web-dui-program"
-  }, {
-    path: "/web-dui/slider",
-    component: _6082807a,
-    name: "web-dui-slider"
-  }, {
-    path: "/web-dui/tution",
-    component: _7d80e0a4,
-    name: "web-dui-tution"
-  }, {
-    path: "/admission/admissionInActiveBatch/create",
-    component: _2e0fda69,
-    name: "admission-admissionInActiveBatch-create"
-  }, {
-    path: "/admission/batch/create",
-    component: _4f6b12fd,
-    name: "admission-batch-create"
-  }, {
-    path: "/admission/department/create",
-    component: _5ba7997d,
-    name: "admission-department-create"
-  }, {
     path: "/employee/department/create",
-    component: _4bd116fe,
+    component: _917314fa,
     name: "employee-department-create"
   }, {
     path: "/employee/designation/create",
-    component: _47c7edbf,
+    component: _4afe5fda,
     name: "employee-designation-create"
   }, {
     path: "/employee/employee/create",
-    component: _49c74162,
+    component: _559c7d27,
     name: "employee-employee-create"
   }, {
     path: "/profile/qualification/create",
-    component: _69979b08,
+    component: _65a12766,
     name: "profile-qualification-create"
   }, {
     path: "/profile/social/create",
-    component: _a63bbabc,
+    component: _a419f606,
     name: "profile-social-create"
   }, {
     path: "/profile/training/create",
-    component: _91913fd6,
+    component: _90cdd0a0,
     name: "profile-training-create"
   }, {
-    path: "/student/attendance/report",
-    component: _276252f0,
-    name: "student-attendance-report"
-  }, {
-    path: "/student/course/assign",
-    component: _3dea27b9,
-    name: "student-course-assign"
-  }, {
-    path: "/student/course/create",
-    component: _52667946,
-    name: "student-course-create"
-  }, {
-    path: "/student/lecture-sheet/create",
-    component: _1f95ac96,
-    name: "student-lecture-sheet-create"
-  }, {
-    path: "/student/lesson-plan/create",
-    component: _6de3e9b2,
-    name: "student-lesson-plan-create"
-  }, {
-    path: "/student/question/create",
-    component: _5fcb091b,
-    name: "student-question-create"
-  }, {
-    path: "/student/syllabus/create",
-    component: _077f5c88,
-    name: "student-syllabus-create"
-  }, {
-    path: "/web-dui/blog/create",
-    component: _71bca8a3,
-    name: "web-dui-blog-create"
-  }, {
-    path: "/web-dui/committee/create",
-    component: _17efa624,
-    name: "web-dui-committee-create"
-  }, {
-    path: "/web-dui/event/create",
-    component: _7a9215e7,
-    name: "web-dui-event-create"
-  }, {
-    path: "/web-dui/facilitie/create",
-    component: _217da64f,
-    name: "web-dui-facilitie-create"
-  }, {
-    path: "/web-dui/notice/create",
-    component: _24c5a9a6,
-    name: "web-dui-notice-create"
-  }, {
-    path: "/web-dui/program/create",
-    component: _4c373c3d,
-    name: "web-dui-program-create"
-  }, {
-    path: "/web-dui/slider/create",
-    component: _50fc4cf8,
-    name: "web-dui-slider-create"
-  }, {
-    path: "/web-dui/tution/create",
-    component: _e3329e60,
-    name: "web-dui-tution-create"
-  }, {
-    path: "/admission/batch/update/:id?",
-    component: _3d2014f5,
-    name: "admission-batch-update-id"
-  }, {
     path: "/employee/employee/detail/:id?",
-    component: _01ba6062,
+    component: _655231a7,
     name: "employee-employee-detail-id"
   }, {
     path: "/employee/employee/update/:id?",
-    component: _374488da,
+    component: _ca474bc2,
     name: "employee-employee-update-id"
   }, {
-    path: "/student/attendance/create/:id?",
-    component: _69f4ac63,
-    name: "student-attendance-create-id"
-  }, {
-    path: "/student/course/update/:id?",
-    component: _2805a284,
-    name: "student-course-update-id"
-  }, {
-    path: "/student/lecture-sheet/update/:id",
-    component: _addfe0a6,
-    name: "student-lecture-sheet-update-id"
-  }, {
-    path: "/student/lesson-plan/update/:id",
-    component: _82522fc2,
-    name: "student-lesson-plan-update-id"
-  }, {
-    path: "/student/question/update/:id?",
-    component: _db8867da,
-    name: "student-question-update-id"
-  }, {
-    path: "/student/syllabus/update/:id?",
-    component: _28ac4798,
-    name: "student-syllabus-update-id"
-  }, {
-    path: "/web-dui/committee/update/:id",
-    component: _3d48bc9c,
-    name: "web-dui-committee-update-id"
-  }, {
-    path: "/admission/print-receive/:id?",
-    component: _21940a12,
-    name: "admission-print-receive-id"
-  }, {
-    path: "/admission/student-update/:id?",
-    component: _7d3d8652,
-    name: "admission-student-update-id"
-  }, {
     path: "/password-reset-confirm/:token?",
-    component: _087dd383,
+    component: _17e02ade,
     name: "password-reset-confirm-token"
   }, {
     path: "/",
-    component: _0ae5cb08,
+    component: _87a7da52,
     name: "index"
   }],
 

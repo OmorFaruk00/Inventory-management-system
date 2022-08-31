@@ -1,3 +1,4 @@
+export { default as File } from '../../components/File.vue'
 export { default as Topnav } from '../../components/Topnav.vue'
 
 // nuxt/nuxt.js#8607

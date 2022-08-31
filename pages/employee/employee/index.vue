@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="pt-5" v-if="auth">
+    <div class="row">
+      <div class="col-md-8 col-12 pl-4">
+        <div class="pt-5" v-if="auth">
       <div class="row">
         <div class="mx-auto col-md-12">
           <div class="panel">
@@ -15,6 +17,51 @@
                 </div>
               </div>
             </div>
+            <div class="panel-body table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>SL</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Depertment</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody v-if="employees">
+                  <tr v-for="(employee, index) in employees" :key="index">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.rel_designation.designation }}</td>
+                    <td>{{ employee.rel_department.department }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.personal_phone_no }}</td>
+                    <td><img :src="'http://localhost:8000/images/emp/' + employee.profile_photo" alt="image"
+                        style="height:80px;width: 100px;" /></td>
+                    <td>
+                      <button v-if="employee.status == 1" class="btn-active" @click="employeeStatus(employee.id)">
+                        Active
+                      </button>
+                      <button v-if="employee.status == 0" class="btn-inactive" @click="employeeStatus(employee.id)">
+                        Inactive
+                      </button>
+                    </td>
+                    <td class="pt-3">
+                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn-edit"
+                        style="padding:8px 15px" v-if="$auth.user.permission.includes('Employee-update')">Edit
+                      </nuxt-link>
+                      <nuxt-link :to="`/employee/employee/detail/${employee.id}`" class="btn-details"
+                        style="padding:8px 15px">Details</nuxt-link>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <div class="panel-body table-responsive">
               <table class="table table-striped table-bordered">
                 <thead>
@@ -99,14 +146,82 @@
       </div>
     </div>
     <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
+      </div>
+      <div class="col-md-4 col-12">
+
+         <div class="scroll-div ">
+          <div class="mt-5 ">
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div><div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+         </div>
+
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
-  layout: "Emp-content",
+  layout: "Sidebar",
   mounted() {
     this.getEmployee();
-
   },
   data() {
     return {
@@ -184,4 +299,24 @@ export default {
 };
 </script>
 <style scoped>
+  .scroll-div{
+    width: 100%;    
+    /* right: 0;    */
+    height: 100vh;   
+    overflow-y: scroll;
+    position: fixed;
+   background: #f9f9f9;
+  }
+  .scroll-div::-webkit-scrollbar {
+  display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .scroll-div{
+      position: absolute;
+
+    }
+
+  }
+
+  
 </style>

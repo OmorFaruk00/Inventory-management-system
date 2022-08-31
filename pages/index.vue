@@ -29,8 +29,8 @@
 											clip-rule="evenodd" />
 									</svg></span>
 							</div>
-							<input type="text" class="form-control" id="email" placeholder="username" v-model="login.email"
-								autocomplete />
+							<input type="text" class="form-control" id="email" placeholder="username"
+								v-model="login.email" autocomplete />
 						</div>
 						<p v-if="errors.email" v-text="errors.email[0]" class="text-danger"></p>
 
@@ -70,7 +70,7 @@
 						<div class="row">
 							<div class="col-sm-12 col-md-6 col-xl-6">
 								<div class="remember">
-									<input type="checkbox" class="text-white" id="rememberMe"/>Remember Me
+									<input type="checkbox" class="text-white" id="rememberMe" />Remember Me
 								</div>
 							</div>
 							<div class="col-sm-12 col-md-6 col-xl-6">
@@ -94,6 +94,7 @@
 <script>
 export default {
 	auth: false,
+
 	mounted() { },
 	data() {
 		return {
@@ -122,8 +123,8 @@ export default {
 				this.nonvisibile = true;
 				this.visibile = false;
 			}
-		},	
-		
+		},
+
 		async userLogin() {
 			await this.$auth
 				.loginWith("laravelSanctum", { data: this.login })
@@ -132,7 +133,7 @@ export default {
 						this.login_error = res.data.message;
 					}
 					// this.$toaster.success("Login Successful");
-					this.$router.push("/app");
+					this.$router.push("/dashboard");
 				})
 				.catch((error) => {
 					console.log(error);

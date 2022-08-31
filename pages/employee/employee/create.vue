@@ -208,7 +208,7 @@
 </template>
 <script>
 export default {
-    layout: "Emp-content",
+    layout: "Sidebar",
     mounted() {
         this.getDesignation();
         this.getDepartment();

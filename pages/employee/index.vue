@@ -6,6 +6,6 @@
 </template>
 <script>
 export default {
-    layout: "Emp-content",
+    layout: "Sidebar",
     }
 </script>

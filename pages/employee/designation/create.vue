@@ -30,7 +30,7 @@
 </template>
 <script>
 export default {
-    layout: "Emp-content",
+    layout: "Sidebar",
     data() {
         return {
             designation: {

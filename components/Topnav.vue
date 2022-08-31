@@ -3,8 +3,8 @@
     <nav class="navbar navbar-expand-lg topnav ">
       <button class="btn btn-primary" id="menu-toggle"> <img src="/images/menu.png" alt="">
       </button>
-      <nuxt-link to="/app">
-        <h4 class="cms-title">Central Management System | Darul Uloom Islamia</h4>
+      <nuxt-link to="/dashboard">
+        <h4 class="cms-title">Inventory Management System</h4>
       </nuxt-link>
       <div class="ml-auto">
         <div class="dropdown">
@@ -53,8 +53,6 @@ export default {
     userprofile() {
       document.getElementById("user").classList.toggle("show");
     },
-
-
     logout() {
       this.$auth.logout().then(response => {
         console.log(response);
@@ -111,16 +109,6 @@ export default {
 .show {
   display: block;
 }
-.sidebar {
-  text-align: center;
-  line-height: 50px;
-
-}
-
-.sidebar-item {
-  font-size: 18px;
-  color: #000;
-}
 
 .user-icon {
   height: 30px;
@@ -149,7 +137,8 @@ export default {
 
 .cms-title {
   padding-left: 50px;
-  color: #fff;
+  /* color:linear-gradient(#00c6ff, #596cff); */
+  color:#000;
   font-weight: bolder;
 }
 
@@ -158,83 +147,22 @@ a {
 }
 
 .topnav {
-  background: #337ab7;
+  background: #f6f6f6;
+  /* background: #337ab7; */
   position: sticky;
     top: 0px;
 
 }
-
-#sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
-  padding-top: 58px;
-  background: #f2f2f2;
-}
-
-
 #menu-toggle {
-  background: #337ab7;
+  background: linear-gradient(#00c6ff,#596cff);  
   border: none;
-
 }
-
 #menu-toggle:hover {
-  background: #21537f;
-
+  /* background: #21537f; */
 }
 
 #menu-toggle img {
   height: 20px;
-
-
-}
-
-
-
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
-}
-
-#sidebar-wrapper .list-group {
-  width: 15rem;
-}
-
-#page-content-wrapper {
-  min-width: 100vw;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
-}
-
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
-}
-
-.bg-light {
-  background-color: rgb(10, 94, 118);
-
-}
-
-#page-content-wrapper {
-  background-color: #fff;
-
 }
 </style>
 
