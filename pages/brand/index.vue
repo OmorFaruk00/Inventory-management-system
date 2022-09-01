@@ -1,17 +1,16 @@
 <template>
     <div>
-        <div class="pt-3 pr-3">
+        <div class="pt-2 pr-3 mb-2">
             <div class="row">
                 <div class="col col-sm-5 col-xs-12">
-                    <h4 class="title">Brand List</h4>
+                    <h4 class="pt-3">Brand List</h4>
                 </div>
-                <div class="col-sm-7 col-xs-12 text-right pt-3">
-                    <nuxt-link to="/brand/create" class="btn-add"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"
-                            style="height:20px; font-weight:600">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                        </svg>
-                        Add Brand</nuxt-link>
+                <div class="col-sm-7 col-xs-12 text-right pt-1">
+                    <button type="button" class="btn-add" style="border:none" data-toggle="modal"
+                        data-target="#myModal">
+                        <img src="images/add.png" alt="" height="30px">
+                    </button>
+
                 </div>
             </div>
         </div>
@@ -21,7 +20,7 @@
                     <tr>
                         <th>SL</th>
                         <th>Name</th>
-                        <th>Image</th>         
+                        <th>Image</th>
 
                         <th>Action</th>
                     </tr>
@@ -30,17 +29,17 @@
                     <tr>
                         <td> 1 </td>
                         <td>Mi</td>
-                        
+
                         <td>2300</td>
 
                         <td>
-                            <button class="btn-edit" @click="designationEdit(designation.id)"><img
-                                    src="images/edit1.png" height="30px">
+                            <button class="btn" @click="brandEdit(brand.id)"><img src="images/edit1.png"
+                                    height="30px">
 
 
                             </button>
-                            <button class="btn-delete" @click="designationDelete(designation.id)"><img
-                                    src="images/delete.png" height="30px">
+                            <button class="btn" @click="brandDelete(brand.id)"><img src="images/delete.png"
+                                    height="30px">
 
                             </button>
                         </td>
@@ -51,32 +50,63 @@
 
 
         </div>
+
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header card-header">
+                        <h4 class="modal-title">Brand Add</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for=""> Brand Name <span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" placeholder="" v-model="brand">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer card-footer">
+                        <button type="submit" class="btn-submit" @click="brandAdd()">Submit</button>
+                        <!-- <button v-if="brand=!''" type="submit" class="btn-submit" @click="brandAdd()">Update</button> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </template>
   <script>
 export default {
     layout: "Sidebar",
     mounted() {
-        this.getDesignation();
+        this.getbrand();
 
     },
     data() {
         return {
-            auth: true,
-            designations: '',
-            designation: {
-                type: "",
-                name: '',
-            },
-            errors: {},
+        brand:'',
+        errors: {},
         };
     },
     methods: {
-        getDesignation() {
+        brandAdd(){
+            alert(this.brand);
+            
+
+        },
+        brandUpdate(){
+            alert(this.brand);
+            
+
+        },
+        getbrand() {
             this.$axios
-                .$get("/designation/show")
+                .$get("/brand/show")
                 .then((res) => {
-                    this.designations = res;
+                    this.brands = res;
                 })
                 .catch((error) => {
                     if (error.response.status == 401) {
@@ -86,23 +116,23 @@ export default {
                     console.log(error);
                 });
         },
-        designationEdit(id) {
-            $("#designationUpdate").modal("show");
+        brandEdit(id) {
+            $("#brandUpdate").modal("show");
             this.$axios
-                .$get("/designation/edit/" + id)
+                .$get("/brand/edit/" + id)
                 .then((res) => {
-                    this.designation = res;
+                    this.brand = res;
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         },
-        designationUpdate() {
+        brandUpdate() {
             this.$axios
-                .$post("/designation/update/" + this.designation.id, this.designation)
+                .$post("/brand/update/" + this.brand.id, this.brand)
                 .then((res) => {
-                    this.getDesignation();
-                    $("#designationUpdate").modal("hide");
+                    this.getbrand();
+                    $("#brandUpdate").modal("hide");
                     this.$toaster.success(res.message);
                     this.errors = "";
 
@@ -113,12 +143,12 @@ export default {
                     this.errors = err.response.data.errors;
                 });
         },
-        designationDelete(id) {
-            if (confirm("Are you sure to delete this designation?")) {
+        brandDelete(id) {
+            if (confirm("Are you sure to delete this brand?")) {
                 this.$axios
-                    .$get("/designation/delete/" + id)
+                    .$get("/brand/delete/" + id)
                     .then((res) => {
-                        this.getDesignation();
+                        this.getbrand();
                         this.$toaster.error(res.message);
                     })
                     .catch((err) => {
@@ -126,12 +156,12 @@ export default {
                     });
             }
         },
-        designationStatus(id) {
+        brandStatus(id) {
             this.$axios
-                .$get("/designation/status/" + id)
+                .$get("/brand/status/" + id)
                 .then((res) => {
                     console.log(res);
-                    this.getDesignation();
+                    this.getbrand();
                     this.$toaster.success(res.message);
                 })
                 .catch((err) => {

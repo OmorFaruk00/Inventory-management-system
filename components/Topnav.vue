@@ -1,7 +1,7 @@
 <template>
   <div class="sticky-top">
     <nav class="navbar navbar-expand-lg topnav ">
-      <button class="btn btn-primary" id="menu-toggle"> <img src="/images/menu.png" alt="">
+      <button class="" id="menu-toggle"> <img src="/images/menu.png" alt="">
       </button>
       <nuxt-link to="/dashboard">
         <h4 class="cms-title">Inventory Management System</h4>
@@ -139,7 +139,7 @@ export default {
   padding-left: 50px;
   /* color:linear-gradient(#00c6ff, #596cff); */
   color:#000;
-  font-weight: bolder;
+  /* font-weight: bolder; */
 }
 
 a {
@@ -154,7 +154,7 @@ a {
 
 }
 #menu-toggle {
-  background: linear-gradient(#00c6ff,#596cff);  
+  /* background: linear-gradient(#00c6ff,#596cff);   */
   border: none;
 }
 #menu-toggle:hover {
