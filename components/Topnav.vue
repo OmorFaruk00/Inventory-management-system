@@ -15,8 +15,8 @@
               <img :src="base_url+'/images/emp/' + $auth.user.profile_photo" alt="image" class="profile" />
             </div>
             <div class="user-text">
-              <h4 class="pt-3">{{ $auth.user.name }}</h4>
-              <p >{{ $auth.user.rel_designation.designation}}</p>
+              <!-- <h4 class="pt-3">{{ $auth.user.name ?? null }}</h4>
+              <p >{{ $auth.user.rel_designation.designation ?? null}}</p> -->
             </div>
 
             <div class="d-flex justify-content-center mb-4">

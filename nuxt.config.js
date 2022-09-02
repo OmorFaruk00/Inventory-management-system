@@ -48,6 +48,7 @@ export default {
     {src: '~/plugins/owl.js', ssr: false},
     {src: '~/plugins/vue-toaster.js', ssr: false},
     {src: '~/plugins/fontawesome.js', ssr: false},
+    {src: '~/plugins/pagination.js', ssr: false},
   ],
 
 

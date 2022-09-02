@@ -249,13 +249,13 @@ input:focus {
 
 .login_btn {
 	color: black;
-	background-color: #ffc312;
+	background-color: #ffc312 !important;
 	width: 100px;
 }
 
 .login_btn:hover {
 	color: black;
-	background-color: white;
+	background-color: white !important;
 }
 
 .links {

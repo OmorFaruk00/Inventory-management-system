@@ -20,6 +20,7 @@ import nuxt_plugin_axios_ecc147f2 from 'nuxt_plugin_axios_ecc147f2' // Source: .
 import nuxt_plugin_owl_47c2522e from 'nuxt_plugin_owl_47c2522e' // Source: ../plugins/owl.js (mode: 'client')
 import nuxt_plugin_vuetoaster_a0853800 from 'nuxt_plugin_vuetoaster_a0853800' // Source: ../plugins/vue-toaster.js (mode: 'client')
 import nuxt_plugin_fontawesome_b8db358e from 'nuxt_plugin_fontawesome_b8db358e' // Source: ../plugins/fontawesome.js (mode: 'client')
+import nuxt_plugin_pagination_0c55d867 from 'nuxt_plugin_pagination_0c55d867' // Source: ../plugins/pagination.js (mode: 'client')
 import nuxt_plugin_auth_31753049 from 'nuxt_plugin_auth_31753049' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -243,6 +244,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_fontawesome_b8db358e === 'function') {
     await nuxt_plugin_fontawesome_b8db358e(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_pagination_0c55d867 === 'function') {
+    await nuxt_plugin_pagination_0c55d867(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_31753049 === 'function') {
