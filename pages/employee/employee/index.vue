@@ -1,25 +1,33 @@
 <template>
-  <div>
-    <div class="row">
-      <div class="col-md-8 col-12 pl-4">
-        <div class="pt-5" v-if="auth">
-      <div class="row">
-        <div class="mx-auto col-md-12">
-          <div class="panel">
-            <div class="panel-heading">
-              <div class="row">
-                <div class="col col-sm-5 col-xs-12">
-                  <h6 class="title">Employee List</h6>
+  
+    
+      <div class="body-shadow">
+        
+        <div class="pt-2 pr-3 mb-2">
+            <div class="row">
+                <div class="col col-sm-5 col-xs-12 d-flex">
+                    <h4 class="pt-3">Employee List</h4>
+                    <div class="d-block pt-3 pl-4">
+                        <label for=""> Show</label>
+                        <select class="mx-2 pr-2" v-model="list" @change="getEmployee">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <label for=""> Total entries {{employees.total}}</label>
+                    </div>
                 </div>
-                <div class="col-sm-7 col-xs-12 text-right">
-                  <nuxt-link to="/employee/employee/create" class="btn-add"
-                    v-if="$auth.user.permission.includes('Employee-add')">Add Employee</nuxt-link>
+                <div class="col-sm-7 col-xs-12 text-right pt-1">
+                    <nuxt-link to="/employee/employee/create" type="button" class="btn-add">
+                        <img src="/images/add.png" alt="" height="30px" />
+                    </nuxt-link>
                 </div>
-              </div>
             </div>
-            <div class="panel-body table-responsive">
-              <table class="table table-striped table-bordered">
-                <thead>
+        </div>
+           
+            <div class="mr-3">
+              <table class="table t-body">
+                <thead class="t-head">
                   <tr>
                     <th>SL</th>
                     <th>Name</th>
@@ -33,8 +41,8 @@
                   </tr>
                 </thead>
                 <tbody v-if="employees">
-                  <tr v-for="(employee, index) in employees" :key="index">
-                    <td>{{ index + 1 }}</td>
+                  <tr v-for="(employee, index) in employees.data" :key="index" class="t-row">
+                    <td>{{ employees.current_page * list - list + index + 1 }}</td>
                     <td>{{ employee.name }}</td>
                     <td>{{ employee.rel_designation.designation }}</td>
                     <td>{{ employee.rel_department.department }}</td>
@@ -43,204 +51,55 @@
                     <td><img :src="'http://localhost:8000/images/emp/' + employee.profile_photo" alt="image"
                         style="height:80px;width: 100px;" /></td>
                     <td>
-                      <button v-if="employee.status == 1" class="btn-active" @click="employeeStatus(employee.id)">
-                        Active
+                      <button v-if="employee.status == 1" class="btn" @click="employeeStatus(employee.id)">
+                       <img src="/images/active.png" alt="">
                       </button>
-                      <button v-if="employee.status == 0" class="btn-inactive" @click="employeeStatus(employee.id)">
-                        Inactive
+                      <button v-if="employee.status == 0" class="btn" @click="employeeStatus(employee.id)">
+                        <img src="/images/inactive.png" alt="">
                       </button>
                     </td>
                     <td class="pt-3">
-                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn-edit"
-                        style="padding:8px 15px" v-if="$auth.user.permission.includes('Employee-update')">Edit
+                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn"
+                      ><img src="/images/edit.png" alt="">
                       </nuxt-link>
-                      <nuxt-link :to="`/employee/employee/detail/${employee.id}`" class="btn-details"
-                        style="padding:8px 15px">Details</nuxt-link>
+                      <nuxt-link :to="`/employee/employee/detail/${employee.id}`" class="btn"
+                       ><img src="/images/info.png" alt=""></nuxt-link>
                     </td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-
-            <div class="panel-body table-responsive">
-              <table class="table table-striped table-bordered">
-                <thead>
-                  <tr>
-                    <th>SL</th>
-                    <th>Name</th>
-                    <th>Designation</th>
-                    <th>Depertment</th>
-                    <th>E-mail</th>
-                    <th>Phone</th>
-                    <th>Image</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody v-if="employees">
-                  <tr v-for="(employee, index) in employees" :key="index">
-                    <td>{{ index + 1 }}</td>
-                    <td>{{ employee.name }}</td>
-                    <td>{{ employee.rel_designation.designation }}</td>
-                    <td>{{ employee.rel_department.department }}</td>
-                    <td>{{ employee.email }}</td>
-                    <td>{{ employee.personal_phone_no }}</td>
-                    <td><img :src="'http://localhost:8000/images/emp/' + employee.profile_photo" alt="image"
-                        style="height:80px;width: 100px;" /></td>
-                    <td>
-                      <button v-if="employee.status == 1" class="btn-active" @click="employeeStatus(employee.id)">
-                        Active
-                      </button>
-                      <button v-if="employee.status == 0" class="btn-inactive" @click="employeeStatus(employee.id)">
-                        Inactive
-                      </button>
-                    </td>
-                    <td class="pt-3">
-                      <nuxt-link :to="`/employee/employee/update/${employee.id}`" class="btn-edit"
-                        style="padding:8px 15px" v-if="$auth.user.permission.includes('Employee-update')">Edit
-                      </nuxt-link>
-                      <nuxt-link :to="`/employee/employee/detail/${employee.id}`" class="btn-details"
-                        style="padding:8px 15px">Details</nuxt-link>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+            </div>            
+                  <!-- pagination         -->
+        <vs-pagination :total-pages="employees.last_page" @change="getEmployee"></vs-pagination>
+         
         </div>
-      </div>
+      
 
 
 
-      <div class="col-12">
-        <div class="row">
-          <div class="col-lg-2 col-md-2 col-sm-12">
-            Showing <span v-html="meta.from || 0"></span> to
-            <span v-html="meta.to || 0"></span>
-            of
-            <span v-html="meta.total"></span> entries
-          </div>
-          <div class="col-lg-10 col-md-10 col-sm-12">
-            <nav aria-label="Page navigation example" class="my-3 mx-2">
-              <ul class="pagination pagination-sm justify-content-end">
-                <li class="page-item" :class="meta.current_page > 1 ? '' : 'disabled'">
-                  <a class="page-link" href="javaScript:void(0)" @click="paginatePreview" aria-label="Previous">
-                    <!-- <span aria-hidden="true">&laquo;</span> -->
-                    <span class="">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item" v-for="(row, index) in meta.last_page" :key="index"
-                  :class="row == meta.current_page ? 'active' : ''">
-                  <a class="page-link" href="javaScript:void(0)" @click="paginatePageWise(row)" v-text="row"></a>
-                </li>
-                <li class="page-item" :class="meta.last_page > meta.current_page ? '' : 'disabled'">
-                  <a class="page-link" href="javaScript:void(0)" @click="paginateNext" aria-label="Next">
-                    <!-- <span aria-hidden="true">&raquo;</span> -->
-                    <span class="">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h2 class="text-center text-danger mt-5" v-else>You are not authorized</h2>
-      </div>
-      <div class="col-md-4 col-12">
-
-         <div class="scroll-div ">
-          <div class="mt-5 ">
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div><div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some example text. Some example text.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
-         </div>
-
-      </div>
-    </div>
-  </div>
+  
 </template>
 <script>
 export default {
   layout: "Sidebar",
   mounted() {
     this.getEmployee();
+
   },
   data() {
-    return {
-      auth: true,
+    return {      
       employees: '',
-      links: '',
-      meta: '',
-      page: '',
+      list:10,
       errors: {},
     };
   },
   methods: {
-    getEmployee() {
+    getEmployee(page = 1) {
       this.$axios
-        .$get("/employee/show-paginate?page=" + this.page)
+        .$get("/employee/show-paginate/"+this.list+"?page=" + page)
         .then((response) => {
-          this.employees = response.data;
-          this.links = response.data.links;
-          this.meta = response;
+          this.employees = response;
+          
         })
         .catch((error) => {
           if (error.response.status == 401) {
@@ -277,46 +136,15 @@ export default {
           console.log(error);
         });
     },
-    paginatePreview() {
-      let page_number = parseInt(this.meta.current_page - 1);
-      this.page = page_number;
-      this.getEmployee();
-    },
-
-    paginateNext() {
-      let page_number = parseInt(this.meta.current_page + 1);
-      this.page = page_number;
-      this.getEmployee();
-
-    },
-
-    paginatePageWise(row) {
-      window.scrollTo(0, 0);
-      this.page = row;
-      this.getEmployee();
-    },
+   
   },
 };
 </script>
-<style scoped>
-  .scroll-div{
-    width: 100%;    
-    /* right: 0;    */
-    height: 100vh;   
-    overflow-y: scroll;
-    position: fixed;
-   background: #f9f9f9;
+<style lang="scss" >
+  .vs-pagination>li.vs-pagination--active a {
+      background: #f5f5f5 !important;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
-  .scroll-div::-webkit-scrollbar {
-  display: none;
-  }
-  @media only screen and (max-width: 768px) {
-    .scroll-div{
-      position: absolute;
-
-    }
-
-  }
-
+  </style>
   
-</style>

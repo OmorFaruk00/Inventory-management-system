@@ -17,6 +17,7 @@ export default {
       {rel: 'stylesheet', id: 'bootstrap-style', href: '/css/bootstrap.min.css'},
       {rel: 'stylesheet', id: 'font-awesome-style', href: '/css/font-awesome.min.css'},
       {rel: 'stylesheet', id: 'style-style', href: '/css/style.css'},
+      {rel: 'stylesheet/scss', id: 'style-style', href: '/css/style.scss'},
 
 
 
@@ -39,6 +40,7 @@ export default {
   css: [   
   //  '@/assets/css/main.css',
   //  '/css/font-awesome.min.css',
+  // '@/css/style.scss'
 
 
   ],

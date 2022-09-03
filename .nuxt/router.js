@@ -16,8 +16,6 @@ const _dbe8ead2 = () => interopDefault(import('../pages/product/index.vue' /* we
 const _9909b25e = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _f4b17290 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _2be38172 = () => interopDefault(import('../pages/unit/index.vue' /* webpackChunkName: "pages/unit/index" */))
-const _1a3803a2 = () => interopDefault(import('../pages/brand/create.vue' /* webpackChunkName: "pages/brand/create" */))
-const _5bda155c = () => interopDefault(import('../pages/category/create.vue' /* webpackChunkName: "pages/category/create" */))
 const _6a7a31f4 = () => interopDefault(import('../pages/customer/category.vue' /* webpackChunkName: "pages/customer/category" */))
 const _6610b31c = () => interopDefault(import('../pages/customer/create.vue' /* webpackChunkName: "pages/customer/create" */))
 const _3f45da7b = () => interopDefault(import('../pages/employee/department/index.vue' /* webpackChunkName: "pages/employee/department/index" */))
@@ -35,7 +33,6 @@ const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue'
 const _ffa5554e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
 const _6ad6f226 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
-const _7840f78c = () => interopDefault(import('../pages/unit/create.vue' /* webpackChunkName: "pages/unit/create" */))
 const _5dac80ba = () => interopDefault(import('../pages/employee/department/create.vue' /* webpackChunkName: "pages/employee/department/create" */))
 const _6d8459ba = () => interopDefault(import('../pages/employee/designation/create.vue' /* webpackChunkName: "pages/employee/designation/create" */))
 const _63e86172 = () => interopDefault(import('../pages/employee/employee/create.vue' /* webpackChunkName: "pages/employee/employee/create" */))
@@ -107,14 +104,6 @@ export const routerOptions = {
     component: _2be38172,
     name: "unit"
   }, {
-    path: "/brand/create",
-    component: _1a3803a2,
-    name: "brand-create"
-  }, {
-    path: "/category/create",
-    component: _5bda155c,
-    name: "category-create"
-  }, {
     path: "/customer/category",
     component: _6a7a31f4,
     name: "customer-category"
@@ -182,10 +171,6 @@ export const routerOptions = {
     path: "/setting/special-permission",
     component: _6ad6f226,
     name: "setting-special-permission"
-  }, {
-    path: "/unit/create",
-    component: _7840f78c,
-    name: "unit-create"
   }, {
     path: "/employee/department/create",
     component: _5dac80ba,

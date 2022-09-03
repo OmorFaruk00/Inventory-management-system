@@ -2,8 +2,17 @@
     <div class="body-shadow">
         <div class="pt-2 pr-3 mb-2">
             <div class="row">
-                <div class="col col-sm-5 col-xs-12">
+                <div class="col col-sm-5 col-xs-12 d-flex">
                     <h4 class="pt-3">Brand List</h4>
+                    <div class="d-block pt-3 pl-4">
+                        <label for=""> Show</label>
+                        <select class="mx-2 pr-2" v-model="list" @change="DataGet">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <label for=""> Total entries {{brands.total}}</label>
+                    </div>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right pt-1">
                     <button type="button" class="btn-add" style="border: none" data-toggle="modal" data-target="#Modal">
@@ -22,8 +31,8 @@
                     </tr>
                 </thead>
                 <tbody v-for="(brand, index) in brands.data" :key="index">
-                    <tr>
-                        <td>{{(brands.current_page*3)-3 + index+1}}</td>
+                    <tr class="t-row">
+                        <td>{{ brands.current_page * list - list + index + 1 }}</td>
                         <td>{{ brand.name }}</td>
                         <td>
                             <button class="btn" @click="DataEdit(brand.id)">
@@ -36,7 +45,6 @@
                     </tr>
                 </tbody>
             </table>
-            
         </div>
         <!-- pagination         -->
         <vs-pagination :total-pages="brands.last_page" @change="DataGet"></vs-pagination>
@@ -47,9 +55,9 @@
                     <div class="modal-header card-header">
                         <h4 v-if="add" class="modal-title">Brand Add</h4>
                         <h4 v-if="update" class="modal-title">Brand Update</h4>
-                        <button type="button" class="close" data-dismiss="modal" @click="name = ''; add = true; update = false; errors = '';
+                        <button type="button" class="close" data-dismiss="modal" @click="name = '';add = true;update = false;errors = '';
                         ">
-                            &times;
+                            
                         </button>
                     </div>
                     <div class="modal-body">
@@ -70,7 +78,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </template>
 <script>
@@ -87,15 +95,15 @@ export default {
             brands: "",
             errors: {},
             id: "",
+            list: 10,
         };
     },
     methods: {
         DataGet(page = 1) {
             this.$axios
-                .$get("/brand?page=" + page)
+                .$get("/brand/" + this.list + "?page=" + page)
                 .then((response) => {
                     this.brands = response;
-                    console.log(response);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -190,5 +198,10 @@ export default {
     },
 };
 </script>
-<style scoped>
+<style lang="scss" >
+.vs-pagination>li.vs-pagination--active a {
+    background: #f5f5f5 !important;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
 </style>

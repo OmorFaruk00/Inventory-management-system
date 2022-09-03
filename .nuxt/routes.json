@@ -84,20 +84,6 @@
     "_name": "_2be38172"
   },
   {
-    "name": "brand-create",
-    "path": "/brand/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/brand/create.vue",
-    "chunkName": "pages/brand/create",
-    "_name": "_1a3803a2"
-  },
-  {
-    "name": "category-create",
-    "path": "/category/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/category/create.vue",
-    "chunkName": "pages/category/create",
-    "_name": "_5bda155c"
-  },
-  {
     "name": "customer-category",
     "path": "/customer/category",
     "component": "/home/omorfaruk/Desktop/Pos/pages/customer/category.vue",
@@ -215,13 +201,6 @@
     "component": "/home/omorfaruk/Desktop/Pos/pages/setting/special-permission.vue",
     "chunkName": "pages/setting/special-permission",
     "_name": "_6ad6f226"
-  },
-  {
-    "name": "unit-create",
-    "path": "/unit/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/unit/create.vue",
-    "chunkName": "pages/unit/create",
-    "_name": "_7840f78c"
   },
   {
     "name": "employee-department-create",

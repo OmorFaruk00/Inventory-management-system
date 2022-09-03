@@ -173,5 +173,12 @@ export default {
 };
 </script>
   <style scoped>
+    .btn-search{
+      border:none;
+      /* background: #000; */
+      background: rgba(235,237,240) !important;
+       border-radius: 0px 20px 20px 0px;
+
+    }
 </style>
   
