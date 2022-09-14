@@ -259,6 +259,13 @@
     "_name": "_6dd4c782"
   },
   {
+    "name": "product-update-id",
+    "path": "/product/update/:id?",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/product/update/_id.vue",
+    "chunkName": "pages/product/update/_id",
+    "_name": "_55dbffff"
+  },
+  {
     "name": "password-reset-confirm-token",
     "path": "/password-reset-confirm/:token?",
     "component": "/home/omorfaruk/Desktop/Pos/pages/password-reset-confirm/_token.vue",

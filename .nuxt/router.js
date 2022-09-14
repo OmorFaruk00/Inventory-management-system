@@ -41,6 +41,7 @@ const _791c3246 = () => interopDefault(import('../pages/profile/social/create.vu
 const _68e70190 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
 const _d8e91872 = () => interopDefault(import('../pages/employee/employee/detail/_id.vue' /* webpackChunkName: "pages/employee/employee/detail/_id" */))
 const _6dd4c782 = () => interopDefault(import('../pages/employee/employee/update/_id.vue' /* webpackChunkName: "pages/employee/employee/update/_id" */))
+const _55dbffff = () => interopDefault(import('../pages/product/update/_id.vue' /* webpackChunkName: "pages/product/update/_id" */))
 const _9e61a684 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
 const _b72a9692 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -203,6 +204,10 @@ export const routerOptions = {
     path: "/employee/employee/update/:id?",
     component: _6dd4c782,
     name: "employee-employee-update-id"
+  }, {
+    path: "/product/update/:id?",
+    component: _55dbffff,
+    name: "product-update-id"
   }, {
     path: "/password-reset-confirm/:token?",
     component: _9e61a684,

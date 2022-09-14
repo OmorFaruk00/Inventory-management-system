@@ -7,7 +7,7 @@
                         <div class="form-content">
                             <div class="form-horizontal">
                                 <div class="text-center card-header mb-4 d-flex justify-content-between">
-                                    <h4 class="ml-3">Product Add</h4>
+                                    <h4 class="ml-3">Product Update</h4>
                                     <div>
                                         <nuxt-link to="/product" class="text-dark mr-3"><img src="/images/list.png"
                                                 alt="list" height="20px" />
@@ -20,16 +20,16 @@
                                             <label for="">
                                                 Product Name <span class="text-danger">*</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product name"
-                                                v-model="product.name" />
-                                                <p v-if="errors.product_name" v-text="errors.product_name[0]" class="text-danger"></p>
+                                                v-model="product.product_name" />
+                                            <p v-if="errors.name" v-text="errors.name[0]" class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group">
                                             <label for="">Product Code <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product code"
-                                                v-model="product.code" />
-                                                <p v-if="errors.product_code" v-text="errors.product_code[0]" class="text-danger"></p>
+                                                v-model="product.product_code" />
+                                            <p v-if="errors.code" v-text="errors.code[0]" class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -56,7 +56,8 @@
                                                     {{ category.name }}
                                                 </option>
                                             </select>
-                                            <p v-if="errors.category" v-text="errors.category[0]" class="text-danger"></p>
+                                            <p v-if="errors.category" v-text="errors.category[0]" class="text-danger">
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -85,7 +86,8 @@
                                                     *</span></label>
                                             <input class="form-control" type="number" placeholder="Enter Purchase Price"
                                                 v-model="product.purchase_price" />
-                                                <p v-if="errors.purchase_price" v-text="errors.purchase_price[0]" class="text-danger"></p>
+                                            <p v-if="errors.purchase_price" v-text="errors.purchase_price[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -93,7 +95,8 @@
                                             <label for="">Sales Price<span class="text-danger"> *</span></label>
                                             <input class="form-control" type="number" placeholder="Enter sales price"
                                                 v-model="product.sales_price" />
-                                                <p v-if="errors.sales_price" v-text="errors.sales_price[0]" class="text-danger"></p>
+                                            <p v-if="errors.sales_price" v-text="errors.sales_price[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -109,7 +112,8 @@
                                                 <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="number"
                                                 placeholder=" Enter Opening Quantity" v-model="product.opening_qty" />
-                                                <p v-if="errors.opening_qty" v-text="errors.opening_qty[0]" class="text-danger"></p>
+                                            <p v-if="errors.opening_qty" v-text="errors.opening_qty[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -117,13 +121,6 @@
                                             <label for=""> Alert Qty</label>
                                             <input class="form-control" type="number" placeholder="Enter Alert barcode"
                                                 v-model="product.alert_qty" />
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-xl-4">
-                                        <div class="form-group">
-                                            <label for=""> Discount</label>
-                                            <input class="form-control" type="number" placeholder="Enter Product Discount"
-                                                v-model="product.discount" />
                                         </div>
                                     </div>
 
@@ -145,8 +142,14 @@
                                         <div class="form-group">
                                             <label for="">Image</label>
                                             <input type="file" class="form-control" placeholder=""
-                                                @change="(e) => (product.image = e.target.files[0])" accept="image/*" />
-                                                <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
+                                                @change="(e) => (product.new_image = e.target.files[0])" accept="image/*" />
+                                            <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="form-group">
+                                            <img :src="base_url + '/images/product/' + product.image" alt="image"
+                                                style="height:80px;width: 100px;" />
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-xl-12">
@@ -159,8 +162,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-3 card-footer">
-                                    <button class="btn-submit mr-4" @click="DataStore()">
-                                        Submit
+                                    <button class="btn-submit mr-4" @click="DataUpdate()">
+                                        Update
                                     </button>
                                 </div>
                             </div>
@@ -168,7 +171,8 @@
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
+        
     </div>
 </template>
 
@@ -177,12 +181,14 @@ export default {
     layout: "Sidebar",
     created() {
         this.DataGet();
+        this.DataEdit();
     },
     data() {
         return {
             product_list: "",
             name: "",
             errors: {},
+            base_url: process.env.url,
             product: {
                 name: "",
                 code: "",
@@ -197,11 +203,11 @@ export default {
                 alert_qty: "",
                 warranty: "",
                 guarantee: "",
-                discount: "",
                 image: "",
                 description: "",
 
-            }
+            },
+
         };
     },
     methods: {
@@ -216,7 +222,20 @@ export default {
                 });
         },
 
-        DataStore() {
+        DataEdit() {
+            this.$axios
+                .$get("/product/" + this.$route.params.id + "/edit")
+                .then((response) => {
+                    this.product = response;
+
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+
+        DataUpdate() {
+            
             let formData = new FormData();
             formData.append('product_name', this.product.product_name)
             formData.append('product_code', this.product.product_code)
@@ -231,15 +250,17 @@ export default {
             formData.append('alert_qty', this.product.alert_qty)
             formData.append('warranty', this.product.warranty)
             formData.append('guarantee', this.product.guarantee)
-            formData.append('discount', this.product.discount)
             formData.append('description', this.product.description)
-            formData.append('image', this.product.image)
+            if(this.product.new_image){
+                formData.append('image', this.product.new_image)
+            }           
 
             this.$axios
-                .$post("/product", formData)
+                .$post("/products/update/"+ this.$route.params.id, formData)
                 .then((response) => {
-                    this.product = '';
-                    this.errors = '';
+                    console.log(formData);
+                    // this.product = '';
+                    // this.errors = '';
                     this.$swal({
                         title: "Success",
                         position: "top",

@@ -100,7 +100,7 @@ height: 20px;
 }
 .btn-submit{
     color: rgba(255,255,255,0.8);
-    background: linear-gradient(#00c6ff,#596cff);
+    background: linear-gradient(#45c8f1,#0c5460);
     font-size: 18px;
     font-weight: 700;
     text-transform: capitalize;
@@ -169,6 +169,13 @@ height: 20px;
     color: #313133 !important;    
     text-decoration: none;     
 }
+.btn-search{
+    border:none;
+    /* background: #000; */
+    background: rgba(235,237,240) !important;
+     border-radius: 0px 20px 20px 0px;
+
+  }
 .title {
     color: #000;
     font-size: 25px;

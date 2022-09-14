@@ -57,7 +57,7 @@
                         <h4 v-if="update" class="modal-title">Brand Update</h4>
                         <button type="button" class="close" data-dismiss="modal" @click="name = '';add = true;update = false;errors = '';
                         ">
-                            
+                            &times;
                         </button>
                     </div>
                     <div class="modal-body">

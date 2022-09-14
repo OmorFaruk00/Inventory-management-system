@@ -1,9 +1,18 @@
 <template>
-  <div>
-    <div class="pt-3 pr-3">
+  <div class="body-shadow">
+    <div class="pt-2 pr-3 mb-2">
       <div class="row">
-        <div class="col col-sm-5 col-xs-12">
-          <h4 class="">Products List</h4>
+        <div class="col col-sm-5 col-xs-12 d-flex">
+          <h4 class="pt-3">Product List</h4>
+          <div class="d-block pt-3 pl-4">
+            <label for=""> Show</label>
+            <select class="mx-2 pr-2" v-model="list" @change="DataGet">
+              <option value="10" selected>10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+            <label for=""> Total entries {{ products.total }}</label>
+          </div>
         </div>
         <div class="col-sm-7 col-xs-12">
           <div class="input-group form-group w-50 float-right">
@@ -15,170 +24,112 @@
         </div>
       </div>
     </div>
-    <div class="pr-3">
+    <div class="pr-3" v-if="products">
       <table class="table text-center t-body">
         <thead class="t-head">
           <tr>
             <th>SL</th>
             <th>Name</th>
             <th>Code</th>
-            <th>Image</th>
             <th>Category</th>
-            <th>Band</th>
-            <th>Qty</th>
-            <th>Purchase Price</th>
-            <th>Sales Price</th>
-            <th>MRP</th>
-
+            <th>Unit</th>
+            <th>Price</th>
+            <th>Image</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mi</td>
-            <td>#R211</td>
-            <td>image</td>
-            <td>Phone</td>
-            <td>Mi</td>
-            <td>22</td>
-            <td>2000</td>
-            <td>2300</td>
-            <td>2300</td>
-
+        <tbody v-for="(product, index) in products.data" :key="index">
+          <tr class="t-row">
+            <td>{{ products.current_page * list - list + index + 1 }}</td>
+            <td>{{ product.product_name }}</td>
+            <td>{{ product.product_code }}</td>
+            <td>{{ product.category.name }}</td>
+            <td>{{ product.unit.name }}</td>
+            <td>{{ product.sales_price }}</td>
+            <td><img :src=" base_url+'/images/product/' + product.image" alt="image"
+                        style="height:80px;width: 100px;" /></td>
+                    
             <td>
-              <button class="btn" @click="designationEdit(designation.id)">
-                <img src="images/edit1.png" height="30px" />
-              </button>
-              <button
-                class="btn"
-                @click="designationDelete(designation.id)"
-              >
-                <img src="images/delete.png" height="30px" />
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mi</td>
-            <td>#R211</td>
-            <td>image</td>
-            <td>Phone</td>
-            <td>Mi</td>
-            <td>22</td>
-            <td>2000</td>
-            <td>2300</td>
-            <td>2300</td>
-
-            <td>
-              <button class="btn" @click="designationEdit(designation.id)">
-                <img src="images/edit1.png" height="30px" />
-              </button>
-              <button
-                class="btn"
-                @click="designationDelete(designation.id)"
-              >
-                <img src="images/delete.png" height="30px" />
+              <nuxt-link :to="`product/update/${product.id}`" class="btn" >
+                <img src="images/edit.png" />
+              </nuxt-link>
+              <button class="btn" @click="DataDelete(product.id)">
+                <img src="images/delete.png" />
               </button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+    <!-- pagination         -->
+    <vs-pagination :total-pages="products.last_page" @change="DataGet"></vs-pagination>
+   
+ 
   </div>
 </template>
-  <script>
+<script>
 export default {
   layout: "Sidebar",
   mounted() {
-    this.getDesignation();
+    this.DataGet();
   },
   data() {
     return {
-      auth: true,
-      designations: "",
-      designation: {
-        type: "",
-        name: "",
-      },
+      add: true,
+      update: false,
+      name: "",
+      products: "",
       errors: {},
+      id: "",
+      list: 10,
+      base_url: process.env.url,
     };
   },
   methods: {
-    getDesignation() {
+    DataGet(page = 1) {
       this.$axios
-        .$get("/designation/show")
-        .then((res) => {
-          this.designations = res;
+        .$get("/product/" + this.list + "?page=" + page)
+        .then((response) => {
+          this.products = response;
         })
         .catch((error) => {
-          if (error.response.status == 401) {
-            this.auth = false;
-            this.$toaster.error(error.response.data.message);
-          }
           console.log(error);
         });
     },
-    designationEdit(id) {
-      $("#designationUpdate").modal("show");
-      this.$axios
-        .$get("/designation/edit/" + id)
-        .then((res) => {
-          this.designation = res;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    designationUpdate() {
-      this.$axios
-        .$post("/designation/update/" + this.designation.id, this.designation)
-        .then((res) => {
-          this.getDesignation();
-          $("#designationUpdate").modal("hide");
-          this.$toaster.success(res.message);
-          this.errors = "";
-        })
-        .catch((err) => {
-          console.log(err);
-          this.errors = err.response.data.errors;
-        });
-    },
-    designationDelete(id) {
-      if (confirm("Are you sure to delete this designation?")) {
-        this.$axios
-          .$get("/designation/delete/" + id)
-          .then((res) => {
-            this.getDesignation();
-            this.$toaster.error(res.message);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      }
-    },
-    designationStatus(id) {
-      this.$axios
-        .$get("/designation/status/" + id)
-        .then((res) => {
-          console.log(res);
-          this.getDesignation();
-          this.$toaster.success(res.message);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+ 
+    
+  
+    DataDelete(id) {
+      let that = this;
+      this.$swal({
+        title: "Are you sure.",
+        text: "You want to delete this item?",
+        type: "question",
+        position: "top",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#C32A27",
+        confirmButtonText: "Yes, Delete!",
+      }).then(function (result) {
+        if (result.value == true) {
+          that.$axios
+            .$delete("/product/" + id)
+            .then((res) => {
+              that.DataGet();
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      });
     },
   },
 };
 </script>
-  <style scoped>
-    .btn-search{
-      border:none;
-      /* background: #000; */
-      background: rgba(235,237,240) !important;
-       border-radius: 0px 20px 20px 0px;
-
-    }
+<style lang="scss" >
+.vs-pagination>li.vs-pagination--active a {
+  background: #f5f5f5 !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
 </style>
-  
