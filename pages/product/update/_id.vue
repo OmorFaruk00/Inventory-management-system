@@ -123,6 +123,13 @@
                                                 v-model="product.alert_qty" />
                                         </div>
                                     </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="form-group">
+                                            <label for=""> Discount</label>
+                                            <input class="form-control" type="number" placeholder="Enter Product Discount"
+                                                v-model="product.discount" />
+                                        </div>
+                                    </div>
 
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group">
@@ -146,10 +153,10 @@
                                             <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 col-xl-4">
-                                        <div class="form-group">
+                                    <div class="col-12 col-md-6 col-xl-12">
+                                        <div class="form-group float-right">
                                             <img :src="base_url + '/images/product/' + product.image" alt="image"
-                                                style="height:80px;width: 100px;" />
+                                                style="height:80px;width: 150px;" />
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-xl-12">
@@ -201,6 +208,7 @@ export default {
                 barcode: "",
                 opening_qty: "",
                 alert_qty: "",
+                discount: "",
                 warranty: "",
                 guarantee: "",
                 image: "",
@@ -249,6 +257,7 @@ export default {
             formData.append('opening_qty', this.product.opening_qty)
             formData.append('alert_qty', this.product.alert_qty)
             formData.append('warranty', this.product.warranty)
+            formData.append('discount', this.product.discount)
             formData.append('guarantee', this.product.guarantee)
             formData.append('description', this.product.description)
             if(this.product.new_image){

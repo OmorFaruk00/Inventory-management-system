@@ -1,8 +1,8 @@
 <template>
-  <div class="body-shadow">
-    <div class="pt-2 pr-3 mb-2">
-      <div class="row">
-        <div class="col col-sm-5 col-xs-12 d-flex">
+  <div class="pb-5">
+  <div class="body-shadow">    
+      <div class="row pr-2 mb-2">
+        <div class="col col-sm-12 col-xl-4 d-flex">
           <h4 class="pt-3">Product List</h4>
           <div class="d-block pt-3 pl-4">
             <label for=""> Show</label>
@@ -11,20 +11,44 @@
               <option value="25">25</option>
               <option value="50">50</option>
             </select>
-            <label for=""> Total entries {{ products.total }}</label>
+            <label for=""> Entries of {{ products.total }}</label>
           </div>
         </div>
-        <div class="col-sm-7 col-xs-12">
-          <div class="input-group form-group w-50 float-right">
-            <input type="search" class="form-control" placeholder="Search" />
-            <button class="btn-search">
-              <img src="/images/search.png" height="30px" />
-            </button>
+        <div class="col-sm-12 col-xl-8 pt-2">
+          <div class="row">
+            <div class="col-sm-12 col-xl-3">
+              <div class="form-group  ">
+                <select class="form-control" v-model="category"
+                  @click="searchProduct('search_by_category',category)">
+                  <option selected disabled value="">Search By Category</option>
+                  <option v-for="(category, index) in product_list.category" :key="index" :value="category.id">
+                    {{ category.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xl-3">
+              <div class="form-group  ">
+                <select class="form-control" v-model="brand" @change="searchProduct('search_by_brand',brand)">
+                  <option selected disabled value="">Search By Brand</option>
+                  <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
+                    {{ brand.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xl-6">
+              <div class="input-group form-group  w-100">
+                <input type="search" class="form-control" placeholder="Search Name/Code/Barcode/Price" v-model="search" @keyup="searchProduct('search_by_global',search)">
+                <button class="btn-search">
+                  <img src="/images/search.png" height="30px" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="pr-3" v-if="products">
+      </div>       
+    <div class="table-responsive" v-if="products">
       <table class="table text-center t-body">
         <thead class="t-head">
           <tr>
@@ -46,11 +70,10 @@
             <td>{{ product.category.name }}</td>
             <td>{{ product.unit.name }}</td>
             <td>{{ product.sales_price }}</td>
-            <td><img :src=" base_url+'/images/product/' + product.image" alt="image"
-                        style="height:80px;width: 100px;" /></td>
-                    
+            <td><img :src="base_url + '/images/product/' + product.image" alt="image"
+                style="height:80px;width: 100px;" /></td>
             <td>
-              <nuxt-link :to="`product/update/${product.id}`" class="btn" >
+              <nuxt-link :to="`product/update/${product.id}`" class="btn">
                 <img src="images/edit.png" />
               </nuxt-link>
               <button class="btn" @click="DataDelete(product.id)">
@@ -60,45 +83,60 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <!-- pagination         -->
-    <vs-pagination :total-pages="products.last_page" @change="DataGet"></vs-pagination>
-   
- 
+    </div>       
+    <!-- pagination         -->    
+    <vs-pagination v-if="products.last_page > 1" :total-pages="products.last_page" @change="DataGet"></vs-pagination>
   </div>
+</div>
 </template>
 <script>
 export default {
   layout: "Sidebar",
-  mounted() {
+  created() {
+    this.getCategoryBrand();   
     this.DataGet();
   },
   data() {
-    return {
-      add: true,
-      update: false,
-      name: "",
-      products: "",
-      errors: {},
-      id: "",
-      list: 10,
+    return {      
+      products: "",   
+      brand: "",
+      category: "",
+      search:'',
+      product_list: "",         
+      list:10,
+      search:null,
+      type:null,
+      item:null,    
       base_url: process.env.url,
+      
     };
   },
   methods: {
-    DataGet(page = 1) {
+    searchProduct(type,item){
+      this.type = type;
+      this.item = item;
+      this.DataGet();
+    },
+    DataGet(page=1) {        
       this.$axios
-        .$get("/product/" + this.list + "?page=" + page)
-        .then((response) => {
-          this.products = response;
+        .$post("/product-search?page="+page, { "type": this.type, "item":this.item,"search":this.search,"list":this.list})
+        .then((response) => {          
+          this.products = response;        
         })
         .catch((error) => {
           console.log(error);
         });
     },
- 
-    
-  
+    getCategoryBrand() {
+      this.$axios
+        .$get("/product")
+        .then((response) => {
+          this.product_list = response;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     DataDelete(id) {
       let that = this;
       this.$swal({
@@ -127,8 +165,13 @@ export default {
 };
 </script>
 <style lang="scss" >
+  .vs-pagination > li > a {
+    background: #e8eaec!important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1
+}
 .vs-pagination>li.vs-pagination--active a {
-  background: #f5f5f5 !important;
+  // background: rgb(185, 44, 44) !important;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }

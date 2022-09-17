@@ -71,7 +71,7 @@
             </div>            
                   <!-- pagination         -->
         <vs-pagination :total-pages="employees.last_page" @change="getEmployee"></vs-pagination>
-         
+       
         </div>
       
 
@@ -94,6 +94,7 @@ export default {
     };
   },
   methods: {
+    
     getEmployee(page = 1) {
       this.$axios
         .$get("/employee/show-paginate/"+this.list+"?page=" + page)

@@ -46,49 +46,62 @@
         </div>
       </div>
       <div class=" col-12 col-xl-8 mt-3 ">
-        <div class="mb-3 d-flex justify-content-between">
-          <div class="d-flex">
-            <div class="form-group mr-5">
-              <select class="form-control pr-5">
-                <option selected disabled>Search By Category</option>
-                <option value="">Search</option>
-                <option value="">Search </option>
-              </select>
+        <div class="pr-2 mb-2">       
+          <div class="row">
+            <div class="col-sm-12 col-xl-3">
+              <div class="form-group  ">
+                <select class="form-control" v-model="category"
+                  @click="searchProduct('search_by_category',category)">
+                  <option selected disabled value="">Search By Category</option>
+                  <option v-for="(category, index) in product_list.category" :key="index" :value="category.id">
+                    {{ category.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-            <div class="form-group">
-              <select class="form-control pr-5">
-                <option selected disabled>Search By Brand</option>
-                <option value="">Search</option>
-                <option value="">Search </option>
-              </select>
+            <div class="col-sm-12 col-xl-3">
+              <div class="form-group  ">
+                <select class="form-control" v-model="brand" @change="searchProduct('search_by_brand',brand)">
+                  <option selected disabled value="">Search By Brand</option>
+                  <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
+                    {{ brand.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="input-group form-group w-50">
-            <input type="search" class="form-control search" placeholder="Search">
-            <button class="btn-search"><img src="/images/search1.png" height="25px"></button>
-          </div>
-        </div>
+            <div class="col-sm-12 col-xl-6">
+              <div class="input-group form-group  w-100">
+                <input type="search" class="form-control" placeholder="Search Name/Code/Barcode/Price" v-model="search" @keyup="searchProduct('search_by_global',search)">
+                <button class="btn-search">
+                  <img src="/images/search.png" height="30px" />
+                </button>
+              </div>
+            </div>
+          </div>        
+      </div>    
         <div class="row">
 
-          <div class="col-xl-2 col-md-4 col-6 mb-3">
+          <div class="col-xl-2 col-md-4 col-6 mb-4" v-for="(product, index) in products.data" :key="index">
             <div class="pos">
               <div class="pos-image ">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp"
+                <img :src="base_url + '/images/product/' + product.image" alt="image"
                   class="w-100 h-100" />
               </div>
               <div class="p-price">
-                <p>$600</p>
+                <p> <img src="/images/taka.png" alt="taka" height="12px" width="18px">{{product.sales_price}}</p>
               </div>
-              <div class="">
-                <button class="p-detail">-20%</button>
+              <div v-if="product.discount!=null">
+                <p class="p-detail">{{product.discount}}</p>
               </div>
               <div class="pos-content">
-                <p class="p-name">product name</p>
-                <!-- <p class="p-brand">Brand name</p> -->
+                <p class="p-name">{{product.product_name}}</p>
+                <!-- <p class="">{{product.sales_price}}</p> -->
               </div>
             </div>
           </div>
-
+          <div class="">
+            <vs-pagination v-if="products.last_page > 1" :total-pages="products.last_page" @change="DataGet"></vs-pagination>
+          </div>
         </div>
       </div>
     </div>
@@ -97,11 +110,72 @@
 <script>
 export default {
   layout: "Sidebar",
-
-}
+  mounted() {
+    this.getCategoryBrand();   
+    this.DataGet();
+  },
+  data() {
+    return {      
+      products: "",   
+      brand: "",
+      category: "",
+      search:'',
+      product_list: "",         
+      list:18,
+      search:null,
+      type:null,
+      item:null,    
+      base_url: process.env.url,
+      
+    };
+  },
+  methods: {
+    searchProduct(type,item){
+      this.type = type;
+      this.item = item;
+      this.DataGet();
+    },
+    DataGet(page=1) {        
+      this.$axios
+        .$post("/product-search?page="+page, { "type": this.type, "item":this.item,"search":this.search,"list":this.list})
+        .then((response) => {          
+          this.products = response;        
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getCategoryBrand() {
+      this.$axios
+        .$get("/product")
+        .then((response) => {
+          this.product_list = response;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  
+  },
+};
 </script>
+<style lang="scss" >
+  .vs-pagination > li > a {
+    background: #e8eaec!important;
+    margin-left: 50px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1;
+    
+}
+.vs-pagination>li.vs-pagination--active a {
+  // background: rgb(185, 44, 44) !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+</style>
 
   <style scoped>
+    
     /* .search{
       position: relative;
       border-radius: 20px !important;

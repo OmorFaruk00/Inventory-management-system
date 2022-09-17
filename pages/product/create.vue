@@ -20,7 +20,7 @@
                                             <label for="">
                                                 Product Name <span class="text-danger">*</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product name"
-                                                v-model="product.name" />
+                                                v-model="product.product_name" />
                                                 <p v-if="errors.product_name" v-text="errors.product_name[0]" class="text-danger"></p>
                                         </div>
                                     </div>
@@ -28,7 +28,7 @@
                                         <div class="form-group">
                                             <label for="">Product Code <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product code"
-                                                v-model="product.code" />
+                                                v-model="product.product_code" />
                                                 <p v-if="errors.product_code" v-text="errors.product_code[0]" class="text-danger"></p>
                                         </div>
                                     </div>
@@ -184,8 +184,8 @@ export default {
             name: "",
             errors: {},
             product: {
-                name: "",
-                code: "",
+                product_name: "",
+                product_code: "",
                 brand: "",
                 category: "",
                 unit: "",
@@ -207,7 +207,7 @@ export default {
     methods: {
         DataGet() {
             this.$axios
-                .$get("/product/create")
+                .$get("/product")
                 .then((response) => {
                     this.product_list = response;
                 })
