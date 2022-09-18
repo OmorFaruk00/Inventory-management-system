@@ -133,6 +133,13 @@
     "_name": "_f6bf23fc"
   },
   {
+    "name": "pos-new",
+    "path": "/pos/new",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/new.vue",
+    "chunkName": "pages/pos/new",
+    "_name": "_4e681a8a"
+  },
+  {
     "name": "pos-test",
     "path": "/pos/test",
     "component": "/home/omorfaruk/Desktop/Pos/pages/pos/test.vue",

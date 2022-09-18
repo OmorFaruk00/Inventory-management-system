@@ -23,6 +23,7 @@ const _5e97bcf8 = () => interopDefault(import('../pages/employee/designation/ind
 const _585d7352 = () => interopDefault(import('../pages/employee/employee/index.vue' /* webpackChunkName: "pages/employee/employee/index" */))
 const _147a200b = () => interopDefault(import('../pages/employee/office-time/index.vue' /* webpackChunkName: "pages/employee/office-time/index" */))
 const _f6bf23fc = () => interopDefault(import('../pages/pos/create.vue' /* webpackChunkName: "pages/pos/create" */))
+const _4e681a8a = () => interopDefault(import('../pages/pos/new.vue' /* webpackChunkName: "pages/pos/new" */))
 const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
 const _5968ea71 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
@@ -132,6 +133,10 @@ export const routerOptions = {
     path: "/pos/create",
     component: _f6bf23fc,
     name: "pos-create"
+  }, {
+    path: "/pos/new",
+    component: _4e681a8a,
+    name: "pos-new"
   }, {
     path: "/pos/test",
     component: _2a6ecbd0,

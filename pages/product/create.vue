@@ -21,7 +21,8 @@
                                                 Product Name <span class="text-danger">*</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product name"
                                                 v-model="product.product_name" />
-                                                <p v-if="errors.product_name" v-text="errors.product_name[0]" class="text-danger"></p>
+                                            <p v-if="errors.product_name" v-text="errors.product_name[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -29,7 +30,8 @@
                                             <label for="">Product Code <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product code"
                                                 v-model="product.product_code" />
-                                                <p v-if="errors.product_code" v-text="errors.product_code[0]" class="text-danger"></p>
+                                            <p v-if="errors.product_code" v-text="errors.product_code[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -56,7 +58,8 @@
                                                     {{ category.name }}
                                                 </option>
                                             </select>
-                                            <p v-if="errors.category" v-text="errors.category[0]" class="text-danger"></p>
+                                            <p v-if="errors.category" v-text="errors.category[0]" class="text-danger">
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -85,7 +88,8 @@
                                                     *</span></label>
                                             <input class="form-control" type="number" placeholder="Enter Purchase Price"
                                                 v-model="product.purchase_price" />
-                                                <p v-if="errors.purchase_price" v-text="errors.purchase_price[0]" class="text-danger"></p>
+                                            <p v-if="errors.purchase_price" v-text="errors.purchase_price[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -93,7 +97,8 @@
                                             <label for="">Sales Price<span class="text-danger"> *</span></label>
                                             <input class="form-control" type="number" placeholder="Enter sales price"
                                                 v-model="product.sales_price" />
-                                                <p v-if="errors.sales_price" v-text="errors.sales_price[0]" class="text-danger"></p>
+                                            <p v-if="errors.sales_price" v-text="errors.sales_price[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -109,7 +114,8 @@
                                                 <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="number"
                                                 placeholder=" Enter Opening Quantity" v-model="product.opening_qty" />
-                                                <p v-if="errors.opening_qty" v-text="errors.opening_qty[0]" class="text-danger"></p>
+                                            <p v-if="errors.opening_qty" v-text="errors.opening_qty[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -122,8 +128,8 @@
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group">
                                             <label for=""> Discount</label>
-                                            <input class="form-control" type="number" placeholder="Enter Product Discount"
-                                                v-model="product.discount" />
+                                            <input class="form-control" type="number"
+                                                placeholder="Enter Product Discount" v-model="product.discount" />
                                         </div>
                                     </div>
 
@@ -146,7 +152,7 @@
                                             <label for="">Image</label>
                                             <input type="file" class="form-control" placeholder=""
                                                 @change="(e) => (product.image = e.target.files[0])" accept="image/*" />
-                                                <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
+                                            <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-xl-12">
@@ -168,10 +174,9 @@
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
     </div>
 </template>
-
 <script>
 export default {
     layout: "Sidebar",
@@ -200,7 +205,6 @@ export default {
                 discount: "",
                 image: "",
                 description: "",
-
             }
         };
     },
@@ -259,4 +263,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>
