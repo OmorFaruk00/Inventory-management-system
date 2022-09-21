@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="row">
-      <div class=" col-12 col-xl-4 mt-3">
+
+      <div class=" col-sm-12 col-md-6 col-xl-6 mt-3">
         <div class="d-flex justify-content-between mb-2">
           <div class="form-group w-50">
             <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">
@@ -15,54 +16,74 @@
             <button class="mr-3 btn-add">Add Customer</button>
           </div>
         </div>
-        <div class="mr-3">
-          <table class="table card-body">
+        <div class="">
+          <table class="table card-body" >
             <thead class="t-head">
               <tr>
                 <th>Sl</th>
-                <th>Name</th>
+                <th>Product Name</th>
+                <th>Product Code</th>
                 <th>Qty</th>
                 <th>Price</th>
-                <th>Subtotal</th>
+                <th>Amount</th>
                 <th></th>
+                
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td> 1 </td>
-                <td>Mi</td>
-                <td>Mi</td>
-                <td>22</td>
-                <td>2300</td>
+
+              <tr v-for="(cartItem,index) in cart" :key="index" class="t-row" >
+                <td>{{index +1}} </td>
+                <td>{{cartItem.data.product_name}}</td>
+                <td>{{cartItem.data.product_code}}</td>
                 <td>
-                  <button class="btn float-right"><img src="/images/remove.png" height="18px">
-                  </button>
+                  <input type="number" style="width:60px" class="form-control" @click="updateQty(cartItem)"
+                    @keyup="updateQty(cartItem)" v-model="cart[index].qty">
                 </td>
-              </tr>
-              <tr>
-                <td> 2 </td>
-                <td>Mi</td>
-                <td>Mi</td>
-                <td>22</td>
-                <td>2300</td>
                 <td>
-                  <button class="btn float-right"><img src="/images/remove.png" height="18px">
-                  </button>
+                  <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt=""
+                      height="15px">{{cartItem.data.sales_price}}</div>
+                </td>
+                <td>
+                  <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt="" height="15px">{{cartItem.amount}}
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class=" float-right" @click="removeCart(cartItem)"><img src="/images/remove.png"
+                      height="18px">
+                  </a>
                 </td>
               </tr>
             </tbody>
           </table>
-          {{selected}} <br>
-          {{cart}}<br>
-          {{cartItems}} 
-          
+          <div class="card-body t-row">
 
+            <div class="d-flex mb-3">
+              <span class="pr-5 mt-2 mr-2 font-weight-bold">Vat</span> <input type="text" class="form-control mr-3">
+              <span class="pr-4 mt-2 font-weight-bold">Discount</span> <input type="text" class="form-control mr-3">
+              <span class="pr-4 mt-2 font-weight-bold">Subtotal</span> <input type="text" class="form-control"
+                v-model="subtotal">
+            </div>
+            <div class="d-flex">
+              <span class="pr-3 font-weight-bold">Previous Due</span> <input type="text" class="form-control mr-3">
+              <span class="pr-4 font-weight-bold">Payable Amount</span> <input type="text" class="form-control mr-3">
+              <span class="pr-4 font-weight-bold">Paid Amount</span> <input type="text" class="form-control">
+            </div>
+            <div class="row px-3 pt-4">
+              <div colspan="3" class="btn-list col-6" @click="test">               
+                  <h6 class="font-weight-bolder text-center py-2">List</h6>                
+              </div>
+              <div colspan="3" class="btn-cart col-6">                
+                  <h6 class="font-weight-bolder text-center py-2">Save</h6>               
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class=" col-12 col-xl-8 mt-3 ">
+      <div class=" col-sm-12 col-md-6 col-xl-6 mt-3 ">
         <div class="pr-2 mb-2">
           <div class="row">
-            <div class="col-sm-12 col-xl-3">
+            <div class="col-sm-12 col-md-3 col-xl-3">
               <div class="form-group  ">
                 <select class="form-control border-0" v-model="category"
                   @click="searchProduct('search_by_category',category)">
@@ -94,9 +115,9 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xl-2 col-md-4 col-6 mb-4" v-for="(product, index) in products.data" :key="index">
-            <a href="#" class="btn-pos" @click="addToCart(product.id)">
+        <div class="row ">
+          <div class="col-md-3 col-xl-3 mb-4" v-for="(product, index) in products.data" :key="index">
+            <a href="#" class="btn-pos" @click="addToCart(product)">
               <div class="pos">
                 <div class="pos-image ">
                   <img :src="base_url + '/images/product/' + product.image" alt="image" class="w-100 h-100" />
@@ -139,65 +160,72 @@ export default {
       category: "",
       search: '',
       product_list: "",
-      list: 18,
+      list: 16,
       search: null,
       type: null,
       item: null,
       base_url: process.env.url,
       cart: [],
-      cartItems: {
-        'id' : 0,
-        'qty': 0
-      },
-      qty: '',
-      selected: []
+      subtotal: '',
+
 
     };
   },
   methods: {
-    addToCart(ids) {
-      let selectedProduct = this.products.data.find((product) => {
-        if (product.id === ids) {
-          this.selected = product;
-          if(this.cart.includes(ids))
-          {
-            for (let i in (this.cartItems)) {
-              console.log(i)
-              // if(item.id === ids)
-              // {
-              //   item.qty = item.qty+1
-              // }
-            }
-            this.cart.push(ids);
-
-          }else{
-            this.cart.push(ids);
-            this.cartItems.id = ids 
-            this.cartItems.qty = 1 
-          }
-
-
-
-
-
-        }
+    test() {
+      alert('sdfsdfas');
+    },
+    addToCart(product) {
+      let cart = this.cart.find(function (item) {
+        return item.data.id === product.id;
       });
-      // console.log(selectedProduct);
-      // console.log(this.products.data);
+      if (cart) {
+        let Items = this.cart.findIndex(function (item) {
+          return item.data.id === product.id;
+        });
+        if (this.cart[Items].qty > product.stock.available_quantity) {
+          this.$swal({
+            title: "error",
+            position: "middle",
+            text: 'Qty not available',
+            // timer: 2000,
+            type: "error",
+            // showConfirmButton: false,
+          });
+        } else {
+          this.cart[Items].qty += 1;
+          this.cart[Items].amount = this.cart[Items].qty * product.sales_price;
+          this.total();
+        }
 
-      // if(selectedProduct){
-      //        this.selectedProduct = selectedProduct;
-
-      // }
-
-      // this.cart.push(id);
-
-
-
-
-
+      } else {
+        this.cart.push({ "data": product, "qty": 1, "amount": product.sales_price });
+        this.total();
+      }
 
     },
+    updateQty(product) {
+      product.amount = product.qty * product.data.sales_price;
+      this.total();
+
+    },
+    total() {
+      let total = 0;
+      this.cart.forEach(item => {
+        total = parseInt(total) + parseInt(item.amount);
+      })
+      this.subtotal = total;
+      console.log("total", total);
+
+    },
+    removeCart(product) {
+      let remove = this.cart.findIndex(function (item) {
+        return item.data.id === product.data.id;
+      });
+      this.cart.splice(remove, 1);
+      this.total();
+    },
+
     searchProduct(type, item) {
       this.type = type;
       this.item = item;
@@ -227,6 +255,125 @@ export default {
   },
 };
 </script>
+<style scoped>
+ 
+
+table{
+  text-align: left;
+}
+
+thead {
+  text-align: left;
+  width: calc(100% - 17px);  
+}
+
+tbody {
+  text-align: left;
+  display:block; 
+  height: 200px; 
+  overflow-y: scroll; 
+}
+
+
+
+tr {
+  display: table; 
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+
+.btn-cart {
+  background: linear-gradient(#2C3E50, #4CA1AF);
+  color: #fff;
+  cursor: pointer;
+
+}
+
+.btn-cart:hover {
+  background: linear-gradient(#27394b, #104b54);
+}
+
+.btn-list {
+  color: #fff;
+  background: linear-gradient(#618b8b, #40a2b1);
+}
+
+.btn-list:hover {
+  background: linear-gradient(#27394b, #104b54);
+}
+
+.pos-body {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-body {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
+}
+
+.pos {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+}
+
+.btn-pos {
+  text-decoration: none;
+  color: #000;
+}
+
+.pos:hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.pos-image img {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.pos-image {
+  position: relative;
+  height: 90px;
+}
+
+.pos-content {
+  padding: 15px 10px 5px 10px;
+  line-height: 5px;
+  text-transform: capitalize;
+}
+
+.p-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.p-price {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.p-brand {
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+}
+
+.p-discount {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0px 8px !important;
+  margin: 0px !important;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(#4B0082, #6500B0);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+</style>
+
 <style lang="scss" >
 .vs-pagination>li>a {
   background: #e8eaec !important;
@@ -241,84 +388,5 @@ export default {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
-</style>
-<style scoped>
-.pos-body {
-   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- }
-
- .card-body {
-   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- }
-
- .pos {
-   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-   border-radius: 15px;
- }
-
- .btn-pos {
-   text-decoration: none;
-   color: #000;
- }
-
- .pos:hover {
-   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
- }
-
- .pos-image img {
-   border-radius: 15px 15px 0px 0px;
- }
-
- .pos-image {
-   position: relative;
-   height: 130px;
- }
-
- .pos-content {
-   padding: 15px 10px 5px 10px;
-   line-height: 5px;
-   text-transform: capitalize;
- }
-
- .p-name {
-   font-size: 14px;
-   font-weight: 600;
- }
-
- .p-price {
-   font-size: 13px;
-   font-weight: 400;
- }
-
- .p-brand {
-   font-size: 12px;
-   font-weight: 600;
-   color: gray;
- }
-
- .p-discount {
-   position: absolute;
-   bottom: 75px;
-   right: 20px;
-   color: #fff;
-   border-radius: 10px;
-   padding: 0px 8px !important;
-   margin: 0px !important;
-   font-size: 12px;
-   font-weight: 600;
-   border: none;
-   cursor: pointer;
-   background: linear-gradient(#4B0082, #6500B0);
-   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
- }
-
- @media only screen and (max-width: 768px) {
-   .scroll-div {
-     position: absolute;
-
-   }
-
- }
 </style>
   

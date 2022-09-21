@@ -267,9 +267,7 @@ export default {
             this.$axios
                 .$post("/products/update/"+ this.$route.params.id, formData)
                 .then((response) => {
-                    console.log(formData);
-                    // this.product = '';
-                    // this.errors = '';
+                    console.log(formData);                    
                     this.$swal({
                         title: "Success",
                         position: "top",

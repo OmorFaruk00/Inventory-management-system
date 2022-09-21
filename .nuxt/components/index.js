@@ -1,3 +1,4 @@
+export { default as Cart } from '../../components/Cart.vue'
 export { default as File } from '../../components/File.vue'
 export { default as Topnav } from '../../components/Topnav.vue'
 

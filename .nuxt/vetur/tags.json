@@ -1,4 +1,7 @@
 {
+  "Cart": {
+    "description": "Auto imported from components/Cart.vue"
+  },
   "File": {
     "description": "Auto imported from components/File.vue"
   },
