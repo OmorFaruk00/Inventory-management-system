@@ -92,7 +92,7 @@
 <script>
 export default {
     layout: "Sidebar",
-    mounted() {
+    created() {
         this.DataGet();
     },
     data() {

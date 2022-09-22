@@ -20,35 +20,34 @@
           <table class="table card-body" >
             <thead class="t-head">
               <tr>
-                <th>Sl</th>
-                <th>Product Name</th>
-                <th>Product Code</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Amount</th>
-                <th></th>
-                
+                <th width="50px">Sl</th>
+                <th width="160px">Product Name</th>
+                <th width="160px">Product Code</th>
+                <th width="100px">Qty</th>
+                <th width="110px">Price</th>
+                <th width="110px">Amount</th>
+                <th></th>                
               </tr>
             </thead>
             <tbody>
 
               <tr v-for="(cartItem,index) in cart" :key="index" class="t-row" >
-                <td>{{index +1}} </td>
-                <td>{{cartItem.data.product_name}}</td>
-                <td>{{cartItem.data.product_code}}</td>
-                <td>
+                <td width="50px">{{index +1}} </td>
+                <td width="160px">{{cartItem.data.product_name}}</td>
+                <td width="160px">{{cartItem.data.product_code}}</td>
+                <td width="100px">
                   <input type="number" style="width:60px" class="form-control" @click="updateQty(cartItem)"
                     @keyup="updateQty(cartItem)" v-model="cart[index].qty">
                 </td>
-                <td>
+                <td width="110px">
                   <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt=""
                       height="15px">{{cartItem.data.sales_price}}</div>
                 </td>
-                <td>
+                <td width="110px">
                   <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt="" height="15px">{{cartItem.amount}}
                   </div>
                 </td>
-                <td>
+                <td >
                   <a href="#" class=" float-right" @click="removeCart(cartItem)"><img src="/images/remove.png"
                       height="18px">
                   </a>
@@ -66,7 +65,7 @@
             </div>
             <div class="d-flex">
               <span class="pr-3 font-weight-bold">Previous Due</span> <input type="text" class="form-control mr-3">
-              <span class="pr-4 font-weight-bold">Payable Amount</span> <input type="text" class="form-control mr-3">
+              <span class="pr-4 font-weight-bold">Payable Amount</span> <input type="text" class="form-control mr-3" v-model="payable">
               <span class="pr-4 font-weight-bold">Paid Amount</span> <input type="text" class="form-control">
             </div>
             <div class="row px-3 pt-4">
@@ -167,6 +166,7 @@ export default {
       base_url: process.env.url,
       cart: [],
       subtotal: '',
+      payable:'',
 
 
     };
@@ -215,7 +215,8 @@ export default {
         total = parseInt(total) + parseInt(item.amount);
       })
       this.subtotal = total;
-      console.log("total", total);
+      this.payable = total;
+     
 
     },
     removeCart(product) {
@@ -256,33 +257,16 @@ export default {
 };
 </script>
 <style scoped>
- 
-
-table{
-  text-align: left;
-}
-
-thead {
-  text-align: left;
-  width: calc(100% - 17px);  
-}
-
 tbody {
-  text-align: left;
   display:block; 
-  height: 200px; 
+  height: 50vh; 
   overflow-y: scroll; 
 }
-
-
-
-tr {
+tr {  
   display: table; 
   width: 100%;
-  box-sizing: border-box; 
+ 
 }
-
-
 .btn-cart {
   background: linear-gradient(#2C3E50, #4CA1AF);
   color: #fff;

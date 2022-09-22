@@ -15,8 +15,8 @@
                     </div>
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right pt-1">
-                    <button type="button" class="btn-add" style="border: none" data-toggle="modal" data-target="#Modal">
-                        <img src="images/add.png" alt="" height="30px" />
+                    <button type="button" class="btn-add" data-toggle="modal" data-target="#Modal">
+                        <img src="/images/add.png" alt="" height="30px" />
                     </button>
                 </div>
             </div>
@@ -36,10 +36,10 @@
                         <td>{{ brand.name }}</td>
                         <td>
                             <button class="btn" @click="DataEdit(brand.id)">
-                                <img src="images/edit.png" />
+                                <img src="/images/edit.png" />
                             </button>
                             <button class="btn" @click="DataDelete(brand.id)">
-                                <img src="images/delete.png" />
+                                <img src="/images/delete.png" />
                             </button>
                         </td>
                     </tr>
@@ -84,7 +84,7 @@
 <script>
 export default {
     layout: "Sidebar",
-    mounted() {
+    created() {
         this.DataGet();
     },
     data() {

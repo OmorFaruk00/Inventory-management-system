@@ -20,7 +20,7 @@ const getters = {
 };
 const actions = {
     async getProduct({commit}){
-        const response = await this.$axios.$get("/category");
+        const response = await this.$axios.$get("/product");
         commit("getProduct",response)       
     }
 

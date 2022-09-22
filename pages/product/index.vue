@@ -11,7 +11,7 @@
               <option value="25">25</option>
               <option value="50">50</option>
             </select>
-            <label for=""> Entries of {{ products.total }}</label>
+            <label for=""> Total Entries {{ products.total }}</label>
           </div>
         </div>
         <div class="col-sm-12 col-xl-8 pt-2">
