@@ -21,7 +21,7 @@
                                                 Product Name <span class="text-danger">*</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product name"
                                                 v-model="product.product_name" />
-                                            <p v-if="errors.name" v-text="errors.name[0]" class="text-danger"></p>
+                                            <p v-if="errors.product_name" v-text="errors.product_name[0]" class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -29,7 +29,7 @@
                                             <label for="">Product Code <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product code"
                                                 v-model="product.product_code" />
-                                            <p v-if="errors.code" v-text="errors.code[0]" class="text-danger"></p>
+                                            <p v-if="errors.product_code" v-text="errors.product_code[0]" class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -211,7 +211,7 @@ export default {
                 discount: "",
                 warranty: "",
                 guarantee: "",
-                image: "",
+                new_image: "",
                 description: "",
 
             },
@@ -221,7 +221,7 @@ export default {
     methods: {
         DataGet() {
             this.$axios
-                .$get("/product/create")
+                .$get("/product")
                 .then((response) => {
                     this.product_list = response;
                 })
@@ -242,8 +242,7 @@ export default {
                 });
         },
 
-        DataUpdate() {
-            
+        DataUpdate() {            
             let formData = new FormData();
             formData.append('product_name', this.product.product_name)
             formData.append('product_code', this.product.product_code)
@@ -259,18 +258,20 @@ export default {
             formData.append('warranty', this.product.warranty)
             formData.append('discount', this.product.discount)
             formData.append('guarantee', this.product.guarantee)
-            formData.append('description', this.product.description)
+            formData.append('description', this.product.description) 
             if(this.product.new_image){
                 formData.append('image', this.product.new_image)
             }           
+            
+                   
 
             this.$axios
-                .$post("/products/update/"+ this.$route.params.id, formData)
+                .$post("/product-update/"+ this.$route.params.id, formData)
                 .then((response) => {
-                    console.log(formData);                    
+                    this.DataEdit();                
                     this.$swal({
-                        title: "Success",
-                        position: "top",
+                        title: "Updated",
+                        position: "center",
                         text: response.message,
                         timer: 2000,
                         type: "success",

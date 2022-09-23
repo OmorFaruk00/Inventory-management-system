@@ -266,6 +266,13 @@
     "_name": "_6dd4c782"
   },
   {
+    "name": "customer-update-id",
+    "path": "/customer/update/:id?",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/customer/update/_id.vue",
+    "chunkName": "pages/customer/update/_id",
+    "_name": "_329be5ea"
+  },
+  {
     "name": "product-update-id",
     "path": "/product/update/:id?",
     "component": "/home/omorfaruk/Desktop/Pos/pages/product/update/_id.vue",

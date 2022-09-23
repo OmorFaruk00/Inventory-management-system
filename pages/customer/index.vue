@@ -1,177 +1,168 @@
 <template>
-    <div>
-      <div class="pt-3 pr-3">
-        <div class="row">
-          <div class="col col-sm-5 col-xs-12">
-            <h4 class="">Products List</h4>
-          </div>
-          <div class="col-sm-7 col-xs-12">
-            <div class="input-group form-group w-50 float-right">
-              <input type="search" class="form-control" placeholder="Search" />
-              <button class="btn-search">
-                <img src="/images/search.png" height="30px" />
-              </button>
-            </div>
+  <div class="pb-5">
+    <div class="body-shadow">
+      <div class="row pr-2 mb-2">
+        <div class="col col-sm-12 col-md-6 col-xl-6 d-flex">
+          <h4 class="pt-3">Customer List</h4>
+          <div class="d-block pt-3 pl-4">
+            <label for=""> Show</label>
+            <select class="mx-2 pr-2" v-model="list" @change="DataGet">
+              <option value="10" selected>10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+            <label for="">  Entries Of {{ customers.total }}</label>
           </div>
         </div>
+        <div class="col-sm-12 col-xl-6 pt-2">
+          
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-xl-4">
+              <div class="form-group  ">
+                <select class="form-control border-0" v-model="category" @click="searchcustomer('search_by_category',category)">
+                  <option selected disabled value="">Search By Category</option>
+                  <option v-for="(category, index) in category_list" :key="index" :value="category.id">
+                    {{ category.name }}
+                  </option>
+                </select>
+              </div>
+            </div>           
+            <div class="col-sm-12 col-md-6 col-xl-8">
+              <div class="input-group form-group  w-100">
+                <input type="search" class="form-control border-0" placeholder="Search Name/Phone/Address" v-model="search"
+                  @keyup="searchcustomer('search_by_global',search)">
+                <button class="btn-search">
+                  <img src="/images/search.png" height="30px" />
+                </button>
+              </div>
+            </div>          
+        </div>
+        </div>
       </div>
-      <div class="pr-3">
+      <div class="table-responsive" v-if="customers">
         <table class="table text-center t-body">
           <thead class="t-head">
             <tr>
               <th>SL</th>
               <th>Name</th>
-              <th>Code</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Category</th>              
               <th>Image</th>
-              <th>Category</th>
-              <th>Band</th>
-              <th>Qty</th>
-              <th>Purchase Price</th>
-              <th>Sales Price</th>
-              <th>MRP</th>
-  
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mi</td>
-              <td>#R211</td>
-              <td>image</td>
-              <td>Phone</td>
-              <td>Mi</td>
-              <td>22</td>
-              <td>2000</td>
-              <td>2300</td>
-              <td>2300</td>
-  
+          <tbody v-for="(customer, index) in customers.data" :key="index">
+            <tr class="t-row">
+              <td>{{ customers.current_page * list - list + index + 1 }}</td>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.phone }}</td>
+              <td>{{ customer.email}}</td>
+              <td>{{ customer.category.name}}</td>              
+              <td><img :src="base_url + '/images/customer/' + customer.image" alt="image"
+                  style="height:80px;width: 100px;" /></td>
               <td>
-                <button class="btn" @click="designationEdit(designation.id)">
-                  <img src="images/edit1.png" height="30px" />
-                </button>
-                <button
-                  class="btn"
-                  @click="designationDelete(designation.id)"
-                >
-                  <img src="images/delete.png" height="30px" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Mi</td>
-              <td>#R211</td>
-              <td>image</td>
-              <td>Phone</td>
-              <td>Mi</td>
-              <td>22</td>
-              <td>2000</td>
-              <td>2300</td>
-              <td>2300</td>
-  
-              <td>
-                <button class="btn" @click="designationEdit(designation.id)">
-                  <img src="images/edit1.png" height="30px" />
-                </button>
-                <button
-                  class="btn"
-                  @click="designationDelete(designation.id)"
-                >
-                  <img src="images/delete.png" height="30px" />
+                <nuxt-link :to="`customer/update/${customer.id}`" class="btn">
+                  <img src="images/edit.png" />
+                </nuxt-link>
+                <button class="btn" @click="DataDelete(customer.id)">
+                  <img src="images/delete.png" />
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+      <!-- pagination         -->
+      <vs-pagination v-if="customers.last_page > 1" :total-pages="customers.last_page" @change="DataGet"></vs-pagination>
     </div>
-  </template>
-    <script>
-  export default {
-    layout: "Sidebar",
-    mounted() {
-      this.getDesignation();
+  </div>
+</template>
+<script>
+export default {
+  layout: "Sidebar",
+  created() {
+    this.getCategory();
+    this.DataGet();
+  },
+  data() {
+    return {
+      customers: "",
+      brand: "",
+      category: "",
+      search: '',
+      category_list: "",
+      list: 10,
+      search: null,
+      type: null,
+      item: null,
+      base_url: process.env.url,
+
+    };
+  },
+  methods: {
+    searchcustomer(type, item) {
+      this.type = type;
+      this.item = item;
+      this.DataGet();
     },
-    data() {
-      return {
-        auth: true,
-        designations: "",
-        designation: {
-          type: "",
-          name: "",
-        },
-        errors: {},
-      };
+    DataGet(page = 1) {
+      this.$axios
+        .$post("/customer-search?page=" + page, { "type": this.type, "item": this.item, "search": this.search, "list": this.list })
+        .then((response) => {
+          this.customers = response;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
-    methods: {
-      getDesignation() {
-        this.$axios
-          .$get("/designation/show")
-          .then((res) => {
-            this.designations = res;
-          })
-          .catch((error) => {
-            if (error.response.status == 401) {
-              this.auth = false;
-              this.$toaster.error(error.response.data.message);
-            }
-            console.log(error);
-          });
-      },
-      designationEdit(id) {
-        $("#designationUpdate").modal("show");
-        this.$axios
-          .$get("/designation/edit/" + id)
-          .then((res) => {
-            this.designation = res;
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      },
-      designationUpdate() {
-        this.$axios
-          .$post("/designation/update/" + this.designation.id, this.designation)
-          .then((res) => {
-            this.getDesignation();
-            $("#designationUpdate").modal("hide");
-            this.$toaster.success(res.message);
-            this.errors = "";
-          })
-          .catch((err) => {
-            console.log(err);
-            this.errors = err.response.data.errors;
-          });
-      },
-      designationDelete(id) {
-        if (confirm("Are you sure to delete this designation?")) {
-          this.$axios
-            .$get("/designation/delete/" + id)
+    getCategory() {
+      this.$axios
+        .$get("/customer-category")
+        .then((response) => {
+          this.category_list = response;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    DataDelete(id) {
+      let that = this;
+      this.$swal({
+        title: "Are you sure.",
+        text: "You want to delete this item?",
+        type: "question",
+        position: "top",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#C32A27",
+        confirmButtonText: "Yes, Delete!",
+      }).then(function (result) {
+        if (result.value == true) {
+          that.$axios
+            .$delete("/customer/" + id)
             .then((res) => {
-              this.getDesignation();
-              this.$toaster.error(res.message);
+              that.DataGet();
             })
-            .catch((err) => {
-              console.log(err);
+            .catch((error) => {
+              console.log(error);
             });
         }
-      },
-      designationStatus(id) {
-        this.$axios
-          .$get("/designation/status/" + id)
-          .then((res) => {
-            console.log(res);
-            this.getDesignation();
-            this.$toaster.success(res.message);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      },
+      });
     },
-  };
-  </script>
-    <style scoped>
-  </style>
-    
+  },
+};
+</script>
+<style lang="scss" >
+.vs-pagination>li>a {
+  background: #e8eaec !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1
+}
+
+.vs-pagination>li.vs-pagination--active a {
+  // background: rgb(185, 44, 44) !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+</style>

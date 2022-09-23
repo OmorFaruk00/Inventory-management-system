@@ -11,14 +11,14 @@
               <option value="25">25</option>
               <option value="50">50</option>
             </select>
-            <label for=""> Total Entries {{ products.total }}</label>
+            <label for="">  Entries of {{ products.total }}</label>
           </div>
         </div>
         <div class="col-sm-12 col-xl-8 pt-2">
           <div class="row">
             <div class="col-sm-12 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control" v-model="category" @click="searchProduct('search_by_category',category)">
+                <select class="form-control border-0" v-model="category" @click="searchProduct('search_by_category',category)">
                   <option selected disabled value="">Search By Category</option>
                   <option v-for="(category, index) in product_list.category" :key="index" :value="category.id">
                     {{ category.name }}
@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-12 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control" v-model="brand" @change="searchProduct('search_by_brand',brand)">
+                <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">
                   <option selected disabled value="">Search By Brand</option>
                   <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
                     {{ brand.name }}
@@ -38,7 +38,7 @@
             </div>
             <div class="col-sm-12 col-xl-6">
               <div class="input-group form-group  w-100">
-                <input type="search" class="form-control" placeholder="Search Name/Code/Barcode/Price" v-model="search"
+                <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price" v-model="search"
                   @keyup="searchProduct('search_by_global',search)">
                 <button class="btn-search">
                   <img src="/images/search.png" height="30px" />

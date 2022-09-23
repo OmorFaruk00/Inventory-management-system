@@ -15,7 +15,7 @@
                     justify-content-between
                   "
                 >
-                  <h4 class="ml-3">Customer Add</h4>
+                  <h4 class="ml-3">Customer Update</h4>
                   <div>
                     <nuxt-link to="/customer" class="text-dark mr-3"
                       ><img src="/images/list.png" alt="list" height="20px" />
@@ -32,7 +32,7 @@
                         class="form-control"
                         type="text"
                         placeholder="Enter customer name"
-                        v-model="customer.customer_name"
+                        v-model="customer.name"
                       />
                       <p
                         v-if="errors.customer_name"
@@ -44,9 +44,7 @@
 
                   <div class="col-12 col-md-6 col-xl-6">
                     <div class="form-group">
-                      <label for=""
-                        >Category</label
-                      >
+                      <label for="">Category</label>
                       <select class="form-control" v-model="customer.category">
                         <option selected disabled value="">
                           Select category
@@ -140,11 +138,11 @@
                         class="form-control"
                         type="number"
                         placeholder="Enter Opening Balance"
-                        v-model="customer.opening_balance"
+                        v-model="customer.current_balance"
                       />
                       <p
-                        v-if="errors.opening_balance"
-                        v-text="errors.opening_balance[0]"
+                        v-if="errors.current_balance"
+                        v-text="errors.current_balance[0]"
                         class="text-danger"
                       ></p>
                     </div>
@@ -152,19 +150,30 @@
 
                   <div class="col-12 col-md-6 col-xl-6">
                     <div class="form-group">
-                      <label for="">Image</label>
+                      <label for="">new_image</label>
                       <input
                         type="file"
                         class="form-control"
                         placeholder=""
-                        @change="(e) => (customer.image = e.target.files[0])"
-                        accept="image/*"
+                        @change="
+                          (e) => (customer.new_image = e.target.files[0])
+                        "
+                        accept="new_image/*"
                       />
                       <p
-                        v-if="errors.image"
-                        v-text="errors.image[0]"
+                        v-if="errors.new_image"
+                        v-text="errors.new_image[0]"
                         class="text-danger"
                       ></p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-12">
+                    <div class="form-group float-right">
+                      <img
+                        :src="base_url + '/images/customer/' + customer.image"
+                        alt="image"
+                        style="height: 100px; width: 150px"
+                      />
                     </div>
                   </div>
                   <div class="col-12 col-md-12 col-xl-12">
@@ -190,7 +199,7 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
 </template>
 <script>
@@ -198,10 +207,12 @@ export default {
   layout: "Sidebar",
   created() {
     this.DataGet();
+    this.DataEdit();
   },
   data() {
     return {
       customer_category: "",
+      base_url: process.env.url,
       name: "",
       errors: {},
       customer: {
@@ -211,8 +222,8 @@ export default {
         email: "",
         due_limit: "",
         card_number: "",
-        opening_balance: "",
-        image: "",
+        current_balance: "",
+        new_image: "",
         address: "",
       },
     };
@@ -228,23 +239,33 @@ export default {
           console.log(error);
         });
     },
+    DataEdit() {
+      this.$axios
+        .$get("/customer/" + this.$route.params.id + "/edit")
+        .then((response) => {
+          this.customer = response;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
 
     DataStore() {
       let formData = new FormData();
-      formData.append("customer_name", this.customer.customer_name);
+      formData.append("customer_name", this.customer.name);
       formData.append("category", this.customer.category);
       formData.append("phone", this.customer.phone);
       formData.append("email", this.customer.email);
       formData.append("due_limit", this.customer.due_limit);
       formData.append("card_number", this.customer.card_number);
-      formData.append("opening_balance", this.customer.opening_balance);
+      formData.append("opening_balance", this.customer.current_balance);
       formData.append("address", this.customer.address);
-      formData.append("image", this.customer.image);
+      formData.append("image", this.customer.new_image);
 
       this.$axios
-        .$post("/customer", formData)
+        .$post("/customer-update/" + this.$route.params.id, formData)
         .then((response) => {
-          this.customer = "";
+          this.DataEdit();
           this.errors = "";
           this.$swal({
             title: "Success",
