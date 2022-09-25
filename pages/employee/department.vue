@@ -3,16 +3,7 @@
         <div class="pt-2 pr-3 mb-2">
             <div class="row">
                 <div class="col col-sm-5 col-xs-12 d-flex">
-                    <h4 class="pt-3">Brand List</h4>
-                    <div class="d-block pt-3 pl-4">
-                        <label for=""> Show</label>
-                        <select class="mx-2 pr-2" v-model="list" @change="DataGet">
-                            <option value="10" selected>10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                        </select>
-                        <label for="">  Entries of {{brands.total}}</label>
-                    </div>
+                    <h4 class="pt-3">Department List</h4>                   
                 </div>
                 <div class="col-sm-7 col-xs-12 text-right pt-1">
                     <button type="button" class="btn-add" data-toggle="modal" data-target="#Modal">
@@ -21,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="pr-3" v-if="brands">
+        <div class="pr-3" v-if="departments">
             <table class="table text-center t-body">
                 <thead class="t-head">
                     <tr>
@@ -30,15 +21,15 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody v-for="(brand, index) in brands.data" :key="index">
+                <tbody v-for="(department, index) in departments.data" :key="index">
                     <tr class="t-row">
-                        <td>{{ brands.current_page * list - list + index + 1 }}</td>
-                        <td>{{ brand.name }}</td>
+                        <td>{{ departments.current_page * list - list + index + 1 }}</td>
+                        <td>{{ department.name }}</td>
                         <td>
-                            <button class="btn" @click="DataEdit(brand.id)">
+                            <button class="btn" @click="DataEdit(department.id)">
                                 <img src="/images/edit.png" />
                             </button>
-                            <button class="btn" @click="DataDelete(brand.id)">
+                            <button class="btn" @click="DataDelete(department.id)">
                                 <img src="/images/delete.png" />
                             </button>
                         </td>
@@ -47,14 +38,14 @@
             </table>
         </div>
         <!-- pagination         -->
-        <vs-pagination :total-pages="brands.last_page" @change="DataGet"></vs-pagination>
+        <vs-pagination v-if="departments.last_page > 1" :total-pages="departments.last_page" @change="DataGet"></vs-pagination>
         <!-- The Modal -->
         <div class="modal fade" id="Modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header card-header">
-                        <h4 v-if="add" class="modal-title">Brand Add</h4>
-                        <h4 v-if="update" class="modal-title">Brand Update</h4>
+                        <h4 v-if="add" class="modal-title">Department Add</h4>
+                        <h4 v-if="update" class="modal-title">Department Update</h4>
                         <button type="button" class="close" data-dismiss="modal" @click="name = '';add = true;update = false;errors = '';
                         ">
                             &times;
@@ -63,7 +54,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="">
-                                Brand Name <span class="text-danger">*</span></label>
+                                Department Name <span class="text-danger">*</span></label>
                             <input class="form-control" type="text" placeholder="" v-model="name" />
                             <p v-if="errors.name" v-text="errors.name[0]" class="text-danger mt-2"></p>
                         </div>
@@ -92,7 +83,7 @@ export default {
             add: true,
             update: false,
             name: "",
-            brands: "",
+            departments: "",
             errors: {},
             id: "",
             list: 10,
@@ -101,9 +92,9 @@ export default {
     methods: {
         DataGet(page = 1) {
             this.$axios
-                .$get("/brand/" + this.list + "?page=" + page)
+                .$get("/department?page=" + page)
                 .then((response) => {
-                    this.brands = response;
+                    this.departments = response;
                 })
                 .catch((error) => {
                     console.log(error);
@@ -112,7 +103,7 @@ export default {
 
         DataStore() {
             this.$axios
-                .$post("/brand", { name: this.name })
+                .$post("/department", { name: this.name })
                 .then((response) => {
                     this.name = "";
                     this.errors = "";
@@ -120,7 +111,7 @@ export default {
                     this.DataGet();
                     this.$swal({
                         title: "Success",
-                        position: "top",
+                        position: "center",
                         text: response.message,
                         timer: 2000,
                         type: "success",
@@ -134,7 +125,7 @@ export default {
         },
         DataEdit(id) {
             this.$axios
-                .$get("/brand/" + id + "/edit")
+                .$get("/department/" + id + "/edit")
                 .then((response) => {
                     this.id = response.id;
                     this.name = response.name;
@@ -148,7 +139,7 @@ export default {
         },
         DataUpdate(id) {
             this.$axios
-                .$put("/brand/" + this.id, { name: this.name })
+                .$put("/department/" + this.id, { name: this.name })
                 .then((response) => {
                     this.name = "";
                     this.errors = "";
@@ -159,7 +150,7 @@ export default {
                     this.DataGet();
                     this.$swal({
                         title: "Success",
-                        position: "top",
+                        position: "center",
                         text: response.message,
                         timer: 2000,
                         type: "success",
@@ -177,7 +168,7 @@ export default {
                 title: "Are you sure.",
                 text: "You want to delete this item?",
                 type: "question",
-                position: "top",
+                position: "center",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#C32A27",
@@ -185,7 +176,7 @@ export default {
             }).then(function (result) {
                 if (result.value == true) {
                     that.$axios
-                        .$delete("/brand/" + id)
+                        .$delete("/department/" + id)
                         .then((res) => {
                             that.DataGet();
                         })

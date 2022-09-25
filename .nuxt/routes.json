@@ -35,13 +35,6 @@
     "_name": "_2203d6f9"
   },
   {
-    "name": "employee",
-    "path": "/employee",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/index.vue",
-    "chunkName": "pages/employee/index",
-    "_name": "_0293809c"
-  },
-  {
     "name": "password-reset",
     "path": "/password-reset",
     "component": "/home/omorfaruk/Desktop/Pos/pages/password-reset.vue",
@@ -100,30 +93,30 @@
   {
     "name": "employee-department",
     "path": "/employee/department",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/department/index.vue",
-    "chunkName": "pages/employee/department/index",
-    "_name": "_3f45da7b"
+    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/department.vue",
+    "chunkName": "pages/employee/department",
+    "_name": "_4625adf8"
   },
   {
     "name": "employee-designation",
     "path": "/employee/designation",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/designation/index.vue",
-    "chunkName": "pages/employee/designation/index",
-    "_name": "_5e97bcf8"
+    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/designation.vue",
+    "chunkName": "pages/employee/designation",
+    "_name": "_7d742fc1"
   },
   {
-    "name": "employee-employee",
-    "path": "/employee/employee",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee/index.vue",
-    "chunkName": "pages/employee/employee/index",
-    "_name": "_585d7352"
+    "name": "employee-employee-add",
+    "path": "/employee/employee-add",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-add.vue",
+    "chunkName": "pages/employee/employee-add",
+    "_name": "_ff4657b0"
   },
   {
-    "name": "employee-office-time",
-    "path": "/employee/office-time",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/office-time/index.vue",
-    "chunkName": "pages/employee/office-time/index",
-    "_name": "_147a200b"
+    "name": "employee-employee-list",
+    "path": "/employee/employee-list",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-list.vue",
+    "chunkName": "pages/employee/employee-list",
+    "_name": "_27bc30a7"
   },
   {
     "name": "pos-create",
@@ -210,27 +203,6 @@
     "_name": "_6ad6f226"
   },
   {
-    "name": "employee-department-create",
-    "path": "/employee/department/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/department/create.vue",
-    "chunkName": "pages/employee/department/create",
-    "_name": "_5dac80ba"
-  },
-  {
-    "name": "employee-designation-create",
-    "path": "/employee/designation/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/designation/create.vue",
-    "chunkName": "pages/employee/designation/create",
-    "_name": "_6d8459ba"
-  },
-  {
-    "name": "employee-employee-create",
-    "path": "/employee/employee/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee/create.vue",
-    "chunkName": "pages/employee/employee/create",
-    "_name": "_63e86172"
-  },
-  {
     "name": "profile-qualification-create",
     "path": "/profile/qualification/create",
     "component": "/home/omorfaruk/Desktop/Pos/pages/profile/qualification/create.vue",
@@ -252,25 +224,18 @@
     "_name": "_68e70190"
   },
   {
-    "name": "employee-employee-detail-id",
-    "path": "/employee/employee/detail/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee/detail/_id.vue",
-    "chunkName": "pages/employee/employee/detail/_id",
-    "_name": "_d8e91872"
-  },
-  {
-    "name": "employee-employee-update-id",
-    "path": "/employee/employee/update/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee/update/_id.vue",
-    "chunkName": "pages/employee/employee/update/_id",
-    "_name": "_6dd4c782"
-  },
-  {
     "name": "customer-update-id",
     "path": "/customer/update/:id?",
     "component": "/home/omorfaruk/Desktop/Pos/pages/customer/update/_id.vue",
     "chunkName": "pages/customer/update/_id",
     "_name": "_329be5ea"
+  },
+  {
+    "name": "employee-employee-update-id",
+    "path": "/employee/employee-update/:id?",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-update/_id.vue",
+    "chunkName": "pages/employee/employee-update/_id",
+    "_name": "_155ec7bd"
   },
   {
     "name": "product-update-id",

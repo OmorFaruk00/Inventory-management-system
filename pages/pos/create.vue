@@ -5,15 +5,15 @@
       <div class=" col-sm-12 col-md-6 col-xl-6 mt-3">
         <div class="d-flex justify-content-between mb-2">
           <div class="form-group w-50">
-            <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">
-              <option selected disabled value="">Select Customer Type</option>
-              <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
-                {{ brand.name }}
+            <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">              
+              <option selected disabled value="">Select Customer Type</option>              
+              <option v-for="(customer, index) in customers" :key="index" :value="customer.id">
+                {{ customer.name }}
               </option>
             </select>
           </div>
           <div>
-            <button class="mr-3 btn-add">Add Customer</button>
+            <button type="button" class="mr-3 btn-add" data-toggle="modal" data-target="#exampleModalCenter">Add Customer</button>
           </div>
         </div>
         <div class="">
@@ -143,13 +143,33 @@
         </div>
       </div>
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <Customer />
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn-submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </template>
 <script>
 export default {
   layout: "Sidebar",
   mounted() {
-    this.getCategoryBrand();
+    this.getCustomer();
     this.DataGet();
   },
   data() {
@@ -167,6 +187,7 @@ export default {
       cart: [],
       subtotal: '',
       payable:'',
+      customers:''
 
 
     };
@@ -242,11 +263,11 @@ export default {
           console.log(error);
         });
     },
-    getCategoryBrand() {
+    getCustomer() {
       this.$axios
-        .$get("/product")
+        .$get("/customer")
         .then((response) => {
-          this.product_list = response;
+          this.customers = response;
         })
         .catch((error) => {
           console.log(error);

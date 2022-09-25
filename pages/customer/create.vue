@@ -106,7 +106,7 @@
                       <label for=""> Card Number</label>
                       <input
                         class="form-control"
-                        type="number"
+                        type="text"
                         placeholder="Enter Card Number"
                         v-model="customer.card_number"
                       />
@@ -122,7 +122,7 @@
                       <label for="">Due Limit</label>
                       <input
                         class="form-control"
-                        type="number"
+                        type="text"
                         placeholder="Enter Due Limit"
                         v-model="customer.due_limit"
                       />
@@ -240,6 +240,7 @@ export default {
       formData.append("opening_balance", this.customer.opening_balance);
       formData.append("address", this.customer.address);
       formData.append("image", this.customer.image);
+     
 
       this.$axios
         .$post("/customer", formData)

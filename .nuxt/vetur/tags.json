@@ -2,6 +2,9 @@
   "Cart": {
     "description": "Auto imported from components/Cart.vue"
   },
+  "Customer": {
+    "description": "Auto imported from components/Customer.vue"
+  },
   "File": {
     "description": "Auto imported from components/File.vue"
   },

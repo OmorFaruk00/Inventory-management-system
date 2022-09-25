@@ -1,0 +1,307 @@
+
+<template>
+    <div>
+        <div class="form-bg mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <div class="form-content">
+                            <div class="form-horizontal">
+                                <div class="text-center card-header mb-4 d-flex justify-content-between">
+                                    <h4 class="ml-3">Employee  Add</h4>
+                                    <div>
+                                        <nuxt-link to="/employee/employee-list" class="text-dark mr-3"><img src="/images/list.png"
+                                                alt="list" height="20px" />
+                                        </nuxt-link>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="row">
+                                        <div class="col-md-6 col-xl-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Employee Name <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="User Name"
+                                                    v-model="employee.name" />
+                                                <h6 v-if="errors.name" v-text="errors.name[0]" class="text-danger"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xl-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Email <span class="text-danger">*</span></label>
+                                                <input type="email" class="form-control" placeholder="Email Address"
+                                                    v-model="employee.email" />
+                                                <h6 v-if="errors.email" v-text="errors.email[0]" class="text-danger">
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xl-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Password <span class="text-danger">*</span></label>
+                                                <input type="password" class="form-control" placeholder=""
+                                                    id="showpassword" v-model="employee.password" />
+                                                <h6 v-if="errors.password" v-text="errors.password[0]"
+                                                    class="text-danger"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xl-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Confirm Password</label>
+                                                <input type="password" class="form-control" placeholder=""
+                                                    v-model="employee.password_confirmation" />
+                                                <h6 v-if="errors.password_confirmation"
+                                                    v-text="errors.password_confirmation[0]" class="text-danger"></h6>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="text-center py-3">Personal Information</h4>
+                                    <div class="row">
+
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Date Of Birth </label>
+                                                <input type="date" class="form-control" placeholder="Date Of Birth"
+                                                    v-model="employee.date_of_birth" />
+                                                <h6 v-if="errors.date_of_birth" v-text="errors.date_of_birth[0]"
+                                                    class="text-danger">
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Personal Phone No <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Phone Number"
+                                                    v-model="employee.personal_phone_no" />
+                                                <h6 v-if="errors.personal_phone_no" v-text="errors.personal_phone_no[0]"
+                                                    class="text-danger"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Alternative Phone No</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Alternative Phone No"
+                                                    v-model="employee.alternative_phone_no" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Home Phone No</label>
+                                                <input type="text" class="form-control" placeholder="Home Phone No"
+                                                    v-model="employee.home_phone_no" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Parents Phone No</label>
+                                                <input type="text" class="form-control" placeholder="parents Phone No"
+                                                    v-model="employee.parent_phone_no" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>NID No <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="NID No"
+                                                    v-model="employee.nid_no" />
+                                                <h6 v-if="errors.nid_no" v-text="errors.nid_no[0]" class="text-danger">
+                                                </h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <h4 class="text-center py-3">Office Information</h4>
+                                    <div class="row">
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Branch<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder=""
+                                                    v-model="employee.branch" />
+                                                <h6 v-if="errors.branch" v-text="errors.branch[0]"
+                                                    class="text-danger"></h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Department <span class="text-danger">*</span></label>
+                                                <select class="form-control" v-model="employee.department">
+                                                    <option disabled selected value="">Select Department</option>
+                                                    <option v-for="(department,index) in employee_info.department" :key="index"
+                                                        :value="department.id">{{ department.name }}</option>
+                                                </select>
+                                                <h6 v-if="errors.department" v-text="errors.department[0]"
+                                                    class="text-danger"></h6>
+                                            </div>
+                                        </div>                                       
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Designation <span class="text-danger">*</span></label>
+                                                <select class="form-control" v-model="employee.designation">
+                                                    <option disabled selected value="">Select Designation </option>
+                                                    <option v-for="(designation,index) in employee_info.designation" :key="index"
+                                                        :value="designation.id">{{ designation.name }}</option>
+
+                                                </select>
+                                                <h6 v-if="errors.designation" v-text="errors.designation[0]"
+                                                    class="text-danger"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Job Type <span class="text-danger">*</span></label>
+                                                <select class="form-control" v-model="employee.job_type">
+                                                    <option disabled selected value="">Job Type</option>
+                                                    <option value="full time">Full Time</option>
+                                                    <option value="part time">Part Time</option>
+                                                </select>
+                                                <h6 v-if="errors.job_type" v-text="errors.job_type[0]"
+                                                    class="text-danger"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Role <span class="text-danger">*</span></label>
+                                                <select class="form-control" v-model="employee.role">
+                                                    <option disabled selected value="">Select Role</option>
+                                                    <option v-for="(role,index) in employee_info.role" :key="index"
+                                                        :value="role.name">{{ role.name }}</option>
+                                                  
+                                                </select>
+                                                <h6 v-if="errors.role" v-text="errors.role[0]" class="text-danger"></h6>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="col-md-4 col-xl-4 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Image <span class="text-danger">*</span></label>
+                                                <input type="file" class="form-control" placeholder=""
+                                                    @change="(e) => (employee.image = e.target.files[0])"
+                                                    accept="image/*" />
+                                                <h6 v-if="errors.image" v-text="errors.image[0]" class="text-danger">
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end mt-3 card-footer mb-5">
+                                    <div class="d-flex justify-content-end  py-2">
+                                        <button class="btn-submit" @click.prevent="addEmployee()">Create
+                                            </button>
+                                    </div>
+                                </div>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    layout: "Sidebar",
+    mounted() {
+        this.getEmployeeInfo();
+      
+
+    },
+    data() {
+        return {
+            employee_info:"",
+            employees: [],
+            roles: [],
+            errors: [],
+            employee: {
+                name: '',
+                email: '',
+                password: '',
+                password_confirmation: '',
+                date_of_birth: '',
+                personal_phone_no: '',
+                alternative_phone_no: '',
+                home_phone_no: '',
+                parent_phone_no: '',
+                nid_no: '',
+                branch: '',
+                department: '',
+                designation: '',
+                job_type: '',
+                merit: '',
+                role: '',
+                supervised_by: '',
+
+            }
+        }
+
+    },
+    methods: {
+        getEmployeeInfo() {
+            this.$axios
+                .$get("/employee")
+                .then((response) => {
+                    this.employee_info = response;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },   
+     
+     
+        addEmployee() {
+
+            let formData = new FormData();
+            formData.append('name', this.employee.name)
+            formData.append('email', this.employee.email)
+            formData.append('password', this.employee.password)
+            formData.append('password_confirmation', this.employee.password_confirmation)
+            formData.append('date_of_birth', this.employee.date_of_birth)
+            formData.append('personal_phone_no', this.employee.personal_phone_no)
+            formData.append('alternative_phone_no', this.employee.alternative_phone_no)
+            formData.append('home_phone_no', this.employee.home_phone_no)
+            formData.append('parent_phone_no', this.employee.parent_phone_no)
+            formData.append('nid_no', this.employee.nid_no)
+            formData.append('branch', this.employee.branch)
+            formData.append('department', this.employee.department)
+            formData.append('designation', this.employee.designation)
+            formData.append('job_type', this.employee.job_type)          
+            formData.append('role', this.employee.role)            
+            formData.append('image', this.employee.image)
+
+
+            this.$axios
+                .$post("/employee", formData)
+                .then((response) => {
+                    this.employee = "";
+                    this.errors = {};
+                    this.$swal({
+                        title: "Success",
+                        position: "center",
+                        text: response.message,
+                        timer: 2000,
+                        type: "success",
+                        showConfirmButton: false,
+                    });
+                    
+                })
+                .catch((error) => {
+                    if (error.response.status == 401) {
+                        this.$toaster.error(error.response.data.message);
+                    }
+                    this.errors = error.response.data.errors;
+                });
+        },
+
+
+
+
+
+    },
+
+
+};
+
+</script>
+<style scoped>
+</style>
