@@ -24,15 +24,18 @@
               </svg>
             </a>
             <div v-if="product" class="dropdown_item">
-              <nuxt-link class="sidebar-item" to="/brand"><img src="/images/brand.png" alt="" />Brand</nuxt-link>
-              <nuxt-link class="sidebar-item" to="/category"><img src="/images/category.png" alt="" />Category
-              </nuxt-link>
-              <nuxt-link class="sidebar-item" to="/unit"><img src="/images/unit.png" alt="" />Units</nuxt-link>
               <nuxt-link class="sidebar-item" to="/product/create"><img src="/images/add1.png" alt="" />Add Product
               </nuxt-link>
               <nuxt-link class="sidebar-item" to="/product"><img src="/images/list.png" alt="" />Product lists
               </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/product/stock"><img src="/images/stock.png" alt="" />Stock Product 
+              </nuxt-link>
 
+              <nuxt-link class="sidebar-item" to="/brand"><img src="/images/brand.png" alt="" />Brand</nuxt-link>
+              <nuxt-link class="sidebar-item" to="/category"><img src="/images/category.png" alt="" />Category
+              </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/unit"><img src="/images/unit.png" alt="" />Units</nuxt-link>
+              
             </div>
           </div>
           <div class="">

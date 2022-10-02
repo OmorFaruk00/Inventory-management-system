@@ -50,8 +50,8 @@
                   <td>{{ employee.name }}</td>
                   <td>{{ employee.email }}</td>
                   <td>{{ employee.personal_phone_no }}</td>
-                  <td>{{ employee.rel_designation.name }}</td>
-                  <td>{{ employee.rel_department.name}}</td>
+                  <td>{{ employee.designation.name }}</td>
+                  <td>{{ employee.department.name}}</td>
             
                   <td><img :src="base_url + '/images/employee/' + employee.image" alt="image"
                   style="height:80px;width: 100px;" /></td>

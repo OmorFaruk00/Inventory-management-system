@@ -74,10 +74,10 @@
                   style="height:80px;width: 100px;" /></td>
               <td>
                 <nuxt-link :to="`product/update/${product.id}`" class="btn">
-                  <img src="images/edit.png" />
+                  <img src="/images/edit.png" />
                 </nuxt-link>
                 <button class="btn" @click="DataDelete(product.id)">
-                  <img src="images/delete.png" />
+                  <img src="/images/delete.png" />
                 </button>
               </td>
             </tr>

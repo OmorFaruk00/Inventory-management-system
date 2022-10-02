@@ -147,6 +147,13 @@
     "_name": "_51cbd9f2"
   },
   {
+    "name": "product-stock",
+    "path": "/product/stock",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/product/stock.vue",
+    "chunkName": "pages/product/stock",
+    "_name": "_0dc296db"
+  },
+  {
     "name": "profile-qualification",
     "path": "/profile/qualification",
     "component": "/home/omorfaruk/Desktop/Pos/pages/profile/qualification/index.vue",

@@ -25,6 +25,7 @@ const _f6bf23fc = () => interopDefault(import('../pages/pos/create.vue' /* webpa
 const _4e681a8a = () => interopDefault(import('../pages/pos/new.vue' /* webpackChunkName: "pages/pos/new" */))
 const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
+const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
 const _5968ea71 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
 const _681ee401 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
 const _3ddbb224 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
@@ -137,6 +138,10 @@ export const routerOptions = {
     path: "/product/create",
     component: _51cbd9f2,
     name: "product-create"
+  }, {
+    path: "/product/stock",
+    component: _0dc296db,
+    name: "product-stock"
   }, {
     path: "/profile/qualification",
     component: _5968ea71,
