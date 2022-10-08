@@ -33,6 +33,8 @@
     "v-owl-carousel": "^1.0.8",
     "v-toaster": "^1.0.3",
     "vue": "^2.6.14",
+    "vue-html-to-paper": "^1.4.4",
+    "vue-html2pdf": "^1.8.0",
     "vue-js-counter": "^1.0.3",
     "vue-notification": "^1.3.20",
     "vue-pagination-2": "^3.1.0",

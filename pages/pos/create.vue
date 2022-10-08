@@ -84,10 +84,10 @@
           </div>
         </div>
       </div>
-      <div class=" col-sm-12 col-md-6 col-xl-6 mt-3 ">
+      <div class=" col-sm-12 col-md-3 col-xl-6 mt-3 ">
         <div class="pr-2 mb-2">
           <div class="row">
-            <div class="col-sm-12 col-md-3 col-xl-3">
+            <div class="col-sm-12 col-md-4 col-xl-3">
               <div class="form-group  ">
                 <select class="form-control border-0" v-model="category"
                   @click="searchProduct('search_by_category',category)">
@@ -98,7 +98,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-sm-12 col-xl-3">
+            <div class="col-sm-12 col-md-3 col-xl-3">
               <div class="form-group  ">
                 <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">
                   <option selected disabled value="">Search By Brand</option>
@@ -108,7 +108,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-sm-12 col-xl-6">
+            <div class="col-sm-12 col-md-6 col-xl-6">
               <div class="input-group form-group  w-100">
                 <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price"
                   v-model="search" @keyup="searchProduct('search_by_global',search)">
@@ -328,18 +328,10 @@ export default {
         this.$toaster.error('The paid amount field is required');
       }
       this.$axios
-        .$post("/create-invoice", { customer: this.customer, cart: this.cart, vat: this.vat, discount: this.discount, subtotal: this.subtotal, payable: this.payable, paid_amount: this.paid_amount,responseType: "blob"})
+        .$post("/create-invoice", { customer: this.customer, cart: this.cart, vat: this.vat, discount: this.discount, subtotal: this.subtotal, payable: this.payable, paid_amount: this.paid_amount})
         .then((response) => {
-          this.cart = []; this.customer = ""; this.vat = ""; this.discount = ""; this.subtotal = ""; this.payable = ""; this.paid_amount = ""; 
+          this.cart = []; this.customer = ""; this.vat = ""; this.discount = ""; this.subtotal = ""; this.payable = ""; this.paid_amount = "";
 
-          const url = window.URL.createObjectURL(new Blob([response]));
-                    const link = document.createElement("a");
-                    link.href = url;
-                    link.setAttribute("download", "invoice.pdf");
-                    document.body.appendChild(link);
-                    link.click();
-          
-          
           this.$swal({
             title: "Success",
             position: "top",

@@ -1,5 +1,5 @@
 <template>
-    <div class="body-shadow">
+    <div class="body-shadow">        
         <div class="pt-2 pr-3 mb-2">
             <div class="row">
                 <div class="col col-sm-5 col-xs-12 d-flex">

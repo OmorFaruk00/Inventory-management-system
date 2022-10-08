@@ -20,7 +20,6 @@ let store = {};
   store.modules = store.modules || {}
 
   resolveStoreModules(require('../store/postLogin.js'), 'postLogin.js')
-  resolveStoreModules(require('../store/modules/product.js'), 'modules/product.js')
 
   // If the environment supports hot reloading...
 
@@ -29,7 +28,6 @@ let store = {};
     module.hot.accept([
       '../store/index.js',
       '../store/postLogin.js',
-      '../store/modules/product.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()
