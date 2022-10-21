@@ -12,7 +12,6 @@ const _2203d6f9 = () => interopDefault(import('../pages/dashboard.vue' /* webpac
 const _13b79c08 = () => interopDefault(import('../pages/password-reset.vue' /* webpackChunkName: "pages/password-reset" */))
 const _f1bf3788 = () => interopDefault(import('../pages/pos/index.vue' /* webpackChunkName: "pages/pos/index" */))
 const _dbe8ead2 = () => interopDefault(import('../pages/product/index.vue' /* webpackChunkName: "pages/product/index" */))
-const _9909b25e = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _f4b17290 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
 const _2be38172 = () => interopDefault(import('../pages/unit/index.vue' /* webpackChunkName: "pages/unit/index" */))
 const _6a7a31f4 = () => interopDefault(import('../pages/customer/category.vue' /* webpackChunkName: "pages/customer/category" */))
@@ -26,17 +25,10 @@ const _4e681a8a = () => interopDefault(import('../pages/pos/new.vue' /* webpackC
 const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
 const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
-const _5968ea71 = () => interopDefault(import('../pages/profile/qualification/index.vue' /* webpackChunkName: "pages/profile/qualification/index" */))
-const _681ee401 = () => interopDefault(import('../pages/profile/social/index.vue' /* webpackChunkName: "pages/profile/social/index" */))
-const _3ddbb224 = () => interopDefault(import('../pages/profile/training/index.vue' /* webpackChunkName: "pages/profile/training/index" */))
-const _ff44314c = () => interopDefault(import('../pages/profile/update.vue' /* webpackChunkName: "pages/profile/update" */))
 const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
 const _ffa5554e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
 const _6ad6f226 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
-const _092ea326 = () => interopDefault(import('../pages/profile/qualification/create.vue' /* webpackChunkName: "pages/profile/qualification/create" */))
-const _791c3246 = () => interopDefault(import('../pages/profile/social/create.vue' /* webpackChunkName: "pages/profile/social/create" */))
-const _68e70190 = () => interopDefault(import('../pages/profile/training/create.vue' /* webpackChunkName: "pages/profile/training/create" */))
 const _329be5ea = () => interopDefault(import('../pages/customer/update/_id.vue' /* webpackChunkName: "pages/customer/update/_id" */))
 const _155ec7bd = () => interopDefault(import('../pages/employee/employee-update/_id.vue' /* webpackChunkName: "pages/employee/employee-update/_id" */))
 const _55dbffff = () => interopDefault(import('../pages/product/update/_id.vue' /* webpackChunkName: "pages/product/update/_id" */))
@@ -86,10 +78,6 @@ export const routerOptions = {
     path: "/product",
     component: _dbe8ead2,
     name: "product"
-  }, {
-    path: "/profile",
-    component: _9909b25e,
-    name: "profile"
   }, {
     path: "/setting",
     component: _f4b17290,
@@ -143,22 +131,6 @@ export const routerOptions = {
     component: _0dc296db,
     name: "product-stock"
   }, {
-    path: "/profile/qualification",
-    component: _5968ea71,
-    name: "profile-qualification"
-  }, {
-    path: "/profile/social",
-    component: _681ee401,
-    name: "profile-social"
-  }, {
-    path: "/profile/training",
-    component: _3ddbb224,
-    name: "profile-training"
-  }, {
-    path: "/profile/update",
-    component: _ff44314c,
-    name: "profile-update"
-  }, {
     path: "/setting/assign-role",
     component: _d0104e0c,
     name: "setting-assign-role"
@@ -174,18 +146,6 @@ export const routerOptions = {
     path: "/setting/special-permission",
     component: _6ad6f226,
     name: "setting-special-permission"
-  }, {
-    path: "/profile/qualification/create",
-    component: _092ea326,
-    name: "profile-qualification-create"
-  }, {
-    path: "/profile/social/create",
-    component: _791c3246,
-    name: "profile-social-create"
-  }, {
-    path: "/profile/training/create",
-    component: _68e70190,
-    name: "profile-training-create"
   }, {
     path: "/customer/update/:id?",
     component: _329be5ea,

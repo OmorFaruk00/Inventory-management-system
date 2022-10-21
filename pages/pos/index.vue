@@ -117,12 +117,12 @@
             </table>
             <div class="float-right mt-4" style="line-height:12px;text-align: right;">
               <p>Subtotal : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.subtotal_amount}}</p>
-              <p>Discount : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.discount_amount}}</p>
-              <p>Previous Due : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.customer.previous_due}}
-              </p>
+              <p>Discount : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.discount_amount}}</p>              
               <p v-if="sales_info.vat">Vat: {{ sales_info.vat}}%</p>
               <p>Payable : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.payable_amount}}</p>
               <p>Paid : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.paid_amount}}</p>
+              <p>Due : <img src="/images/taka.png" alt="" height="15px">{{ sales_info.customer.previous_due}}
+              </p>
             </div>
           </div>
           <!-- Modal footer -->

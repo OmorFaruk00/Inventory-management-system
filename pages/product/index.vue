@@ -18,7 +18,7 @@
           <div class="row">
             <div class="col-sm-12 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="category" @click="searchProduct('search_by_category',category)">
+                <select class="form-control border-0" v-model="category" @click="searchProduct('category',category)">
                   <option selected disabled value="">Search By Category</option>
                   <option v-for="(category, index) in product_list.category" :key="index" :value="category.id">
                     {{ category.name }}
@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-12 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">
+                <select class="form-control border-0" v-model="brand" @change="searchProduct('brand',brand)">
                   <option selected disabled value="">Search By Brand</option>
                   <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
                     {{ brand.name }}
@@ -39,7 +39,7 @@
             <div class="col-sm-12 col-xl-6">
               <div class="input-group form-group  w-100">
                 <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price" v-model="search"
-                  @keyup="searchProduct('search_by_global',search)">
+                  @keyup="searchProduct('global',search)">
                 <button class="btn-search">
                   <img src="/images/search.png" height="30px" />
                 </button>
@@ -65,11 +65,11 @@
           <tbody v-for="(product, index) in products.data" :key="index">
             <tr class="t-row">
               <td>{{ products.current_page * list - list + index + 1 }}</td>
-              <td>{{ product.product_name }}</td>
-              <td>{{ product.product_code }}</td>
-              <td>{{ product.category.name }}</td>
-              <td>{{ product.unit.name }}</td>
-              <td>{{ product.sales_price }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.code }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.unit}}</td>
+              <td>{{ product.price }}</td>
               <td><img :src="base_url + '/images/product/' + product.image" alt="image"
                   style="height:80px;width: 100px;" /></td>
               <td>
@@ -87,6 +87,7 @@
       <!-- pagination         -->
       <vs-pagination v-if="products.last_page > 1" :total-pages="products.last_page" @change="DataGet"></vs-pagination>
     </div>
+    
   </div>
 </template>
 <script>
@@ -121,6 +122,7 @@ export default {
       this.$axios
         .$post("/product-search?page=" + page, { "type": this.type, "item": this.item, "search": this.search, "list": this.list })
         .then((response) => {
+          console.log(response);
           this.products = response;
         })
         .catch((error) => {

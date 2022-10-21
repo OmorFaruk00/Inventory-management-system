@@ -56,13 +56,6 @@
     "_name": "_dbe8ead2"
   },
   {
-    "name": "profile",
-    "path": "/profile",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/index.vue",
-    "chunkName": "pages/profile/index",
-    "_name": "_9909b25e"
-  },
-  {
     "name": "setting",
     "path": "/setting",
     "component": "/home/omorfaruk/Desktop/Pos/pages/setting/index.vue",
@@ -154,34 +147,6 @@
     "_name": "_0dc296db"
   },
   {
-    "name": "profile-qualification",
-    "path": "/profile/qualification",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/qualification/index.vue",
-    "chunkName": "pages/profile/qualification/index",
-    "_name": "_5968ea71"
-  },
-  {
-    "name": "profile-social",
-    "path": "/profile/social",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/social/index.vue",
-    "chunkName": "pages/profile/social/index",
-    "_name": "_681ee401"
-  },
-  {
-    "name": "profile-training",
-    "path": "/profile/training",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/training/index.vue",
-    "chunkName": "pages/profile/training/index",
-    "_name": "_3ddbb224"
-  },
-  {
-    "name": "profile-update",
-    "path": "/profile/update",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/update.vue",
-    "chunkName": "pages/profile/update",
-    "_name": "_ff44314c"
-  },
-  {
     "name": "setting-assign-role",
     "path": "/setting/assign-role",
     "component": "/home/omorfaruk/Desktop/Pos/pages/setting/assign-role.vue",
@@ -208,27 +173,6 @@
     "component": "/home/omorfaruk/Desktop/Pos/pages/setting/special-permission.vue",
     "chunkName": "pages/setting/special-permission",
     "_name": "_6ad6f226"
-  },
-  {
-    "name": "profile-qualification-create",
-    "path": "/profile/qualification/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/qualification/create.vue",
-    "chunkName": "pages/profile/qualification/create",
-    "_name": "_092ea326"
-  },
-  {
-    "name": "profile-social-create",
-    "path": "/profile/social/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/social/create.vue",
-    "chunkName": "pages/profile/social/create",
-    "_name": "_791c3246"
-  },
-  {
-    "name": "profile-training-create",
-    "path": "/profile/training/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/profile/training/create.vue",
-    "chunkName": "pages/profile/training/create",
-    "_name": "_68e70190"
   },
   {
     "name": "customer-update-id",

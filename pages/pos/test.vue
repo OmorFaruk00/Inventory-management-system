@@ -203,12 +203,12 @@
                $("#salesModal").modal('hide');                         
                
       },
-      // PrintInvoice(){
-      //   window.print();
+      PrintInvoice(){
+        window.print();
   
   
   
-      // },
+      },
   
     },
   };

@@ -259,7 +259,7 @@ export default {
 
 
             this.$axios
-                .$put("/employee-update/"+ this.$route.params.id, formData)
+                .$post("/employee-update/"+ this.$route.params.id, formData)
                 .then((response) => {                    
                     this.errors = {};
                     this.$swal({

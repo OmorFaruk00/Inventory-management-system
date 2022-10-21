@@ -90,7 +90,7 @@
             <div class="col-sm-12 col-md-4 col-xl-3">
               <div class="form-group  ">
                 <select class="form-control border-0" v-model="category"
-                  @click="searchProduct('search_by_category',category)">
+                  @click="searchProduct('category',category)">
                   <option selected disabled value="">Search By Category</option>
                   <option v-for="(category, index) in product_info.category" :key="index" :value="category.id">
                     {{ category.name }}
@@ -100,7 +100,7 @@
             </div>
             <div class="col-sm-12 col-md-3 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="brand" @change="searchProduct('search_by_brand',brand)">
+                <select class="form-control border-0" v-model="brand" @change="searchProduct('brand',brand)">
                   <option selected disabled value="">Search By Brand</option>
                   <option v-for="(brand, index) in product_info.brand" :key="index" :value="brand.id">
                     {{ brand.name }}
@@ -111,7 +111,7 @@
             <div class="col-sm-12 col-md-6 col-xl-6">
               <div class="input-group form-group  w-100">
                 <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price"
-                  v-model="search" @keyup="searchProduct('search_by_global',search)">
+                  v-model="search" @keyup="searchProduct('global',search)">
                 <button class="btn-search">
                   <img src="/images/search.png" height="30px" />
                 </button>
@@ -122,7 +122,7 @@
         <div class="row ">
           <div class="col-md-3 col-xl-3 mb-4" v-for="(product, index) in products.data" :key="index">
             <a href="#" class="btn-pos"
-              @click="addToCart(product.id,product.product_name,product.product_code,product.sales_price,product.stock.available_quantity,product.discount)">
+              @click="addToCart(product.id,product.name,product.code,product.price,product.available_quantity,product.discount)">
               <div class="pos">
                 <div class="pos-image ">
                   <img :src="base_url + '/images/product/' + product.image" alt="image" class="w-100 h-100" />
@@ -131,9 +131,9 @@
                   <p class="p-discount"><span v-if="product.discount">-</span>{{product.discount}}</p>
                 </div>
                 <div class="pos-content">
-                  <p class="p-name">{{product.product_name}}</p>
+                  <p class="p-name">{{product.name}}</p>
                   <p class="p-price"><span class="p-name">Price </span> <img class="mb-1" src="/images/taka.png" alt=""
-                      height="13px">{{product.sales_price}} </p>
+                      height="13px">{{product.price}} </p>
 
                 </div>
               </div>
@@ -271,8 +271,15 @@ export default {
       }
     },
     updateQty(product) {
-      if (product.qty >= product.data.stock.available_quantity) {
-        alert('not available');
+      if (product.qty >= product.available_qty) {
+        this.$swal({
+            title: "error",
+            position: "center",
+            text: 'Qty not available',
+            // timer: 2000,
+            type: "error",
+            // showConfirmButton: false,
+          });
       } else {
         product.amount = product.qty * product.price;
         this.total();
@@ -291,22 +298,23 @@ export default {
 
       })
 
-      this.subtotal = Math.ceil(total - discount);
+      this.subtotal = Math.ceil(total);
       this.discount = Math.ceil(parseFloat(discount));
-      this.payable = parseInt(this.Previous_due) + parseInt(this.subtotal);
+      this.payable = Math.ceil(this.Previous_due + this.subtotal - this.discount);
 
     },
     VatCalculate() {
-      let vat = Math.ceil((this.subtotal * this.vat) / 100);
+      let subtotal = this.subtotal - this.discount;
+      let vat = Math.ceil((subtotal * this.vat) / 100);
       this.subtotal = parseInt(this.subtotal) + parseInt(vat);
-      this.payable = parseInt(this.subtotal) + parseInt(this.Previous_due);
+      this.payable = parseInt(this.subtotal) + parseInt(this.Previous_due)-parseInt(this.discount);
       // this.total();
       // alert(vat);
 
     },
     removeCart(product) {
       let remove = this.cart.findIndex(function (item) {
-        return item.data.id === product.data.id;
+        return item.id === product.id;
       });
       this.cart.splice(remove, 1);
       this.total();

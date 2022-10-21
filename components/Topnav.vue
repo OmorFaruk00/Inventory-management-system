@@ -12,12 +12,12 @@
           <div id="user" class="dropdown-content pt-4">
             <div class="user-info d-flex justify-content-center">
 
-              <img :src="base_url+'/images/emp/' + $auth.user.profile_photo" alt="image" class="profile" />
+              <img :src="base_url+'/images/employee/' + $auth.user.image" alt="image" class="profile" />
             </div>
             <div class="user-text">
-              <!-- <h4 class="pt-3">{{ $auth.user.name ?? null }}</h4>
-              <p >{{ $auth.user.rel_designation.designation ?? null}}</p> -->
-            </div>
+               <h4 class="pt-3">{{ $auth.user.name}}</h4> 
+              <p >{{ $auth.user.designation.name}}</p>               
+            </div>           
 
             <div class="d-flex justify-content-center mb-4">
               <nuxt-link to="/change-password" class="btn-change" style="padding:5px 40px">Change Password</nuxt-link>              

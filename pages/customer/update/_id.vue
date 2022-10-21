@@ -45,7 +45,7 @@
                   <div class="col-12 col-md-6 col-xl-6">
                     <div class="form-group">
                       <label for="">Category</label>
-                      <select class="form-control" v-model="customer.category">
+                      <select class="form-control" v-model="customer.category_id">
                         <option selected disabled value="">
                           Select category
                         </option>
@@ -217,7 +217,7 @@ export default {
       errors: {},
       customer: {
         customer_name: "",
-        category: "",
+        category_id: "",
         phone: "",
         email: "",
         due_limit: "",
@@ -253,7 +253,7 @@ export default {
     DataStore() {
       let formData = new FormData();
       formData.append("customer_name", this.customer.name);
-      formData.append("category", this.customer.category);
+      formData.append("category", this.customer.category_id);
       formData.append("phone", this.customer.phone);
       formData.append("email", this.customer.email);
       formData.append("due_limit", this.customer.due_limit);

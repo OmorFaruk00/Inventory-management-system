@@ -19,7 +19,7 @@
           <div class="row">
             <div class="col-sm-12 col-md-6 col-xl-4">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="category" @click="searchcustomer('search_by_category',category)">
+                <select class="form-control border-0" v-model="category" @click="searchcustomer('category',category)">
                   <option selected disabled value="">Search By Category</option>
                   <option v-for="(category, index) in category_list" :key="index" :value="category.id">
                     {{ category.name }}
@@ -30,7 +30,7 @@
             <div class="col-sm-12 col-md-6 col-xl-8">
               <div class="input-group form-group  w-100">
                 <input type="search" class="form-control border-0" placeholder="Search Name/Phone/Address" v-model="search"
-                  @keyup="searchcustomer('search_by_global',search)">
+                  @keyup="searchcustomer('global',search)">
                 <button class="btn-search">
                   <img src="/images/search.png" height="30px" />
                 </button>
@@ -58,7 +58,7 @@
               <td>{{ customer.name }}</td>
               <td>{{ customer.phone }}</td>
               <td>{{ customer.email}}</td>
-              <td>{{ customer.category.name}}</td>              
+              <td>{{ customer.category}}</td>              
               <td><img :src="base_url + '/images/customer/' + customer.image" alt="image"
                   style="height:80px;width: 100px;" /></td>
               <td>

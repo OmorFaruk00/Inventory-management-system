@@ -1,89 +1,38 @@
 <template>
-	<div class="bg">
-		<div class="">
-			<div class="welcome">
-				<h1 aria-label="welcome"></h1>
-			</div>
-			<div class="d-flex justify-content-end h-100">
-				<div class="login">
-					<div class="login-logo">
-						<img src="/images/logo.png" alt="" />
-					</div>
-					<div class="login-header">
-						<h2 class="">Central Management System | Darul Uloom Moniram</h2>
-					</div>
-					<div class="login-header">
-						<h3>Sign In</h3>
-						<div class="d-flex justify-content-end social_icon"></div>
-					</div>
-					<div class="card-body">
-						<div class="alert alert-danger" v-if="login_error">
-							<strong>{{ login_error }}!</strong>
-						</div>
-						<div class="input-group form-group pb-2">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-										viewBox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd"
-											d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-											clip-rule="evenodd" />
-									</svg></span>
-							</div>
-							<input type="text" class="form-control" id="email" placeholder="username"
-								v-model="login.email" autocomplete />
-						</div>
-						<p v-if="errors.email" v-text="errors.email[0]" class="text-danger"></p>
-
-						<div class="input-group form-group pb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-										viewBox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd"
-											d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z"
-											clip-rule="evenodd" />
-									</svg></span>
-							</div>
-							<input type="password" id="password" class="form-control" placeholder="password"
-								v-model="login.password" />
-							<div class="input-group-prepend">
-								<span class="input-group-text eye" @click="Password_Visibility" v-if="nonvisibile"><svg
-										xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-										fill="currentColor">
-										<path fill-rule="evenodd"
-											d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
-											clip-rule="evenodd" />
-										<path
-											d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
-									</svg></span>
-								<span class="input-group-text eye" @click="Password_Visibility" v-if="visibile"><svg
-										xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-										fill="currentColor">
-										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-										<path fill-rule="evenodd"
-											d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-											clip-rule="evenodd" />
-									</svg></span>
-							</div>
-						</div>
-						<p v-if="errors.password" v-text="errors.password[0]" class="text-danger"></p>
-
-						<div class="row">
-							<div class="col-sm-12 col-md-6 col-xl-6">
-								<div class="remember">
-									<input type="checkbox" class="text-white" id="rememberMe" />Remember Me
+	<div class="content">
+		<div class="form-bg">
+			<h2 class="title-bar">Inventory Management System</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 mx-auto ">
+						<div class="form-container">
+							<div class="form-icon"><i class="fa fa-user"></i></div>
+							<h3 class="login-title">Login</h3>
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label>email</label>
+									<input class="form-control" type="email" placeholder="email address"
+										v-model="login.email">
 								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-xl-6">
-								<div class="forgot">
-									<nuxt-link to="password-reset" class="text-danger">Forgot your password?</nuxt-link>
+								<div class="form-group">
+									<label>password</label>
+									<input class="form-control" type="password" placeholder="password"
+										v-model="login.password">
 								</div>
-							</div>
-						</div>
-						<div class="form-group py-4">
-							<!-- <nuxt-link class="btn float-right login_btn" to="/app">Login</nuxt-link> -->
-							<button class="btn float-right login_btn" @click="userLogin">
-								Login
-							</button>
+								<div class="" style="margin:30px 40px">
+									<button type="button" class="btn" @click="userLogin">Login</button>
+
+									<div class="pt-3">										
+											<nuxt-link to="password-reset" class="forgot-password">Forgot your password?
+											</nuxt-link>
+										
+									</div>
+
+									<div class="alert alert-danger mt-4 text-center" v-if="login_error">
+										<strong>{{ login_error }}!</strong>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -143,188 +92,121 @@ export default {
 };
 </script>
 <style scoped>
-.bg {
-	background: linear-gradient(to bottom,
-			rgba(0, 0, 0, 0.2) 0%,
-			rgba(0, 0, 0, 0.2) 100%),
-		url("http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg");
-
-	/* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 100vh;
-	/* position: relative; */
-}
-
-.welcome {
-	top: 50%;
-	left: 40%;
-	transform: translate(-50%, -50%);
-	color: red !important;
-	position: absolute;
-	font-size: 80px;
-}
-
-.login-logo {
-	display: flex;
-	justify-content: center;
-}
-
-.login-logo img {
-	height: 100px;
-	border-radius: 50px;
-}
-
-.login {
-	padding-top: 5%;
-	/* margin-right: 20px; */
-	height: 100vh;
-	margin-top: auto;
-	margin-bottom: auto;
-	width: 400px;
-	background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.social_icon span {
-	font-size: 60px;
-	margin-left: 10px;
-	color: #ffc312;
-}
-
-.social_icon span:hover {
-	color: white;
-	cursor: pointer;
-}
-
-.login-header h2 {
-	color: white;
+.title-bar{
 	text-align: center;
-	font-size: 25px;
-	padding: 50px 20px;
+	margin:30px 0px;
+	color: #0c5460;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 40px;
+}
+.content {
+	margin-top: 70px;
+
 }
 
-.login-header h3 {
-	color: white;
-	padding-left: 20px;
+.demo {
+	background: #F2F2F2;
 }
 
-.social_icon {
+/* .form-bg{
 	position: absolute;
-	right: 20px;
-	top: -45px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+} */
+
+.form-container {
+	background: #ecf0f3;
+	font-family: 'Nunito', sans-serif;
+	padding: 40px;
+	border-radius: 20px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	/* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
+
+
 }
 
-.input-group-prepend span {
-	width: 50px;
-	background-color: #ffc312;
-	color: black;
-	border: 0 !important;
-}
-
-.input-group-prepend span.eye {
-	width: 50px;
-	background-color: rgb(232, 240, 254);
-	border: 0 !important;
-}
-
-.remember {
-	color: #fff;
-}
-
-input:focus {
-	outline: 0 0 0 0 !important;
-	box-shadow: 0 0 0 0 !important;
-}
-
-.remember {
-	color: white;
-}
-
-.remember input {
-	width: 20px;
-	height: 20px;
-	margin-left: 15px;
-	margin-right: 5px;
-}
-
-.login_btn {
-	color: black;
-	background-color: #ffc312 !important;
+.form-container .form-icon {
+	color: #0c5460;
+	font-size: 55px;
+	text-align: center;
+	line-height: 100px;
 	width: 100px;
+	height: 100px;
+	margin: 0 auto 15px;
+	border-radius: 50px;
+	box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px #fff;
 }
 
-.login_btn:hover {
-	color: black;
-	background-color: white !important;
-}
-
-.links {
-	color: white;
-}
-
-.links a {
-	margin-left: 4px;
-}
-
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background: #3f81b3 url(https://source.unsplash.com/DSwBHyWKiVw/1280x720) no-repeat center;
-	background-size: cover;
-	overflow: hidden;
-}
-
-h1 {
-	position: relative;
-	font-family: "Roboto", Arial, sans-serif;
-	font-size: calc(10px + 10vw);
+.form-container .login-title {
+	color: #0c5460;
+	font-size: 25px;
 	font-weight: 700;
-	color: #f5f5f5;
-	letter-spacing: 0.02em;
 	text-transform: uppercase;
-	perspective: 500px;
+	letter-spacing: 1px;
+	text-align: center;
+	margin: 0 0 20px;
 }
 
-h1::before,
-h1::after {
-	content: attr(aria-label);
-	position: absolute;
-	top: 0;
-	left: 0;
-	transform: translate(-50%, -50%);
-	text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.3);
+.form-container .form-horizontal .form-group {
+	margin: 0 0 25px 0;
 }
 
-h1::before {
-	animation: floatAbove 3.5s ease-in-out infinite;
-	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
-	clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+.form-container .form-horizontal .form-group label {
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
 }
 
-h1::after {
-	opacity: 0.65;
-	filter: blur(0.02em);
-	transform: translate(-50%, -50%) rotateX(21deg);
-	animation: floatBelow 3.5s ease-in-out infinite;
-	-webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
-	clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+.form-container .form-horizontal .form-control {
+	color: #333;
+	background: #ecf0f3;
+	font-size: 15px;
+	height: 50px;
+	padding: 20px;
+	letter-spacing: 1px;
+	border: none;
+	border-radius: 50px;
+	box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
 }
 
-@keyframes floatAbove {
-	50% {
-		transform: translate(-50%, -60%);
-		-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
-		clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
-	}
+.form-container .form-horizontal .form-control:focus {
+	box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+	outline: none;
 }
 
-@keyframes floatBelow {
-	50% {
-		transform: translate(-50%, -60%) rotateX(10deg);
-		-webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
-		clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
-	}
+.form-container .form-horizontal .form-control::placeholder {
+	color: #808080;
+	font-size: 14px;
+}
+
+.form-container .form-horizontal .btn {
+	color: #000;
+	background: linear-gradient(#45c8f1, #0c5460);
+	/* background-color: #ac40ab; */
+	font-size: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+	padding: 12px !important;
+	border-radius: 50px !important;
+	box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px #fff;
+	border: none;
+	transition: all 0.5s ease 0s;
+}
+
+.forgot-password {
+	color: #c717c4
+}
+
+.form-container .form-horizontal .btn:hover,
+.form-container .form-horizontal .btn:focus {
+	color: #fff;
+	letter-spacing: 3px;
+	box-shadow: none;
+	outline: none;
 }
 </style>
