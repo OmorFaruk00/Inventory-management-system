@@ -11,7 +11,7 @@
               <option value="25">25</option>
               <option value="50">50</option>
             </select>
-            <label for="">  Entries Of {{ customers.total }}</label>
+            <label for="">  Entries of {{ customers.total }}</label>
           </div>
         </div>
         <div class="col-sm-12 col-xl-6 pt-2">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="table-responsive" v-if="customers">
-        <table class="table text-center t-body">
+        <table class="table t-body">
           <thead class="t-head">
             <tr>
               <th>SL</th>
@@ -59,9 +59,12 @@
               <td>{{ customer.phone }}</td>
               <td>{{ customer.email}}</td>
               <td>{{ customer.category}}</td>              
-              <td><img :src="base_url + '/images/customer/' + customer.image" alt="image"
-                  style="height:80px;width: 100px;" /></td>
+              <td v-if="customer.image"><img :src="base_url + '/images/customer/' + customer.image" alt="image"
+                  style="height:80px;width: 100px;" />
+              </td>
+              <td v-else>No Image</td>
               <td>
+                
                 <nuxt-link :to="`customer/update/${customer.id}`" class="btn">
                   <img src="images/edit.png" />
                 </nuxt-link>

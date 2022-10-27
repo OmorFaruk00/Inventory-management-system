@@ -22,6 +22,8 @@ const _ff4657b0 = () => interopDefault(import('../pages/employee/employee-add.vu
 const _27bc30a7 = () => interopDefault(import('../pages/employee/employee-list.vue' /* webpackChunkName: "pages/employee/employee-list" */))
 const _f6bf23fc = () => interopDefault(import('../pages/pos/create.vue' /* webpackChunkName: "pages/pos/create" */))
 const _4e681a8a = () => interopDefault(import('../pages/pos/new.vue' /* webpackChunkName: "pages/pos/new" */))
+const _21a372c9 = () => interopDefault(import('../pages/pos/sales_return.vue' /* webpackChunkName: "pages/pos/sales_return" */))
+const _4191cc04 = () => interopDefault(import('../pages/pos/sales_return_list.vue' /* webpackChunkName: "pages/pos/sales_return_list" */))
 const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
 const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
@@ -118,6 +120,14 @@ export const routerOptions = {
     path: "/pos/new",
     component: _4e681a8a,
     name: "pos-new"
+  }, {
+    path: "/pos/sales_return",
+    component: _21a372c9,
+    name: "pos-sales_return"
+  }, {
+    path: "/pos/sales_return_list",
+    component: _4191cc04,
+    name: "pos-sales_return_list"
   }, {
     path: "/pos/test",
     component: _2a6ecbd0,

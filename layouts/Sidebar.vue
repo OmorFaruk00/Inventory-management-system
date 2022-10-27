@@ -25,7 +25,7 @@
               <nuxt-link class="sidebar-item" to="/product"><img src="/images/list.png" alt="" />Product lists
               </nuxt-link>
               <nuxt-link class="sidebar-item" to="/product/stock"><img src="/images/stock.png" alt="" />Stock Product 
-              </nuxt-link>
+              </nuxt-link>             
 
               <nuxt-link class="sidebar-item" to="/brand"><img src="/images/brand.png" alt="" />Brand</nuxt-link>
               <nuxt-link class="sidebar-item" to="/category"><img src="/images/category.png" alt="" />Category
@@ -47,6 +47,11 @@
               <nuxt-link class="sidebar-item" to="/pos/create"><img src="/images/add1.png" alt="" />Sale Create
               </nuxt-link>
               <nuxt-link class="sidebar-item" to="/pos"><img src="/images/list.png" alt="" />Sale lists</nuxt-link>
+
+              <nuxt-link class="sidebar-item" to="/pos/sales_return"><img src="/images/return.png" alt="" /> Sales Return 
+              </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/pos/sales_return_list"><img src="/images/list.png" alt="" /> Sales Return List 
+              </nuxt-link>
 
             </div>
           </div>

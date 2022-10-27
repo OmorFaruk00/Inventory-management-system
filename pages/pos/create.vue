@@ -6,14 +6,15 @@
         <div class="d-flex mb-2">
           <div class="form-group w-50">
             <select class="form-control border-0" v-model="customer" @change="searchCustomerDue(customer)">
-              <option selected disabled value="">Select Customer Type</option>
+              <option selected disabled value="">Walk-in Customer</option>
               <option v-for="(customer, index) in customers" :key="index" :value="customer.id">
                 {{ customer.name }}
               </option>
             </select>
           </div>
           <div>
-            <button type="button" class="border-0" data-toggle="modal" data-target="#exampleModalCenter" style="" ><img src="/images/add.png" alt="" height="35px"></button>
+            <button type="button" class="border-0" data-toggle="modal" data-target="#exampleModalCenter" style=""><img
+                src="/images/add.png" alt="" height="35px"></button>
           </div>
         </div>
         <div class="">
@@ -31,20 +32,20 @@
             </thead>
             <tbody>
 
-              <tr v-for="(cartItem,index) in cart" :key="index" class="t-row">
-                <td width="50px">{{index +1}} </td>
-                <td width="160px">{{cartItem.name}}</td>
-                <td width="160px">{{cartItem.code}}</td>
+              <tr v-for="(cartItem, index) in cart" :key="index" class="t-row">
+                <td width="50px">{{ index + 1 }} </td>
+                <td width="160px">{{ cartItem.name }}</td>
+                <td width="160px">{{ cartItem.code }}</td>
                 <td width="100px">
                   <input type="number" style="width:60px" class="form-control" @click="updateQty(cartItem)"
                     @keyup="updateQty(cartItem)" v-model="cart[index].qty">
                 </td>
                 <td width="110px">
-                  <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt="" height="15px">{{cartItem.price}}
+                  <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt="" height="15px">{{ cartItem.price }}
                   </div>
                 </td>
                 <td width="110px">
-                  <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt="" height="15px">{{cartItem.amount}}
+                  <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt="" height="15px">{{ cartItem.amount }}
                   </div>
                 </td>
                 <td>
@@ -89,8 +90,7 @@
           <div class="row">
             <div class="col-sm-12 col-md-4 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="category"
-                  @click="searchProduct('category',category)">
+                <select class="form-control border-0" v-model="category" @click="searchProduct('category', category)">
                   <option selected disabled value="">Search By Category</option>
                   <option v-for="(category, index) in product_info.category" :key="index" :value="category.id">
                     {{ category.name }}
@@ -100,7 +100,7 @@
             </div>
             <div class="col-sm-12 col-md-3 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="brand" @change="searchProduct('brand',brand)">
+                <select class="form-control border-0" v-model="brand" @change="searchProduct('brand', brand)">
                   <option selected disabled value="">Search By Brand</option>
                   <option v-for="(brand, index) in product_info.brand" :key="index" :value="brand.id">
                     {{ brand.name }}
@@ -111,7 +111,7 @@
             <div class="col-sm-12 col-md-6 col-xl-6">
               <div class="input-group form-group  w-100">
                 <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price"
-                  v-model="search" @keyup="searchProduct('global',search)">
+                  v-model="search" @keyup="searchProduct('global', search)">
                 <button class="btn-search">
                   <img src="/images/search.png" height="30px" />
                 </button>
@@ -122,18 +122,18 @@
         <div class="row ">
           <div class="col-md-3 col-xl-3 mb-4" v-for="(product, index) in products.data" :key="index">
             <a href="#" class="btn-pos"
-              @click="addToCart(product.id,product.name,product.code,product.price,product.available_quantity,product.discount)">
+              @click="addToCart(product.id, product.name, product.code, product.price, product.available_quantity, product.discount)">
               <div class="pos">
                 <div class="pos-image ">
                   <img :src="base_url + '/images/product/' + product.image" alt="image" class="w-100 h-100" />
                 </div>
-                <div v-if="product.discount!=null">
-                  <p class="p-discount"><span v-if="product.discount">-</span>{{product.discount}}</p>
+                <div v-if="product.discount != null">
+                  <p class="p-discount"><span v-if="product.discount">-</span>{{ product.discount }}</p>
                 </div>
                 <div class="pos-content">
-                  <p class="p-name">{{product.name}}</p>
+                  <p class="p-name">{{ product.name }}</p>
                   <p class="p-price"><span class="p-name">Price </span> <img class="mb-1" src="/images/taka.png" alt=""
-                      height="13px">{{product.price}} </p>
+                      height="13px">{{ product.price }} </p>
 
                 </div>
               </div>
@@ -163,7 +163,7 @@
           <div class="modal-body">
             <Customer />
           </div>
-         
+
         </div>
       </div>
     </div>
@@ -191,7 +191,7 @@ export default {
       base_url: process.env.url,
       cart: [],
       subtotal: '',
-      payable: '',
+      payable: 0,
       customers: [],
       customer: '',
       Previous_due: 0,
@@ -273,13 +273,13 @@ export default {
     updateQty(product) {
       if (product.qty >= product.available_qty) {
         this.$swal({
-            title: "error",
-            position: "center",
-            text: 'Qty not available',
-            // timer: 2000,
-            type: "error",
-            // showConfirmButton: false,
-          });
+          title: "error",
+          position: "center",
+          text: 'Qty not available',
+          // timer: 2000,
+          type: "error",
+          // showConfirmButton: false,
+        });
       } else {
         product.amount = product.qty * product.price;
         this.total();
@@ -298,16 +298,16 @@ export default {
 
       })
 
-      this.subtotal = Math.ceil(total);
+      this.subtotal = Math.ceil(parseInt(total)-parseInt(discount));
       this.discount = Math.ceil(parseFloat(discount));
-      this.payable = Math.ceil(this.Previous_due + this.subtotal - this.discount);
+      this.payable = parseInt(this.subtotal) + parseInt(this.Previous_due);
 
     },
     VatCalculate() {
       let subtotal = this.subtotal - this.discount;
       let vat = Math.ceil((subtotal * this.vat) / 100);
       this.subtotal = parseInt(this.subtotal) + parseInt(vat);
-      this.payable = parseInt(this.subtotal) + parseInt(this.Previous_due)-parseInt(this.discount);
+      this.payable = parseInt(this.subtotal) + parseInt(this.Previous_due);
       // this.total();
       // alert(vat);
 
@@ -323,20 +323,22 @@ export default {
       let due = this.customers.find(function (item) {
         return item.id === id;
       });
-      this.Previous_due = due.previous_due;
-      this.total();
+      let pre_due = due.previous_due;
+      if(pre_due!=null){
+        this.Previous_due = pre_due;     
+        this.total();
+
+      }
+      
 
 
     },
-    CartSubmit() {
-      if (this.customer == '') {
-        this.$toaster.error('The customer field is required');
-      }
+    CartSubmit() {    
       if (this.paid_amount == '') {
         this.$toaster.error('The paid amount field is required');
       }
       this.$axios
-        .$post("/create-invoice", { customer: this.customer, cart: this.cart, vat: this.vat, discount: this.discount, subtotal: this.subtotal, payable: this.payable, paid_amount: this.paid_amount})
+        .$post("/create-invoice", { customer: this.customer, cart: this.cart, vat: this.vat, discount: this.discount, subtotal: this.subtotal, payable: this.payable, paid_amount: this.paid_amount })
         .then((response) => {
           this.cart = []; this.customer = ""; this.vat = ""; this.discount = ""; this.subtotal = ""; this.payable = ""; this.paid_amount = "";
 
@@ -360,10 +362,11 @@ export default {
 };
 </script>
 <style scoped>
-  .btn-submit{
-    /* background: #000 !important; */
-    margin-right: 0px !important;
-  }
+.btn-submit {
+  /* background: #000 !important; */
+  margin-right: 0px !important;
+}
+
 tbody {
   display: block;
   height: 50vh;

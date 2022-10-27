@@ -126,6 +126,20 @@
     "_name": "_4e681a8a"
   },
   {
+    "name": "pos-sales_return",
+    "path": "/pos/sales_return",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/sales_return.vue",
+    "chunkName": "pages/pos/sales_return",
+    "_name": "_21a372c9"
+  },
+  {
+    "name": "pos-sales_return_list",
+    "path": "/pos/sales_return_list",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/sales_return_list.vue",
+    "chunkName": "pages/pos/sales_return_list",
+    "_name": "_4191cc04"
+  },
+  {
     "name": "pos-test",
     "path": "/pos/test",
     "component": "/home/omorfaruk/Desktop/Pos/pages/pos/test.vue",
