@@ -112,6 +112,27 @@
     "_name": "_27bc30a7"
   },
   {
+    "name": "expense-category",
+    "path": "/expense/category",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/category.vue",
+    "chunkName": "pages/expense/category",
+    "_name": "_c0973700"
+  },
+  {
+    "name": "expense-create",
+    "path": "/expense/create",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/create.vue",
+    "chunkName": "pages/expense/create",
+    "_name": "_6815e804"
+  },
+  {
+    "name": "expense-expense-list",
+    "path": "/expense/expense-list",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/expense-list.vue",
+    "chunkName": "pages/expense/expense-list",
+    "_name": "_100c20f5"
+  },
+  {
     "name": "pos-create",
     "path": "/pos/create",
     "component": "/home/omorfaruk/Desktop/Pos/pages/pos/create.vue",
@@ -201,6 +222,13 @@
     "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-update/_id.vue",
     "chunkName": "pages/employee/employee-update/_id",
     "_name": "_155ec7bd"
+  },
+  {
+    "name": "expense-update-id",
+    "path": "/expense/update/:id?",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/update/_id.vue",
+    "chunkName": "pages/expense/update/_id",
+    "_name": "_0213a576"
   },
   {
     "name": "product-update-id",

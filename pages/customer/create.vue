@@ -20,7 +20,7 @@
                     </nuxt-link>
                   </div>
                 </div>
-             <Customer />
+                <Customer />
              
               </div>
             </div>

@@ -55,6 +55,27 @@
 
             </div>
           </div>
+
+          <div class="">
+            <a @click.prevent="expense=!expense" style="cursor:pointer"><img src="/images/minus.jpg" alt="" />
+              Expense
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
+                class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </a>
+            <div v-if="expense" class="dropdown_item">
+              <nuxt-link class="sidebar-item" to="/expense/create"><img src="/images/add1.png" alt="" />New Expense
+              </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/expense/expense-list"><img src="/images/list.png" alt="" />Expense List</nuxt-link>
+
+              <nuxt-link class="sidebar-item" to="/expense/category"><img src="/images/category.png" alt="" /> Category 
+              </nuxt-link>
+              
+
+            </div>
+          </div>
           <div class="">
             <a @click.prevent="customer=!customer" style="cursor:pointer"><img src="/images/customer.png" alt="" />
               Customer Manage
@@ -122,6 +143,7 @@ export default {
       pos: false,
       customer: false,
       employee: false,
+      expense:false,
     }
   }
 

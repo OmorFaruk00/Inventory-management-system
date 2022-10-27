@@ -20,6 +20,9 @@ const _4625adf8 = () => interopDefault(import('../pages/employee/department.vue'
 const _7d742fc1 = () => interopDefault(import('../pages/employee/designation.vue' /* webpackChunkName: "pages/employee/designation" */))
 const _ff4657b0 = () => interopDefault(import('../pages/employee/employee-add.vue' /* webpackChunkName: "pages/employee/employee-add" */))
 const _27bc30a7 = () => interopDefault(import('../pages/employee/employee-list.vue' /* webpackChunkName: "pages/employee/employee-list" */))
+const _c0973700 = () => interopDefault(import('../pages/expense/category.vue' /* webpackChunkName: "pages/expense/category" */))
+const _6815e804 = () => interopDefault(import('../pages/expense/create.vue' /* webpackChunkName: "pages/expense/create" */))
+const _100c20f5 = () => interopDefault(import('../pages/expense/expense-list.vue' /* webpackChunkName: "pages/expense/expense-list" */))
 const _f6bf23fc = () => interopDefault(import('../pages/pos/create.vue' /* webpackChunkName: "pages/pos/create" */))
 const _4e681a8a = () => interopDefault(import('../pages/pos/new.vue' /* webpackChunkName: "pages/pos/new" */))
 const _21a372c9 = () => interopDefault(import('../pages/pos/sales_return.vue' /* webpackChunkName: "pages/pos/sales_return" */))
@@ -33,6 +36,7 @@ const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* web
 const _6ad6f226 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
 const _329be5ea = () => interopDefault(import('../pages/customer/update/_id.vue' /* webpackChunkName: "pages/customer/update/_id" */))
 const _155ec7bd = () => interopDefault(import('../pages/employee/employee-update/_id.vue' /* webpackChunkName: "pages/employee/employee-update/_id" */))
+const _0213a576 = () => interopDefault(import('../pages/expense/update/_id.vue' /* webpackChunkName: "pages/expense/update/_id" */))
 const _55dbffff = () => interopDefault(import('../pages/product/update/_id.vue' /* webpackChunkName: "pages/product/update/_id" */))
 const _9e61a684 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
 const _b72a9692 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -113,6 +117,18 @@ export const routerOptions = {
     component: _27bc30a7,
     name: "employee-employee-list"
   }, {
+    path: "/expense/category",
+    component: _c0973700,
+    name: "expense-category"
+  }, {
+    path: "/expense/create",
+    component: _6815e804,
+    name: "expense-create"
+  }, {
+    path: "/expense/expense-list",
+    component: _100c20f5,
+    name: "expense-expense-list"
+  }, {
     path: "/pos/create",
     component: _f6bf23fc,
     name: "pos-create"
@@ -164,6 +180,10 @@ export const routerOptions = {
     path: "/employee/employee-update/:id?",
     component: _155ec7bd,
     name: "employee-employee-update-id"
+  }, {
+    path: "/expense/update/:id?",
+    component: _0213a576,
+    name: "expense-update-id"
   }, {
     path: "/product/update/:id?",
     component: _55dbffff,
