@@ -140,13 +140,6 @@
     "_name": "_f6bf23fc"
   },
   {
-    "name": "pos-new",
-    "path": "/pos/new",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/new.vue",
-    "chunkName": "pages/pos/new",
-    "_name": "_4e681a8a"
-  },
-  {
     "name": "pos-sales_return",
     "path": "/pos/sales_return",
     "component": "/home/omorfaruk/Desktop/Pos/pages/pos/sales_return.vue",
@@ -180,6 +173,20 @@
     "component": "/home/omorfaruk/Desktop/Pos/pages/product/stock.vue",
     "chunkName": "pages/product/stock",
     "_name": "_0dc296db"
+  },
+  {
+    "name": "report-sales-report",
+    "path": "/report/sales-report",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/report/sales-report.vue",
+    "chunkName": "pages/report/sales-report",
+    "_name": "_f4ecd796"
+  },
+  {
+    "name": "report-sales-return-report",
+    "path": "/report/sales-return-report",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/report/sales-return-report.vue",
+    "chunkName": "pages/report/sales-return-report",
+    "_name": "_d0e48000"
   },
   {
     "name": "setting-assign-role",

@@ -10,8 +10,8 @@
 
 
 
-          <div class="">
-            <a @click.prevent="product=!product" style="cursor:pointer"><img src="/images/product.png" alt="" />
+          <div class="sidebar-menu" @click.prevent="product=!product">
+            <a><img src="/images/product.png" alt="" />
               Product Manage
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
                 class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
@@ -19,6 +19,7 @@
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
               </svg>
             </a>
+          </div>
             <div v-if="product" class="dropdown_item">
               <nuxt-link class="sidebar-item" to="/product/create"><img src="/images/add1.png" alt="" />Add Product
               </nuxt-link>
@@ -33,9 +34,9 @@
               <nuxt-link class="sidebar-item" to="/unit"><img src="/images/unit.png" alt="" />Units</nuxt-link>
               
             </div>
-          </div>
-          <div class="">
-            <a @click.prevent="pos=!pos" style="cursor:pointer"><img src="/images/pos.png" alt="" />
+         
+          <div class="sidebar-menu" @click.prevent="pos=!pos">
+            <a ><img src="/images/pos.png" alt="" />
               Point of Seles
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
                 class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
@@ -43,6 +44,7 @@
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
               </svg>
             </a>
+          </div>
             <div v-if="pos" class="dropdown_item">
               <nuxt-link class="sidebar-item" to="/pos/create"><img src="/images/add1.png" alt="" />Sale Create
               </nuxt-link>
@@ -54,10 +56,10 @@
               </nuxt-link>
 
             </div>
-          </div>
+          
 
-          <div class="">
-            <a @click.prevent="expense=!expense" style="cursor:pointer"><img src="/images/minus.jpg" alt="" />
+          <div class="sidebar-menu"  @click.prevent="expense=!expense">
+            <a><img src="/images/minus.png" alt="" />
               Expense
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
                 class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
@@ -65,6 +67,7 @@
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
               </svg>
             </a>
+          </div>
             <div v-if="expense" class="dropdown_item">
               <nuxt-link class="sidebar-item" to="/expense/create"><img src="/images/add1.png" alt="" />New Expense
               </nuxt-link>
@@ -72,12 +75,29 @@
 
               <nuxt-link class="sidebar-item" to="/expense/category"><img src="/images/category.png" alt="" /> Category 
               </nuxt-link>
+            </div>
+            <div class="sidebar-menu"  @click.prevent="report=!report">
+            <a><img src="/images/reportbar.png" alt="" />
+             Report
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
+                class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </a>
+          </div>
+            <div v-if="report" class="dropdown_item">
+              <nuxt-link class="sidebar-item" to="/report/sales-report"><img src="/images/report.png" alt="" />Sales Report
+              </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/report/sales-return-report"><img src="/images/report.png" alt="" />Sales Return Report
+              </nuxt-link>
+            
               
 
             </div>
-          </div>
-          <div class="">
-            <a @click.prevent="customer=!customer" style="cursor:pointer"><img src="/images/customer.png" alt="" />
+          
+          <div class="sidebar-menu" @click.prevent="customer=!customer">
+            <a ><img src="/images/customer.png" alt="" />
               Customer Manage
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
                 class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
@@ -85,18 +105,17 @@
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
               </svg>
             </a>
+          </div>
             <div v-if="customer" class="dropdown_item">
               <nuxt-link class="sidebar-item" to="/customer/create"><img src="/images/add1.png" alt="" />Add Customer
               </nuxt-link>
               <nuxt-link class="sidebar-item" to="/customer"><img src="/images/list.png" alt="" />Customer lists
               </nuxt-link>
               <nuxt-link class="sidebar-item" to="/customer/category"><img src="/images/category.png" alt="" />Customer
-                Category</nuxt-link>
-
-            </div>
+                Category</nuxt-link>            
           </div>
-          <div>
-            <a @click.prevent="employee=!employee" style="cursor:pointer"><img src="/images/pos.png" alt="" />
+          <div class="sidebar-menu" @click.prevent="employee=!employee">
+            <a><img src="/images/pos.png" alt="" />
               Employee Manage
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
                 class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
@@ -104,6 +123,7 @@
                   d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
               </svg>
             </a>
+          </div>
             <div v-if="employee" class="dropdown_item">
               <nuxt-link class="sidebar-item" to="/employee/employee-add"><img src="/images/add1.png" alt="" />Add Employee
               </nuxt-link>
@@ -116,9 +136,7 @@
                   class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
-                </svg>Designation</nuxt-link>
-
-            </div>
+                </svg>Designation</nuxt-link>            
           </div>
         </div>
       </div>
@@ -144,6 +162,7 @@ export default {
       customer: false,
       employee: false,
       expense:false,
+      report:false,
     }
   }
 
@@ -171,6 +190,15 @@ export default {
 
 
 }
+.sidebar-menu:hover{
+  background: #fff !important;
+  cursor: pointer;
+  
+}
+.sidebar-menu svg{
+ padding-top: 5px !important;
+  
+}
 
 .sidebar-item {
   font-size: 15px;
@@ -179,7 +207,7 @@ export default {
 }
 
 .sidebar-item:hover {
-  background: #fff;
+  background: #fff !important;
 
 }
 

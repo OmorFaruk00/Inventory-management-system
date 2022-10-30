@@ -24,12 +24,13 @@ const _c0973700 = () => interopDefault(import('../pages/expense/category.vue' /*
 const _6815e804 = () => interopDefault(import('../pages/expense/create.vue' /* webpackChunkName: "pages/expense/create" */))
 const _100c20f5 = () => interopDefault(import('../pages/expense/expense-list.vue' /* webpackChunkName: "pages/expense/expense-list" */))
 const _f6bf23fc = () => interopDefault(import('../pages/pos/create.vue' /* webpackChunkName: "pages/pos/create" */))
-const _4e681a8a = () => interopDefault(import('../pages/pos/new.vue' /* webpackChunkName: "pages/pos/new" */))
 const _21a372c9 = () => interopDefault(import('../pages/pos/sales_return.vue' /* webpackChunkName: "pages/pos/sales_return" */))
 const _4191cc04 = () => interopDefault(import('../pages/pos/sales_return_list.vue' /* webpackChunkName: "pages/pos/sales_return_list" */))
 const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
 const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
+const _f4ecd796 = () => interopDefault(import('../pages/report/sales-report.vue' /* webpackChunkName: "pages/report/sales-report" */))
+const _d0e48000 = () => interopDefault(import('../pages/report/sales-return-report.vue' /* webpackChunkName: "pages/report/sales-return-report" */))
 const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
 const _ffa5554e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
@@ -133,10 +134,6 @@ export const routerOptions = {
     component: _f6bf23fc,
     name: "pos-create"
   }, {
-    path: "/pos/new",
-    component: _4e681a8a,
-    name: "pos-new"
-  }, {
     path: "/pos/sales_return",
     component: _21a372c9,
     name: "pos-sales_return"
@@ -156,6 +153,14 @@ export const routerOptions = {
     path: "/product/stock",
     component: _0dc296db,
     name: "product-stock"
+  }, {
+    path: "/report/sales-report",
+    component: _f4ecd796,
+    name: "report-sales-report"
+  }, {
+    path: "/report/sales-return-report",
+    component: _d0e48000,
+    name: "report-sales-return-report"
   }, {
     path: "/setting/assign-role",
     component: _d0104e0c,

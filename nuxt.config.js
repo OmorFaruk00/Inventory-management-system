@@ -29,6 +29,9 @@ export default {
       {src: '/js/main.js', defer: true},
       {src: '/js/bootstrap.min.js', defer: true},
       {src: '/js/bootstrap.bundle.min.js', defer: true},
+      {src: "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.6/xlsx.full.min.js", defer: true},
+      
+      
 
 
 

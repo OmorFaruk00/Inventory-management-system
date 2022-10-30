@@ -25,6 +25,7 @@
     "html2canvas": "^1.4.1",
     "jquery": "^3.6.0",
     "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
     "laravel-vue-pagination": "^3.0.0",
     "node-sass": "^7.0.1",
     "nuxt": "^2.15.8",

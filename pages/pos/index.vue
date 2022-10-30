@@ -230,23 +230,7 @@ export default {
 };
 </script>
 <style>
-@media print {
 
-  #sidebar-wrapper,
-  #main-content,
-  #button {
-    display: none !important;
-  }
-
-  #print {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100% !important;
-
-  }
-
-}
 </style>
 <style lang="scss" >
 .vs-pagination>li>a {

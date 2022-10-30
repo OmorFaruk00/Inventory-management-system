@@ -31,10 +31,10 @@
                                 <td><input type="number" style="width:60px" class="form-control"
                                         @click="updateQty(product)" v-model="product.qty" @keyup="updateQty(product)">
                                 </td>
-                                <td><img class="mb-1" src="/images/taka.png" alt=""
-                      height="13px">{{ product.price }}</td>
-                                <td><img class="mb-1" src="/images/taka.png" alt=""
-                      height="13px">{{ product.amount }}</td>
+                                <td><img class="mb-1" src="/images/taka.png" alt="" height="13px">{{ product.price }}
+                                </td>
+                                <td><img class="mb-1" src="/images/taka.png" alt="" height="13px">{{ product.amount }}
+                                </td>
 
                                 <td>
                                     <a href="#" class=" float-right" @click="removeProduct(product)"><img
@@ -65,18 +65,15 @@
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <h5>Subtotal </h5>
-                        <h5> <img class="mb-1" src="/images/taka.png" alt=""
-                      height="16px"> {{ subtotal }}</h5>
+                        <h5> <img class="mb-1" src="/images/taka.png" alt="" height="16px"> {{ subtotal }}</h5>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <h5>Discount </h5>
-                        <h5> <img class="mb-1" src="/images/taka.png" alt=""
-                      height="16px">{{ discount }}</h5>
+                        <h5> <img class="mb-1" src="/images/taka.png" alt="" height="16px">{{ discount }}</h5>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
                         <h5>Grand Total </h5>
-                        <h5> <img class="mb-1" src="/images/taka.png" alt=""
-                      height="16px">{{ grand_total }}</h5>
+                        <h5> <img class="mb-1" src="/images/taka.png" alt="" height="16px">{{ grand_total }}</h5>
                     </div>
 
                     <div class="form-group">
@@ -212,6 +209,7 @@ export default {
     background: #e8eaec;
     border-radius: 0px 0px 0px 0px;
 }
+
 .btn-search:hover {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
@@ -219,6 +217,7 @@ export default {
     color: #313133 !important;
     text-decoration: none;
 }
+
 .table-body {
     color: #fff;
     background-color: #337ab7;
