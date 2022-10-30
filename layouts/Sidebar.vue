@@ -56,6 +56,22 @@
               </nuxt-link>
 
             </div>
+            <div class="sidebar-menu"  @click.prevent="supplier=!supplier">
+            <a><img src="/images/supplier.png" alt="" />
+              Suppliers
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
+                class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </a>
+          </div>
+            <div v-if="supplier" class="dropdown_item">
+              <nuxt-link class="sidebar-item" to="/supplier/create"><img src="/images/add1.png" alt="" />New Suppiler
+              </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/supplier/supplier-list"><img src="/images/list.png" alt="" />Supplier List</nuxt-link>
+             
+            </div>
           
 
           <div class="sidebar-menu"  @click.prevent="expense=!expense">
@@ -115,7 +131,7 @@
                 Category</nuxt-link>            
           </div>
           <div class="sidebar-menu" @click.prevent="employee=!employee">
-            <a><img src="/images/pos.png" alt="" />
+            <a><img src="/images/supplier.png" alt="" />
               Employee Manage
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
                 class="bi bi-chevron-down float-right mt-2 mr-4 font-weight-bolder" viewBox="0 0 16 16">
@@ -163,6 +179,7 @@ export default {
       employee: false,
       expense:false,
       report:false,
+      supplier:false,
     }
   }
 

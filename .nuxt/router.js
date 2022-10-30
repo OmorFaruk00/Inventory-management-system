@@ -35,10 +35,13 @@ const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue'
 const _ffa5554e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
 const _6ad6f226 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
+const _cb616878 = () => interopDefault(import('../pages/supplier/create.vue' /* webpackChunkName: "pages/supplier/create" */))
+const _8254f232 = () => interopDefault(import('../pages/supplier/supplier-list.vue' /* webpackChunkName: "pages/supplier/supplier-list" */))
 const _329be5ea = () => interopDefault(import('../pages/customer/update/_id.vue' /* webpackChunkName: "pages/customer/update/_id" */))
 const _155ec7bd = () => interopDefault(import('../pages/employee/employee-update/_id.vue' /* webpackChunkName: "pages/employee/employee-update/_id" */))
 const _0213a576 = () => interopDefault(import('../pages/expense/update/_id.vue' /* webpackChunkName: "pages/expense/update/_id" */))
 const _55dbffff = () => interopDefault(import('../pages/product/update/_id.vue' /* webpackChunkName: "pages/product/update/_id" */))
+const _d3c6db88 = () => interopDefault(import('../pages/supplier/update/_id.vue' /* webpackChunkName: "pages/supplier/update/_id" */))
 const _9e61a684 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
 const _b72a9692 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -178,6 +181,14 @@ export const routerOptions = {
     component: _6ad6f226,
     name: "setting-special-permission"
   }, {
+    path: "/supplier/create",
+    component: _cb616878,
+    name: "supplier-create"
+  }, {
+    path: "/supplier/supplier-list",
+    component: _8254f232,
+    name: "supplier-supplier-list"
+  }, {
     path: "/customer/update/:id?",
     component: _329be5ea,
     name: "customer-update-id"
@@ -193,6 +204,10 @@ export const routerOptions = {
     path: "/product/update/:id?",
     component: _55dbffff,
     name: "product-update-id"
+  }, {
+    path: "/supplier/update/:id?",
+    component: _d3c6db88,
+    name: "supplier-update-id"
   }, {
     path: "/password-reset-confirm/:token?",
     component: _9e61a684,

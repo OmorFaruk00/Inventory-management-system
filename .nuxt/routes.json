@@ -217,6 +217,20 @@
     "_name": "_6ad6f226"
   },
   {
+    "name": "supplier-create",
+    "path": "/supplier/create",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/supplier/create.vue",
+    "chunkName": "pages/supplier/create",
+    "_name": "_cb616878"
+  },
+  {
+    "name": "supplier-supplier-list",
+    "path": "/supplier/supplier-list",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/supplier/supplier-list.vue",
+    "chunkName": "pages/supplier/supplier-list",
+    "_name": "_8254f232"
+  },
+  {
     "name": "customer-update-id",
     "path": "/customer/update/:id?",
     "component": "/home/omorfaruk/Desktop/Pos/pages/customer/update/_id.vue",
@@ -243,6 +257,13 @@
     "component": "/home/omorfaruk/Desktop/Pos/pages/product/update/_id.vue",
     "chunkName": "pages/product/update/_id",
     "_name": "_55dbffff"
+  },
+  {
+    "name": "supplier-update-id",
+    "path": "/supplier/update/:id?",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/supplier/update/_id.vue",
+    "chunkName": "pages/supplier/update/_id",
+    "_name": "_d3c6db88"
   },
   {
     "name": "password-reset-confirm-token",
