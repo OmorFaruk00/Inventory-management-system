@@ -94,7 +94,7 @@
         <div class="row mt-5">
             <div class="col-12 col-md-6 col-xl-3">
                 <div class="info-card customer-bg">
-                    <div class="d-flex justify-content-between px-4" style="margin-bottom:0px">
+                    <div class="d-flex justify-content-between px-4">
                         <div class="info-content pt-4">
                             <h6>Customers</h6>
                             <h4>{{info.total_customer}}</h4>
@@ -113,16 +113,16 @@
             </div>
             <div class="col-12 col-md-6 col-xl-3">
                 <div class="info-card supplier-bg">
-                    <div class="d-flex justify-content-between px-4" style="margin-bottom:0px">
+                    <div class="d-flex justify-content-between px-4">
                         <div class="info-content pt-4">
                             <h6>SUPPLIERS</h6>
-                            <h4>{{info.total_suppiler}}</h4>
+                            <h4>{{info.total_supplier}}</h4>
                         </div>
                         <div class="info-icon">
                             <img src="/images/users.png" alt="">
                         </div>
                     </div>
-                    <nuxt-link to="/supplier">
+                    <nuxt-link to="/supplier/supplier-list">
                         <div class="supplier-show">
                             <p class="text-center text-white">Show <i class="fa fa-arrow-circle-right pl-2"
                                     aria-hidden="true"></i></p>
@@ -132,7 +132,7 @@
             </div>
             <div class="col-12 col-md-6 col-xl-3">
                 <div class="info-card purchase-bg">
-                    <div class="d-flex justify-content-between px-4" style="margin-bottom:0px">
+                    <div class="d-flex justify-content-between px-4">
                         <div class="info-content pt-4">
                             <h6>PURCHASE INVOICE</h6>
                             <h4>50</h4>
@@ -151,7 +151,7 @@
             </div>
             <div class="col-12 col-md-6 col-xl-3">
                 <div class="info-card sale-bg">
-                    <div class="d-flex justify-content-between px-4" style="margin-bottom:0px">
+                    <div class="d-flex justify-content-between px-4" >
                         <div class="info-content pt-4">
                             <h6>SALE INVOICE</h6>
                             <h4>{{info.total_sale_invoice}}</h4>

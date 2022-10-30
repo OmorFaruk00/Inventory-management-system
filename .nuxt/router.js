@@ -29,6 +29,7 @@ const _4191cc04 = () => interopDefault(import('../pages/pos/sales_return_list.vu
 const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
 const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
+const _3e2ba92e = () => interopDefault(import('../pages/report/expense-report.vue' /* webpackChunkName: "pages/report/expense-report" */))
 const _f4ecd796 = () => interopDefault(import('../pages/report/sales-report.vue' /* webpackChunkName: "pages/report/sales-report" */))
 const _d0e48000 = () => interopDefault(import('../pages/report/sales-return-report.vue' /* webpackChunkName: "pages/report/sales-return-report" */))
 const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
@@ -156,6 +157,10 @@ export const routerOptions = {
     path: "/product/stock",
     component: _0dc296db,
     name: "product-stock"
+  }, {
+    path: "/report/expense-report",
+    component: _3e2ba92e,
+    name: "report-expense-report"
   }, {
     path: "/report/sales-report",
     component: _f4ecd796,

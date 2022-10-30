@@ -107,6 +107,8 @@
               </nuxt-link>
               <nuxt-link class="sidebar-item" to="/report/sales-return-report"><img src="/images/report.png" alt="" />Sales Return Report
               </nuxt-link>
+              <nuxt-link class="sidebar-item" to="/report/expense-report"><img src="/images/report.png" alt="" />Expense Report
+              </nuxt-link>
             
               
 

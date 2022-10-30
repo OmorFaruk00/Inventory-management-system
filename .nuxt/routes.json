@@ -175,6 +175,13 @@
     "_name": "_0dc296db"
   },
   {
+    "name": "report-expense-report",
+    "path": "/report/expense-report",
+    "component": "/home/omorfaruk/Desktop/Pos/pages/report/expense-report.vue",
+    "chunkName": "pages/report/expense-report",
+    "_name": "_3e2ba92e"
+  },
+  {
     "name": "report-sales-report",
     "path": "/report/sales-report",
     "component": "/home/omorfaruk/Desktop/Pos/pages/report/sales-report.vue",
