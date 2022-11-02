@@ -97,7 +97,7 @@ export default {
     ExportDataToPdf() {
         const doc = new jsPDF()
         doc.autoTable({ html: '#report' })
-        doc.save('sales-report.pdf')
+        doc.save('sales-return-report.pdf')
     },
 
     ExportDataToExcel() {
@@ -107,7 +107,7 @@ export default {
             bookType: 'xlsx',
             type: 'base64'
         });
-        XLSX.writeFile(fp, 'sales-report.xlsx')
+        XLSX.writeFile(fp, 'sales-return-report.xlsx')
     },
 
     ExportDataPrint() {

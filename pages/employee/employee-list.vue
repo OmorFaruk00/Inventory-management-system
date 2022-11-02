@@ -54,7 +54,7 @@
                   <td>{{ employee.department.name}}</td>
             
                   <td><img :src="base_url + '/images/employee/' + employee.image" alt="image"
-                  style="height:80px;width: 100px;" /></td>
+                  style="height:50px;width: 80px;" /></td>
                   <td>
                     <button v-if="employee.status == 1" class="btn" @click="employeeStatus(employee.id)">
                      <img src="/images/active.png" alt="">
@@ -75,7 +75,7 @@
             </table>
           </div>            
                 <!-- pagination         -->
-      <vs-pagination :total-pages="employees.last_page" @change="getEmployee"></vs-pagination>
+      <vs-pagination v-if="employees.last_page > 1" :total-pages="employees.last_page" @change="getEmployee"></vs-pagination>
      
       </div>
     

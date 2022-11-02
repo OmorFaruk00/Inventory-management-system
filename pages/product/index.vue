@@ -71,7 +71,7 @@
               <td>{{ product.unit}}</td>
               <td>{{ product.price }}</td>
               <td><img :src="base_url + '/images/product/' + product.image" alt="image"
-                  style="height:80px;width: 100px;" /></td>
+                  style="height:50px;width: 80px;" /></td>
               <td>
                 <nuxt-link :to="`product/update/${product.id}`" class="btn">
                   <img src="/images/edit.png" />

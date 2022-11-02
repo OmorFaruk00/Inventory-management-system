@@ -60,7 +60,7 @@
               <td>{{ customer.email}}</td>
               <td>{{ customer.category}}</td>              
               <td v-if="customer.image"><img :src="base_url + '/images/customer/' + customer.image" alt="image"
-                  style="height:80px;width: 100px;" />
+                  style="height:50px;width: 80px;" />
               </td>
               <td v-else>No Image</td>
               <td>

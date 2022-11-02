@@ -49,12 +49,14 @@
           </div>
         </div>
         <div class="table-responsive" v-if="products">
-          <table class="table text-center t-body">
+          <table class="table t-body">
             <thead class="t-head">
               <tr>
                 <th>SL</th>
                 <th>Product Name</th>
                 <th>Product Code</th>                            
+                <th>Brand</th>                            
+                <th>Category</th>                            
                 <th>Available Qty</th>
                 <th> Purchased Qty</th>
                 <th> Sold Qty</th>
@@ -66,6 +68,8 @@
                 <td>{{ products.current_page * list - list + index + 1 }}</td>
                <td>{{ product.name }}</td>
                 <td>{{ product.code }}</td>                            
+                <td>{{ product.brand}}</td>                            
+                <td>{{ product.category}}</td>                            
                 <td >
                     <div  v-if="product.alert_qty>=product.available_quantity" class="text-danger font-weight-bold">
                         {{ product.stock.available_quantity}}

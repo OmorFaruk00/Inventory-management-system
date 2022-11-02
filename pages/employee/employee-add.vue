@@ -8,7 +8,7 @@
                         <div class="form-content">
                             <div class="form-horizontal">
                                 <div class="text-center card-header mb-4 d-flex justify-content-between">
-                                    <h4 class="ml-3">Employee  Add</h4>
+                                    <h4 class="ml-3"> Add Employee</h4>
                                     <div>
                                         <nuxt-link to="/employee/employee-list" class="text-dark mr-3"><img src="/images/list.png"
                                                 alt="list" height="20px" />

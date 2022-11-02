@@ -30,8 +30,10 @@ const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpack
 const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
 const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
 const _3e2ba92e = () => interopDefault(import('../pages/report/expense-report.vue' /* webpackChunkName: "pages/report/expense-report" */))
+const _1bf80235 = () => interopDefault(import('../pages/report/profit-loss-report.vue' /* webpackChunkName: "pages/report/profit-loss-report" */))
 const _f4ecd796 = () => interopDefault(import('../pages/report/sales-report.vue' /* webpackChunkName: "pages/report/sales-report" */))
 const _d0e48000 = () => interopDefault(import('../pages/report/sales-return-report.vue' /* webpackChunkName: "pages/report/sales-return-report" */))
+const _884ec82a = () => interopDefault(import('../pages/report/stock-report.vue' /* webpackChunkName: "pages/report/stock-report" */))
 const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
 const _ffa5554e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
 const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
@@ -162,6 +164,10 @@ export const routerOptions = {
     component: _3e2ba92e,
     name: "report-expense-report"
   }, {
+    path: "/report/profit-loss-report",
+    component: _1bf80235,
+    name: "report-profit-loss-report"
+  }, {
     path: "/report/sales-report",
     component: _f4ecd796,
     name: "report-sales-report"
@@ -169,6 +175,10 @@ export const routerOptions = {
     path: "/report/sales-return-report",
     component: _d0e48000,
     name: "report-sales-return-report"
+  }, {
+    path: "/report/stock-report",
+    component: _884ec82a,
+    name: "report-stock-report"
   }, {
     path: "/setting/assign-role",
     component: _d0104e0c,
