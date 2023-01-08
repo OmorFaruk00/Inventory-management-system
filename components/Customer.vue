@@ -5,10 +5,10 @@
               <div class="col-12 col-md-6 col-xl-6">
                 <div class="form-group">
                   <label for="">
-                    Customer Name <span class="text-danger">*</span></label>
-                  <input class="form-control" type="text" placeholder="Enter customer name"
-                    v-model="customer.customer_name" />
-                  <p v-if="errors.customer_name" v-text="errors.customer_name[0]" class="text-danger"></p>
+                    Name <span class="text-danger">*</span></label>
+                  <input class="form-control" type="text" placeholder="Enter  name"
+                    v-model="customer.name" />
+                  <p v-if="errors.name" v-text="errors.name[0]" class="text-danger"></p>
                 </div>
               </div>
 
@@ -23,7 +23,7 @@
                       {{ category.name }}
                     </option>
                   </select>
-                  <p v-if="errors.category" v-text="errors.category[0]" class="text-danger"></p>
+                  <p v-if="errors.category_id" v-text="errors.category_id[0]" class="text-danger"></p>
                 </div>
               </div>
 
@@ -103,7 +103,7 @@ export default {
       name: "",
       errors: {},
       customer: {
-        customer_name: "",
+        name: "",
         category: "",
         phone: "",
         email: "",
@@ -129,8 +129,8 @@ export default {
 
     DataStore() {
       let formData = new FormData();
-      formData.append("customer_name", this.customer.customer_name);
-      formData.append("category", this.customer.category);
+      formData.append("name", this.customer.name);
+      formData.append("category_id", this.customer.category);
       formData.append("phone", this.customer.phone);
       formData.append("email", this.customer.email);
       formData.append("due_limit", this.customer.due_limit);

@@ -27,9 +27,8 @@
             </div>
           </div>
         </div>
-        </div>
-     
-      <div class="pr-3 table-responsive">
+        </div>     
+      <div class="table-responsive">
         <table class="table text-center t-body mb-3">
           <thead class="t-head">
             <tr>
@@ -49,29 +48,25 @@
               <td>
                 <button class="btn" @click="sales_returnInfo(sale.id)">
                   <img src="/images/info.png" height="30px" />
-                </button>
-  
+                </button>  
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-      <vs-pagination v-if="sales_return.last_page > 1" :total-pages="sales_return.last_page" @change="getData"></vs-pagination>
-  
+      <vs-pagination v-if="sales_return.last_page > 1" :total-pages="sales_return.last_page" @change="getData"></vs-pagination>  
       
       <div class="modal fade" id="sales_returnModal">
-        <div class="modal-dialog modal-dialog-top mw-100 w-50">
-  
-              
+        <div class="modal-dialog modal-dialog-top mw-100 w-50">         
                <!-- PDF Content Here -->          
           <div class="modal-content border-0" id="print">
             <div class="modal-body px-5"  v-if="sales_return_info">
-              <div class="text-center my-4">
-                <!-- <h4>Invoice</h4> -->
+              <div class="text-center my-4" style="line-height:10px" >                
                 <h4>Daily Shop</h4>
                 <p> Bonani,Dhaka-1205 </p>
-             
+                <p><strong>Phone : </strong>011361532</p>
+              <p><strong>Email : </strong>dailyshop@gmail.com</p>             
               </div>
               <div class="d-flex justify-content-between" style="line-height:10px">
                 <div v-if="sales_return_info.customer != null">
@@ -97,14 +92,12 @@
                     <th>Amount</th>
                   </tr>
                 </thead>
-                <tbody v-if="sales_return_info.return_info">              
-  
+                <tbody v-if="sales_return_info.return_info">  
                   <tr v-for="(info,index) in sales_return_info.return_info" :key="index" class="t-row">
                     <td>{{index +1}} </td>
                     <td>{{info.name}}</td>
                     <td>{{info.code}}</td>
-                    <td>{{info.qty}}</td>
-  
+                    <td>{{info.qty}}</td>  
                     <td>
                       <div class="d-flex"><img class="mt-1" src="/images/taka.png" alt=""
                           height="15px">{{info.price}}
@@ -123,24 +116,19 @@
                 <div class="d-flex justify-content-between">
                     <p>Total Qty : </p>
                     <p> {{ sales_return_info.total_qty}}</p>
-
                 </div>
                 <div class="d-flex justify-content-between">
                     <p>Subtotal : </p>
                     <p> <img src="/images/taka.png" alt="" height="15px"></img>{{ sales_return_info.subtotal}}</p>
-
                 </div>
                 <div class="d-flex justify-content-between">
                     <p>Discount : </p>
                     <p> <img src="/images/taka.png" alt="" height="15px"></img>{{ sales_return_info.discount}}</p>
-
                 </div>
                 <div class="d-flex justify-content-between">
                     <p>Total :</p>
                     <p> <img src="/images/taka.png" alt="" height="15px">{{ sales_return_info.grand_total}}</p>
-
-                </div>              
-                          
+                </div>                       
               </div>
             </div>
             <!-- Modal footer -->
@@ -151,15 +139,10 @@
               <button type="button" class="btn btn-danger px-3" data-dismiss="modal" >Close</button>
             </div> 
            </div>         
-          </div>        
-        
+          </div>     
       </div>
       </div>
-  
-      
-  
-    </div>
-  
+    </div>  
   </template>
   <script>
   
@@ -184,8 +167,7 @@
         this.$axios
           .$post("/return-list?page=" + page, { "search": this.search, "list": this.list,"date":this.date })
           .then((response) => {
-            this.sales_return = response;
-            console.log(response);
+            this.sales_return = response;            
           })
           .catch((error) => {
             console.log(error);
@@ -197,19 +179,14 @@
           .then((response) => {
             console.log(response);
             this.sales_return_info = response;
-            $("#sales_returnModal").modal('show');
-            // this.button = true;
+            $("#sales_returnModal").modal('show');            
           })
           .catch((error) => {
             console.log(error);
           });
-      },
-   
+      },   
       PrintInvoice(){
-        window.print();
-  
-  
-  
+        window.print();  
       },
   
     },
@@ -230,17 +207,4 @@
       }
   
     }
-  </style>
-  <style lang="scss" >
-  .vs-pagination>li>a {
-    background: #e8eaec !important;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 1px 3px 1
-  }
-  
-  .vs-pagination>li.vs-pagination--active a {
-    // background: rgb(185, 44, 44) !important;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  }
   </style>

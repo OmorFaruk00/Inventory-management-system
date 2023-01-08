@@ -5,8 +5,8 @@
                 <div class="w-50 pull-right mt-5">
                     <div class="input-group form-group  w-100">
                         <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price"
-                            v-model="search">
-                        <button class="btn-search" @click="searchProduct(search)">
+                            v-model="search" @keyup.enter="searchProduct(search)">
+                        <button class="btn-search" @click.enter="searchProduct(search)">
                             <img src="/images/search.png" height="30px" />
                         </button>
                     </div>
@@ -125,7 +125,9 @@ export default {
                             type: "error",
                             showConfirmButton: false,
                         });
-                    } else {
+                    }
+                      
+                    else {
                         response.forEach((item, index) => {
                             this.products.push({ "id": item.id, "name": item.name, "code": item.code, "price": item.price, "qty": 1, "amount": item.price, "discount": item.discount });
                         });

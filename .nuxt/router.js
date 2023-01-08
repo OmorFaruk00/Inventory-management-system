@@ -4,49 +4,53 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _4578cb22 = () => interopDefault(import('../pages/brand/index.vue' /* webpackChunkName: "pages/brand/index" */))
-const _6897b2ec = () => interopDefault(import('../pages/category/index.vue' /* webpackChunkName: "pages/category/index" */))
-const _4251e686 = () => interopDefault(import('../pages/change-password.vue' /* webpackChunkName: "pages/change-password" */))
-const _586f4468 = () => interopDefault(import('../pages/customer/index.vue' /* webpackChunkName: "pages/customer/index" */))
-const _2203d6f9 = () => interopDefault(import('../pages/dashboard.vue' /* webpackChunkName: "pages/dashboard" */))
-const _13b79c08 = () => interopDefault(import('../pages/password-reset.vue' /* webpackChunkName: "pages/password-reset" */))
-const _f1bf3788 = () => interopDefault(import('../pages/pos/index.vue' /* webpackChunkName: "pages/pos/index" */))
-const _dbe8ead2 = () => interopDefault(import('../pages/product/index.vue' /* webpackChunkName: "pages/product/index" */))
-const _f4b17290 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
-const _2be38172 = () => interopDefault(import('../pages/unit/index.vue' /* webpackChunkName: "pages/unit/index" */))
-const _6a7a31f4 = () => interopDefault(import('../pages/customer/category.vue' /* webpackChunkName: "pages/customer/category" */))
-const _6610b31c = () => interopDefault(import('../pages/customer/create.vue' /* webpackChunkName: "pages/customer/create" */))
-const _4625adf8 = () => interopDefault(import('../pages/employee/department.vue' /* webpackChunkName: "pages/employee/department" */))
-const _7d742fc1 = () => interopDefault(import('../pages/employee/designation.vue' /* webpackChunkName: "pages/employee/designation" */))
-const _ff4657b0 = () => interopDefault(import('../pages/employee/employee-add.vue' /* webpackChunkName: "pages/employee/employee-add" */))
-const _27bc30a7 = () => interopDefault(import('../pages/employee/employee-list.vue' /* webpackChunkName: "pages/employee/employee-list" */))
-const _c0973700 = () => interopDefault(import('../pages/expense/category.vue' /* webpackChunkName: "pages/expense/category" */))
-const _6815e804 = () => interopDefault(import('../pages/expense/create.vue' /* webpackChunkName: "pages/expense/create" */))
-const _100c20f5 = () => interopDefault(import('../pages/expense/expense-list.vue' /* webpackChunkName: "pages/expense/expense-list" */))
-const _f6bf23fc = () => interopDefault(import('../pages/pos/create.vue' /* webpackChunkName: "pages/pos/create" */))
-const _21a372c9 = () => interopDefault(import('../pages/pos/sales_return.vue' /* webpackChunkName: "pages/pos/sales_return" */))
-const _4191cc04 = () => interopDefault(import('../pages/pos/sales_return_list.vue' /* webpackChunkName: "pages/pos/sales_return_list" */))
-const _2a6ecbd0 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
-const _51cbd9f2 = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
-const _0dc296db = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
-const _3e2ba92e = () => interopDefault(import('../pages/report/expense-report.vue' /* webpackChunkName: "pages/report/expense-report" */))
-const _1bf80235 = () => interopDefault(import('../pages/report/profit-loss-report.vue' /* webpackChunkName: "pages/report/profit-loss-report" */))
-const _f4ecd796 = () => interopDefault(import('../pages/report/sales-report.vue' /* webpackChunkName: "pages/report/sales-report" */))
-const _d0e48000 = () => interopDefault(import('../pages/report/sales-return-report.vue' /* webpackChunkName: "pages/report/sales-return-report" */))
-const _884ec82a = () => interopDefault(import('../pages/report/stock-report.vue' /* webpackChunkName: "pages/report/stock-report" */))
-const _d0104e0c = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
-const _ffa5554e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
-const _b957bc00 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
-const _6ad6f226 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
-const _cb616878 = () => interopDefault(import('../pages/supplier/create.vue' /* webpackChunkName: "pages/supplier/create" */))
-const _8254f232 = () => interopDefault(import('../pages/supplier/supplier-list.vue' /* webpackChunkName: "pages/supplier/supplier-list" */))
-const _329be5ea = () => interopDefault(import('../pages/customer/update/_id.vue' /* webpackChunkName: "pages/customer/update/_id" */))
-const _155ec7bd = () => interopDefault(import('../pages/employee/employee-update/_id.vue' /* webpackChunkName: "pages/employee/employee-update/_id" */))
-const _0213a576 = () => interopDefault(import('../pages/expense/update/_id.vue' /* webpackChunkName: "pages/expense/update/_id" */))
-const _55dbffff = () => interopDefault(import('../pages/product/update/_id.vue' /* webpackChunkName: "pages/product/update/_id" */))
-const _d3c6db88 = () => interopDefault(import('../pages/supplier/update/_id.vue' /* webpackChunkName: "pages/supplier/update/_id" */))
-const _9e61a684 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
-const _b72a9692 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _61bb0317 = () => interopDefault(import('../pages/brand/index.vue' /* webpackChunkName: "pages/brand/index" */))
+const _a758ad78 = () => interopDefault(import('../pages/category/index.vue' /* webpackChunkName: "pages/category/index" */))
+const _1299e165 = () => interopDefault(import('../pages/change-password.vue' /* webpackChunkName: "pages/change-password" */))
+const _17845424 = () => interopDefault(import('../pages/customer/index.vue' /* webpackChunkName: "pages/customer/index" */))
+const _79e56cbe = () => interopDefault(import('../pages/dashboard.vue' /* webpackChunkName: "pages/dashboard" */))
+const _57739260 = () => interopDefault(import('../pages/password-reset.vue' /* webpackChunkName: "pages/password-reset" */))
+const _53692d82 = () => interopDefault(import('../pages/product/index.vue' /* webpackChunkName: "pages/product/index" */))
+const _6c31b540 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "pages/setting/index" */))
+const _a7ef386c = () => interopDefault(import('../pages/unit/index.vue' /* webpackChunkName: "pages/unit/index" */))
+const _8e4b06c8 = () => interopDefault(import('../pages/customer/category.vue' /* webpackChunkName: "pages/customer/category" */))
+const _00ba7b1a = () => interopDefault(import('../pages/customer/create.vue' /* webpackChunkName: "pages/customer/create" */))
+const _7d9deea0 = () => interopDefault(import('../pages/employee/department.vue' /* webpackChunkName: "pages/employee/department" */))
+const _35040419 = () => interopDefault(import('../pages/employee/designation.vue' /* webpackChunkName: "pages/employee/designation" */))
+const _8a70ea60 = () => interopDefault(import('../pages/employee/employee-add.vue' /* webpackChunkName: "pages/employee/employee-add" */))
+const _3aa84eff = () => interopDefault(import('../pages/employee/employee-list.vue' /* webpackChunkName: "pages/employee/employee-list" */))
+const _3767b650 = () => interopDefault(import('../pages/expense/category.vue' /* webpackChunkName: "pages/expense/category" */))
+const _0fb10256 = () => interopDefault(import('../pages/expense/create.vue' /* webpackChunkName: "pages/expense/create" */))
+const _70c81566 = () => interopDefault(import('../pages/expense/expense-list.vue' /* webpackChunkName: "pages/expense/expense-list" */))
+const _59182058 = () => interopDefault(import('../pages/pos/sale-create.vue' /* webpackChunkName: "pages/pos/sale-create" */))
+const _5a65ee76 = () => interopDefault(import('../pages/pos/sale-list.vue' /* webpackChunkName: "pages/pos/sale-list" */))
+const _663b3321 = () => interopDefault(import('../pages/pos/sales_return.vue' /* webpackChunkName: "pages/pos/sales_return" */))
+const _7bfc82ac = () => interopDefault(import('../pages/pos/sales_return_list.vue' /* webpackChunkName: "pages/pos/sales_return_list" */))
+const _621b9b20 = () => interopDefault(import('../pages/pos/test.vue' /* webpackChunkName: "pages/pos/test" */))
+const _1ad6095f = () => interopDefault(import('../pages/product/create.vue' /* webpackChunkName: "pages/product/create" */))
+const _52027583 = () => interopDefault(import('../pages/product/stock.vue' /* webpackChunkName: "pages/product/stock" */))
+const _7a711bd2 = () => interopDefault(import('../pages/purchase/create.vue' /* webpackChunkName: "pages/purchase/create" */))
+const _6ea824c2 = () => interopDefault(import('../pages/purchase/purchase-list.vue' /* webpackChunkName: "pages/purchase/purchase-list" */))
+const _7363aa1e = () => interopDefault(import('../pages/purchase/purchase-return.vue' /* webpackChunkName: "pages/purchase/purchase-return" */))
+const _41be3eaa = () => interopDefault(import('../pages/purchase/purchase-return-list.vue' /* webpackChunkName: "pages/purchase/purchase-return-list" */))
+const _1b54e211 = () => interopDefault(import('../pages/report/expense-report.vue' /* webpackChunkName: "pages/report/expense-report" */))
+const _1f5724dd = () => interopDefault(import('../pages/report/profit-loss-report.vue' /* webpackChunkName: "pages/report/profit-loss-report" */))
+const _85fc5646 = () => interopDefault(import('../pages/report/sales-report.vue' /* webpackChunkName: "pages/report/sales-report" */))
+const _0012f258 = () => interopDefault(import('../pages/report/sales-return-report.vue' /* webpackChunkName: "pages/report/sales-return-report" */))
+const _195e46da = () => interopDefault(import('../pages/report/stock-report.vue' /* webpackChunkName: "pages/report/stock-report" */))
+const _611fccbc = () => interopDefault(import('../pages/setting/assign-role.vue' /* webpackChunkName: "pages/setting/assign-role" */))
+const _0453409e = () => interopDefault(import('../pages/setting/permission.vue' /* webpackChunkName: "pages/setting/permission" */))
+const _a46c6350 = () => interopDefault(import('../pages/setting/role.vue' /* webpackChunkName: "pages/setting/role" */))
+const _3319b945 = () => interopDefault(import('../pages/setting/special-permission.vue' /* webpackChunkName: "pages/setting/special-permission" */))
+const _63dbbf28 = () => interopDefault(import('../pages/supplier/create.vue' /* webpackChunkName: "pages/supplier/create" */))
+const _5c7cb582 = () => interopDefault(import('../pages/supplier/supplier-list.vue' /* webpackChunkName: "pages/supplier/supplier-list" */))
+const _6a142692 = () => interopDefault(import('../pages/customer/update/_id.vue' /* webpackChunkName: "pages/customer/update/_id" */))
+const _7160c415 = () => interopDefault(import('../pages/employee/employee-update/_id.vue' /* webpackChunkName: "pages/employee/employee-update/_id" */))
+const _7fbcafce = () => interopDefault(import('../pages/expense/update/_id.vue' /* webpackChunkName: "pages/expense/update/_id" */))
+const _58f5eb52 = () => interopDefault(import('../pages/product/update/_id.vue' /* webpackChunkName: "pages/product/update/_id" */))
+const _64d65a38 = () => interopDefault(import('../pages/supplier/update/_id.vue' /* webpackChunkName: "pages/supplier/update/_id" */))
+const _55e68934 = () => interopDefault(import('../pages/password-reset-confirm/_token.vue' /* webpackChunkName: "pages/password-reset-confirm/_token" */))
+const _0e27bb5f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -61,175 +65,191 @@ export const routerOptions = {
 
   routes: [{
     path: "/brand",
-    component: _4578cb22,
+    component: _61bb0317,
     name: "brand"
   }, {
     path: "/category",
-    component: _6897b2ec,
+    component: _a758ad78,
     name: "category"
   }, {
     path: "/change-password",
-    component: _4251e686,
+    component: _1299e165,
     name: "change-password"
   }, {
     path: "/customer",
-    component: _586f4468,
+    component: _17845424,
     name: "customer"
   }, {
     path: "/dashboard",
-    component: _2203d6f9,
+    component: _79e56cbe,
     name: "dashboard"
   }, {
     path: "/password-reset",
-    component: _13b79c08,
+    component: _57739260,
     name: "password-reset"
   }, {
-    path: "/pos",
-    component: _f1bf3788,
-    name: "pos"
-  }, {
     path: "/product",
-    component: _dbe8ead2,
+    component: _53692d82,
     name: "product"
   }, {
     path: "/setting",
-    component: _f4b17290,
+    component: _6c31b540,
     name: "setting"
   }, {
     path: "/unit",
-    component: _2be38172,
+    component: _a7ef386c,
     name: "unit"
   }, {
     path: "/customer/category",
-    component: _6a7a31f4,
+    component: _8e4b06c8,
     name: "customer-category"
   }, {
     path: "/customer/create",
-    component: _6610b31c,
+    component: _00ba7b1a,
     name: "customer-create"
   }, {
     path: "/employee/department",
-    component: _4625adf8,
+    component: _7d9deea0,
     name: "employee-department"
   }, {
     path: "/employee/designation",
-    component: _7d742fc1,
+    component: _35040419,
     name: "employee-designation"
   }, {
     path: "/employee/employee-add",
-    component: _ff4657b0,
+    component: _8a70ea60,
     name: "employee-employee-add"
   }, {
     path: "/employee/employee-list",
-    component: _27bc30a7,
+    component: _3aa84eff,
     name: "employee-employee-list"
   }, {
     path: "/expense/category",
-    component: _c0973700,
+    component: _3767b650,
     name: "expense-category"
   }, {
     path: "/expense/create",
-    component: _6815e804,
+    component: _0fb10256,
     name: "expense-create"
   }, {
     path: "/expense/expense-list",
-    component: _100c20f5,
+    component: _70c81566,
     name: "expense-expense-list"
   }, {
-    path: "/pos/create",
-    component: _f6bf23fc,
-    name: "pos-create"
+    path: "/pos/sale-create",
+    component: _59182058,
+    name: "pos-sale-create"
+  }, {
+    path: "/pos/sale-list",
+    component: _5a65ee76,
+    name: "pos-sale-list"
   }, {
     path: "/pos/sales_return",
-    component: _21a372c9,
+    component: _663b3321,
     name: "pos-sales_return"
   }, {
     path: "/pos/sales_return_list",
-    component: _4191cc04,
+    component: _7bfc82ac,
     name: "pos-sales_return_list"
   }, {
     path: "/pos/test",
-    component: _2a6ecbd0,
+    component: _621b9b20,
     name: "pos-test"
   }, {
     path: "/product/create",
-    component: _51cbd9f2,
+    component: _1ad6095f,
     name: "product-create"
   }, {
     path: "/product/stock",
-    component: _0dc296db,
+    component: _52027583,
     name: "product-stock"
   }, {
+    path: "/purchase/create",
+    component: _7a711bd2,
+    name: "purchase-create"
+  }, {
+    path: "/purchase/purchase-list",
+    component: _6ea824c2,
+    name: "purchase-purchase-list"
+  }, {
+    path: "/purchase/purchase-return",
+    component: _7363aa1e,
+    name: "purchase-purchase-return"
+  }, {
+    path: "/purchase/purchase-return-list",
+    component: _41be3eaa,
+    name: "purchase-purchase-return-list"
+  }, {
     path: "/report/expense-report",
-    component: _3e2ba92e,
+    component: _1b54e211,
     name: "report-expense-report"
   }, {
     path: "/report/profit-loss-report",
-    component: _1bf80235,
+    component: _1f5724dd,
     name: "report-profit-loss-report"
   }, {
     path: "/report/sales-report",
-    component: _f4ecd796,
+    component: _85fc5646,
     name: "report-sales-report"
   }, {
     path: "/report/sales-return-report",
-    component: _d0e48000,
+    component: _0012f258,
     name: "report-sales-return-report"
   }, {
     path: "/report/stock-report",
-    component: _884ec82a,
+    component: _195e46da,
     name: "report-stock-report"
   }, {
     path: "/setting/assign-role",
-    component: _d0104e0c,
+    component: _611fccbc,
     name: "setting-assign-role"
   }, {
     path: "/setting/permission",
-    component: _ffa5554e,
+    component: _0453409e,
     name: "setting-permission"
   }, {
     path: "/setting/role",
-    component: _b957bc00,
+    component: _a46c6350,
     name: "setting-role"
   }, {
     path: "/setting/special-permission",
-    component: _6ad6f226,
+    component: _3319b945,
     name: "setting-special-permission"
   }, {
     path: "/supplier/create",
-    component: _cb616878,
+    component: _63dbbf28,
     name: "supplier-create"
   }, {
     path: "/supplier/supplier-list",
-    component: _8254f232,
+    component: _5c7cb582,
     name: "supplier-supplier-list"
   }, {
     path: "/customer/update/:id?",
-    component: _329be5ea,
+    component: _6a142692,
     name: "customer-update-id"
   }, {
     path: "/employee/employee-update/:id?",
-    component: _155ec7bd,
+    component: _7160c415,
     name: "employee-employee-update-id"
   }, {
     path: "/expense/update/:id?",
-    component: _0213a576,
+    component: _7fbcafce,
     name: "expense-update-id"
   }, {
     path: "/product/update/:id?",
-    component: _55dbffff,
+    component: _58f5eb52,
     name: "product-update-id"
   }, {
     path: "/supplier/update/:id?",
-    component: _d3c6db88,
+    component: _64d65a38,
     name: "supplier-update-id"
   }, {
     path: "/password-reset-confirm/:token?",
-    component: _9e61a684,
+    component: _55e68934,
     name: "password-reset-confirm-token"
   }, {
     path: "/",
-    component: _b72a9692,
+    component: _0e27bb5f,
     name: "index"
   }],
 

@@ -3,7 +3,7 @@
         <div class="form-bg mt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 mx-auto">
+                    <div class="col-10 mx-auto">
                         <div class="form-content">
                             <div class="form-horizontal">
                                 <div class="text-center card-header mb-4 d-flex justify-content-between">
@@ -77,8 +77,7 @@ export default {
         return {
 
             errors: {},
-            supplier: {
-                category_id: "",
+            supplier: {                
                 phone: "",
                 name: "",
                 email: "",

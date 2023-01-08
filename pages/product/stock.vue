@@ -18,7 +18,7 @@
             <div class="row">
               <div class="col-sm-12 col-xl-3">
                 <div class="form-group  ">
-                  <select class="form-control border-0" v-model="category" @click="searchProduct('category',category)">
+                  <select class="form-control border-0" v-model="category" @change="DataGet">
                     <option selected disabled value="">Search By Category</option>
                     <option v-for="(category, index) in product_list.category" :key="index" :value="category.id">
                       {{ category.name }}
@@ -28,7 +28,7 @@
               </div>
               <div class="col-sm-12 col-xl-3">
                 <div class="form-group  ">
-                  <select class="form-control border-0" v-model="brand" @change="searchProduct('brand',brand)">
+                  <select class="form-control border-0" v-model="brand" @change="DataGet">
                     <option selected disabled value="">Search By Brand</option>
                     <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
                       {{ brand.name }}
@@ -39,7 +39,7 @@
               <div class="col-sm-12 col-xl-6">
                 <div class="input-group form-group  w-100">
                   <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode" v-model="search"
-                    @keyup="searchProduct('global',search)">
+                    @keyup="DataGet">
                   <button class="btn-search">
                     <img src="/images/search.png" height="30px" />
                   </button>
@@ -104,23 +104,16 @@
         category: "",
         search: '',
         product_list: "",
-        list: 10,
-        search: null,
-        type: null,
-        item: null,
-        base_url: process.env.url,
+        list: 10,   
+        
   
       };
     },
     methods: {
-      searchProduct(type, item) {
-        this.type = type;
-        this.item = item;
-        this.DataGet();
-      },
+      
       DataGet(page = 1) {
         this.$axios
-          .$post("/product-stock?page=" + page, { "type": this.type, "item": this.item, "search": this.search, "list": this.list })
+          .$post("/product-stock?page=" + page, { "brand": this.brand, "category": this.category, "search": this.search, "list": this.list })
           .then((response) => {
             this.products = response;
           })

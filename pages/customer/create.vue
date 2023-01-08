@@ -3,7 +3,7 @@
     <div class="form-bg mt-5">
       <div class="container">
         <div class="row">
-          <div class="col-8 mx-auto">
+          <div class="col-10 mx-auto">
             <div class="form-content">
               <div class="form-horizontal">
                 <div class="
@@ -13,7 +13,7 @@
                     d-flex
                     justify-content-between
                   ">
-                  <h4 class="ml-3">Customer Add</h4>
+                  <h4 class="ml-3">Add Customer </h4>
                   <div>
                     <nuxt-link to="/customer" class="text-dark mr-3"><img src="/images/list.png" alt="list"
                         height="20px" />
@@ -43,7 +43,7 @@ export default {
             name: "",
             errors: {},
             customer: {
-                customer_name: "",
+                name: "",
                 category: "",
                 phone: "",
                 email: "",
@@ -68,7 +68,7 @@ export default {
         },
         DataStore() {
             let formData = new FormData();
-            formData.append("customer_name", this.customer.customer_name);
+            formData.append("name", this.customer.name);
             formData.append("category", this.customer.category);
             formData.append("phone", this.customer.phone);
             formData.append("email", this.customer.email);

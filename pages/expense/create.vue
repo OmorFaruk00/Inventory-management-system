@@ -3,14 +3,14 @@
         <div class="form-bg mt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 mx-auto">
+                    <div class="col-10 mx-auto">
                         <div class="form-content">
                             <div class="form-horizontal">
                                 <div class="text-center card-header mb-4 d-flex justify-content-between">
                                     <h4 class="ml-4"> Add Expense</h4>
                                     <div>
-                                        <nuxt-link to="/expense/expense-list" class="text-dark mr-3"><img src="/images/list.png"
-                                                alt="list" height="20px" />
+                                        <nuxt-link to="/expense/expense-list" class="text-dark mr-3"><img
+                                                src="/images/list.png" alt="list" height="20px" />
                                         </nuxt-link>
                                     </div>
                                 </div>
@@ -19,7 +19,7 @@
                                         <div class="form-group">
                                             <label for="">
                                                 Category <span class="text-danger">*</span></label>
-                                                <select class="form-control" v-model="expense.category_id">
+                                            <select class="form-control" v-model="expense.category_id">
                                                 <option selected disabled value="">Select Category</option>
                                                 <option v-for="(category, index) in category_list" :key="index"
                                                     :value="category.id">
@@ -34,26 +34,24 @@
                                                 Purpose <span class="text-danger">*</span></label>
                                             <input class="form-control" type="text" placeholder=""
                                                 v-model="expense.purpose" />
-                                            <p v-if="errors.purpose" v-text="errors.purpose[0]"
-                                                class="text-danger"></p>
+                                            <p v-if="errors.purpose" v-text="errors.purpose[0]" class="text-danger"></p>
                                         </div>
                                         <div class="form-group">
                                             <label for="">
                                                 Amount<span class="text-danger">*</span></label>
                                             <input class="form-control" type="number" placeholder=""
                                                 v-model="expense.amount" />
-                                            <p v-if="errors.amount" v-text="errors.amount[0]"
-                                                class="text-danger"></p>
+                                            <p v-if="errors.amount" v-text="errors.amount[0]" class="text-danger"></p>
                                         </div>
                                         <div class="form-group">
                                             <label for="">
                                                 Description</label>
                                             <textarea class="form-control" type="text" placeholder=""
-                                                v-model="expense.description" ></textarea>
+                                                v-model="expense.description"></textarea>
                                             <p v-if="errors.description" v-text="errors.description[0]"
                                                 class="text-danger"></p>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
 
@@ -83,9 +81,9 @@ export default {
             errors: {},
             expense: {
                 category_id: "",
-                amount:"",
-                purpose:"",
-                description:""
+                amount: "",
+                purpose: "",
+                description: ""
             },
         };
     },
@@ -103,10 +101,10 @@ export default {
 
         DataStore() {
             this.$axios
-                .$post("/expense",this.expense)
+                .$post("/expense", this.expense)
                 .then((response) => {
                     this.expense = "";
-                    this.errors ="";
+                    this.errors = "";
                     this.$swal({
                         title: "Success",
                         position: "top",

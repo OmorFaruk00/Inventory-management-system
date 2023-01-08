@@ -17,11 +17,16 @@ export default {
       {rel: 'stylesheet', id: 'bootstrap-style', href: '/css/bootstrap.min.css'},
       {rel: 'stylesheet', id: 'font-awesome-style', href: '/css/font-awesome.min.css'},
       {rel: 'stylesheet', id: 'style-style', href: '/css/style.css'},
-      {rel: 'stylesheet/scss', id: 'style-style', href: '/css/style.scss'},
+      // {rel: 'stylesheet/scss', id: 'style-style', href: '/css/style.scss'},
 
 
 
     ],
+    styleResources: {
+      scss: [
+        '~assets/scss/style.scss',
+      ],
+    },
 
     script: [
 
@@ -61,7 +66,8 @@ export default {
 
 
   buildModules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/style-resources'
   ],
   googleFonts: {
     families: {

@@ -21,13 +21,13 @@
                 </div>
             </div>
         </div>
-        <div class="pr-3" v-if="brands">
+        <div v-if="brands">
             <table class="table text-center t-body">
                 <thead class="t-head">
                     <tr>
                         <th>SL</th>
-                        <th>Name</th>
-                        <th>Action</th>
+                        <th width="50%">Name</th>
+                        <th width="25%">Action</th>
                     </tr>
                 </thead>
                 <tbody v-for="(brand, index) in brands.data" :key="index">
@@ -47,14 +47,14 @@
             </table>
         </div>
         <!-- pagination         -->
-        <vs-pagination :total-pages="brands.last_page" @change="DataGet"></vs-pagination>
+        <vs-pagination v-if="brands.last_page > 1"  :total-pages="brands.last_page" @change="DataGet"></vs-pagination>
         <!-- The Modal -->
         <div class="modal fade" id="Modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header card-header">
-                        <h4 v-if="add" class="modal-title">Brand Add</h4>
-                        <h4 v-if="update" class="modal-title">Brand Update</h4>
+                        <h4 v-if="add" class="modal-title">Add Brand </h4>
+                        <h4 v-if="update" class="modal-title">Update Brand </h4>
                         <button type="button" class="close" data-dismiss="modal" @click="name = '';add = true;update = false;errors = '';
                         ">
                             &times;
@@ -153,8 +153,7 @@ export default {
                     this.name = "";
                     this.errors = "";
                     this.update = false;
-                    this.add = true;
-                    // this.$toaster.success(res.message);
+                    this.add = true;                    
                     $("#Modal").modal("hide");
                     this.DataGet();
                     this.$swal({
@@ -198,10 +197,3 @@ export default {
     },
 };
 </script>
-<style lang="scss" >
-.vs-pagination>li.vs-pagination--active a {
-    background: #f5f5f5 !important;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-</style>

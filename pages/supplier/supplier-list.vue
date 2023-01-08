@@ -28,15 +28,15 @@
             </div>
 
             <div class="pr-3 table-responsive">
-                <table class="table text-center t-body mb-3">
+                <table class="table t-body mb-3">
                     <thead class="t-head">
                         <tr>
                             <th>SL</th>
                             <th>Supplier Name</th>
                             <th>Phone</th>
                             <th>Email</th>
-                            <th>Opening Balance</th>
-                            <th>Address</th>
+                            <!-- <th>Opening Balance</th>
+                            <th>Address</th> -->
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -46,8 +46,8 @@
                             <td>{{ supplier.name }}</td>
                             <td>{{ supplier.phone }}</td>
                             <td>{{ supplier.email }}</td>
-                            <td>{{ supplier.opening_balance }}</td>
-                            <td>{{ supplier.address}}</td>
+                            <!-- <td>{{ supplier.opening_balance }}</td>
+                            <td>{{ supplier.address}}</td> -->
 
                             <td>
                                 <nuxt-link :to="`update/${supplier.id}`" class="btn">

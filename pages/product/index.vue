@@ -18,7 +18,7 @@
           <div class="row">
             <div class="col-sm-12 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="category" @click="searchProduct('category',category)">
+                <select class="form-control border-0" v-model="category" @change="DataGet()">
                   <option selected disabled value="">Search By Category</option>
                   <option v-for="(category, index) in product_list.category" :key="index" :value="category.id">
                     {{ category.name }}
@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-12 col-xl-3">
               <div class="form-group  ">
-                <select class="form-control border-0" v-model="brand" @change="searchProduct('brand',brand)">
+                <select class="form-control border-0" v-model="brand" @change="DataGet()">
                   <option selected disabled value="">Search By Brand</option>
                   <option v-for="(brand, index) in product_list.brand" :key="index" :value="brand.id">
                     {{ brand.name }}
@@ -39,7 +39,7 @@
             <div class="col-sm-12 col-xl-6">
               <div class="input-group form-group  w-100">
                 <input type="search" class="form-control border-0" placeholder="Search Name/Code/Barcode/Price" v-model="search"
-                  @keyup="searchProduct('global',search)">
+                  @keyup="DataGet()">
                 <button class="btn-search">
                   <img src="/images/search.png" height="30px" />
                 </button>
@@ -49,13 +49,14 @@
         </div>
       </div>
       <div class="table-responsive" v-if="products">
-        <table class="table text-center t-body">
+        <table class="table t-body">
           <thead class="t-head">
             <tr>
               <th>SL</th>
               <th>Name</th>
               <th>Code</th>
               <th>Category</th>
+              <th>Brand</th>
               <th>Unit</th>
               <th>Price</th>
               <th>Image</th>
@@ -68,6 +69,7 @@
               <td>{{ product.name }}</td>
               <td>{{ product.code }}</td>
               <td>{{ product.category }}</td>
+              <td>{{ product.brand }}</td>
               <td>{{ product.unit}}</td>
               <td>{{ product.price }}</td>
               <td><img :src="base_url + '/images/product/' + product.image" alt="image"
@@ -104,23 +106,15 @@ export default {
       category: "",
       search: '',
       product_list: "",
-      list: 10,
-      search: null,
-      type: null,
-      item: null,
+      list: 10,     
       base_url: process.env.url,
 
     };
   },
-  methods: {
-    searchProduct(type, item) {
-      this.type = type;
-      this.item = item;
-      this.DataGet();
-    },
+  methods: {  
     DataGet(page = 1) {
       this.$axios
-        .$post("/product-search?page=" + page, { "type": this.type, "item": this.item, "search": this.search, "list": this.list })
+        .$post("/product-search?page=" + page, { "brand": this.brand, "category": this.category, "search": this.search, "list": this.list })
         .then((response) => {
           console.log(response);
           this.products = response;

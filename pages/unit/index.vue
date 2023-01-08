@@ -21,19 +21,19 @@
                 </div>
             </div>
         </div>
-        <div class="pr-3" v-if="units">
-            <table class="table text-center t-body">
+        <div v-if="units">
+            <table class="table text-center">
                 <thead class="t-head">
                     <tr>
                         <th>SL</th>
-                        <th>Name</th>
-                        <th>Action</th>
+                        <th width="50%">Name</th>
+                        <th width="25%">Action</th>
                     </tr>
                 </thead>
                 <tbody v-for="(unit, index) in units.data" :key="index">
                     <tr class="t-row">
                         <td>{{ units.current_page * list - list + index + 1 }}</td>
-                        <td>{{ unit.name }}</td>
+                        <td >{{ unit.name }}</td>
                         <td>
                             <button class="btn" @click="DataEdit(unit.id)">
                                 <img src="images/edit.png" />
@@ -47,14 +47,14 @@
             </table>
         </div>
         <!-- pagination         -->
-        <vs-pagination :total-pages="units.last_page" @change="DataGet"></vs-pagination>
+        <vs-pagination v-if="units.last_page > 1" :total-pages="units.last_page" @change="DataGet"></vs-pagination>
         <!-- The Modal -->
         <div class="modal fade" id="Modal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header card-header">
-                        <h4 v-if="add" class="modal-title">Unit Add</h4>
-                        <h4 v-if="update" class="modal-title">nit Update</h4>
+                        <h4 v-if="add" class="modal-title">Add Unit </h4>
+                        <h4 v-if="update" class="modal-title">Update Unit </h4>
                         <button type="button" class="close" data-dismiss="modal" @click=" name = '';  add = true;  update = false; errors = '';
                         ">
                             &times;

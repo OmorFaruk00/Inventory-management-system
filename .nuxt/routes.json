@@ -2,302 +2,330 @@
   {
     "name": "brand",
     "path": "/brand",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/brand/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/brand/index.vue",
     "chunkName": "pages/brand/index",
-    "_name": "_4578cb22"
+    "_name": "_61bb0317"
   },
   {
     "name": "category",
     "path": "/category",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/category/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/category/index.vue",
     "chunkName": "pages/category/index",
-    "_name": "_6897b2ec"
+    "_name": "_a758ad78"
   },
   {
     "name": "change-password",
     "path": "/change-password",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/change-password.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/change-password.vue",
     "chunkName": "pages/change-password",
-    "_name": "_4251e686"
+    "_name": "_1299e165"
   },
   {
     "name": "customer",
     "path": "/customer",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/customer/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/customer/index.vue",
     "chunkName": "pages/customer/index",
-    "_name": "_586f4468"
+    "_name": "_17845424"
   },
   {
     "name": "dashboard",
     "path": "/dashboard",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/dashboard.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/dashboard.vue",
     "chunkName": "pages/dashboard",
-    "_name": "_2203d6f9"
+    "_name": "_79e56cbe"
   },
   {
     "name": "password-reset",
     "path": "/password-reset",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/password-reset.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/password-reset.vue",
     "chunkName": "pages/password-reset",
-    "_name": "_13b79c08"
-  },
-  {
-    "name": "pos",
-    "path": "/pos",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/index.vue",
-    "chunkName": "pages/pos/index",
-    "_name": "_f1bf3788"
+    "_name": "_57739260"
   },
   {
     "name": "product",
     "path": "/product",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/product/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/product/index.vue",
     "chunkName": "pages/product/index",
-    "_name": "_dbe8ead2"
+    "_name": "_53692d82"
   },
   {
     "name": "setting",
     "path": "/setting",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/setting/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/setting/index.vue",
     "chunkName": "pages/setting/index",
-    "_name": "_f4b17290"
+    "_name": "_6c31b540"
   },
   {
     "name": "unit",
     "path": "/unit",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/unit/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/unit/index.vue",
     "chunkName": "pages/unit/index",
-    "_name": "_2be38172"
+    "_name": "_a7ef386c"
   },
   {
     "name": "customer-category",
     "path": "/customer/category",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/customer/category.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/customer/category.vue",
     "chunkName": "pages/customer/category",
-    "_name": "_6a7a31f4"
+    "_name": "_8e4b06c8"
   },
   {
     "name": "customer-create",
     "path": "/customer/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/customer/create.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/customer/create.vue",
     "chunkName": "pages/customer/create",
-    "_name": "_6610b31c"
+    "_name": "_00ba7b1a"
   },
   {
     "name": "employee-department",
     "path": "/employee/department",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/department.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/employee/department.vue",
     "chunkName": "pages/employee/department",
-    "_name": "_4625adf8"
+    "_name": "_7d9deea0"
   },
   {
     "name": "employee-designation",
     "path": "/employee/designation",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/designation.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/employee/designation.vue",
     "chunkName": "pages/employee/designation",
-    "_name": "_7d742fc1"
+    "_name": "_35040419"
   },
   {
     "name": "employee-employee-add",
     "path": "/employee/employee-add",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-add.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/employee/employee-add.vue",
     "chunkName": "pages/employee/employee-add",
-    "_name": "_ff4657b0"
+    "_name": "_8a70ea60"
   },
   {
     "name": "employee-employee-list",
     "path": "/employee/employee-list",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-list.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/employee/employee-list.vue",
     "chunkName": "pages/employee/employee-list",
-    "_name": "_27bc30a7"
+    "_name": "_3aa84eff"
   },
   {
     "name": "expense-category",
     "path": "/expense/category",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/category.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/expense/category.vue",
     "chunkName": "pages/expense/category",
-    "_name": "_c0973700"
+    "_name": "_3767b650"
   },
   {
     "name": "expense-create",
     "path": "/expense/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/create.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/expense/create.vue",
     "chunkName": "pages/expense/create",
-    "_name": "_6815e804"
+    "_name": "_0fb10256"
   },
   {
     "name": "expense-expense-list",
     "path": "/expense/expense-list",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/expense-list.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/expense/expense-list.vue",
     "chunkName": "pages/expense/expense-list",
-    "_name": "_100c20f5"
+    "_name": "_70c81566"
   },
   {
-    "name": "pos-create",
-    "path": "/pos/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/create.vue",
-    "chunkName": "pages/pos/create",
-    "_name": "_f6bf23fc"
+    "name": "pos-sale-create",
+    "path": "/pos/sale-create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/pos/sale-create.vue",
+    "chunkName": "pages/pos/sale-create",
+    "_name": "_59182058"
+  },
+  {
+    "name": "pos-sale-list",
+    "path": "/pos/sale-list",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/pos/sale-list.vue",
+    "chunkName": "pages/pos/sale-list",
+    "_name": "_5a65ee76"
   },
   {
     "name": "pos-sales_return",
     "path": "/pos/sales_return",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/sales_return.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/pos/sales_return.vue",
     "chunkName": "pages/pos/sales_return",
-    "_name": "_21a372c9"
+    "_name": "_663b3321"
   },
   {
     "name": "pos-sales_return_list",
     "path": "/pos/sales_return_list",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/sales_return_list.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/pos/sales_return_list.vue",
     "chunkName": "pages/pos/sales_return_list",
-    "_name": "_4191cc04"
+    "_name": "_7bfc82ac"
   },
   {
     "name": "pos-test",
     "path": "/pos/test",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/pos/test.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/pos/test.vue",
     "chunkName": "pages/pos/test",
-    "_name": "_2a6ecbd0"
+    "_name": "_621b9b20"
   },
   {
     "name": "product-create",
     "path": "/product/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/product/create.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/product/create.vue",
     "chunkName": "pages/product/create",
-    "_name": "_51cbd9f2"
+    "_name": "_1ad6095f"
   },
   {
     "name": "product-stock",
     "path": "/product/stock",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/product/stock.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/product/stock.vue",
     "chunkName": "pages/product/stock",
-    "_name": "_0dc296db"
+    "_name": "_52027583"
+  },
+  {
+    "name": "purchase-create",
+    "path": "/purchase/create",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/purchase/create.vue",
+    "chunkName": "pages/purchase/create",
+    "_name": "_7a711bd2"
+  },
+  {
+    "name": "purchase-purchase-list",
+    "path": "/purchase/purchase-list",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/purchase/purchase-list.vue",
+    "chunkName": "pages/purchase/purchase-list",
+    "_name": "_6ea824c2"
+  },
+  {
+    "name": "purchase-purchase-return",
+    "path": "/purchase/purchase-return",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/purchase/purchase-return.vue",
+    "chunkName": "pages/purchase/purchase-return",
+    "_name": "_7363aa1e"
+  },
+  {
+    "name": "purchase-purchase-return-list",
+    "path": "/purchase/purchase-return-list",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/purchase/purchase-return-list.vue",
+    "chunkName": "pages/purchase/purchase-return-list",
+    "_name": "_41be3eaa"
   },
   {
     "name": "report-expense-report",
     "path": "/report/expense-report",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/report/expense-report.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/report/expense-report.vue",
     "chunkName": "pages/report/expense-report",
-    "_name": "_3e2ba92e"
+    "_name": "_1b54e211"
   },
   {
     "name": "report-profit-loss-report",
     "path": "/report/profit-loss-report",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/report/profit-loss-report.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/report/profit-loss-report.vue",
     "chunkName": "pages/report/profit-loss-report",
-    "_name": "_1bf80235"
+    "_name": "_1f5724dd"
   },
   {
     "name": "report-sales-report",
     "path": "/report/sales-report",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/report/sales-report.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/report/sales-report.vue",
     "chunkName": "pages/report/sales-report",
-    "_name": "_f4ecd796"
+    "_name": "_85fc5646"
   },
   {
     "name": "report-sales-return-report",
     "path": "/report/sales-return-report",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/report/sales-return-report.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/report/sales-return-report.vue",
     "chunkName": "pages/report/sales-return-report",
-    "_name": "_d0e48000"
+    "_name": "_0012f258"
   },
   {
     "name": "report-stock-report",
     "path": "/report/stock-report",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/report/stock-report.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/report/stock-report.vue",
     "chunkName": "pages/report/stock-report",
-    "_name": "_884ec82a"
+    "_name": "_195e46da"
   },
   {
     "name": "setting-assign-role",
     "path": "/setting/assign-role",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/setting/assign-role.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/setting/assign-role.vue",
     "chunkName": "pages/setting/assign-role",
-    "_name": "_d0104e0c"
+    "_name": "_611fccbc"
   },
   {
     "name": "setting-permission",
     "path": "/setting/permission",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/setting/permission.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/setting/permission.vue",
     "chunkName": "pages/setting/permission",
-    "_name": "_ffa5554e"
+    "_name": "_0453409e"
   },
   {
     "name": "setting-role",
     "path": "/setting/role",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/setting/role.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/setting/role.vue",
     "chunkName": "pages/setting/role",
-    "_name": "_b957bc00"
+    "_name": "_a46c6350"
   },
   {
     "name": "setting-special-permission",
     "path": "/setting/special-permission",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/setting/special-permission.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/setting/special-permission.vue",
     "chunkName": "pages/setting/special-permission",
-    "_name": "_6ad6f226"
+    "_name": "_3319b945"
   },
   {
     "name": "supplier-create",
     "path": "/supplier/create",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/supplier/create.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/supplier/create.vue",
     "chunkName": "pages/supplier/create",
-    "_name": "_cb616878"
+    "_name": "_63dbbf28"
   },
   {
     "name": "supplier-supplier-list",
     "path": "/supplier/supplier-list",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/supplier/supplier-list.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/supplier/supplier-list.vue",
     "chunkName": "pages/supplier/supplier-list",
-    "_name": "_8254f232"
+    "_name": "_5c7cb582"
   },
   {
     "name": "customer-update-id",
     "path": "/customer/update/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/customer/update/_id.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/customer/update/_id.vue",
     "chunkName": "pages/customer/update/_id",
-    "_name": "_329be5ea"
+    "_name": "_6a142692"
   },
   {
     "name": "employee-employee-update-id",
     "path": "/employee/employee-update/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/employee/employee-update/_id.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/employee/employee-update/_id.vue",
     "chunkName": "pages/employee/employee-update/_id",
-    "_name": "_155ec7bd"
+    "_name": "_7160c415"
   },
   {
     "name": "expense-update-id",
     "path": "/expense/update/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/expense/update/_id.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/expense/update/_id.vue",
     "chunkName": "pages/expense/update/_id",
-    "_name": "_0213a576"
+    "_name": "_7fbcafce"
   },
   {
     "name": "product-update-id",
     "path": "/product/update/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/product/update/_id.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/product/update/_id.vue",
     "chunkName": "pages/product/update/_id",
-    "_name": "_55dbffff"
+    "_name": "_58f5eb52"
   },
   {
     "name": "supplier-update-id",
     "path": "/supplier/update/:id?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/supplier/update/_id.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/supplier/update/_id.vue",
     "chunkName": "pages/supplier/update/_id",
-    "_name": "_d3c6db88"
+    "_name": "_64d65a38"
   },
   {
     "name": "password-reset-confirm-token",
     "path": "/password-reset-confirm/:token?",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/password-reset-confirm/_token.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/password-reset-confirm/_token.vue",
     "chunkName": "pages/password-reset-confirm/_token",
-    "_name": "_9e61a684"
+    "_name": "_55e68934"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/omorfaruk/Desktop/Pos/pages/index.vue",
+    "component": "/media/omorfaruk/0D3E384B49BCFC29/Pos/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_b72a9692"
+    "_name": "_0e27bb5f"
   }
 ]

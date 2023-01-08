@@ -7,7 +7,7 @@
                         <div class="form-content">
                             <div class="form-horizontal">
                                 <div class="text-center card-header mb-4 d-flex justify-content-between">
-                                    <h4 class="ml-3">Product Add</h4>
+                                    <h4 class="ml-3"> Add Product </h4>
                                     <div>
                                         <nuxt-link to="/product" class="text-dark mr-3"><img src="/images/list.png"
                                                 alt="list" height="20px" />
@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group">
-                                            <label for=""> Alert Qty</label>
+                                            <label for=""> Alert Qty <span class="text-danger">*</span></label>
                                             <input class="form-control" type="number" placeholder="Enter Alert barcode"
                                                 v-model="product.alert_qty" />
                                         </div>
@@ -129,7 +129,7 @@
                                         <div class="form-group">
                                             <label for=""> Discount</label>
                                             <input class="form-control" type="number"
-                                                placeholder="Enter Product Discount" v-model="product.discount" />
+                                                placeholder="Discount By %" v-model="product.discount" />
                                         </div>
                                     </div>
 
@@ -252,6 +252,7 @@ export default {
                         type: "success",
                         showConfirmButton: false,
                     });
+                    console.log(response);
                 })
                 .catch((error) => {
                     this.errors = error.response.data.errors;

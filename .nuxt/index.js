@@ -13,15 +13,15 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_518e4f71 from 'nuxt_plugin_plugin_518e4f71' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_47fb4336 from 'nuxt_plugin_bootstrapvue_47fb4336' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_srcplugin2aec793a_3795e622 from 'nuxt_plugin_srcplugin2aec793a_3795e622' // Source: ./src.plugin.2aec793a.js (mode: 'client')
-import nuxt_plugin_axios_ecc147f2 from 'nuxt_plugin_axios_ecc147f2' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_plugin_d3b3e06e from 'nuxt_plugin_plugin_d3b3e06e' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_5270ef8e from 'nuxt_plugin_bootstrapvue_5270ef8e' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_srcpluginfae083ea_1be034c7 from 'nuxt_plugin_srcpluginfae083ea_1be034c7' // Source: ./src.plugin.fae083ea.js (mode: 'client')
+import nuxt_plugin_axios_935a3f42 from 'nuxt_plugin_axios_935a3f42' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_owl_47c2522e from 'nuxt_plugin_owl_47c2522e' // Source: ../plugins/owl.js (mode: 'client')
 import nuxt_plugin_vuetoaster_a0853800 from 'nuxt_plugin_vuetoaster_a0853800' // Source: ../plugins/vue-toaster.js (mode: 'client')
 import nuxt_plugin_fontawesome_b8db358e from 'nuxt_plugin_fontawesome_b8db358e' // Source: ../plugins/fontawesome.js (mode: 'client')
 import nuxt_plugin_pagination_0c55d867 from 'nuxt_plugin_pagination_0c55d867' // Source: ../plugins/pagination.js (mode: 'client')
-import nuxt_plugin_auth_31753049 from 'nuxt_plugin_auth_31753049' // Source: ./auth.js (mode: 'all')
+import nuxt_plugin_auth_2ed87e1e from 'nuxt_plugin_auth_2ed87e1e' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -89,7 +89,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"pos","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"stylesheet","id":"bootstrap-style","href":"\u002Fcss\u002Fbootstrap.min.css"},{"rel":"stylesheet","id":"font-awesome-style","href":"\u002Fcss\u002Ffont-awesome.min.css"},{"rel":"stylesheet","id":"style-style","href":"\u002Fcss\u002Fstyle.css"},{"rel":"stylesheet\u002Fscss","id":"style-style","href":"\u002Fcss\u002Fstyle.scss"},{"hid":"gf-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"gf-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"gf-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100"}],"script":[{"src":"\u002Fjs\u002Fjquery.min.js","defer":true},{"src":"\u002Fjs\u002Fmain.js","defer":true},{"src":"\u002Fjs\u002Fbootstrap.min.js","defer":true},{"src":"\u002Fjs\u002Fbootstrap.bundle.min.js","defer":true},{"src":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fxlsx\u002F0.15.6\u002Fxlsx.full.min.js","defer":true},{"hid":"gf-script","innerHTML":"(function(){var l=document.createElement('link');l.rel=\"stylesheet\";l.href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\";document.querySelector(\"head\").appendChild(l);})();"}],"style":[],"noscript":[{"hid":"gf-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"gf-script":["innerHTML"],"gf-noscript":["innerHTML"]}},
+    head: {"title":"pos","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"stylesheet","id":"bootstrap-style","href":"\u002Fcss\u002Fbootstrap.min.css"},{"rel":"stylesheet","id":"font-awesome-style","href":"\u002Fcss\u002Ffont-awesome.min.css"},{"rel":"stylesheet","id":"style-style","href":"\u002Fcss\u002Fstyle.css"},{"hid":"gf-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"gf-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"gf-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100"}],"styleResources":{"scss":["~assets\u002Fscss\u002Fstyle.scss"]},"script":[{"src":"\u002Fjs\u002Fjquery.min.js","defer":true},{"src":"\u002Fjs\u002Fmain.js","defer":true},{"src":"\u002Fjs\u002Fbootstrap.min.js","defer":true},{"src":"\u002Fjs\u002Fbootstrap.bundle.min.js","defer":true},{"src":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fxlsx\u002F0.15.6\u002Fxlsx.full.min.js","defer":true},{"hid":"gf-script","innerHTML":"(function(){var l=document.createElement('link');l.rel=\"stylesheet\";l.href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\";document.querySelector(\"head\").appendChild(l);})();"}],"style":[],"noscript":[{"hid":"gf-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto&family=Josefin+Sans&family=Lato:wght@100;300&family=Raleway:ital,wght@0,100;0,400;1,100\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"gf-script":["innerHTML"],"gf-noscript":["innerHTML"]}},
 
     store,
     router,
@@ -218,20 +218,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_518e4f71 === 'function') {
-    await nuxt_plugin_plugin_518e4f71(app.context, inject)
+  if (typeof nuxt_plugin_plugin_d3b3e06e === 'function') {
+    await nuxt_plugin_plugin_d3b3e06e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_47fb4336 === 'function') {
-    await nuxt_plugin_bootstrapvue_47fb4336(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_5270ef8e === 'function') {
+    await nuxt_plugin_bootstrapvue_5270ef8e(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_srcplugin2aec793a_3795e622 === 'function') {
-    await nuxt_plugin_srcplugin2aec793a_3795e622(app.context, inject)
+  if (process.client && typeof nuxt_plugin_srcpluginfae083ea_1be034c7 === 'function') {
+    await nuxt_plugin_srcpluginfae083ea_1be034c7(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_ecc147f2 === 'function') {
-    await nuxt_plugin_axios_ecc147f2(app.context, inject)
+  if (typeof nuxt_plugin_axios_935a3f42 === 'function') {
+    await nuxt_plugin_axios_935a3f42(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_owl_47c2522e === 'function') {
@@ -250,8 +250,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_pagination_0c55d867(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_auth_31753049 === 'function') {
-    await nuxt_plugin_auth_31753049(app.context, inject)
+  if (typeof nuxt_plugin_auth_2ed87e1e === 'function') {
+    await nuxt_plugin_auth_2ed87e1e(app.context, inject)
   }
 
   // Lock enablePreview in context

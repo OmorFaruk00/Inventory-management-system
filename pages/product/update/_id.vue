@@ -7,7 +7,7 @@
                         <div class="form-content">
                             <div class="form-horizontal">
                                 <div class="text-center card-header mb-4 d-flex justify-content-between">
-                                    <h4 class="ml-3">Product Update</h4>
+                                    <h4 class="ml-3"> Update Product </h4>
                                     <div>
                                         <nuxt-link to="/product" class="text-dark mr-3"><img src="/images/list.png"
                                                 alt="list" height="20px" />
@@ -21,7 +21,8 @@
                                                 Product Name <span class="text-danger">*</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product name"
                                                 v-model="product.product_name" />
-                                            <p v-if="errors.product_name" v-text="errors.product_name[0]" class="text-danger"></p>
+                                            <p v-if="errors.product_name" v-text="errors.product_name[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -29,7 +30,8 @@
                                             <label for="">Product Code <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="text" placeholder="Enter product code"
                                                 v-model="product.product_code" />
-                                            <p v-if="errors.product_code" v-text="errors.product_code[0]" class="text-danger"></p>
+                                            <p v-if="errors.product_code" v-text="errors.product_code[0]"
+                                                class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
@@ -118,7 +120,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group">
-                                            <label for=""> Alert Qty</label>
+                                            <label for=""> Alert Qty <span class="text-danger"> *</span></label>
                                             <input class="form-control" type="number" placeholder="Enter Alert barcode"
                                                 v-model="product.alert_qty" />
                                         </div>
@@ -126,8 +128,8 @@
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group">
                                             <label for=""> Discount</label>
-                                            <input class="form-control" type="number" placeholder="Enter Product Discount"
-                                                v-model="product.discount" />
+                                            <input class="form-control" type="number"
+                                                placeholder="Enter Product Discount" v-model="product.discount" />
                                         </div>
                                     </div>
 
@@ -149,14 +151,15 @@
                                         <div class="form-group">
                                             <label for="">Image</label>
                                             <input type="file" class="form-control" placeholder=""
-                                                @change="(e) => (product.new_image = e.target.files[0])" accept="image/*" />
+                                                @change="(e) => (product.new_image = e.target.files[0])"
+                                                accept="image/*" />
                                             <p v-if="errors.image" v-text="errors.image[0]" class="text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-12">
                                         <div class="form-group float-right">
                                             <img :src="base_url + '/images/product/' + product.image" alt="image"
-                                                style="height:80px;width: 150px;" />
+                                                style="height: 80px; width: 150px" />
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-xl-12">
@@ -164,7 +167,7 @@
                                             <label for="">Description</label>
                                             <textarea class="form-control" type="text" placeholder=" Enter Description"
                                                 v-model="product.description">
-                                            </textarea>
+                      </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +182,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </template>
 
@@ -213,9 +215,7 @@ export default {
                 guarantee: "",
                 new_image: "",
                 description: "",
-
             },
-
         };
     },
     methods: {
@@ -235,40 +235,37 @@ export default {
                 .$get("/product/" + this.$route.params.id + "/edit")
                 .then((response) => {
                     this.product = response;
-
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         },
 
-        DataUpdate() {            
+        DataUpdate() {
             let formData = new FormData();
-            formData.append('product_name', this.product.product_name)
-            formData.append('product_code', this.product.product_code)
-            formData.append('brand', this.product.brand)
-            formData.append('category', this.product.category)
-            formData.append('unit', this.product.unit)
-            formData.append('tax', this.product.tax)
-            formData.append('purchase_price', this.product.purchase_price)
-            formData.append('sales_price', this.product.sales_price)
-            formData.append('barcode', this.product.barcode)
-            formData.append('opening_qty', this.product.opening_qty)
-            formData.append('alert_qty', this.product.alert_qty)
-            formData.append('warranty', this.product.warranty)
-            formData.append('discount', this.product.discount)
-            formData.append('guarantee', this.product.guarantee)
-            formData.append('description', this.product.description) 
-            if(this.product.new_image){
-                formData.append('image', this.product.new_image)
-            }           
-            
-                   
+            formData.append("product_name", this.product.product_name);
+            formData.append("product_code", this.product.product_code);
+            formData.append("brand", this.product.brand);
+            formData.append("category", this.product.category);
+            formData.append("unit", this.product.unit);
+            formData.append("tax", this.product.tax);
+            formData.append("purchase_price", this.product.purchase_price);
+            formData.append("sales_price", this.product.sales_price);
+            formData.append("barcode", this.product.barcode);
+            formData.append("opening_qty", this.product.opening_qty);
+            formData.append("alert_qty", this.product.alert_qty);
+            formData.append("warranty", this.product.warranty);
+            formData.append("discount", this.product.discount);
+            formData.append("guarantee", this.product.guarantee);
+            formData.append("description", this.product.description);
+            if (this.product.new_image) {
+                formData.append("image", this.product.new_image);
+            }
 
             this.$axios
-                .$post("/product-update/"+ this.$route.params.id, formData)
+                .$post("/product-update/" + this.$route.params.id, formData)
                 .then((response) => {
-                    this.DataEdit();                
+                    this.DataEdit();
                     this.$swal({
                         title: "Updated",
                         position: "center",
@@ -288,4 +285,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>
